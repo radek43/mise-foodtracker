@@ -18,17 +18,26 @@ struct ButonMeniuAdaugareView: View {
     
     var body: some View {
         VStack{
-            Button(action: {
-                 print("Round Action")
-                 }) {
-                 Circle()
-                     .stroke(lineWidth: 2)
-                     .frame(width: 50, height: 50)
-                     .foregroundColor(Color(UIColor.label))
-                     //.background(Color.red)
-                     .clipShape(Circle())
-                     .overlay(Image(imageName))
-                 }
+            NavigationLink(destination: AddFoodView()) {
+                Circle()
+                    .stroke(lineWidth: 2)
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(Color(UIColor.label))
+                    //.background(Color.red)
+                    .clipShape(Circle())
+                    .overlay(Image(imageName))
+            }
+//            Button(action: {
+//                 print("Round Action")
+//                 }) {
+//                 Circle()
+//                     .stroke(lineWidth: 2)
+//                     .frame(width: 50, height: 50)
+//                     .foregroundColor(Color(UIColor.label))
+//                     //.background(Color.red)
+//                     .clipShape(Circle())
+//                     .overlay(Image(imageName))
+//                 }
             Text(title)
                 .multilineTextAlignment(.center)
         }.padding(10)

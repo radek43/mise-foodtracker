@@ -15,6 +15,7 @@
 		178C8139280A992700EB29C1 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C8138280A992700EB29C1 /* RecipeCard.swift */; };
 		178C813B280AD9AE00EB29C1 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C813A280AD9AE00EB29C1 /* RecipeList.swift */; };
 		178CEBC52809B82700D6DD25 /* ButonMeniuAdaugareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CEBC42809B82700D6DD25 /* ButonMeniuAdaugareView.swift */; };
+		1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1791A78A281AE55000FB69E2 /* AddFoodView.swift */; };
 		179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DDB2A2803441D00049C65 /* RecipesView.swift */; };
 		179DDB2D2803443200049C65 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DDB2C2803443200049C65 /* CommunityView.swift */; };
 		17A92CFF2801DCEA000CF34F /* maiIncercSiEuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A92CFE2801DCEA000CF34F /* maiIncercSiEuApp.swift */; };
@@ -35,6 +36,7 @@
 		178C8138280A992700EB29C1 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		178C813A280AD9AE00EB29C1 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 		178CEBC42809B82700D6DD25 /* ButonMeniuAdaugareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButonMeniuAdaugareView.swift; sourceTree = "<group>"; };
+		1791A78A281AE55000FB69E2 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		179DDB2A2803441D00049C65 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
 		179DDB2C2803443200049C65 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
 		17A92CFB2801DCEA000CF34F /* maiIncercSiEu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maiIncercSiEu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				171C1723280AE513004F17DE /* RecipeView.swift */,
+				1791A78A281AE55000FB69E2 /* AddFoodView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				178CEBC52809B82700D6DD25 /* ButonMeniuAdaugareView.swift in Sources */,
 				171C1724280AE513004F17DE /* RecipeView.swift in Sources */,
 				17A92CFF2801DCEA000CF34F /* maiIncercSiEuApp.swift in Sources */,
+				1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */,
 				179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */,
 				173F05532810AC5D0058D1F2 /* ActivityProgressView.swift in Sources */,
 				178C8139280A992700EB29C1 /* RecipeCard.swift in Sources */,

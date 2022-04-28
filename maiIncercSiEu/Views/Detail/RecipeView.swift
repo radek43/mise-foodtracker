@@ -15,7 +15,7 @@ struct RecipeView: View {
                 .scaledToFill()
                 .frame(height: 300)
                 //.background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
                 .padding()
             VStack(spacing: 30) {

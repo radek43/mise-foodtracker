@@ -17,7 +17,7 @@ struct DatePickerView: View {
         }
         .padding()
         .background(Color(UIColor.tertiarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .padding([.leading, .trailing])
         .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
     }
