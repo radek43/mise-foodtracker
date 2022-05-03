@@ -25,6 +25,9 @@
 		17BF517A280C697D00CE01BD /* CaloriiRamaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF5179280C697D00CE01BD /* CaloriiRamaseView.swift */; };
 		17BF517C280C69DA00CE01BD /* MeniuAdaugareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF517B280C69DA00CE01BD /* MeniuAdaugareView.swift */; };
 		17BF517E280C6A3200CE01BD /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF517D280C6A3200CE01BD /* DatePickerView.swift */; };
+		17D9D151281C3AB800DD0406 /* SwiftUISegues in Frameworks */ = {isa = PBXBuildFile; productRef = 17D9D150281C3AB800DD0406 /* SwiftUISegues */; };
+		17D9D154281C3E5800DD0406 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 17D9D153281C3E5800DD0406 /* SwiftUICharts */; };
+		17D9D156281C3EF700DD0406 /* JurnalCaloriiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D9D155281C3EF700DD0406 /* JurnalCaloriiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,7 @@
 		17BF5179280C697D00CE01BD /* CaloriiRamaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriiRamaseView.swift; sourceTree = "<group>"; };
 		17BF517B280C69DA00CE01BD /* MeniuAdaugareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeniuAdaugareView.swift; sourceTree = "<group>"; };
 		17BF517D280C6A3200CE01BD /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		17D9D155281C3EF700DD0406 /* JurnalCaloriiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalCaloriiView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D9D151281C3AB800DD0406 /* SwiftUISegues in Frameworks */,
+				17D9D154281C3E5800DD0406 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +72,7 @@
 				17BF5179280C697D00CE01BD /* CaloriiRamaseView.swift */,
 				17BF517B280C69DA00CE01BD /* MeniuAdaugareView.swift */,
 				17BF517D280C6A3200CE01BD /* DatePickerView.swift */,
+				17D9D155281C3EF700DD0406 /* JurnalCaloriiView.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -181,6 +188,10 @@
 			dependencies = (
 			);
 			name = maiIncercSiEu;
+			packageProductDependencies = (
+				17D9D150281C3AB800DD0406 /* SwiftUISegues */,
+				17D9D153281C3E5800DD0406 /* SwiftUICharts */,
+			);
 			productName = maiIncercSiEu;
 			productReference = 17A92CFB2801DCEA000CF34F /* maiIncercSiEu.app */;
 			productType = "com.apple.product-type.application";
@@ -209,6 +220,10 @@
 				Base,
 			);
 			mainGroup = 17A92CF22801DCEA000CF34F;
+			packageReferences = (
+				17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */,
+				17D9D152281C3E5800DD0406 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 17A92CFC2801DCEA000CF34F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				173F05552810AEC60058D1F2 /* SettingsView.swift in Sources */,
+				17D9D156281C3EF700DD0406 /* JurnalCaloriiView.swift in Sources */,
 				17BF517A280C697D00CE01BD /* CaloriiRamaseView.swift in Sources */,
 				17A92D012801DCEA000CF34F /* ContentView.swift in Sources */,
 				178C813B280AD9AE00EB29C1 /* RecipeList.swift in Sources */,
@@ -457,6 +473,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-segues";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		17D9D152281C3E5800DD0406 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17D9D150281C3AB800DD0406 /* SwiftUISegues */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */;
+			productName = SwiftUISegues;
+		};
+		17D9D153281C3E5800DD0406 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17D9D152281C3E5800DD0406 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 17A92CF32801DCEA000CF34F /* Project object */;
 }

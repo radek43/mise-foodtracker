@@ -14,16 +14,21 @@ struct HomeView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    ScrollView {
+                    ScrollView(showsIndicators: false)  {
                         DatePickerView()
                         
                         CaloriiRamaseView()
                             
                         MeniuAdaugareView()
+                        
+                        JurnalCaloriiView()
+                            
                     }
                     Spacer()
                 }
             }
+            .fixedSize(horizontal: true, vertical: false)
+            //.frame(maxHeight: 200)
             .navigationTitle("Food Tracker")
         }
         .navigationViewStyle(.stack)

@@ -21,7 +21,8 @@ struct AddFoodView: View {
                   }
                   
               }
-            .searchable(text: $searchString, placement: .navigationBarDrawer(displayMode: .always))
+            .searchable(text: $searchString, placement: .navigationBarDrawer(displayMode: .always), prompt: Text("Ce ai mancat azi?"))
+            .navigationBarTitleDisplayMode(.inline)
             .shadow(color: Color.black.opacity(0.2), radius: 25, x: 0, y: 10)
             
     }

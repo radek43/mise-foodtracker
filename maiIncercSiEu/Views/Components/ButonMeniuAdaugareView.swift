@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUISegues
 
 struct ButonMeniuAdaugareView: View {
     var imageName: String
@@ -23,24 +24,14 @@ struct ButonMeniuAdaugareView: View {
                     .stroke(lineWidth: 2)
                     .frame(width: 50, height: 50)
                     .foregroundColor(Color(UIColor.label))
-                    //.background(Color.red)
                     .clipShape(Circle())
                     .overlay(Image(imageName))
             }
-//            Button(action: {
-//                 print("Round Action")
-//                 }) {
-//                 Circle()
-//                     .stroke(lineWidth: 2)
-//                     .frame(width: 50, height: 50)
-//                     .foregroundColor(Color(UIColor.label))
-//                     //.background(Color.red)
-//                     .clipShape(Circle())
-//                     .overlay(Image(imageName))
-//                 }
+
             Text(title)
                 .multilineTextAlignment(.center)
-        }.padding(10)
+        }
+        .padding(10)
     }
 }
 
