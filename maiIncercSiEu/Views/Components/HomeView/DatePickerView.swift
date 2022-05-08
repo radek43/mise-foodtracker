@@ -15,11 +15,7 @@ struct DatePickerView: View {
         VStack {
             DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
         }
-        .padding()
-        .background(Color(UIColor.tertiarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .padding([.leading, .trailing])
-        .shadow(color: Color.black.opacity(0.4), radius: 12)
+        .modifier(MakeCard())
     
     }
 }

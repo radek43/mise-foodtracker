@@ -22,7 +22,7 @@ struct TabbarView: View {
                 ActivityProgressView()
                     .tabItem {
                         
-                        Image("progressIcon")
+                        Image(systemName: "chart.bar")
                         Text("Progres")
                     }
                 RecipesView()
@@ -31,17 +31,17 @@ struct TabbarView: View {
                         Image(systemName: "book")
                         Text("Retete")
                     }
-            
+                FitnessView()
+                    .tabItem {
+                        Image("fitnessIcon")
+                        Text("Sport")
+                    }
                 CommunityView()
                     .tabItem {
                         Image(systemName: "person.2.fill")
                         Text("Comunitate")
                     }
-                SettingsView()
-                    .tabItem {
-                        Image(systemName: "gear")
-                        Text("Comunitate")
-                    }
+
             
             
         }

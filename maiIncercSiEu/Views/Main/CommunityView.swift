@@ -11,11 +11,17 @@ struct CommunityView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Text("nimic")
-                    .navigationTitle("Comunitate")
+                ScrollView{
+                    Title(numeTitlu: "Comunitate")
+                        
+                }
+                .navigationTitle("Comunitate")
+                .navigationBarHidden(true)
             }
         
-        }.navigationViewStyle(.stack)
+        }
+        .modifier(BlurSafeArea())
+        .navigationViewStyle(.stack)
     }
 }
 

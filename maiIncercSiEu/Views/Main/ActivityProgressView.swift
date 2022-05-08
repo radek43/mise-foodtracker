@@ -6,16 +6,34 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct ActivityProgressView: View {
+    
+    //let stil =  ChartStyle(backgroundColor: Color.white, accentColor: Color.blue, secondGradientColor: Color.blue, textColor: Color.black, legendTextColor: Color.gray, dropShadowColor: Color.gray)
+    
     var body: some View {
         NavigationView{
-            ZStack{
-                Text("nimic (deocamdata)")
-                    .navigationTitle("Progres")
+            ScrollView{
+                Title(numeTitlu: "Progres")
+                
+                VStack{
+                    //LineChartView(data: [8,23,54,32,12,37,7,23,43], title: "Calorii Consumate  Saptmanal", form: ChartForm.extraLarge)
+                    
+                    //BarChartView(data: ChartData(points: [8,23,54,32,12,37,7,23,43]), title: "Top calorii alimente consumate", style: Styles.barChartStyleNeonBlueLight,form: ChartForm.extraLarge)
+                        //.padding(.horizontal)
+                    CardMicut()
+                }
+                    
+                
+                
+                
             }
-        
-        }.navigationViewStyle(.stack)
+            .navigationTitle("Progres")
+            .navigationBarHidden(true)
+        }
+        .modifier(BlurSafeArea())
+        .navigationViewStyle(.stack)
     }
 }
 

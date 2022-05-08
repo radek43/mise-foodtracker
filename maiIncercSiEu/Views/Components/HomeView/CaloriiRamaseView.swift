@@ -29,14 +29,7 @@ struct CaloriiRamaseView: View {
                 }
                 
             }
-            .padding()
-            .background(Color(UIColor.tertiarySystemBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .padding([.top, .leading, .trailing])
-            .shadow(color: Color.black.opacity(0.4), radius: 12)
-            
-        
-
+            .modifier(MakeCard())
     }
     
 }

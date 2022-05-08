@@ -7,16 +7,19 @@
 
 import SwiftUI
 
-
 struct HomeView: View {
+    
+    @State var uiTabarController: UITabBarController?
     
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
                     ScrollView(showsIndicators: false)  {
-                        DatePickerView()
+                        TitleWithButton(numeTitlu: "Food Tracker", numeIcon: "person.crop.circle")
                         
+                        DatePickerView()
+        
                         CaloriiRamaseView()
                             
                         MeniuAdaugareView()
@@ -25,13 +28,18 @@ struct HomeView: View {
                             
                     }
                     Spacer()
+
                 }
             }
-            .fixedSize(horizontal: true, vertical: false)
+            //.fixedSize(horizontal: true, vertical: false)
             //.frame(maxHeight: 200)
             .navigationTitle("Food Tracker")
+            .navigationBarHidden(true)
+
         }
+        .modifier(BlurSafeArea())
         .navigationViewStyle(.stack)
+
     
     }
 }

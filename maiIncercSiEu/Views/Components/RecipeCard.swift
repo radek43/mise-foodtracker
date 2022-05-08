@@ -7,7 +7,9 @@
 
 import SwiftUI
 
+
 struct RecipeCard: View {
+
     var body: some View {
         VStack {
             Image("foodImage")
@@ -27,6 +29,7 @@ struct RecipeCard: View {
         //.background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .shadow(color: Color.black.opacity(0.3), radius: 15, x: 0, y: 10)
+        
     }
 }
 

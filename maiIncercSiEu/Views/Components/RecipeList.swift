@@ -6,8 +6,18 @@
 //
 
 import SwiftUI
+import SwiftUISegues
 
 struct RecipeList: View {
+    
+    // All the routes that lead from this view to the next ones
+    enum Route: Hashable {
+        case pushTest, modalTest, popoverTest
+    }
+    
+    // Triggers segues when its values are changes
+    @State private var route: Route? = nil
+    
     var body: some View {
         VStack{
             HStack {
@@ -20,36 +30,21 @@ struct RecipeList: View {
             }
             
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
+                Button(action: {
+                    route = .popoverTest})
+                {
+                RecipeCard()
+                    
+                }.segue(.popover(.rect(.bounds), .top), tag: .popoverTest, selection: $route) {
+                    RecipeView()
                 }
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
-                }
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
-                }
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
-                }
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
-                }
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
-                }
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
-                }
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
-                }
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
-                }
-                NavigationLink(destination: RecipeView()) {
-                    RecipeCard()
-                }
+                RecipeCard()
+                RecipeCard()
+                RecipeCard()
+                RecipeCard()
+                RecipeCard()
+                RecipeCard()
+                RecipeCard()
             }.padding(.top)
             
         }.padding(.horizontal)
