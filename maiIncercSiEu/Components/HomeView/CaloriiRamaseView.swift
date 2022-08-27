@@ -16,11 +16,11 @@ struct CaloriiRamaseView: View {
                 HStack{
                     VStack{
                         Text("0")
-                        Text("Consumate")
+                        Text("Consumat")
                     }.frame(maxWidth: .infinity)
                     VStack{
                         Text("0")
-                        Text("Arse")
+                        Text("Ars")
                     }.frame(maxWidth: .infinity)
                     VStack{
                         Text("0")

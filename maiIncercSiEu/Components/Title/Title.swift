@@ -23,7 +23,8 @@ struct Title: View {
             Spacer()
             
         }
-        .padding([.top, .leading, .trailing])
+        .padding([.top, .leading, .trailing], 25.0)
+        
 
     }
 }

@@ -39,7 +39,8 @@ struct JurnalCaloriiView: View {
                                 )
                             .frame(width: 20, height: 20)
                         
-                        Text("\(demoData[0], specifier: "%.1f")g \nGrasimi").minimumScaleFactor(0.01)
+                        Text("\(demoData[0], specifier: "%.1f")g \nGrasimi")
+                            .minimumScaleFactor(0.01)
                         Spacer()
                     }
                     
@@ -50,7 +51,8 @@ struct JurnalCaloriiView: View {
                                 )
                             .frame(width: 20, height: 20)
                         
-                        Text("\(demoData[1], specifier: "%.1f")g \nProteine").minimumScaleFactor(0.01)
+                        Text("\(demoData[1], specifier: "%.1f")g \nProteine")
+                            .minimumScaleFactor(0.01)
                         Spacer()
                     }
                     
@@ -61,7 +63,8 @@ struct JurnalCaloriiView: View {
                                 )
                             .frame(width: 20, height: 20)
                         
-                        Text("\(demoData[2], specifier: "%.1f")g Carbohidrati").minimumScaleFactor(0.01)
+                        Text("\(demoData[2], specifier: "%.1f")g Carbohidrati")
+                            .minimumScaleFactor(0.01)
                         Spacer()
                     }
                 }

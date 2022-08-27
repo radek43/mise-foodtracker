@@ -20,15 +20,6 @@ struct RecipeList: View {
     
     var body: some View {
         VStack{
-            HStack {
-                Text("X Retete")
-                    .font(.headline)
-                    .fontWeight(.medium)
-                .opacity(0.7)
-                
-                Spacer()
-            }
-            
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                 Button(action: {
                     route = .popoverTest})

@@ -33,7 +33,7 @@ struct TitleWithButton: View {
             }
 
         }
-        .padding([.top, .leading, .trailing])
+        .padding([.top, .leading, .trailing], 25.0)
         //.frame(width: UIScreen.main.bounds.width * 0.9)
     }
 }

@@ -9,15 +9,16 @@ import SwiftUI
 
 struct CardMicut: View {
     var body: some View {
-        VStack{
+        HStack{
             Button(action: {
                 print("Buton apasat")
             }) {
-                Text("Average Weight")
+                Text("Greutate medie")
             }
-            
+            Spacer()
             Text("76.90kg")
         }
+        .frame(maxWidth: .infinity)
         .modifier(MakeCard())
     }
 }
