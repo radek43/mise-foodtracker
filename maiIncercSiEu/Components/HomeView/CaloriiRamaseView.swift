@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+// MARK: - PROPERTIES
+
+
+
+// MARK: - BODY
+
 struct CaloriiRamaseView: View {
     var body: some View {
             VStack{
@@ -33,6 +39,8 @@ struct CaloriiRamaseView: View {
     }
     
 }
+
+// MARK: - PREVIEW
 
 struct CaloriiRamaseView_Previews: PreviewProvider {
     static var previews: some View {

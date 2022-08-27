@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    // MARK: - PROPERTIES
+    
     @State private var email = ""
     @State private var password = ""
     @EnvironmentObject var viewModel: AuthViewModel
+    
+    // MARK: - BODY
     
     var body: some View {
         NavigationView {
@@ -18,7 +23,7 @@ struct LoginView: View {
             VStack {
                 
                 // header view
-                AuthenticationHeaderView(title1: "", title2: "Bine ai venit!")
+                AuthenticationHeaderView(title1: "Bine ai venit!", title2: "")
                 
                 VStack(spacing: 40) {
                     CustomInputFields(imageName: "envelope", placeholderText: "Email", text: $email)
@@ -80,6 +85,8 @@ struct LoginView: View {
         }
     }
 }
+
+// MARK: - PREVIEWS
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

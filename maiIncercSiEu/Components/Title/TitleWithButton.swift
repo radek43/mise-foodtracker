@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TitleWithButton: View {
     
+    // MARK: - PROPERTIES
+    
     var numeTitlu: String
     var numeIcon: String
 
@@ -16,6 +18,8 @@ struct TitleWithButton: View {
         self.numeTitlu = numeTitlu
         self.numeIcon = numeIcon
     }
+    
+    // MARK: - BODY
     
     var body: some View {
         HStack {
@@ -38,8 +42,10 @@ struct TitleWithButton: View {
     }
 }
 
+// MARK: - PREVIEW
+
 struct TitleWithButton_Previews: PreviewProvider {
     static var previews: some View {
-        TitleWithButton(numeTitlu: "test", numeIcon: "person.crop.circle")
+        TitleWithButton(numeTitlu: "Test", numeIcon: "person.crop.circle")
     }
 }

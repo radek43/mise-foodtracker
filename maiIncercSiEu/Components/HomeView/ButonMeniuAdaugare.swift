@@ -9,6 +9,9 @@ import SwiftUI
 import SwiftUISegues
 
 struct ButonMeniuAdaugare: View {
+    
+    // MARK: - PROPERTIES
+    
     // All the routes that lead from this view to the next ones
     enum Route: Hashable {
         case pushTest, modalTest, popoverTest
@@ -26,6 +29,9 @@ struct ButonMeniuAdaugare: View {
         self.title = title
     }
 
+    
+    // MARK: - BODY
+    
     var body: some View {
             VStack {
                 
@@ -50,15 +56,17 @@ struct ButonMeniuAdaugare: View {
             .padding(10)
             .segue(.popover(.rect(.bounds), .top), tag: .popoverTest, selection: $route) {
                 AddFoodView()
-//                    Button("Welcome to modal") {
-//                        route = nil
-//                    }
+           //         Button("Welcome to modal") {
+           //             route = nil
+           //         }
             }
     }
 }
 
+// MARK: - PREVIEW
+
 struct ButonMeniuAdaugare_Previews: PreviewProvider {
     static var previews: some View {
-        MeniuAdaugareView()
+        ButonMeniuAdaugare(imageName: "sportsIcon", title: "sport")
     }
 }

@@ -9,14 +9,21 @@ import SwiftUI
 
 struct AuthenticationHeaderView: View {
     
+    // MARK: - PROPERTIES
+    
     let title1: String
     let title2: String
+    
+    // MARK: - BODY
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Spacer()
             }
+            
+            Spacer()
+            
             Text(title1)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
@@ -24,6 +31,7 @@ struct AuthenticationHeaderView: View {
             Text(title2)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
+                .padding(.bottom)
         }
         .frame(height: 260)
         .padding(.leading)
@@ -32,6 +40,8 @@ struct AuthenticationHeaderView: View {
         .clipShape(RoundedShape(corners: [.bottomRight]))
     }
 }
+
+// MARK: - PREVIEW
 
 struct AuthenticationHeaderView_Previews: PreviewProvider {
     static var previews: some View {

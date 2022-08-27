@@ -169,6 +169,7 @@
 		178CEBBF2809B5AE00D6DD25 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				17482A7A28047F57006F2186 /* TabBarView.swift */,
 				17482A7E2804832A006F2186 /* HomeView.swift */,
 				173F05522810AC5D0058D1F2 /* ActivityProgressView.swift */,
 				179DDB2A2803441D00049C65 /* RecipesView.swift */,
@@ -191,15 +192,12 @@
 		178CEBC12809B60F00D6DD25 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				17D8ED3E28BA0FE500BAD54D /* LoginView */,
 				17B1A4DE2826A32F00F1CDEC /* Modifiers */,
 				177E1EFB286892EC00A7832B /* FitnessView */,
 				170C633228297DE10048DFA9 /* Title */,
 				170C633128297DB80048DFA9 /* RecipesView */,
 				1727311E280C6484004DCB9B /* HomeView */,
-				17482A7A28047F57006F2186 /* TabBarView.swift */,
-				17F01E8228A2C8B900285894 /* CustomInputFields.swift */,
-				17F01E8428A2C8FD00285894 /* AuthenticationHeaderView.swift */,
-				17F01E8628A2C94F00285894 /* RoundedShape.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -269,6 +267,16 @@
 				17ABAE5D2827D75A0059E52A /* MakeCard.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		17D8ED3E28BA0FE500BAD54D /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				17F01E8228A2C8B900285894 /* CustomInputFields.swift */,
+				17F01E8428A2C8FD00285894 /* AuthenticationHeaderView.swift */,
+				17F01E8628A2C94F00285894 /* RoundedShape.swift */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 		17F01E7928A2C79000285894 /* Authentication */ = {

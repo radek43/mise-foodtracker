@@ -10,6 +10,13 @@ import SwiftUI
 
 struct RecipeCard: View {
 
+    // MARK: - PROPERTIES
+    
+    // de adaugat argumente card-ului
+    // pentru a putea fi mai modular
+    
+    // MARK: - BODY
+    
     var body: some View {
         VStack {
             Image("foodImage")
@@ -32,6 +39,8 @@ struct RecipeCard: View {
         
     }
 }
+
+// MARK: - PREVIEW
 
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {

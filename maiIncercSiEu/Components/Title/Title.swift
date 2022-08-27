@@ -9,8 +9,12 @@ import SwiftUI
 
 struct Title: View {
     
+    // MARK: - PROPERTIES
+    
     var numeTitlu: String
 
+    // MARK: - BODY
+    
     init(numeTitlu: String) {
         self.numeTitlu = numeTitlu
     }
@@ -28,6 +32,8 @@ struct Title: View {
 
     }
 }
+
+// MARK: - PREVIEW
 
 struct Title_Previews: PreviewProvider {
     static var previews: some View {

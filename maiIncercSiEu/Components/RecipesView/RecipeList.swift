@@ -10,6 +10,8 @@ import SwiftUISegues
 
 struct RecipeList: View {
     
+    // MARK: - PROPERTIES
+    
     // All the routes that lead from this view to the next ones
     enum Route: Hashable {
         case pushTest, modalTest, popoverTest
@@ -17,6 +19,8 @@ struct RecipeList: View {
     
     // Triggers segues when its values are changes
     @State private var route: Route? = nil
+    
+    // MARK: - BODY
     
     var body: some View {
         VStack{
@@ -32,7 +36,7 @@ struct RecipeList: View {
                 RecipeCard()
                 RecipeCard()
                 RecipeCard()
-                RecipeCard()
+                RecipeCard()        // De remediat
                 RecipeCard()
                 RecipeCard()
                 RecipeCard()
@@ -41,6 +45,8 @@ struct RecipeList: View {
         }.padding(.horizontal)
     }
 }
+
+// MARK: - PREVIEW
 
 struct RecipeList_Previews: PreviewProvider {
     static var previews: some View {

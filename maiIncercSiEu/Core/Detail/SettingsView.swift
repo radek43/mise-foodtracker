@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    // MARK: - PROPERTIES
+    
+    
+    // MARK: - BODY
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -18,6 +24,8 @@ struct SettingsView: View {
         }.navigationViewStyle(.stack)
     }
 }
+
+// MARK: - PREVIEW
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {

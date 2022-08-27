@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     
+    // MARK: - PROPERTIES
+    
     @State var uiTabarController: UITabBarController?
+    
+    // MARK: - BODY
     
     var body: some View {
         NavigationView {
@@ -28,21 +32,19 @@ struct HomeView: View {
                             
                     }
                     Spacer()
-
                 }
             }
             //.fixedSize(horizontal: true, vertical: false)
             //.frame(maxHeight: 200)
             .navigationTitle("Food Tracker")
             .navigationBarHidden(true)
-
         }
         .modifier(BlurSafeArea())
         .navigationViewStyle(.stack)
-
-    
     }
 }
+
+// MARK: - PREVIEW
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct CommunityView: View {
+    
+    // MARK: - PROPERTIES
+    
+    
+    // MARK: - BODY
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -24,6 +30,8 @@ struct CommunityView: View {
         .navigationViewStyle(.stack)
     }
 }
+
+// MARK: - PREVIEW
 
 struct CommunityView_Previews: PreviewProvider {
     static var previews: some View {

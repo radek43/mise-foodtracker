@@ -9,7 +9,11 @@ import SwiftUI
 
 struct DatePickerView: View {
     
+    // MARK: - PROPERTIES
+    
     @State private var data = Date()
+    
+    // MARK: - BODY
     
     var body: some View {
         VStack {
@@ -19,6 +23,8 @@ struct DatePickerView: View {
     
     }
 }
+
+// MARK: - PREVIEW
 
 struct DatePickerView_Previews: PreviewProvider {
     static var previews: some View {

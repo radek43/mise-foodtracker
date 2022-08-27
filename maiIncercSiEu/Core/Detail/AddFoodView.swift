@@ -7,19 +7,7 @@
 
 import SwiftUI
 
-extension UIApplication {
-    /// Resigns the keyboard.
-    ///
-    /// Used for resigning the keyboard when pressing the cancel button in a searchbar based on [this](https://stackoverflow.com/a/58473985/3687284) solution.
-    /// - Parameter force: set true to resign the keyboard.
-    func endEditing(_ force: Bool) {
-        let scenes = UIApplication.shared.connectedScenes
-        let windowScene = scenes.first as? UIWindowScene
-        let window = windowScene?.windows.first
-        window?.endEditing(force)
-    }
-}
-    
+
 struct ResignKeyboardOnDragGesture: ViewModifier {
     var gesture = DragGesture().onChanged{_ in
         UIApplication.shared.endEditing(true)
@@ -28,19 +16,17 @@ struct ResignKeyboardOnDragGesture: ViewModifier {
         content.gesture(gesture)
     }
 }
-    
-extension View {
-    func resignKeyboardOnDragGesture() -> some View {
-        return modifier(ResignKeyboardOnDragGesture())
-    }
-}
 
 struct AddFoodView: View {
+    
+    // MARK: - PROPERTIES
+    
     init() { UITableView.appearance().backgroundColor = UIColor.clear }
     let array = ["Peter", "Paul", "Mary", "Anna-Lena", "George", "John", "Greg", "Thomas", "Robert", "Bernie", "Mike", "Benno", "Hugo", "Miles", "Michael", "Mikel", "Tim", "Tom", "Lottie", "Lorrie", "Barbara"]
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
     
+    // MARK: - BODY
     
     var body: some View {
         NavigationView {
@@ -99,8 +85,31 @@ struct AddFoodView: View {
      }
 }
 
+// MARK: - PREVIEW
+
 struct AddFoodView_Previews: PreviewProvider {
     static var previews: some View {
         AddFoodView()
+    }
+}
+
+// MARK: - EXTEXSIONS
+
+extension UIApplication {
+    /// Resigns the keyboard.
+    ///
+    /// Used for resigning the keyboard when pressing the cancel button in a searchbar based on [this](https://stackoverflow.com/a/58473985/3687284) solution.
+    /// - Parameter force: set true to resign the keyboard.
+    func endEditing(_ force: Bool) {
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        window?.endEditing(force)
+    }
+}
+
+extension View {
+    func resignKeyboardOnDragGesture() -> some View {
+        return modifier(ResignKeyboardOnDragGesture())
     }
 }

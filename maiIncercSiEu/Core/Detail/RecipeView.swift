@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct RecipeView: View {
+    
+    // MARK: - PROPERTIES
+    
+    
+    // MARK: - BODY
+    
     var body: some View {
         ScrollView{
             Image("foodImage")
@@ -39,10 +45,10 @@ struct RecipeView: View {
             .padding(.horizontal)
         }
         //.ignoresSafeArea(.container, edges: .top)
-        
-
     }
 }
+
+// MARK: - PREVIEW
 
 struct RecipeView_Previews: PreviewProvider {
     static var previews: some View {

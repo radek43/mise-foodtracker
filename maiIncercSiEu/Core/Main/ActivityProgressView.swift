@@ -10,7 +10,7 @@ import SwiftUICharts
 
 struct ActivityProgressView: View {
     
-    
+    // MARK: - PROPERTIES
     
     var demoData: [Double] = [8, 4, 2, 5, 7, 6, 5]
     let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [
@@ -18,13 +18,13 @@ struct ActivityProgressView: View {
     
     @ScaledMetric var size: CGFloat = 1
     
+    // MARK: - BODY
+    
     var body: some View {
         NavigationView{
             ScrollView{
                 Title(numeTitlu: "Progres")
-
                 VStack{
-                    
                     VStack{
                         HStack{
                             Text("Calorii saptamanale").font(.system(size: 20 + size, weight: .semibold, design: .rounded))
@@ -35,7 +35,6 @@ struct ActivityProgressView: View {
                             .data(demoData)
                             .chartStyle(mixedColorStyle)
        
-                        
                     }
                     .modifier(MakeCard())
                         .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
@@ -48,7 +47,6 @@ struct ActivityProgressView: View {
                         BarChart()
                             .data(demoData)
                             .chartStyle(mixedColorStyle)
-       
                         
                     }
                     .modifier(MakeCard())
@@ -58,10 +56,6 @@ struct ActivityProgressView: View {
                     
                     CardMicut()
                 }
-                    
-                
-                
-                
             }
             .navigationTitle("Progres")
             .navigationBarHidden(true)
@@ -70,6 +64,8 @@ struct ActivityProgressView: View {
         .navigationViewStyle(.stack)
     }
 }
+
+// MARK: - PREVIEW
 
 struct ActivityProgressView_Previews: PreviewProvider {
     static var previews: some View {

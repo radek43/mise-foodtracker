@@ -9,7 +9,11 @@ import SwiftUI
 
 struct RecipesView: View {
     
+    // MARK: - PROPERTIES
+    
     @State private var searchText = ""
+    
+    // MARK: - BODY
     
     var body: some View {
         NavigationView{
@@ -26,6 +30,8 @@ struct RecipesView: View {
         .navigationViewStyle(.stack)
     }
 }
+
+// MARK: - PREVIEW
 
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct FitnessView: View {
+    
+    // MARK: - PROPERTIES
+    
+    
+    // MARK: - BODY
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -24,6 +30,8 @@ struct FitnessView: View {
         .navigationViewStyle(.stack)
     }
 }
+
+// MARK: - PREVIEW
 
 struct FitnessView_Previews: PreviewProvider {
     static var previews: some View {

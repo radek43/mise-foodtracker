@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RegistrationView: View {
     
+    // MARK: - PROPERTIES
+    
     @State private var email = ""
     @State private var username = ""
     @State private var fullname = ""
@@ -17,12 +19,14 @@ struct RegistrationView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var viewModel: AuthViewModel
     
+    // MARK: - BODY
+    
     var body: some View {
         VStack {
             
             // NavigationLink(destination: PhotoSelectorView(), isActive: $viewModel.didAuthenticateUser, label: { })
             
-            AuthenticationHeaderView(title1: "", title2: "Creaza un cont nou")
+            AuthenticationHeaderView(title1: "Creaza un cont nou", title2: "")
             
             VStack(spacing: 40) {
                 CustomInputFields(imageName: "envelope", placeholderText: "Email", text: $email)
@@ -65,6 +69,8 @@ struct RegistrationView: View {
         .ignoresSafeArea()
     }
 }
+
+// MARK: - PREVIEWS
 
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {

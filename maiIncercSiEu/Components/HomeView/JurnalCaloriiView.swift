@@ -11,10 +11,14 @@ import SwiftUICharts
 
 struct JurnalCaloriiView: View {
     
+    // MARK: - PROPERTIES
+    
     var demoData: [Double] = [8, 4, 2]
     let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [
         ColorGradient(.purple, .blue), ColorGradient(.pink, .yellow), ColorGradient(.red, .green)])
     @ScaledMetric var size: CGFloat = 1
+    
+    // MARK: - BODY
     
     var body: some View {
         VStack{
@@ -74,6 +78,8 @@ struct JurnalCaloriiView: View {
             .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
     }
 }
+
+// MARK: - PREVIEW
 
 struct JurnalCaloriiView_Previews: PreviewProvider {
     static var previews: some View {

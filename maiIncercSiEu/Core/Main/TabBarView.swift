@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct TabbarView: View {
+    
+    // MARK: - PROPERTIES
+    
     //init() {
     //        UITabBar.appearance().backgroundColor = UIColor.white
     //    }
+    
+    // MARK: - BODY
+    
     var body: some View {
         TabView {
                 HomeView()
@@ -21,13 +27,11 @@ struct TabbarView: View {
             
                 ActivityProgressView()
                     .tabItem {
-                        
                         Image(systemName: "chart.bar")
                         Text("Progres")
                     }
                 RecipesView()
                     .tabItem {
-                        
                         Image(systemName: "book")
                         Text("Retete")
                     }
@@ -41,12 +45,11 @@ struct TabbarView: View {
                         Image(systemName: "person.2.fill")
                         Text("Comunitate")
                     }
-
-            
-            
         }
     }
 }
+
+// MARK: - PREVIEW
 
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {

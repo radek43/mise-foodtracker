@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+// MARK: - PROPERTIES
+
+
+// MARK: - BODY
+
 struct MeniuAdaugareView: View {
     var body: some View {
         VStack{
@@ -27,6 +32,8 @@ struct MeniuAdaugareView: View {
     }
     
 }
+
+// MARK: - PREVIEW
 
 struct MeniuAdaugareView_Previews: PreviewProvider {
     static var previews: some View {
