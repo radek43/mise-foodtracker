@@ -39,11 +39,13 @@ struct ButonMeniuAdaugare: View {
                     route = .popoverTest})
                 {
                     Circle()
-                        .stroke(lineWidth: 2)
+                        .stroke(lineWidth: 0)
                         .frame(width: 50, height: 50)
                         .foregroundColor(Color(UIColor.label))
+                        .background(Circle().fill(Color("ColorBackground")))
                         .clipShape(Circle())
                         .overlay(Image(imageName))
+                        
                     
                 }
                 Text(title)

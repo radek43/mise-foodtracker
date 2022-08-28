@@ -23,6 +23,7 @@ struct CommunityView: View {
                 }
                 .navigationTitle("Comunitate")
                 .navigationBarHidden(true)
+                .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
         
         }

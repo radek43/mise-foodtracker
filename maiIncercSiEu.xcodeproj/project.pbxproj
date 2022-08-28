@@ -14,6 +14,7 @@
 		1723134C28B2BFA300E683B3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1723134B28B2BFA300E683B3 /* FirebaseFirestore */; };
 		1723134E28B2BFA300E683B3 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1723134D28B2BFA300E683B3 /* FirebaseFirestoreSwift */; };
 		1723135028B2BFA300E683B3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1723134F28B2BFA300E683B3 /* FirebaseStorage */; };
+		1728115328BBB39C001B0BC5 /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1728115228BBB39C001B0BC5 /* FormRowStaticView.swift */; };
 		173F05532810AC5D0058D1F2 /* ActivityProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F05522810AC5D0058D1F2 /* ActivityProgressView.swift */; };
 		173F05552810AEC60058D1F2 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F05542810AEC60058D1F2 /* SettingsView.swift */; };
 		17482A7B28047F57006F2186 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17482A7A28047F57006F2186 /* TabBarView.swift */; };
@@ -38,6 +39,7 @@
 		17BF517C280C69DA00CE01BD /* MeniuAdaugareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF517B280C69DA00CE01BD /* MeniuAdaugareView.swift */; };
 		17BF517E280C6A3200CE01BD /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF517D280C6A3200CE01BD /* DatePickerView.swift */; };
 		17CC53EF2827E1A7006A8FFD /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 17CC53EE2827E1A7006A8FFD /* SwiftUICharts */; };
+		17D8ED4228BA2AF400BAD54D /* HiddenNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ED4128BA2AF400BAD54D /* HiddenNavigationBar.swift */; };
 		17D9D151281C3AB800DD0406 /* SwiftUISegues in Frameworks */ = {isa = PBXBuildFile; productRef = 17D9D150281C3AB800DD0406 /* SwiftUISegues */; };
 		17D9D156281C3EF700DD0406 /* JurnalCaloriiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D9D155281C3EF700DD0406 /* JurnalCaloriiView.swift */; };
 		17DB8C132826991D00C5EFC1 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB8C122826991D00C5EFC1 /* Title.swift */; };
@@ -53,6 +55,7 @@
 		17007E6F2824525B0084B39B /* SegueTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueTestView.swift; sourceTree = "<group>"; };
 		171C1723280AE513004F17DE /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		1723133D28B2AF5F00E683B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1728115228BBB39C001B0BC5 /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		173F05522810AC5D0058D1F2 /* ActivityProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressView.swift; sourceTree = "<group>"; };
 		173F05542810AEC60058D1F2 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		17482A7A28047F57006F2186 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		17BF5179280C697D00CE01BD /* CaloriiRamaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriiRamaseView.swift; sourceTree = "<group>"; };
 		17BF517B280C69DA00CE01BD /* MeniuAdaugareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeniuAdaugareView.swift; sourceTree = "<group>"; };
 		17BF517D280C6A3200CE01BD /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		17D8ED4128BA2AF400BAD54D /* HiddenNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNavigationBar.swift; sourceTree = "<group>"; };
 		17D9D155281C3EF700DD0406 /* JurnalCaloriiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JurnalCaloriiView.swift; sourceTree = "<group>"; };
 		17DB8C122826991D00C5EFC1 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		17E4D1B928B91A10009C42DF /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -132,6 +136,14 @@
 				17D9D155281C3EF700DD0406 /* JurnalCaloriiView.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		1728115128BBB36E001B0BC5 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				1728115228BBB39C001B0BC5 /* FormRowStaticView.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		17425A3A28A2BB280021F61A /* Extensions */ = {
@@ -192,6 +204,7 @@
 		178CEBC12809B60F00D6DD25 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1728115128BBB36E001B0BC5 /* SettingsView */,
 				17D8ED3E28BA0FE500BAD54D /* LoginView */,
 				17B1A4DE2826A32F00F1CDEC /* Modifiers */,
 				177E1EFB286892EC00A7832B /* FitnessView */,
@@ -265,6 +278,7 @@
 			children = (
 				17B1A4DF2826A36700F1CDEC /* BlurSafeArea.swift */,
 				17ABAE5D2827D75A0059E52A /* MakeCard.swift */,
+				17D8ED4128BA2AF400BAD54D /* HiddenNavigationBar.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -393,7 +407,9 @@
 				17ABAE5E2827D75A0059E52A /* MakeCard.swift in Sources */,
 				17D9D156281C3EF700DD0406 /* JurnalCaloriiView.swift in Sources */,
 				17BF517A280C697D00CE01BD /* CaloriiRamaseView.swift in Sources */,
+				1728115328BBB39C001B0BC5 /* FormRowStaticView.swift in Sources */,
 				17AD15E42826EF460023C0EF /* CardMicut.swift in Sources */,
+				17D8ED4228BA2AF400BAD54D /* HiddenNavigationBar.swift in Sources */,
 				17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */,
 				17A92D012801DCEA000CF34F /* ContentView.swift in Sources */,
 				17DB8C132826991D00C5EFC1 /* Title.swift in Sources */,

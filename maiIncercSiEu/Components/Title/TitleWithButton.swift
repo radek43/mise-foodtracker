@@ -22,23 +22,29 @@ struct TitleWithButton: View {
     // MARK: - BODY
     
     var body: some View {
-        HStack {
-            Text(numeTitlu)
-                .font(.largeTitle.bold())
+        VStack {
+            HStack {
+                Text(numeTitlu)
+                    .font(.largeTitle.bold())
 
-            Spacer()
+                Spacer()
 
-            NavigationLink {
-                Text("Person View")
-            } label: {
-                Image(systemName: "person.crop.circle")
-                    .font(.largeTitle)
-                    .foregroundColor(.blue)
+                NavigationLink {
+                    SettingsView()
+                } label: {
+                    Image(systemName: "person.crop.circle")
+                        .font(.largeTitle)
+                        .foregroundColor(.blue)
+                }
+                
             }
-
+            .padding([.top, .leading, .trailing], 25.0)
+            
+            Spacer()
         }
-        .padding([.top, .leading, .trailing], 25.0)
         //.frame(width: UIScreen.main.bounds.width * 0.9)
+        
+        
     }
 }
 

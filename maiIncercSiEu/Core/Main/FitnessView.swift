@@ -23,6 +23,7 @@ struct FitnessView: View {
                 }
                 .navigationTitle("Fitness")
                 .navigationBarHidden(true)
+                .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
         
         }

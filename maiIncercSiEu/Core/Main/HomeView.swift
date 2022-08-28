@@ -22,6 +22,8 @@ struct HomeView: View {
                     ScrollView(showsIndicators: false)  {
                         TitleWithButton(numeTitlu: "Food Tracker", numeIcon: "person.crop.circle")
                         
+                        Spacer()
+                        
                         DatePickerView()
         
                         CaloriiRamaseView()
@@ -31,14 +33,16 @@ struct HomeView: View {
                         JurnalCaloriiView()
                             
                     }
-                    Spacer()
+                    
                 }
             }
             //.fixedSize(horizontal: true, vertical: false)
             //.frame(maxHeight: 200)
             .navigationTitle("Food Tracker")
             .navigationBarHidden(true)
+            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
+        
         .modifier(BlurSafeArea())
         .navigationViewStyle(.stack)
     }

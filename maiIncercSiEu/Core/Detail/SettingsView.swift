@@ -15,14 +15,30 @@ struct SettingsView: View {
     // MARK: - BODY
     
     var body: some View {
-        NavigationView{
-            ZStack{
-                Text("nimic (deocamdata)")
-                    .navigationTitle("Setari")
-            }
+        VStack(alignment: .center, spacing: 0){
+            Form {
+                Button {
+                    // func delogare()
+                } label: {
+                    Text("Delogare")
+                }
+
+            } //: Form
+            .listStyle(GroupedListStyle())
+            
+            
+            
+            Text("Copyright © 2022 All rights reserved. maiIncercSiEu")
+                .multilineTextAlignment(.center)
+                .font(.footnote)
+                .padding(.top, 6)
+                .padding(.bottom, 8)
+                .foregroundColor(Color.secondary)
+        } //: Vstack
+        .navigationBarTitle("Setari", displayMode: .inline)
+        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         
-        }.navigationViewStyle(.stack)
-    }
+    } //: Body
 }
 
 // MARK: - PREVIEW

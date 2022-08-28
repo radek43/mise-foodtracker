@@ -24,6 +24,7 @@ struct RecipesView: View {
                 }
                 .navigationTitle("Retete")
                 .navigationBarHidden(true)
+                .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
         }
         .modifier(BlurSafeArea())
