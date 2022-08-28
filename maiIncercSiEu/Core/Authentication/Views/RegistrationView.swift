@@ -32,7 +32,7 @@ struct RegistrationView: View {
                 CustomInputFields(imageName: "envelope", placeholderText: "Email", text: $email)
                 CustomInputFields(imageName: "person", placeholderText: "Nume Utilizator", text: $username)
                 CustomInputFields(imageName: "person", placeholderText: "Nume Complet", text: $fullname)
-                CustomInputFields(imageName: "lock", placeholderText: "Parola", isSecureField: false, text: $password)
+                CustomInputFields(imageName: "lock", placeholderText: "Parola", isSecureField: true, text: $password)
             }
             .padding(32)
 
@@ -47,7 +47,7 @@ struct RegistrationView: View {
                     .clipShape(Capsule())
                     .padding()
             }
-            .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
+            .shadow(color: Color.black.opacity(0.1), radius: 12)
             
             Spacer()
             
@@ -63,10 +63,10 @@ struct RegistrationView: View {
                 }
             }
             .padding(.bottom, 32)
-
             
         }
         .ignoresSafeArea()
+        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
 

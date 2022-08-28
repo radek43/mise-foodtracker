@@ -60,7 +60,7 @@ struct LoginView: View {
                         .clipShape(Capsule())
                         .padding()
                 }
-                .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 0)
+                .shadow(color: Color.black.opacity(0.1), radius: 12)
                 
                 Spacer()
                 
@@ -82,6 +82,7 @@ struct LoginView: View {
             }
             .ignoresSafeArea()
             .navigationBarHidden(true)
+            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
     }
 }

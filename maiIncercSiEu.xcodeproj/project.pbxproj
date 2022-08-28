@@ -22,6 +22,7 @@
 		177E1EFD2868930500A7832B /* FitnessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177E1EFC2868930500A7832B /* FitnessList.swift */; };
 		178C8139280A992700EB29C1 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C8138280A992700EB29C1 /* RecipeCard.swift */; };
 		178C813B280AD9AE00EB29C1 /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C813A280AD9AE00EB29C1 /* RecipeList.swift */; };
+		178CCC7428BBE4960074D52E /* PhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CCC7328BBE4960074D52E /* PhotoSelectorView.swift */; };
 		178CEBC52809B82700D6DD25 /* ButonMeniuAdaugare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CEBC42809B82700D6DD25 /* ButonMeniuAdaugare.swift */; };
 		1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1791A78A281AE55000FB69E2 /* AddFoodView.swift */; };
 		179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DDB2A2803441D00049C65 /* RecipesView.swift */; };
@@ -63,6 +64,7 @@
 		177E1EFC2868930500A7832B /* FitnessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessList.swift; sourceTree = "<group>"; };
 		178C8138280A992700EB29C1 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		178C813A280AD9AE00EB29C1 /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
+		178CCC7328BBE4960074D52E /* PhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorView.swift; sourceTree = "<group>"; };
 		178CEBC42809B82700D6DD25 /* ButonMeniuAdaugare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButonMeniuAdaugare.swift; sourceTree = "<group>"; };
 		1791A78A281AE55000FB69E2 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		179DDB2A2803441D00049C65 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				17F01E7E28A2C81500285894 /* LoginView.swift */,
 				17F01E8028A2C84800285894 /* RegistrationView.swift */,
+				178CCC7328BBE4960074D52E /* PhotoSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				17A92CFF2801DCEA000CF34F /* maiIncercSiEuApp.swift in Sources */,
 				1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */,
 				17F01E8328A2C8B900285894 /* CustomInputFields.swift in Sources */,
+				178CCC7428BBE4960074D52E /* PhotoSelectorView.swift in Sources */,
 				17B1A4DB2826A1E100F1CDEC /* FitnessView.swift in Sources */,
 				179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */,
 				17B1A4E02826A36700F1CDEC /* BlurSafeArea.swift in Sources */,

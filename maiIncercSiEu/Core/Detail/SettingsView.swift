@@ -11,6 +11,7 @@ struct SettingsView: View {
     
     // MARK: - PROPERTIES
     
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     // MARK: - BODY
     
@@ -18,7 +19,7 @@ struct SettingsView: View {
         VStack(alignment: .center, spacing: 0){
             Form {
                 Button {
-                    // func delogare()
+                    authViewModel.signOut()
                 } label: {
                     Text("Delogare")
                 }
