@@ -6,51 +6,58 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct HomeView: View {
     
     // MARK: - PROPERTIES
     
     @State var uiTabarController: UITabBarController?
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     // MARK: - BODY
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                VStack {
-                    ScrollView(showsIndicators: false)  {
-                        TitleWithButton(numeTitlu: "Food Tracker", numeIcon: "person.crop.circle")
-                        
-                        Spacer()
-                        
-                        DatePickerView()
         
-                        CaloriiRamaseView()
+        if let user = authViewModel.currentUser{
+            NavigationView {
+                ZStack {
+                    VStack {
+                        ScrollView(showsIndicators: false)  {
+                            TitleWithButton(numeTitlu: "Buna Seara, \(user.username)")
                             
-                        MeniuAdaugareView()
+                            Spacer()
+                            
+                            DatePickerView()
+            
+                            CaloriiRamaseView()
+                                
+                            MeniuAdaugareView()
+                            
+                            JurnalCaloriiView()
+                                
+                        }
                         
-                        JurnalCaloriiView()
-                            
                     }
-                    
                 }
+                //.fixedSize(horizontal: true, vertical: false)
+                //.frame(maxHeight: 200)
+                .navigationTitle("Food Tracker")
+                .navigationBarHidden(true)
+                .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
-            //.fixedSize(horizontal: true, vertical: false)
-            //.frame(maxHeight: 200)
-            .navigationTitle("Food Tracker")
-            .navigationBarHidden(true)
-            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
-        }
+            
+            .modifier(BlurSafeArea())
+            .navigationViewStyle(.stack)
+        } //: end if let
         
-        .modifier(BlurSafeArea())
-        .navigationViewStyle(.stack)
-    }
+    }//: end body
 }
 
 // MARK: - PREVIEW
 
 struct HomeView_Previews: PreviewProvider {
+    
     static var previews: some View {
         HomeView()
     }

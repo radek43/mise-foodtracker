@@ -13,10 +13,15 @@ class AuthViewModel: ObservableObject {
     // MARK: - PROPERTIES
     
     @Published var userSession: FirebaseAuth.User?
+    @Published var didAuthenticateUser = false
+    @Published var currentUser: User? // type optional -> aplicatia porneste prima, apoi conectarea la server
+    private var tempUserSession: FirebaseAuth.User?
+    
+    private let service = UserService()
     
     init() {
         self.userSession = Auth.auth().currentUser
-        print("DEBUG: User session is \(String(describing: self.userSession?.uid))")
+        self.fetchUser()
     }
     
     // MARK: - FUNCTIONS
@@ -41,10 +46,8 @@ class AuthViewModel: ObservableObject {
             }
             
             guard let user = result?.user else { return }
-            self.userSession = user
+            self.tempUserSession = user
             
-            print("DEBUG: Registered user successfully")
-            print("DEBUG: User is \(String(describing: self.userSession))")
             
             let data = ["email": email,
                         "username": username.lowercased(),
@@ -54,7 +57,7 @@ class AuthViewModel: ObservableObject {
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data) { _ in
-                    print("DEBUG: Did upload user data..")
+                    self.didAuthenticateUser = true
                 }
         }
     } //: register()
@@ -65,6 +68,26 @@ class AuthViewModel: ObservableObject {
         
         // delogheaza partea de server
         try? Auth.auth().signOut()
+    }
+    
+    func uploadProfileImage(_ image: UIImage) {
+        guard let uid = tempUserSession?.uid else { return }
+        
+        ImageUploader.uploadImage(image: image) { profileImageUrl in
+            Firestore.firestore().collection("users")
+                .document(uid)
+                .updateData(["profileImageUrl": profileImageUrl]) { _ in
+                    self.userSession = self.tempUserSession
+                }
+        }
+    }
+    
+    func fetchUser() {
+        guard let uid = self.userSession?.uid else { return }
+        
+        service.fetchUser(withUid: uid) { user in
+            self.currentUser = user
+        }
     }
     
 }
