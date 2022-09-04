@@ -12,19 +12,23 @@ struct FitnessView: View {
     // MARK: - PROPERTIES
     
     
+    
+    
     // MARK: - BODY
     
     var body: some View {
         NavigationView{
             ZStack{
-                ScrollView{
-                    Title(numeTitlu: "Fitness")
-                        
+                VStack {
+                    ScrollView{
+                        Title(numeTitlu: "Fitness")
+                        FitnessList(excersises: Excercise.all)
+                    }
                 }
-                .navigationTitle("Fitness")
-                .navigationBarHidden(true)
-                .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
+            .navigationTitle("Fitness")
+            .navigationBarHidden(true)
+            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         
         }
         .modifier(BlurSafeArea())

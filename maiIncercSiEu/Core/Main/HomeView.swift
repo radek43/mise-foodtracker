@@ -19,29 +19,19 @@ struct HomeView: View {
     
     var body: some View {
         
-        if let user = authViewModel.currentUser{
+       // if let user = authViewModel.currentUser {
             NavigationView {
                 ZStack {
                     VStack {
                         ScrollView(showsIndicators: false)  {
-                            TitleWithButton(numeTitlu: "Buna Seara, \(user.username)")
-                            
-                            Spacer()
-                            
+                            TitleWithButton(numeTitlu: "Food Tracker") //\(user.username)")
                             DatePickerView()
-            
                             CaloriiRamaseView()
-                                
                             MeniuAdaugareView()
-                            
                             JurnalCaloriiView()
-                                
                         }
-                        
                     }
                 }
-                //.fixedSize(horizontal: true, vertical: false)
-                //.frame(maxHeight: 200)
                 .navigationTitle("Food Tracker")
                 .navigationBarHidden(true)
                 .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
@@ -49,7 +39,7 @@ struct HomeView: View {
             
             .modifier(BlurSafeArea())
             .navigationViewStyle(.stack)
-        } //: end if let
+        //} //: end if let
         
     }//: end body
 }
@@ -60,5 +50,6 @@ struct HomeView_Previews: PreviewProvider {
     
     static var previews: some View {
         HomeView()
+            .environmentObject(AuthViewModel())
     }
 }

@@ -12,7 +12,7 @@ struct MakeCard: ViewModifier {
         content
             .padding()
             .background(Color(UIColor.tertiarySystemBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 15.0, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
             //.padding(.horizontal)
             .frame(width: UIScreen.main.bounds.width * 0.9)
             .shadow(color: Color.black.opacity(0.1), radius: 12)
@@ -21,6 +21,6 @@ struct MakeCard: ViewModifier {
 
 struct MakeCard_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        FitnessCard(exercitiu: Excercise.all[0])
     }
 }

@@ -20,7 +20,7 @@ struct RecipesView: View {
             ZStack{
                 ScrollView{
                     Title(numeTitlu: "Retete")
-                    RecipeList()
+                    RecipeList(recipes: Recipe.all)
                 }
                 .navigationTitle("Retete")
                 .navigationBarHidden(true)

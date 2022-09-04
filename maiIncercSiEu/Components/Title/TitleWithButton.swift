@@ -34,18 +34,19 @@ struct TitleWithButton: View {
                     SettingsView()
                 } label: {
                     if let user = authViewModel.currentUser {
-                        if user.profileImageUrl != "" {
-                            KFImage(URL(string: user.profileImageUrl))
-                                .resizable()
-                                .scaledToFill()
-                                .clipShape(Circle())
-                                .frame(width: 48, height: 48)
-                        } else {
-                            Image(systemName: "person.crop.circle")
-                                .font(.largeTitle)
-                                .foregroundColor(.blue)
-                                .frame(width: 48, height: 48)
-                        }
+                        KFImage(URL(string: user.profileImageUrl))
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 36, height: 36)
+                            .padding(6)
+                        
+                    } else {
+                        Image(systemName: "person.crop.circle")
+                            .font(.largeTitle)
+                            .foregroundColor(.blue)
+                            .frame(width: 48, height: 48)
+                            
                     }
                 }
             }
@@ -64,5 +65,6 @@ struct TitleWithButton: View {
 struct TitleWithButton_Previews: PreviewProvider {
     static var previews: some View {
         TitleWithButton(numeTitlu: "Test")
+            .environmentObject(AuthViewModel())
     }
 }
