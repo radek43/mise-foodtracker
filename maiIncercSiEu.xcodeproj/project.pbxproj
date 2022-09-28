@@ -61,6 +61,7 @@
 		17FE3DDB28C4BBFB00B7590E /* FitnessViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDA28C4BBFB00B7590E /* FitnessViewDetail.swift */; };
 		17FE3DDD28C4CBAC00B7590E /* IconTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDC28C4CBAC00B7590E /* IconTest.swift */; };
 		17FE3DDF28C4DBAD00B7590E /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */; };
+		2C6E96C528E49B78000159C4 /* CommunityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E96C428E49B78000159C4 /* CommunityCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		17FE3DDA28C4BBFB00B7590E /* FitnessViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewDetail.swift; sourceTree = "<group>"; };
 		17FE3DDC28C4CBAC00B7590E /* IconTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTest.swift; sourceTree = "<group>"; };
 		17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
+		2C6E96C428E49B78000159C4 /* CommunityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		178CEBC02809B5E100D6DD25 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				2C6E96C328E49B5D000159C4 /* CommunityView */,
 				1747ABFC28C3BA6200138938 /* FitnessView */,
 				170C633128297DB80048DFA9 /* RecipesView */,
 				1791A78A281AE55000FB69E2 /* AddFoodView.swift */,
@@ -386,6 +389,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		2C6E96C328E49B5D000159C4 /* CommunityView */ = {
+			isa = PBXGroup;
+			children = (
+				2C6E96C428E49B78000159C4 /* CommunityCard.swift */,
+			);
+			path = CommunityView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,6 +525,7 @@
 				179DDB2D2803443200049C65 /* CommunityView.swift in Sources */,
 				17007E702824525B0084B39B /* SegueTestView.swift in Sources */,
 				17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */,
+				2C6E96C528E49B78000159C4 /* CommunityCard.swift in Sources */,
 				17F01E8528A2C8FD00285894 /* AuthenticationHeaderView.swift in Sources */,
 				17482A7B28047F57006F2186 /* TabBarView.swift in Sources */,
 			);

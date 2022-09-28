@@ -11,9 +11,6 @@ struct TabbarView: View {
     
     // MARK: - PROPERTIES
     
-    //init() {
-    //        UITabBar.appearance().backgroundColor = UIColor.white
-    //    }
     
     // MARK: - BODY
     
@@ -54,5 +51,6 @@ struct TabbarView: View {
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
         TabbarView()
+            .environmentObject(AuthViewModel())
     }
 }
