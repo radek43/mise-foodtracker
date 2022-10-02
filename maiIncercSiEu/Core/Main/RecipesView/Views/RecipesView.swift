@@ -11,7 +11,8 @@ struct RecipesView: View {
     
     // MARK: - PROPERTIES
     
-    @State private var searchText = ""
+    var recipes: [Recipe]
+    
     
     // MARK: - BODY
     
@@ -20,7 +21,21 @@ struct RecipesView: View {
             ZStack{
                 ScrollView{
                     Title(numeTitlu: "Retete")
-                    RecipeList(recipes: Recipe.all)
+                    
+                    VStack{
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
+                            ForEach(recipes) { recipe in
+                                NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+                                    RecipeCard(recipe: recipe)
+                                }
+                            }
+                        }.padding(.bottom)
+
+                    }.padding(.horizontal)
+                    
+                    //RecipeList(recipes: Recipe.all)
+                    
+                    
                 }
                 .navigationTitle("Retete")
                 .navigationBarHidden(true)
@@ -36,6 +51,6 @@ struct RecipesView: View {
 
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesView()
+        RecipesView(recipes: Recipe.all)
     }
 }

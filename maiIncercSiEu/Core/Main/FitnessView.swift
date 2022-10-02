@@ -11,7 +11,7 @@ struct FitnessView: View {
     
     // MARK: - PROPERTIES
     
-    
+    var excersises: [Excercise]
     
     
     // MARK: - BODY
@@ -22,7 +22,14 @@ struct FitnessView: View {
                 VStack {
                     ScrollView{
                         Title(numeTitlu: "Fitness")
-                        FitnessList(excersises: Excercise.all)
+                        VStack {
+                            ForEach(excersises) { excersise in
+                                NavigationLink(destination: FitnessViewDetail()) {
+                                    FitnessCard(exercitiu: excersise)
+                                        .padding(.bottom, 5.0)
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -40,6 +47,6 @@ struct FitnessView: View {
 
 struct FitnessView_Previews: PreviewProvider {
     static var previews: some View {
-        FitnessView()
+        FitnessView(excersises: Excercise.all)
     }
 }

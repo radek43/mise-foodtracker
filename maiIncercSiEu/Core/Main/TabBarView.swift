@@ -11,6 +11,10 @@ struct TabbarView: View {
     
     // MARK: - PROPERTIES
     
+    init() {
+    UITabBar.appearance().backgroundColor = UIColor.white
+
+    }
     
     // MARK: - BODY
     
@@ -27,12 +31,12 @@ struct TabbarView: View {
                         Image(systemName: "chart.bar")
                         Text("Progres")
                     }
-                RecipesView()
+            RecipesView(recipes: Recipe.all)
                     .tabItem {
                         Image(systemName: "book")
                         Text("Retete")
                     }
-                FitnessView()
+                FitnessView(excersises: Excercise.all)
                     .tabItem {
                         Image("fitnessIcon")
                         Text("Sport")
