@@ -17,15 +17,24 @@ struct CommunityView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                ScrollView{
-                    Title(numeTitlu: "Comunitate")
-                        
+                VStack {
+                    ScrollView{
+                        Title(numeTitlu: "Comunitate")
+                        VStack {
+                            CommunityCard()
+                            CommunityCard()
+                            CommunityCard()
+                            CommunityCard()
+                            CommunityCard()
+                            CommunityCard()
+                                .padding(.bottom, 5.0)
+                        }
+                    }
                 }
-                .navigationTitle("Comunitate")
-                .navigationBarHidden(true)
-                .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
-        
+            .navigationTitle("Fitness")
+            .navigationBarHidden(true)
+            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
         .modifier(BlurSafeArea())
         .navigationViewStyle(.stack)

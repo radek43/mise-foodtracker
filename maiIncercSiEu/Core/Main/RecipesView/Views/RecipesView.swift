@@ -11,12 +11,13 @@ struct RecipesView: View {
     
     // MARK: - PROPERTIES
     
-    var recipes: [Recipe]
-    
-    
+    @ObservedObject var viewModel = RecipeViewModel()
+    //var recipes: [Recipe]
+
     // MARK: - BODY
     
     var body: some View {
+        
         NavigationView{
             ZStack{
                 ScrollView{
@@ -24,7 +25,7 @@ struct RecipesView: View {
                     
                     VStack{
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                            ForEach(recipes) { recipe in
+                            ForEach(viewModel.recipesArray) { recipe in
                                 NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                                     RecipeCard(recipe: recipe)
                                 }
@@ -32,9 +33,6 @@ struct RecipesView: View {
                         }.padding(.bottom)
 
                     }.padding(.horizontal)
-                    
-                    //RecipeList(recipes: Recipe.all)
-                    
                     
                 }
                 .navigationTitle("Retete")
@@ -51,6 +49,6 @@ struct RecipesView: View {
 
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesView(recipes: Recipe.all)
+        RecipesView()
     }
 }

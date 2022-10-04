@@ -9,11 +9,11 @@ import Firebase
 import FirebaseFirestoreSwift
 
 class RecipeViewModel: ObservableObject {
-    @Published var recipes = [Recipe]()
+    @Published var recipesArray = [Recipe]()
     
     init() {
         fetchRecipes { recipes in
-            self.recipes = recipes
+            self.recipesArray = recipes
             
             print("DEBUG: Recipe \(recipes)")
         }
@@ -21,7 +21,7 @@ class RecipeViewModel: ObservableObject {
     }
     
     func fetchRecipes(completion: @escaping([Recipe]) -> Void) {
-            var recipes = [Recipe]()
+            var recipesArray = [Recipe]()
     
             Firestore.firestore().collection("recipes")
                 .getDocuments { snapshot, _ in
@@ -29,11 +29,11 @@ class RecipeViewModel: ObservableObject {
     
                     documents.forEach { document in
                         guard let recipe = try? document.data(as: Recipe.self) else { return }
-                        recipes.append(recipe)
+                        recipesArray.append(recipe)
                     }
     
-                    completion(recipes)
+                    completion(recipesArray)
                 }
-        }
+    }
 }
 

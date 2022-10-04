@@ -31,7 +31,7 @@ struct TabbarView: View {
                         Image(systemName: "chart.bar")
                         Text("Progres")
                     }
-            RecipesView(recipes: Recipe.all)
+            RecipesView()
                     .tabItem {
                         Image(systemName: "book")
                         Text("Retete")

@@ -74,6 +74,9 @@ struct HomeView: View {
                             .modifier(MakeCard())
                             
                             JurnalCaloriiView()
+                            
+                            
+                            
                         }
                     }
                 }

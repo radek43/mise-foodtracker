@@ -14,7 +14,7 @@ struct CommunityCard: View {
                 .resizable()
                 .scaledToFill()
                 .clipShape(Circle())
-                .frame(width: 60, height: 60)
+                .frame(width: 50, height: 50)
                 .foregroundColor(Color.secondary)
                 .padding(.trailing, 5)
 
