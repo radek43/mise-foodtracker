@@ -23,7 +23,7 @@ struct TabbarView: View {
                 HomeView()
                     .tabItem {
                         Image(systemName: "house")
-                        Text("Meniu Principal")
+                        Text("Meniu")
                     }
             
                 ActivityProgressView()

@@ -24,8 +24,10 @@ struct RecipesView: View {
                     Title(numeTitlu: "Retete")
                     
                     VStack{
+                        SearchBar(text: $viewModel.searchText)
+                            .padding(.bottom, 3)
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
-                            ForEach(viewModel.recipesArray) { recipe in
+                            ForEach(viewModel.searchableRecipes) { recipe in
                                 NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                                     RecipeCard(recipe: recipe)
                                 }

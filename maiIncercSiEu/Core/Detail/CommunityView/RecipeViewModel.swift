@@ -7,17 +7,33 @@
 
 import Firebase
 import FirebaseFirestoreSwift
+import Foundation
+
+// DE MODIFICAT FITNESSCARD-UL PENTRU A FI COMPATIBILA IMAGINEA
 
 class RecipeViewModel: ObservableObject {
     @Published var recipesArray = [Recipe]()
+    @Published var searchText = ""
+    
+    var searchableRecipes: [Recipe] {
+        if searchText.isEmpty {
+            return recipesArray
+        } else {
+            let Query = searchText
+            
+            return recipesArray.filter({
+                $0.name.contains(Query) ||
+                $0.name.lowercased().contains(Query) ||
+                $0.name.range(of: searchText, options: [.diacriticInsensitive, .caseInsensitive]) != nil
+            })
+        }
+    }
     
     init() {
         fetchRecipes { recipes in
             self.recipesArray = recipes
-            
-            print("DEBUG: Recipe \(recipes)")
+
         }
-        
     }
     
     func fetchRecipes(completion: @escaping([Recipe]) -> Void) {
@@ -30,8 +46,9 @@ class RecipeViewModel: ObservableObject {
                     documents.forEach { document in
                         guard let recipe = try? document.data(as: Recipe.self) else { return }
                         recipesArray.append(recipe)
+                        print(recipesArray)
                     }
-    
+
                     completion(recipesArray)
                 }
     }

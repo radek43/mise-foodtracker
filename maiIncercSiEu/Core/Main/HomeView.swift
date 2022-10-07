@@ -52,10 +52,9 @@ struct HomeView: View {
                                         Text("Net")
                                     }.frame(maxWidth: .infinity)
                                 }
-                                
                             }
                             .modifier(MakeCard())
-                            
+
                             // Meniu adaugare alimente consumate
                             VStack{
                                 HStack(alignment: .top) {
@@ -72,6 +71,8 @@ struct HomeView: View {
                                 }.frame(maxWidth: .infinity)
                             }
                             .modifier(MakeCard())
+                            
+
                             
                             JurnalCaloriiView()
                             

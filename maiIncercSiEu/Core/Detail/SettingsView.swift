@@ -12,12 +12,13 @@ struct SettingsView: View {
     // MARK: - PROPERTIES
     
     @EnvironmentObject var authViewModel: AuthViewModel
-    
+
     // MARK: - BODY
     
     var body: some View {
         VStack(alignment: .center, spacing: 0){
             Form {
+
                 Button {
                     authViewModel.signOut()
                 } label: {

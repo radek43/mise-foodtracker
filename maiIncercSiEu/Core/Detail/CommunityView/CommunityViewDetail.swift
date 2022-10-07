@@ -1,15 +1,21 @@
 //
-//  CommunityCard.swift
+//  CommunityViewDetail.swift
 //  maiIncercSiEu
 //
-//  Created by Radu Bila on 9/28/22.
+//  Created by Radu Bila on 10/7/22.
 //
 
 import SwiftUI
 
-struct CommunityCard: View {
+struct CommunityViewDetail: View {
+    // MARK: - PROPERTIES
+    
+    var recipe: Recipe
+    
+    // MARK: - BODY
     var body: some View {
-        VStack{
+        ScrollView{
+            
             HStack(alignment: .top) {
                 Image(systemName: "person.crop.circle")
                     .resizable()
@@ -37,43 +43,24 @@ struct CommunityCard: View {
                         .padding(.bottom, 3)
                     
                     Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
-                        .lineLimit(2)
                         .font(.footnote)
                         .foregroundColor(Color.secondary)
-                }
-                Spacer()
-            }
-
-            HStack {
-                Spacer()
-                Button {
-                    print("Buton de like apasat")
-                } label: {
-                    Image(systemName: "heart")
-                    Text("Like")
-                        .font(.footnote)
-                }
-                
-                Spacer()
-                Button {
-                    print("Buton de comentariu apasat")
-                } label: {
-                    Image(systemName: "bubble.left")
-                    Text("Comment")
-                        .font(.footnote)
-                }
-                
-                Spacer()
                     
-            }.padding(.top, 3)
-    
+                }
+                
+                Spacer()
+                
+            }
+            .padding()
+
+            
         }
-        .modifier(MakeCard())
     }
 }
 
-struct CommunityCard_Previews: PreviewProvider {
+// MARK: - PREVIEW
+struct CommunityViewDetail_Previews: PreviewProvider {
     static var previews: some View {
-        CommunityCard()
+        CommunityViewDetail(recipe: Recipe.all[0])
     }
 }

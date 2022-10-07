@@ -55,6 +55,16 @@ struct ActivityProgressView: View {
                     JurnalCaloriiView()
                     
                     CardMicut()
+                    
+                    // Pasi facuti de catre utilizator inregistrati de telefon
+                    
+                    VStack {
+                        HStack {
+                            Text("Numar de pasi inregistrati:")
+                            Spacer()
+                            Text("1573 Pasi")
+                        }
+                    }.modifier(MakeCard())
                 }
             }
             .navigationTitle("Progres")

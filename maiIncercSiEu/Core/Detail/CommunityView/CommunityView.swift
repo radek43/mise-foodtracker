@@ -21,7 +21,9 @@ struct CommunityView: View {
                     ScrollView{
                         Title(numeTitlu: "Comunitate")
                         VStack {
-                            CommunityCard()
+                            NavigationLink(destination: CommunityViewDetail(recipe: Recipe.all[0])){
+                                CommunityCard()
+                            }
                             CommunityCard()
                             CommunityCard()
                             CommunityCard()

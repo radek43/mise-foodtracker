@@ -32,6 +32,7 @@ struct FitnessViewDetail: View {
     }
 }
 
+
 struct FitnessViewDetail_Previews: PreviewProvider {
     static var previews: some View {
         FitnessViewDetail()

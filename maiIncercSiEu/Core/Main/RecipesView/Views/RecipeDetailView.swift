@@ -59,7 +59,6 @@ struct RecipeDetailView: View {
                         VStack(alignment: .leading, spacing: 20) {
                             Text("Mod Preparare:")
                                 .font(.headline)
-                            
                             Text(recipe.directions)
                         }
                     }
