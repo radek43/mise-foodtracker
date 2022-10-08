@@ -57,6 +57,8 @@
 		17FE3DDD28C4CBAC00B7590E /* IconTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDC28C4CBAC00B7590E /* IconTest.swift */; };
 		17FE3DDF28C4DBAD00B7590E /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */; };
 		2C63538128F0A7E40061A701 /* CommunityViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63538028F0A7E40061A701 /* CommunityViewDetail.swift */; };
+		2C6A161728F17F5200D9DDE4 /* CommunityReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161628F17F5200D9DDE4 /* CommunityReply.swift */; };
+		2C6A161928F1C79500D9DDE4 /* CommunityAddMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161828F1C79400D9DDE4 /* CommunityAddMessage.swift */; };
 		2C6E96C528E49B78000159C4 /* CommunityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E96C428E49B78000159C4 /* CommunityCard.swift */; };
 		2CE4338628E881F2008C3057 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4338528E881F2008C3057 /* RecipeViewModel.swift */; };
 		2CF44A6928ECBB26001689A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A6828ECBB26001689A8 /* SearchBar.swift */; };
@@ -107,6 +109,8 @@
 		17FE3DDC28C4CBAC00B7590E /* IconTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTest.swift; sourceTree = "<group>"; };
 		17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
 		2C63538028F0A7E40061A701 /* CommunityViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewDetail.swift; sourceTree = "<group>"; };
+		2C6A161628F17F5200D9DDE4 /* CommunityReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReply.swift; sourceTree = "<group>"; };
+		2C6A161828F1C79400D9DDE4 /* CommunityAddMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAddMessage.swift; sourceTree = "<group>"; };
 		2C6E96C428E49B78000159C4 /* CommunityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCard.swift; sourceTree = "<group>"; };
 		2CE4338528E881F2008C3057 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeViewModel.swift; path = maiIncercSiEu/Core/Detail/CommunityView/RecipeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		2CF44A6828ECBB26001689A8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 				2C6E96C428E49B78000159C4 /* CommunityCard.swift */,
 				179DDB2C2803443200049C65 /* CommunityView.swift */,
 				2C63538028F0A7E40061A701 /* CommunityViewDetail.swift */,
+				2C6A161628F17F5200D9DDE4 /* CommunityReply.swift */,
+				2C6A161828F1C79400D9DDE4 /* CommunityAddMessage.swift */,
 			);
 			path = CommunityView;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				178CCC7428BBE4960074D52E /* PhotoSelectorView.swift in Sources */,
 				17B1A4DB2826A1E100F1CDEC /* FitnessView.swift in Sources */,
 				179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */,
+				2C6A161928F1C79500D9DDE4 /* CommunityAddMessage.swift in Sources */,
 				17B1A4E02826A36700F1CDEC /* BlurSafeArea.swift in Sources */,
 				17FE3DDF28C4DBAD00B7590E /* SearchTest.swift in Sources */,
 				173F05532810AC5D0058D1F2 /* ActivityProgressView.swift in Sources */,
@@ -509,6 +516,7 @@
 				179DDB2D2803443200049C65 /* CommunityView.swift in Sources */,
 				17007E702824525B0084B39B /* SegueTestView.swift in Sources */,
 				17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */,
+				2C6A161728F17F5200D9DDE4 /* CommunityReply.swift in Sources */,
 				2C6E96C528E49B78000159C4 /* CommunityCard.swift in Sources */,
 				17F01E8528A2C8FD00285894 /* AuthenticationHeaderView.swift in Sources */,
 				17482A7B28047F57006F2186 /* TabBarView.swift in Sources */,
@@ -639,18 +647,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"maiIncercSiEu/Preview Content\"";
 				DEVELOPMENT_TEAM = 7D84B8YR34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Food Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -670,18 +679,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"maiIncercSiEu/Preview Content\"";
 				DEVELOPMENT_TEAM = 7D84B8YR34;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Food Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -36,21 +36,32 @@ struct HomeView: View {
                             // Vizualizare Calorii Ramase
                             VStack{
                                 Text("2342 Calorii Ramase")
+                                    .fontWeight(.semibold)
                                     .padding(5)
                                 ProgressView(value: 0.25)
                                 HStack{
                                     VStack{
                                         Text("0")
+                                            .fontWeight(.medium)
                                         Text("Consumat")
-                                    }.frame(maxWidth: .infinity)
+                                        
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    
                                     VStack{
                                         Text("0")
+                                            .fontWeight(.medium)
                                         Text("Ars")
-                                    }.frame(maxWidth: .infinity)
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    
                                     VStack{
                                         Text("0")
+                                            .fontWeight(.medium)
                                         Text("Net")
-                                    }.frame(maxWidth: .infinity)
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    
                                 }
                             }
                             .modifier(MakeCard())

@@ -49,7 +49,7 @@ struct ButonMeniuAdaugare: View {
                     
                 }
                 Text(title)
-                    .font(.system(size: 15 + size, weight: .regular, design: .rounded))
+                    .font(.system(size: 15 + size, weight: .medium, design: .rounded))
                     .multilineTextAlignment(.center)
                     .minimumScaleFactor(0.01)
                 

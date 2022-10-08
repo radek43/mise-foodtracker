@@ -29,6 +29,8 @@ struct FitnessViewDetail: View {
                 Spacer()
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
 

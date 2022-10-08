@@ -23,7 +23,7 @@ struct JurnalCaloriiView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("Dashboard").font(.system(size: 20 + size, weight: .semibold, design: .rounded))
+                Text("Sumar").font(.system(size: 20 + size, weight: .semibold, design: .rounded))
                 Spacer()
             }
             
@@ -44,6 +44,7 @@ struct JurnalCaloriiView: View {
                             .frame(width: 20, height: 20)
                         
                         Text("\(demoData[0], specifier: "%.1f")g \nGrasimi")
+                            .font(.system(size: 17 + size, weight: .medium, design: .rounded))
                             .minimumScaleFactor(0.01)
                         Spacer()
                     }
@@ -56,6 +57,7 @@ struct JurnalCaloriiView: View {
                             .frame(width: 20, height: 20)
                         
                         Text("\(demoData[1], specifier: "%.1f")g \nProteine")
+                            .font(.system(size: 17 + size, weight: .medium, design: .rounded))
                             .minimumScaleFactor(0.01)
                         Spacer()
                     }
@@ -68,6 +70,7 @@ struct JurnalCaloriiView: View {
                             .frame(width: 20, height: 20)
                         
                         Text("\(demoData[2], specifier: "%.1f")g Carbohidrati")
+                            .font(.system(size: 17 + size, weight: .medium, design: .rounded))
                             .minimumScaleFactor(0.01)
                         Spacer()
                     }

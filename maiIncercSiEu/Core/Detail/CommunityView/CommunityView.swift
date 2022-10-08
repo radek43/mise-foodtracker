@@ -19,9 +19,29 @@ struct CommunityView: View {
             ZStack{
                 VStack {
                     ScrollView{
-                        Title(numeTitlu: "Comunitate")
+                        //Titlu
                         VStack {
-                            NavigationLink(destination: CommunityViewDetail(recipe: Recipe.all[0])){
+                            HStack {
+                                Text("Comunitate")
+                                    .font(.largeTitle.bold())
+
+                                Spacer()
+
+                                NavigationLink {
+                                    CommunityAddMessage()
+                                } label: {
+                                    Image(systemName: "plus.bubble")
+                                        .font(.title)
+                                        .foregroundColor(.blue)
+                                        .frame(width: 48, height: 48)
+                                    }
+                                }
+                            }
+                            .padding([.top, .leading, .trailing], 25.0)
+
+                        
+                        VStack {
+                            NavigationLink(destination: CommunityViewDetail()){
                                 CommunityCard()
                             }
                             CommunityCard()
@@ -34,7 +54,7 @@ struct CommunityView: View {
                     }
                 }
             }
-            .navigationTitle("Fitness")
+            .navigationTitle("Comunitate")
             .navigationBarHidden(true)
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
