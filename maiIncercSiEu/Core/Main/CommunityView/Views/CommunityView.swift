@@ -28,7 +28,7 @@ struct CommunityView: View {
                                 Spacer()
 
                                 NavigationLink {
-                                    CommunityAddMessage()
+                                    CommunityAddPost()
                                 } label: {
                                     Image(systemName: "plus.bubble")
                                         .font(.title)

@@ -17,12 +17,10 @@ struct RecipesView: View {
     // MARK: - BODY
     
     var body: some View {
-        
         NavigationView{
             ZStack{
                 ScrollView{
                     Title(numeTitlu: "Retete")
-                    
                     VStack{
                         SearchBar(text: $viewModel.searchText)
                             .padding(.bottom, 3)
@@ -35,7 +33,6 @@ struct RecipesView: View {
                         }.padding(.bottom)
 
                     }.padding(.horizontal)
-                    
                 }
                 .navigationTitle("Retete")
                 .navigationBarHidden(true)
