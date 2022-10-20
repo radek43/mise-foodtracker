@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct CommunityCard: View {
+    // MARK: - PROPERTIES
+    
+    let post: Post
+    
+    // MARK: - BODY
     var body: some View {
         VStack{
             HStack(alignment: .top) {
@@ -21,7 +26,7 @@ struct CommunityCard: View {
 
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("Titlu Postare")
+                        Text(post.titluPostare)
                             .font(.title2)
                             .fontWeight(.semibold)
                         
@@ -36,7 +41,7 @@ struct CommunityCard: View {
                         .font(.footnote)
                         .padding(.bottom, 3)
                     
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                    Text(post.continutPostare)
                         .lineLimit(3)
                         .font(.footnote)
                         .foregroundColor(Color.secondary)
@@ -49,8 +54,10 @@ struct CommunityCard: View {
     }
 }
 
+
+// MARK: - PREVIEW
 struct CommunityCard_Previews: PreviewProvider {
     static var previews: some View {
-        CommunityCard()
+        CommunityCard(post: Post.dummyData[1])
     }
 }

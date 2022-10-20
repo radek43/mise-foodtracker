@@ -5,7 +5,6 @@
 //  Created by Radu Bila on 10/9/22.
 //
 
-import Foundation
 import Firebase
 
 struct PostService {
@@ -30,4 +29,15 @@ struct PostService {
                 completion(true)
             }
     }
+    
+    func fetchPosts(completion: @escaping([Post]) -> Void) {
+        Firestore.firestore().collection("posts").getDocuments { snapshot, _ in
+            guard let documents = snapshot?.documents else { return }
+            
+            let posts = documents.compactMap({ try? $0.data(as: Post.self) })
+            completion(posts)
+        }
+        
+    }
+    
 }

@@ -10,11 +10,12 @@ import SwiftUI
 struct CommunityViewDetail: View {
     // MARK: - PROPERTIES
     
+    let post: Post
     
     // MARK: - BODY
     var body: some View {
         ScrollView{
-            VStack {
+            VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Image(systemName: "person.crop.circle")
                         .resizable()
@@ -25,7 +26,7 @@ struct CommunityViewDetail: View {
                         .padding(.trailing, 5)
 
                     VStack(alignment: .leading) {
-                        Text("Titlu Postare")
+                        Text(post.titluPostare)
                             .font(.title)
                             .fontWeight(.semibold)
                         
@@ -38,7 +39,7 @@ struct CommunityViewDetail: View {
                 }
                 .padding(.bottom, 6.0)
                 
-                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+                Text(post.continutPostare)
                     .font(.callout)
                     .multilineTextAlignment(.leading)
                     
@@ -98,6 +99,6 @@ struct CommunityViewDetail: View {
 // MARK: - PREVIEW
 struct CommunityViewDetail_Previews: PreviewProvider {
     static var previews: some View {
-        CommunityViewDetail()
+        CommunityViewDetail(post: Post.dummyData[1])
     }
 }

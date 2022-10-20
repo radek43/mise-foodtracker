@@ -56,6 +56,8 @@
 		17FE3DDB28C4BBFB00B7590E /* FitnessViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDA28C4BBFB00B7590E /* FitnessViewDetail.swift */; };
 		17FE3DDD28C4CBAC00B7590E /* IconTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDC28C4CBAC00B7590E /* IconTest.swift */; };
 		17FE3DDF28C4DBAD00B7590E /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */; };
+		2C049F0B2901AAE1006ECB21 /* CommunityFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0A2901AAE1006ECB21 /* CommunityFeedViewModel.swift */; };
+		2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0C2901AD4A006ECB21 /* Post.swift */; };
 		2C2CA01F28F35E90005E92B2 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA01E28F35E90005E92B2 /* PostService.swift */; };
 		2C2CA02128F36229005E92B2 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */; };
 		2C2CA02528F363D4005E92B2 /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA02428F363D4005E92B2 /* CommunityViewModel.swift */; };
@@ -110,6 +112,8 @@
 		17FE3DDA28C4BBFB00B7590E /* FitnessViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewDetail.swift; sourceTree = "<group>"; };
 		17FE3DDC28C4CBAC00B7590E /* IconTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTest.swift; sourceTree = "<group>"; };
 		17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
+		2C049F0A2901AAE1006ECB21 /* CommunityFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedViewModel.swift; sourceTree = "<group>"; };
+		2C049F0C2901AD4A006ECB21 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2C2CA01E28F35E90005E92B2 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		2C2CA02428F363D4005E92B2 /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 				176372DC28C117E4006337A7 /* User.swift */,
 				17A08FB228C3410500CD3D92 /* Recipe.swift */,
 				1747ABFA28C39E8300138938 /* Excercise.swift */,
+				2C049F0C2901AD4A006ECB21 /* Post.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				2C2CA02428F363D4005E92B2 /* CommunityViewModel.swift */,
+				2C049F0A2901AAE1006ECB21 /* CommunityFeedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				17D9D156281C3EF700DD0406 /* JurnalCaloriiView.swift in Sources */,
 				1728115328BBB39C001B0BC5 /* FormRowStaticView.swift in Sources */,
 				178CCC7928BC035C0074D52E /* ImageUploader.swift in Sources */,
+				2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */,
 				17AD15E42826EF460023C0EF /* CardMicut.swift in Sources */,
 				17D8ED4228BA2AF400BAD54D /* HiddenNavigationBar.swift in Sources */,
 				17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */,
@@ -525,6 +532,7 @@
 				1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */,
 				17F01E8328A2C8B900285894 /* CustomInputFields.swift in Sources */,
 				178CCC7428BBE4960074D52E /* PhotoSelectorView.swift in Sources */,
+				2C049F0B2901AAE1006ECB21 /* CommunityFeedViewModel.swift in Sources */,
 				17B1A4DB2826A1E100F1CDEC /* FitnessView.swift in Sources */,
 				179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */,
 				2C6A161928F1C79500D9DDE4 /* CommunityAddPost.swift in Sources */,
