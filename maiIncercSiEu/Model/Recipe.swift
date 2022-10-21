@@ -31,7 +31,7 @@ struct Recipe: Identifiable, Decodable {
 }
 
 extension Recipe {
-    static let all: [Recipe] = [
+    static let dummyData: [Recipe] = [
 
         Recipe(id: "1",
                name: "Chiftelute de ciuperci cu seminte de canepa",

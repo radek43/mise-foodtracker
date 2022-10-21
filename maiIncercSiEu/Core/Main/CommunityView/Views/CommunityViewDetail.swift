@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct CommunityViewDetail: View {
     // MARK: - PROPERTIES
@@ -17,23 +18,42 @@ struct CommunityViewDetail: View {
         ScrollView{
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.secondary)
-                        .padding(.trailing, 5)
-
-                    VStack(alignment: .leading) {
-                        Text(post.titluPostare)
-                            .font(.title)
-                            .fontWeight(.semibold)
+                    if let user = post.user {
+                        KFImage(URL(string: user.profileImageUrl))
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(Color.secondary)
+                            .padding(.trailing, 5)
                         
-                        Text("@numeutilizator")
-                            .font(.footnote)
+                        VStack(alignment: .leading) {
+                            Text(post.titluPostare)
+                                .font(.title)
+                                .fontWeight(.semibold)
+                            
+                            Text("@" + user.username)
+                                .font(.footnote)
+                        }
+                    } else { //dummy data for preview
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(Color.secondary)
+                            .padding(.trailing, 5)
+
+                        VStack(alignment: .leading) {
+                            Text(post.titluPostare)
+                                .font(.title)
+                                .fontWeight(.semibold)
+                            
+                            Text("@numeutilizator")
+                                .font(.footnote)
+                        }
                     }
-                    
+    
                     Spacer()
                     
                 }
@@ -48,17 +68,16 @@ struct CommunityViewDetail: View {
                         print("Buton de like apasat")
                     } label: {
                         Image(systemName: "heart")
-                        Text("Like")
+                        Text("Apreciaza")
                             .font(.footnote)
                     }
                     .padding(.trailing)
-                    
                     
                     Button {
                         print("Buton de comentariu apasat")
                     } label: {
                         Image(systemName: "bubble.left")
-                        Text("Comment")
+                        Text("Comentariu")
                             .font(.footnote)
                     }
                     
@@ -92,7 +111,7 @@ struct CommunityViewDetail: View {
             
         }
         .navigationBarTitleDisplayMode(.inline)
-        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+        //.background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
 

@@ -22,7 +22,7 @@ struct Excercise: Identifiable {
 }
 
 extension Excercise {
-    static let all: [Excercise] = [
+    static let dummyData: [Excercise] = [
         Excercise(id: "1",
                   name: "Superman Alternativ",
                   video: "www.urlcatrevideo.com",
@@ -31,6 +31,7 @@ extension Excercise {
                   dificulty: "medie",
                   datePublished: "2019-02-04",
                   url: "www.siteweb.com"),
+        
         Excercise(id: "2",
                   name: "Serii Abdomene",
                   video: "www.urlcatrevideo.com",
@@ -39,6 +40,7 @@ extension Excercise {
                   dificulty: "usor",
                   datePublished: "2019-02-04",
                   url: "www.siteweb.com"),
+        
         Excercise(id: "3",
                   name: "Genoflexiuni",
                   video: "www.urlcatrevideo.com",
@@ -47,6 +49,7 @@ extension Excercise {
                   dificulty: "medie",
                   datePublished: "2019-02-04",
                   url: "www.siteweb.com"),
+        
         Excercise(id: "4",
                   name: "Fandari",
                   video: "www.urlcatrevideo.com",
@@ -55,6 +58,7 @@ extension Excercise {
                   dificulty: "medie",
                   datePublished: "2019-02-04",
                   url: "www.siteweb.com"),
+        
         Excercise(id: "5",
                   name: "Flotari",
                   video: "www.urlcatrevideo.com",
@@ -63,6 +67,7 @@ extension Excercise {
                   dificulty: "greu",
                   datePublished: "2019-02-04",
                   url: "www.siteweb.com"),
+        
         Excercise(id: "6",
                   name: "Tractiuni",
                   video: "www.urlcatrevideo.com",

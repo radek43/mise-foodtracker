@@ -56,7 +56,6 @@
 		17FE3DDB28C4BBFB00B7590E /* FitnessViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDA28C4BBFB00B7590E /* FitnessViewDetail.swift */; };
 		17FE3DDD28C4CBAC00B7590E /* IconTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDC28C4CBAC00B7590E /* IconTest.swift */; };
 		17FE3DDF28C4DBAD00B7590E /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */; };
-		2C049F0B2901AAE1006ECB21 /* CommunityFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0A2901AAE1006ECB21 /* CommunityFeedViewModel.swift */; };
 		2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0C2901AD4A006ECB21 /* Post.swift */; };
 		2C2CA01F28F35E90005E92B2 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA01E28F35E90005E92B2 /* PostService.swift */; };
 		2C2CA02128F36229005E92B2 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */; };
@@ -112,7 +111,6 @@
 		17FE3DDA28C4BBFB00B7590E /* FitnessViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewDetail.swift; sourceTree = "<group>"; };
 		17FE3DDC28C4CBAC00B7590E /* IconTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTest.swift; sourceTree = "<group>"; };
 		17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
-		2C049F0A2901AAE1006ECB21 /* CommunityFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFeedViewModel.swift; sourceTree = "<group>"; };
 		2C049F0C2901AD4A006ECB21 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2C2CA01E28F35E90005E92B2 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
@@ -403,7 +401,6 @@
 			isa = PBXGroup;
 			children = (
 				2C2CA02428F363D4005E92B2 /* CommunityViewModel.swift */,
-				2C049F0A2901AAE1006ECB21 /* CommunityFeedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -532,7 +529,6 @@
 				1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */,
 				17F01E8328A2C8B900285894 /* CustomInputFields.swift in Sources */,
 				178CCC7428BBE4960074D52E /* PhotoSelectorView.swift in Sources */,
-				2C049F0B2901AAE1006ECB21 /* CommunityFeedViewModel.swift in Sources */,
 				17B1A4DB2826A1E100F1CDEC /* FitnessView.swift in Sources */,
 				179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */,
 				2C6A161928F1C79500D9DDE4 /* CommunityAddPost.swift in Sources */,

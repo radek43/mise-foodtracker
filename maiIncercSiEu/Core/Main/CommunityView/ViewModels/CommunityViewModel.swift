@@ -9,8 +9,15 @@ import Foundation
 
 class CommunityViewModel: ObservableObject {
     
-    @Published var didUploadPost = false
+    @Published var posts = [Post]() //vizualizarea postarilor in view
+    @Published var didUploadPost = false // uploadarea postarilor in db
+    
     let service = PostService()
+    let userService = UserService()
+    
+    init() {
+        fetchPosts()
+    }
     
     func uploadPost(withTitle titluPostare: String, withContent continutPostare: String) {
         
@@ -21,7 +28,20 @@ class CommunityViewModel: ObservableObject {
                 //show error message
             }
         }
-        
+    }
+    
+    func fetchPosts() {
+        service.fetchPosts { posts in
+            self.posts = posts
+            
+            for i in 0 ..< posts.count {
+                let uid = posts[i].uid
+                
+                self.userService.fetchUser(withUid: uid) { user in
+                    self.posts[i].user = user
+                }
+            }
+        }
     }
 }
 

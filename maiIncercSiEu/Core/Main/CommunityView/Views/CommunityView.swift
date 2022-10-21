@@ -11,7 +11,7 @@ struct CommunityView: View {
     
     // MARK: - PROPERTIES
     
-    @ObservedObject var viewModel = CommunityFeedViewModel()
+    @ObservedObject var viewModel = CommunityViewModel()
     
     // MARK: - BODY
     
@@ -40,22 +40,13 @@ struct CommunityView: View {
                             }
                             .padding([.top, .leading, .trailing], 25.0)
 
-                        
                         VStack {
                             ForEach(viewModel.posts) { post in
                                 NavigationLink(destination: CommunityViewDetail(post: post)){
                                    CommunityCard(post: post)
+                                        .foregroundColor(.primary)
                                }
                             }
-//                            NavigationLink(destination: CommunityViewDetail()){
-//                                CommunityCard()
-//                            }
-//                            CommunityCard()
-//                            CommunityCard()
-//                            CommunityCard()
-//                            CommunityCard()
-//                            CommunityCard()
-//                                .padding(.bottom, 5.0)
                         }
                     }
                 }

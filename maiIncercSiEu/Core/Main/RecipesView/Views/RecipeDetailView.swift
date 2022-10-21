@@ -79,6 +79,6 @@ struct RecipeDetailView: View {
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeDetailView(recipe: Recipe.all[0])
+        RecipeDetailView(recipe: Recipe.dummyData[0])
     }
 }

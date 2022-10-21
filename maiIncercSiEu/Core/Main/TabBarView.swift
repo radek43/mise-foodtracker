@@ -36,7 +36,7 @@ struct TabbarView: View {
                         Image(systemName: "book")
                         Text("Retete")
                     }
-                FitnessView(excersises: Excercise.all)
+                FitnessView(excersises: Excercise.dummyData)
                     .tabItem {
                         Image("fitnessIcon")
                         Text("Sport")

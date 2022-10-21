@@ -26,6 +26,7 @@ struct FitnessView: View {
                             ForEach(excersises) { excersise in
                                 NavigationLink(destination: FitnessViewDetail()) {
                                     FitnessCard(exercitiu: excersise)
+                                        .foregroundColor(.primary)
                                         .padding(.bottom, 5.0)
                                 }
                             }
@@ -47,6 +48,6 @@ struct FitnessView: View {
 
 struct FitnessView_Previews: PreviewProvider {
     static var previews: some View {
-        FitnessView(excersises: Excercise.all)
+        FitnessView(excersises: Excercise.dummyData)
     }
 }

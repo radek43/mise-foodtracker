@@ -21,6 +21,6 @@ struct MakeCard: ViewModifier {
 
 struct MakeCard_Previews: PreviewProvider {
     static var previews: some View {
-        FitnessCard(exercitiu: Excercise.all[0])
+        FitnessCard(exercitiu: Excercise.dummyData[0])
     }
 }
