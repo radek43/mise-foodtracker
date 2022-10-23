@@ -21,7 +21,7 @@ struct Post: Identifiable, Decodable {
 
 extension Post {
     static let dummyData: [Post] = [
-        Post(continutPostare: "Postarea mea frumoasa",
+        Post(continutPostare: "Postarea mea frumoasa\n\ninca o linie scrisa",
              likes: 12,
              timestamp: Timestamp(seconds: 2, nanoseconds: 1),
              titluPostare: "Titlul Postarii mele lungi si frumoase la care mi-ar placea sa fie frumos aliniat textul dar ma tem ca nu va fi asa",

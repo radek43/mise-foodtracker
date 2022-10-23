@@ -30,6 +30,8 @@ class CommunityViewModel: ObservableObject {
         }
     }
     
+
+    
     func fetchPosts() {
         service.fetchPosts { posts in
             self.posts = posts

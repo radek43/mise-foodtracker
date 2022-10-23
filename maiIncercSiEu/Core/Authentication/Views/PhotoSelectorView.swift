@@ -9,10 +9,14 @@ import SwiftUI
 
 struct PhotoSelectorView: View {
     
+    // MARK: - PROPERTIES
+    
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
-    @State private var profileImage: Image?
+    @State private var profileImage: Image?             // var pt afisarea imaginii selectate in view
     @EnvironmentObject var viewModel: AuthViewModel
+
+    // MARK: - BODY
     
     var body: some View {
         VStack {
@@ -21,7 +25,7 @@ struct PhotoSelectorView: View {
                 Button {
                     showImagePicker.toggle()
                 } label: {
-                    if let profileImage = profileImage {
+                    if let profileImage = profileImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
                         profileImage
                             .resizable()
                             .frame(width: 180, height: 180)
@@ -66,6 +70,8 @@ struct PhotoSelectorView: View {
     }
     
 }
+
+// MARK: - PREVIEW
 
 struct PhotoSelectorView_Previews: PreviewProvider {
     static var previews: some View {

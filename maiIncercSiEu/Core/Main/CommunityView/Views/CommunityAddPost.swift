@@ -12,6 +12,10 @@ struct CommunityAddPost: View {
     
     // MARK: - PROPERTIES
     
+    @State private var showImagePicker = false
+    @State private var selectedImage: UIImage?
+    @State private var profileImage: Image?
+    
     @State private var titluPostare = ""
     @State private var descriere = ""
     @Environment(\.presentationMode) var presentationMode
@@ -48,11 +52,21 @@ struct CommunityAddPost: View {
                         TextField("", text: $titluPostare)
                             .textFieldStyle(.roundedBorder)
                         Button {
-                            //showImagePicker.toggle()
+                            showImagePicker.toggle()
                         } label: {
-                            Image(systemName: "camera.circle")
-                                .resizable()
-                                .frame(width: 30, height: 30)
+                            if let profileImage = profileImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
+                                profileImage
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                                    .clipShape(Circle())
+                            } else {
+                                Image(systemName: "camera.circle")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
+                            }
+                        }
+                        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+                            ImagePicker(selectedImage: $selectedImage)
                         }
                     }
                     HStack {
@@ -68,6 +82,7 @@ struct CommunityAddPost: View {
             .toolbar {
                 Button("Trimite") {
                     viewModel.uploadPost(withTitle: titluPostare, withContent: descriere)
+                    //viewModel.uploadProfileImage(selectedImage)
                 }
             }
         }
@@ -79,6 +94,11 @@ struct CommunityAddPost: View {
         .padding()
         .navigationBarTitle("Postare Noua", displayMode: .inline)
         .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+    }
+    
+    func loadImage() {
+        guard let selectedImage = selectedImage else { return }
+        profileImage = Image(uiImage: selectedImage)
     }
 }
 

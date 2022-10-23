@@ -13,6 +13,7 @@ struct CommunityCard: View {
     
     let post: Post
     
+    
     // MARK: - BODY
     var body: some View {
         VStack(alignment: .leading) {
@@ -35,9 +36,9 @@ struct CommunityCard: View {
                         Text("@" + user.username)
                             .font(.footnote)
                             .padding(.bottom, 3)
-
-                        Text(post.continutPostare)
-                            .lineLimit(3)
+                        
+                        Text(post.continutPostare.replacingOccurrences(of: "\n", with: ""))
+                            .lineLimit(2)
                             .font(.footnote)
                             .padding(.bottom, 3)
                             .multilineTextAlignment(.leading)
@@ -62,17 +63,19 @@ struct CommunityCard: View {
                         Text("@numeutilizator")
                             .font(.footnote)
                             .padding(.bottom, 3)
-
-                        Text(post.continutPostare)
-                            .lineLimit(3)
+                        
+                        Text(post.continutPostare.replacingOccurrences(of: "\n", with: ""))
+                            .lineLimit(2)
                             .font(.footnote)
                             .padding(.bottom, 3)
                             .multilineTextAlignment(.leading)
+                            
+                            
                     }
                 }
             }
 
-           
+            
             HStack {
                 Text("• 4 aprecieri")
 

@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import SwiftUI
 
 struct PostService {
     
@@ -29,6 +30,19 @@ struct PostService {
                 completion(true)
             }
     }
+   
+//    func uploadPostImage(_ image: UIImage) {
+//        guard let uid = tempUserSession?.uid else { return }
+//
+//        ImageUploader.uploadImage(image: image) { profileImageUrl in
+//            Firestore.firestore().collection("posts")
+//                .document(uid)
+//                .updateData(["profileImageUrl": profileImageUrl]) { _ in
+//                    self.userSession = self.tempUserSession
+//                    self.fetchUser()
+//                }
+//        }
+//    }
     
     func fetchPosts(completion: @escaping([Post]) -> Void) {
         Firestore.firestore().collection("posts")
@@ -41,6 +55,7 @@ struct PostService {
             }
     }
     
+
     func fetchPosts(forUid uid: String, completion: @escaping([Post]) -> Void) {
         Firestore.firestore().collection("posts")
             .whereField("uid", isEqualTo: uid)
