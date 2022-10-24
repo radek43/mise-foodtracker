@@ -64,6 +64,7 @@
 		2C6A161728F17F5200D9DDE4 /* CommunityReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161628F17F5200D9DDE4 /* CommunityReply.swift */; };
 		2C6A161928F1C79500D9DDE4 /* CommunityAddPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161828F1C79400D9DDE4 /* CommunityAddPost.swift */; };
 		2C6E96C528E49B78000159C4 /* CommunityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E96C428E49B78000159C4 /* CommunityCard.swift */; };
+		2C72F33629058249004BBB8A /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C72F33529058249004BBB8A /* PullToRefresh.swift */; };
 		2CF44A6928ECBB26001689A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A6828ECBB26001689A8 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		2C6A161628F17F5200D9DDE4 /* CommunityReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReply.swift; sourceTree = "<group>"; };
 		2C6A161828F1C79400D9DDE4 /* CommunityAddPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAddPost.swift; sourceTree = "<group>"; };
 		2C6E96C428E49B78000159C4 /* CommunityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCard.swift; sourceTree = "<group>"; };
+		2C72F33529058249004BBB8A /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
 		2CF44A6828ECBB26001689A8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				178CCC7628BBF8140074D52E /* ImagePicker.swift */,
+				2C72F33529058249004BBB8A /* PullToRefresh.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				2C63538128F0A7E40061A701 /* CommunityViewDetail.swift in Sources */,
 				179DDB2D2803443200049C65 /* CommunityView.swift in Sources */,
 				17007E702824525B0084B39B /* SegueTestView.swift in Sources */,
+				2C72F33629058249004BBB8A /* PullToRefresh.swift in Sources */,
 				17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */,
 				2C6A161728F17F5200D9DDE4 /* CommunityReply.swift in Sources */,
 				2C2CA02128F36229005E92B2 /* RecipeViewModel.swift in Sources */,

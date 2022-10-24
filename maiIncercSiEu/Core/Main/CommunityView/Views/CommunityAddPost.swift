@@ -52,7 +52,8 @@ struct CommunityAddPost: View {
                         TextField("", text: $titluPostare)
                             .textFieldStyle(.roundedBorder)
                         Button {
-                            showImagePicker.toggle()
+                            //showImagePicker.toggle()
+                            print("buton de ales imagine apasat")
                         } label: {
                             if let profileImage = profileImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
                                 profileImage

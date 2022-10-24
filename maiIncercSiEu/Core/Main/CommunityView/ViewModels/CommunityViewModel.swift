@@ -20,13 +20,13 @@ class CommunityViewModel: ObservableObject {
     }
     
     func uploadPost(withTitle titluPostare: String, withContent continutPostare: String) {
-        
         service.uploadPost(titluPostare: titluPostare, continutPostare: continutPostare) { success in
             if success {
                 self.didUploadPost = true
             } else {
                 //show error message
             }
+            self.didUploadPost = false
         }
     }
     

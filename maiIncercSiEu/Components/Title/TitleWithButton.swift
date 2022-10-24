@@ -42,10 +42,10 @@ struct TitleWithButton: View {
                             .padding(6)
                         
                     } else {
-                        Image(systemName: "person.crop.circle")
-                            .font(.largeTitle)
-                            .foregroundColor(.blue)
-                            .frame(width: 48, height: 48)
+                        Circle()
+                            .frame(width: 36, height: 36)
+                            .foregroundColor(Color.secondary)
+                            .padding(6)
                             
                     }
                 }
