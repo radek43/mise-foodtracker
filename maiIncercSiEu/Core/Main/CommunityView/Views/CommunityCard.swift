@@ -75,7 +75,7 @@ struct CommunityCard: View {
                     
                     //placeholder username
                         RoundedRectangle(cornerRadius: 3, style: .continuous)
-                        .frame(width: 90, height: 10)
+                        .frame(width: 100, height: 10)
                         .foregroundColor(Color("ColorBackground"))
                     
                     //placeholder linie1 continutText
