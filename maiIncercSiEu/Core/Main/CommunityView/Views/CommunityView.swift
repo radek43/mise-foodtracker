@@ -21,9 +21,9 @@ struct CommunityView: View {
                 VStack {
                     ScrollView{
                         //Titlu
-                        PullToRefresh(coordinateSpaceName: "pullToRefresh") {
-                            viewModel.fetchPosts()
-                        }
+//                        PullToRefresh(coordinateSpaceName: "pullToRefresh") {
+//                            viewModel.fetchPosts()
+//                        }
                         VStack {
                             HStack {
                                 Text("Comunitate")

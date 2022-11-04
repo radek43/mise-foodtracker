@@ -12,7 +12,7 @@ struct TabbarView: View {
     // MARK: - PROPERTIES
     
     init() {
-    UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().backgroundColor = UIColor.white
 
     }
     
@@ -20,32 +20,31 @@ struct TabbarView: View {
     
     var body: some View {
         TabView {
-                HomeView()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Meniu")
-                    }
-            
-                ActivityProgressView()
-                    .tabItem {
-                        Image(systemName: "chart.bar")
-                        Text("Progres")
-                    }
+            HomeView()
+                .tabItem {
+                    Image("homeIcon")
+                    Text("Meniu")
+                }
+            ActivityProgressView()
+                .tabItem {
+                    Image("progressIcon")
+                    Text("Progres")
+                }
             RecipesView()
-                    .tabItem {
-                        Image(systemName: "book")
-                        Text("Retete")
-                    }
-                FitnessView(excersises: Excercise.dummyData)
-                    .tabItem {
-                        Image("fitnessIcon")
-                        Text("Sport")
-                    }
-                CommunityView()
-                    .tabItem {
-                        Image(systemName: "person.2.fill")
-                        Text("Comunitate")
-                    }
+                .tabItem {
+                    Image("recipesIcon")
+                    Text("Retete")
+                }
+            FitnessView(excersises: Excercise.dummyData)
+                .tabItem {
+                    Image("fitnessIcon")
+                    Text("Sport")
+                }
+            CommunityView()
+                .tabItem {
+                    Image("communityIcon")
+                    Text("Comunitate")
+                }
         }
     }
 }

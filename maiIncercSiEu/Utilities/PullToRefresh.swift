@@ -35,10 +35,19 @@ struct PullToRefresh: View {
                 if needRefresh {
                     ProgressView()
                 } else {
-                    ProgressView() 
+                    ProgressView()
                 }
                 Spacer()
             }
-        }.padding(.top, -50)
+        }
+        .padding(.top, -50)
+    }
+}
+
+// MARK: - PREVIEW
+
+struct PullToRefresh_Previews: PreviewProvider {
+    static var previews: some View {
+        CommunityView()
     }
 }

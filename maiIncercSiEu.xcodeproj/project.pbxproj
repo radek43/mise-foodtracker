@@ -55,7 +55,6 @@
 		17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8628A2C94F00285894 /* RoundedShape.swift */; };
 		17FE3DDB28C4BBFB00B7590E /* FitnessViewDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDA28C4BBFB00B7590E /* FitnessViewDetail.swift */; };
 		17FE3DDD28C4CBAC00B7590E /* IconTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDC28C4CBAC00B7590E /* IconTest.swift */; };
-		17FE3DDF28C4DBAD00B7590E /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */; };
 		2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0C2901AD4A006ECB21 /* Post.swift */; };
 		2C2CA01F28F35E90005E92B2 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA01E28F35E90005E92B2 /* PostService.swift */; };
 		2C2CA02128F36229005E92B2 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */; };
@@ -65,6 +64,7 @@
 		2C6A161928F1C79500D9DDE4 /* CommunityAddPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161828F1C79400D9DDE4 /* CommunityAddPost.swift */; };
 		2C6E96C528E49B78000159C4 /* CommunityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E96C428E49B78000159C4 /* CommunityCard.swift */; };
 		2C72F33629058249004BBB8A /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C72F33529058249004BBB8A /* PullToRefresh.swift */; };
+		2C7E58612914404900C6A2B5 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2C7E58602914404900C6A2B5 /* SDWebImageSwiftUI */; };
 		2CF44A6928ECBB26001689A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A6828ECBB26001689A8 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,7 +111,6 @@
 		17F01E8628A2C94F00285894 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
 		17FE3DDA28C4BBFB00B7590E /* FitnessViewDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessViewDetail.swift; sourceTree = "<group>"; };
 		17FE3DDC28C4CBAC00B7590E /* IconTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTest.swift; sourceTree = "<group>"; };
-		17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
 		2C049F0C2901AD4A006ECB21 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2C2CA01E28F35E90005E92B2 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +132,7 @@
 				17D9D151281C3AB800DD0406 /* SwiftUISegues in Frameworks */,
 				176372E028C12445006337A7 /* Kingfisher in Frameworks */,
 				1723134C28B2BFA300E683B3 /* FirebaseFirestore in Frameworks */,
+				2C7E58612914404900C6A2B5 /* SDWebImageSwiftUI in Frameworks */,
 				1723134A28B2BFA300E683B3 /* FirebaseAuth in Frameworks */,
 				17CC53EF2827E1A7006A8FFD /* SwiftUICharts in Frameworks */,
 				1723135028B2BFA300E683B3 /* FirebaseStorage in Frameworks */,
@@ -336,7 +336,6 @@
 				17007E6F2824525B0084B39B /* SegueTestView.swift */,
 				17AD15E32826EF460023C0EF /* CardMicut.swift */,
 				17FE3DDC28C4CBAC00B7590E /* IconTest.swift */,
-				17FE3DDE28C4DBAD00B7590E /* SearchTest.swift */,
 			);
 			path = TestingGrounds;
 			sourceTree = "<group>";
@@ -441,6 +440,7 @@
 				1723134D28B2BFA300E683B3 /* FirebaseFirestoreSwift */,
 				1723134F28B2BFA300E683B3 /* FirebaseStorage */,
 				176372DF28C12445006337A7 /* Kingfisher */,
+				2C7E58602914404900C6A2B5 /* SDWebImageSwiftUI */,
 			);
 			productName = maiIncercSiEu;
 			productReference = 17A92CFB2801DCEA000CF34F /* maiIncercSiEu.app */;
@@ -475,6 +475,7 @@
 				17CC53ED2827E1A7006A8FFD /* XCRemoteSwiftPackageReference "ChartView" */,
 				1723134828B2BFA300E683B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				176372DE28C12445006337A7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				2C7E585F2914404900C6A2B5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 17A92CFC2801DCEA000CF34F /* Products */;
 			projectDirPath = "";
@@ -537,7 +538,6 @@
 				2C6A161928F1C79500D9DDE4 /* CommunityAddPost.swift in Sources */,
 				2C2CA01F28F35E90005E92B2 /* PostService.swift in Sources */,
 				17B1A4E02826A36700F1CDEC /* BlurSafeArea.swift in Sources */,
-				17FE3DDF28C4DBAD00B7590E /* SearchTest.swift in Sources */,
 				173F05532810AC5D0058D1F2 /* ActivityProgressView.swift in Sources */,
 				178C8139280A992700EB29C1 /* RecipeCard.swift in Sources */,
 				17E4D1BA28B91A10009C42DF /* AuthViewModel.swift in Sources */,
@@ -609,7 +609,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -664,7 +664,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -692,7 +692,8 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -724,7 +725,8 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -794,6 +796,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		2C7E585F2914404900C6A2B5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -831,6 +841,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */;
 			productName = SwiftUISegues;
+		};
+		2C7E58602914404900C6A2B5 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C7E585F2914404900C6A2B5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

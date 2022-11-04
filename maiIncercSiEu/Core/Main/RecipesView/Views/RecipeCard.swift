@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import SDWebImageSwiftUI
 
 struct RecipeCard: View {
 
@@ -18,34 +18,33 @@ struct RecipeCard: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: recipe.image)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .overlay(alignment: .bottom) {
-                        Text(recipe.name)
-                            .lineLimit(2)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .shadow(color: .black, radius: 3, x: 0, y: 0)
-                            .frame(maxWidth: 140)
-                            .padding()
-                    }
-            } placeholder: {
-                Image(systemName: "photo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .foregroundColor(.white.opacity(0.7))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                Text(recipe.name)
-                    .lineLimit(2)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 3, x: 0, y: 0)
-                    .frame(maxWidth: 140)
-                    .padding()
-            }
+            
+            WebImage(url: URL(string: recipe.image))
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+            
+            
+//            AsyncImage(url: URL(string: recipe.image)) { image in
+//                image
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fill)
+//                    .overlay(alignment: .bottom) {
+//                        Text(recipe.name)
+//                            .lineLimit(2)
+//                            .font(.headline)
+//                            .foregroundColor(.white)
+//                            .shadow(color: .black, radius: 3, x: 0, y: 0)
+//                            .frame(maxWidth: 140)
+//                            .padding()
+//                    }
+//            } placeholder: {
+//                Image(systemName: "photo")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 40, height: 40, alignment: .center)
+//                    .foregroundColor(.white.opacity(0.7))
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+//            }
         }
         .frame(width: 160, height: 217, alignment: .top)
         .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))

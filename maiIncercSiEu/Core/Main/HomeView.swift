@@ -30,6 +30,7 @@ struct HomeView: View {
                             // Vizualizare Data
                             VStack {
                                 DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
+                                    .accentColor(Color.primary)
                             }
                             .modifier(MakeCard())
                             
@@ -82,13 +83,8 @@ struct HomeView: View {
                                 }.frame(maxWidth: .infinity)
                             }
                             .modifier(MakeCard())
-                            
-
-                            
+      
                             JurnalCaloriiView()
-                            
-                            
-                            
                         }
                     }
                 }

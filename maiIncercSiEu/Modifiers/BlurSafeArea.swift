@@ -10,10 +10,10 @@ import SwiftUI
 struct BlurSafeArea: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
-                Color("ColorBackground")
-                    .frame(height: 1)
-                    .background(Material.bar)
-            }
+//            .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
+//                Color("ColorBackground")
+//                    .frame(height: 1)
+//                    .background(Material.bar)
+//            }
     }
 }
