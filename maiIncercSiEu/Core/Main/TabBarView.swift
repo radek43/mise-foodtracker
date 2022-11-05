@@ -11,41 +11,45 @@ struct TabbarView: View {
     
     // MARK: - PROPERTIES
     
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
-
-    }
+    init() { UITabBar.appearance().backgroundColor = UIColor.white }
+    
+    @State private var selection = 0
     
     // MARK: - BODY
     
     var body: some View {
-        TabView {
+        TabView(selection: $selection) {
             HomeView()
                 .tabItem {
-                    Image("homeIcon")
+                    selection == 0 ? Image("homeFill") : Image("homeOutline")
                     Text("Meniu")
                 }
+                .tag(0)
             ActivityProgressView()
                 .tabItem {
-                    Image("progressIcon")
+                    selection == 1 ? Image("progressFill") : Image("progressOutline")
                     Text("Progres")
                 }
+                .tag(1)
             RecipesView()
                 .tabItem {
-                    Image("recipesIcon")
+                    selection == 2 ? Image("recipesFill") : Image("recipesOutline")
                     Text("Retete")
                 }
+                .tag(2)
             FitnessView(excersises: Excercise.dummyData)
                 .tabItem {
-                    Image("fitnessIcon")
+                    selection == 3 ? Image("fitnessFill") : Image("fitnessOutline")
                     Text("Sport")
                 }
+                .tag(3)
             CommunityView()
                 .tabItem {
-                    Image("communityIcon")
+                    selection == 4 ? Image("communityFill") : Image("communityOutline")
                     Text("Comunitate")
                 }
-        }
+                .tag(4)
+        }.imageScale(.large)
     }
 }
 
