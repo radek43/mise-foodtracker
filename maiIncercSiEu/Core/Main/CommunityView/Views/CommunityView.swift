@@ -16,10 +16,10 @@ struct CommunityView: View {
     // MARK: - BODY
     
     var body: some View {
-        NavigationView{
-            ZStack{
+        NavigationView {
+            ZStack {
                 VStack {
-                    ScrollView{
+                    ScrollView {
                         //Titlu
 //                        PullToRefresh(coordinateSpaceName: "pullToRefresh") {
 //                            viewModel.fetchPosts()
@@ -34,10 +34,8 @@ struct CommunityView: View {
                                 NavigationLink {
                                     CommunityAddPost()
                                 } label: {
-                                    Image(systemName: "plus.bubble")
+                                    Image("addPostOutline")
                                         .font(.title)
-                                        .foregroundColor(.blue)
-                                        .frame(width: 48, height: 48)
                                     }
                                 }
                             }
@@ -51,7 +49,8 @@ struct CommunityView: View {
                                }
                             }
                         }
-                    }.coordinateSpace(name: "pullToRefresh")
+                    }
+                    .coordinateSpace(name: "pullToRefresh")
                 }
             }
             .navigationTitle("Comunitate")

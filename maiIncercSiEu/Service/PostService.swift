@@ -55,7 +55,6 @@ struct PostService {
             }
     }
     
-
     func fetchPosts(forUid uid: String, completion: @escaping([Post]) -> Void) {
         Firestore.firestore().collection("posts")
             .whereField("uid", isEqualTo: uid)
@@ -66,5 +65,5 @@ struct PostService {
                 completion(posts.sorted(by: { $0.timestamp.dateValue() > $1.timestamp.dateValue() }))
             }
     }
-    
+
 }

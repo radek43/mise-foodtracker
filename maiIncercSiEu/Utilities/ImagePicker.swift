@@ -25,7 +25,6 @@ struct ImagePicker: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         
     }
-    
 }
 
 extension ImagePicker {
@@ -33,7 +32,7 @@ extension ImagePicker {
         
         let parent: ImagePicker
         
-        init(_ parent: ImagePicker){
+        init(_ parent: ImagePicker) {
             self.parent = parent
         }
         

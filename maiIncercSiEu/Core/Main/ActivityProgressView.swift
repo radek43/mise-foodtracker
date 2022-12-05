@@ -13,20 +13,19 @@ struct ActivityProgressView: View {
     // MARK: - PROPERTIES
     
     var demoData: [Double] = [8, 4, 2, 5, 7, 6, 5]
-    let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [
-        ColorGradient(.purple, .blue)])
+    let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [ColorGradient(.purple, .blue)])
     
     @ScaledMetric var size: CGFloat = 1
     
     // MARK: - BODY
     
     var body: some View {
-        NavigationView{
-            ScrollView{
+        NavigationView {
+            ScrollView {
                 Title(numeTitlu: "Progres")
-                VStack{
-                    VStack{
-                        HStack{
+                VStack {
+                    VStack {
+                        HStack {
                             Text("Calorii saptamanale").font(.system(size: 20 + size, weight: .semibold, design: .rounded))
                             Spacer()
                         }
@@ -38,8 +37,8 @@ struct ActivityProgressView: View {
                     }
                     .modifier(MakeCard())
                         .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
-                    VStack{
-                        HStack{
+                    VStack {
+                        HStack {
                             Text("Top calorii alimente consumate").font(.system(size: 20 + size, weight: .semibold, design: .rounded))
                             Spacer()
                         }

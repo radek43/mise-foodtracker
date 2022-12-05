@@ -18,7 +18,6 @@ struct SettingsView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0){
             Form {
-
                 Button {
                     authViewModel.signOut()
                 } label: {
@@ -28,15 +27,14 @@ struct SettingsView: View {
             } //: Form
             .listStyle(GroupedListStyle())
             
-            
-            
             Text("Copyright © 2022 All rights reserved. maiIncercSiEu")
                 .multilineTextAlignment(.center)
                 .font(.footnote)
                 .padding(.top, 6)
                 .padding(.bottom, 8)
                 .foregroundColor(Color.secondary)
-        } //: Vstack
+            
+        } //: VStack
         .navigationBarTitle("Setari", displayMode: .inline)
         .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         

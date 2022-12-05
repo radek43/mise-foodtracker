@@ -57,8 +57,9 @@ struct PhotoSelectorView: View {
                 }
                 .shadow(color: Color.black.opacity(0.1), radius: 12)
             }
-                            
+                    
             Spacer()
+            
         }
         .ignoresSafeArea()
         .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))

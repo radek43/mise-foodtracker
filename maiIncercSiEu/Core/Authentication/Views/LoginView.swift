@@ -33,7 +33,6 @@ struct LoginView: View {
                 .padding(.horizontal, 32)
                 .padding(.top, 44)
                 
-                
                 HStack {
                     Spacer()
                     NavigationLink {

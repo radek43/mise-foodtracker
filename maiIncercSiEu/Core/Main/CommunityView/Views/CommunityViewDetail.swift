@@ -35,6 +35,7 @@ struct CommunityViewDetail: View {
                             Text("@" + user.username)
                                 .font(.footnote)
                         }
+                        
                     } else { //dummy data for preview
                         Image(systemName: "person.crop.circle")
                             .resizable()
@@ -86,15 +87,15 @@ struct CommunityViewDetail: View {
                     Text("12/03/2022")
                         .font(.footnote)
                         .foregroundColor(Color.secondary)
-    
-                }.padding([.top, .bottom, .trailing], 3)
+                }
+                .padding([.top, .bottom, .trailing], 3)
                 
             }
             .padding(.horizontal)
  
             Divider()
 
-            HStack{
+            HStack {
                 Text("• 3 comentarii")
                     .font(.footnote)
                     .foregroundColor(Color.secondary)

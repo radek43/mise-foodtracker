@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FitnessViewDetail: View {
     var body: some View {
-        ScrollView{
+        ScrollView {
             VStack(alignment: .center, spacing: 30) {
                 Text("Fandari Bulgaresti")
                     .font(.largeTitle)

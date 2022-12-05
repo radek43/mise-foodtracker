@@ -41,7 +41,6 @@ struct FitnessCard: View {
                 }
                 .font(.footnote)
                 .foregroundColor(Color.secondary)
-                
             }
             
             Spacer()

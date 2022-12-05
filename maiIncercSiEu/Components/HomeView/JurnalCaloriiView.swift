@@ -23,11 +23,13 @@ struct JurnalCaloriiView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("Sumar").font(.system(size: 20 + size, weight: .semibold, design: .rounded))
+                Text("Sumar")
+                    .font(.system(size: 20 + size, weight: .semibold, design: .rounded))
                 Spacer()
+                Text("1189 kCal")
+                    .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
             }
-            
-            
+        
             HStack{
                 PieChart()
                     .data(demoData)
@@ -78,7 +80,7 @@ struct JurnalCaloriiView: View {
             }
         }
         .modifier(MakeCard())
-            .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
+        .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
     }
 }
 

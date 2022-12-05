@@ -53,7 +53,7 @@ struct AddFoodView: View {
                      .background(Color(.secondarySystemBackground))
                      .cornerRadius(10.0)
                      
-                     if showCancelButton  {
+                     if showCancelButton {
                          Button("Cancel") {
                                  UIApplication.shared.endEditing(true) // this must be placed before the other commands here
                                  self.searchText = ""
@@ -73,14 +73,16 @@ struct AddFoodView: View {
                  }
                  .navigationBarTitle(Text("Search"), displayMode: .inline)
                  .navigationBarItems(trailing: Button(action: {
-                                    print("Dismissing sheet view...")
-                                }) {
-                                    Text("Done").bold()
-                                })
-                 
+                                        print("Dismissing sheet view...")
+                                    }) {
+                                        Text("Done").bold()
+                                    })
                  
                  .resignKeyboardOnDragGesture()
              }
+             .navigationBarTitle("")
+             .navigationBarHidden(true)
+             .navigationViewStyle(.stack)
          }
      }
 }

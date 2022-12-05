@@ -51,6 +51,7 @@ struct CommunityAddPost: View {
                     HStack {
                         TextField("", text: $titluPostare)
                             .textFieldStyle(.roundedBorder)
+                            
                         Button {
                             //showImagePicker.toggle()
                             print("buton de ales imagine apasat")
@@ -61,9 +62,11 @@ struct CommunityAddPost: View {
                                     .frame(width: 30, height: 30)
                                     .clipShape(Circle())
                             } else {
-                                Image(systemName: "camera.circle")
+                                Image("addPhotoOutline")
+                                    
                                     .resizable()
                                     .frame(width: 30, height: 30)
+                                    
                             }
                         }
                         .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {

@@ -13,12 +13,11 @@ struct FitnessView: View {
     
     var excersises: [Excercise]
     
-    
     // MARK: - BODY
     
     var body: some View {
-        NavigationView{
-            ZStack{
+        NavigationView {
+            ZStack {
                 VStack {
                     ScrollView{
                         Title(numeTitlu: "Fitness")

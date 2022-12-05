@@ -19,12 +19,11 @@ struct HomeView: View {
     // MARK: - BODY
     
     var body: some View {
-        
        // if let user = authViewModel.currentUser {
             NavigationView {
                 ZStack {
                     VStack {
-                        ScrollView(showsIndicators: false)  {
+                        ScrollView(showsIndicators: false) {
                             TitleWithButton(numeTitlu: "Food Tracker") //\(user.username)")
                             
                             // Vizualizare Data
@@ -35,28 +34,27 @@ struct HomeView: View {
                             .modifier(MakeCard())
                             
                             // Vizualizare Calorii Ramase
-                            VStack{
+                            VStack {
                                 Text("2342 Calorii Ramase")
                                     .fontWeight(.semibold)
                                     .padding(5)
                                 ProgressView(value: 0.25)
-                                HStack{
-                                    VStack{
+                                HStack {
+                                    VStack {
                                         Text("0")
                                             .fontWeight(.medium)
                                         Text("Consumat")
-                                        
                                     }
                                     .frame(maxWidth: .infinity)
                                     
-                                    VStack{
+                                    VStack {
                                         Text("0")
                                             .fontWeight(.medium)
                                         Text("Ars")
                                     }
                                     .frame(maxWidth: .infinity)
                                     
-                                    VStack{
+                                    VStack {
                                         Text("0")
                                             .fontWeight(.medium)
                                         Text("Net")
@@ -68,20 +66,49 @@ struct HomeView: View {
                             .modifier(MakeCard())
 
                             // Meniu adaugare alimente consumate
-                            VStack{
+                            VStack {
                                 HStack(alignment: .top) {
-                                    ButonMeniuAdaugare(imageName: "breakfastIcon", title: "mic\ndejun")
-                                    ButonMeniuAdaugare(imageName: "lunchIcon", title: "pranz")
-                                    ButonMeniuAdaugare(imageName: "dinnerIcon", title: "cina")
-                                    ButonMeniuAdaugare(imageName: "snacksIcon", title: "gustari")
-
+                                    Button {
+                                        print("Am apasat")
+                                    } label: {
+                                        ButonMeniuAdaugare(imageName: "micDejunOutline", title: "mic\ndejun")
+                                    }
+                                    Button {
+                                        print("Am apasat")
+                                    } label: {
+                                        ButonMeniuAdaugare(imageName: "pranzOutline", title: "pranz")
+                                    }
+                                    Button {
+                                        print("Am apasat")
+                                    } label: {
+                                        ButonMeniuAdaugare(imageName: "cinaOutline", title: "cina")
+                                    }
+                                    Button {
+                                        print("Am apasat")
+                                    } label: {
+                                        ButonMeniuAdaugare(imageName: "gustariOutline", title: "gustari")
+                                    }
                                 }.frame(maxWidth: .infinity)
+                                
                                 HStack(alignment: .top) {
-                                    ButonMeniuAdaugare(imageName: "sportsIcon", title: "sport")
-                                    ButonMeniuAdaugare(imageName: "weightIcon", title: "greutate")
-                                    ButonMeniuAdaugare(imageName: "waterIcon", title: "lichide")
+                                    Button {
+                                        print("Am apasat")
+                                    } label: {
+                                        ButonMeniuAdaugare(imageName: "sportOutline", title: "sport")
+                                    }
+                                    Button {
+                                        print("Am apasat")
+                                    } label: {
+                                        ButonMeniuAdaugare(imageName: "greutateOutline", title: "greutate")
+                                    }
+                                    Button {
+                                        print("Am apasat")
+                                    } label: {
+                                        ButonMeniuAdaugare(imageName: "lichideOutline", title: "lichide")
+                                    }
                                 }.frame(maxWidth: .infinity)
                             }
+                            .font(.title)
                             .modifier(MakeCard())
       
                             JurnalCaloriiView()
@@ -105,7 +132,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     
     static var previews: some View {
-        HomeView()
+        TabbarView()
             .environmentObject(AuthViewModel())
     }
 }

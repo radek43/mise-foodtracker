@@ -23,7 +23,6 @@ struct RegistrationView: View {
     
     var body: some View {
         VStack {
-            
             NavigationLink(destination: PhotoSelectorView(), isActive: $viewModel.didAuthenticateUser, label: { })
                 
             AuthenticationHeaderView(title1: "Creaza un cont nou", title2: "")
@@ -75,7 +74,7 @@ struct RegistrationView: View {
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()
-        //    .environmentObject(AuthViewModel())
+            .environmentObject(AuthViewModel())
     }
 }
 
