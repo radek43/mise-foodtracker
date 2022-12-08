@@ -21,7 +21,14 @@ struct ContentView: View {
             LoginView()
         } else {
             // user logged in
-            TabbarView()
+            ZStack {
+                TabbarView()
+                GeometryReader { reader in
+                    Color("ColorBackground")
+                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                        .ignoresSafeArea()
+                }
+            }
         }
     }
 }

@@ -80,7 +80,7 @@ struct JurnalCaloriiView: View {
             }
         }
         .modifier(MakeCard())
-        .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
+        //.frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
     }
 }
 

@@ -26,7 +26,6 @@ struct FitnessView: View {
                                 NavigationLink(destination: FitnessViewDetail()) {
                                     FitnessCard(exercitiu: excersise)
                                         .foregroundColor(.primary)
-                                        .padding(.bottom, 5.0)
                                 }
                             }
                         }

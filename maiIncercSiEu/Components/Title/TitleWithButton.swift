@@ -24,7 +24,7 @@ struct TitleWithButton: View {
     
     var body: some View {
         VStack {
-            HStack {
+            HStack(alignment: .center) {
                 Text(numeTitlu)
                     .font(.largeTitle.bold())
 
@@ -39,19 +39,20 @@ struct TitleWithButton: View {
                             .scaledToFill()
                             .clipShape(Circle())
                             .frame(width: 36, height: 36)
-                            .padding(6)
+                            //.padding(6)
                     } else {
                         Circle()
                             .frame(width: 36, height: 36)
                             .foregroundColor(Color.secondary)
-                            .padding(6)
+                            //.padding(6)
                     }
                 }
             }
-            .padding([.top, .leading, .trailing], 25.0)
+            .padding([.top, .leading, .trailing])
+            
             
         }
-        //.frame(width: UIScreen.main.bounds.width * 0.9)
+        
         
     }
 }

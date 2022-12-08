@@ -58,7 +58,7 @@ struct TabbarView: View {
             FitnessView(excersises: Excercise.dummyData)
                 .tabItem {
                     if selection == 3 {
-                        Image("fitnessFill")
+                        Image("fitnessOutline")
                             .imageScale(.large)
                     } else {
                         Image("fitnessOutline")

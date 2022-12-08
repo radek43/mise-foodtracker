@@ -64,6 +64,7 @@ struct HomeView: View {
                                 }
                             }
                             .modifier(MakeCard())
+                            
 
                             // Meniu adaugare alimente consumate
                             VStack {
@@ -76,17 +77,17 @@ struct HomeView: View {
                                     Button {
                                         print("Am apasat")
                                     } label: {
-                                        ButonMeniuAdaugare(imageName: "pranzOutline", title: "pranz")
+                                        ButonMeniuAdaugare(imageName: "pranzOutline", title: "prânz")
                                     }
                                     Button {
                                         print("Am apasat")
                                     } label: {
-                                        ButonMeniuAdaugare(imageName: "cinaOutline", title: "cina")
+                                        ButonMeniuAdaugare(imageName: "cinaOutline", title: "cină")
                                     }
                                     Button {
                                         print("Am apasat")
                                     } label: {
-                                        ButonMeniuAdaugare(imageName: "gustariOutline", title: "gustari")
+                                        ButonMeniuAdaugare(imageName: "gustariOutline", title: "gustări")
                                     }
                                 }.frame(maxWidth: .infinity)
                                 
@@ -112,6 +113,9 @@ struct HomeView: View {
                             .modifier(MakeCard())
       
                             JurnalCaloriiView()
+                            
+                            Spacer()
+                        
                         }
                     }
                 }

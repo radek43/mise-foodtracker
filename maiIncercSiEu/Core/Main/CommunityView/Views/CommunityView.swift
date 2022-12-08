@@ -39,7 +39,7 @@ struct CommunityView: View {
                                     }
                                 }
                             }
-                            .padding([.top, .leading, .trailing], 25.0)
+                            .padding([.top, .leading, .trailing])
 
                         VStack {
                             ForEach(viewModel.posts) { post in

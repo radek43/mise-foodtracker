@@ -28,19 +28,22 @@ struct ButonMeniuAdaugare: View {
             VStack {
                 Circle()
                     .stroke(lineWidth: 0)
-                    .frame(width: 50, height: 50)
+                    .frame(width: 48, height: 48)
                     .foregroundColor(Color(UIColor.label))
                     .background(Circle().fill(Color("ColorBackground")))
                     .clipShape(Circle())
                     .overlay(Image(imageName))
 
                 Text(title)
-                    .font(.system(size: 15 + size, weight: .medium, design: .rounded))
+                    .font(.system(size: 15, weight: .medium, design: .rounded))
                     .foregroundColor(Color.primary)
                     .multilineTextAlignment(.center)
-                    .minimumScaleFactor(0.01)
+                    .frame(height: 40)
+                    
             }
-            .padding(10)
+            
+            .padding(9)
+
     }
 }
 
@@ -48,6 +51,6 @@ struct ButonMeniuAdaugare: View {
 
 struct ButonMeniuAdaugare_Previews: PreviewProvider {
     static var previews: some View {
-        ButonMeniuAdaugare(imageName: "sportsIcon", title: "sport")
+        ButonMeniuAdaugare(imageName: "sportsIcon", title: "mic \ndejun")
     }
 }

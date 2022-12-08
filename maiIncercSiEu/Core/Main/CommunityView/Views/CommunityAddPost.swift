@@ -51,27 +51,6 @@ struct CommunityAddPost: View {
                     HStack {
                         TextField("", text: $titluPostare)
                             .textFieldStyle(.roundedBorder)
-                            
-                        Button {
-                            //showImagePicker.toggle()
-                            print("buton de ales imagine apasat")
-                        } label: {
-                            if let profileImage = profileImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
-                                profileImage
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    .clipShape(Circle())
-                            } else {
-                                Image("addPhotoOutline")
-                                    
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                    
-                            }
-                        }
-                        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-                            ImagePicker(selectedImage: $selectedImage)
-                        }
                     }
                     HStack {
                         Text("Descriere:")
@@ -81,6 +60,37 @@ struct CommunityAddPost: View {
                         .cornerRadius(8)
                         .overlay(RoundedRectangle(cornerRadius: 8)
                         .stroke(Color.secondary).opacity(0.15))
+                    Button {
+                        showImagePicker.toggle()
+                        print("buton de ales imagine apasat")
+                    } label: {
+                        if let profileImage = profileImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
+                            profileImage
+                                .resizable()
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        } else {
+                            RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                .frame(height: 200)
+                                .foregroundColor(Color.white)
+                                .overlay(RoundedRectangle(cornerRadius: 8)
+                                            .stroke(Color.secondary)
+                                            .opacity(0.15))
+                                .overlay(
+                                    VStack {
+                                            Image("addPhotoOutline")
+                                                .resizable()
+                                                .frame(width: 112, height: 100)
+                                                .foregroundColor(Color.secondary)
+                                    
+                                            Text("Adaugă o imagine")
+                                                .foregroundColor(Color.secondary)
+                                            }
+                                        )
+                        }
+                    }
+                    .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+                        ImagePicker(selectedImage: $selectedImage)
+                    }
                 }
             }
             .toolbar {
