@@ -20,10 +20,10 @@ struct ActivityProgressView: View {
     // MARK: - BODY
     
     var body: some View {
+        
         NavigationView {
-            ScrollView {
-                Title(numeTitlu: "Progres")
-                VStack {
+            VStack {
+                ScrollView {
                     VStack {
                         HStack {
                             Text("Calorii saptamanale").font(.system(size: 20 + size, weight: .semibold, design: .rounded))
@@ -36,7 +36,8 @@ struct ActivityProgressView: View {
        
                     }
                     .modifier(MakeCard())
-                        .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
+                    
                     VStack {
                         HStack {
                             Text("Top calorii alimente consumate").font(.system(size: 20 + size, weight: .semibold, design: .rounded))
@@ -49,29 +50,30 @@ struct ActivityProgressView: View {
                         
                     }
                     .modifier(MakeCard())
-                        .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
                     
-                    JurnalCaloriiView()
+                    //JurnalCaloriiView()
                     
-                    CardMicut()
-                    
-                    // Pasi facuti de catre utilizator inregistrati de telefon
+                    VStack {
+                        CardMicut()
+                            
+                    }.padding(.horizontal)
                     
                     VStack {
                         HStack {
                             Text("Numar de pasi inregistrati:")
+
                             Spacer()
                             Text("1573 Pasi")
                         }
-                    }.modifier(MakeCard())
+                    }
+                    .modifier(MakeCard())
+                    .padding(.horizontal)
                 }
             }
             .navigationTitle("Progres")
-            .navigationBarHidden(true)
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
-        .modifier(BlurSafeArea())
-        .navigationViewStyle(.stack)
     }
 }
 

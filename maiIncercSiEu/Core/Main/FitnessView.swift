@@ -17,28 +17,22 @@ struct FitnessView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
                 VStack {
                     ScrollView{
-                        Title(numeTitlu: "Fitness")
                         VStack {
                             ForEach(excersises) { excersise in
                                 NavigationLink(destination: FitnessViewDetail()) {
                                     FitnessCard(exercitiu: excersise)
                                         .foregroundColor(.primary)
+                                        .padding(.horizontal)
                                 }
                             }
                         }
                     }
                 }
-            }
-            .navigationTitle("Fitness")
-            .navigationBarHidden(true)
-            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
-        
+                .navigationTitle("Fitness")
+                .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
-        .modifier(BlurSafeArea())
-        .navigationViewStyle(.stack)
     }
 }
 

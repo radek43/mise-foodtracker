@@ -12,6 +12,7 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     
     @EnvironmentObject var viewModel: AuthViewModel
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     // MARK: - BODY
     
@@ -21,14 +22,7 @@ struct ContentView: View {
             LoginView()
         } else {
             // user logged in
-            ZStack {
-                TabbarView()
-                GeometryReader { reader in
-                    Color("ColorBackground")
-                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
-                        .ignoresSafeArea()
-                }
-            }
+            TabbarView()
         }
     }
 }

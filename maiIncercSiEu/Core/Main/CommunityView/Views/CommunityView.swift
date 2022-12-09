@@ -17,48 +17,37 @@ struct CommunityView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
                 VStack {
                     ScrollView {
                         //Titlu
 //                        PullToRefresh(coordinateSpaceName: "pullToRefresh") {
 //                            viewModel.fetchPosts()
 //                        }
-                        VStack {
-                            HStack {
-                                Text("Comunitate")
-                                    .font(.largeTitle.bold())
-
-                                Spacer()
-
-                                NavigationLink {
-                                    CommunityAddPost()
-                                } label: {
-                                    Image("addPostOutline")
-                                        .font(.title)
-                                    }
-                                }
-                            }
-                            .padding([.top, .leading, .trailing])
 
                         VStack {
                             ForEach(viewModel.posts) { post in
                                 NavigationLink(destination: CommunityViewDetail(post: post)){
                                    CommunityCard(post: post)
                                         .foregroundColor(.primary)
+                                        .padding(.horizontal)
                                }
                             }
                         }
                     }
                     .coordinateSpace(name: "pullToRefresh")
                 }
-            }
-            .navigationTitle("Comunitate")
-            .navigationBarHidden(true)
-            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+                .toolbar(content: {
+                    NavigationLink {
+                        CommunityAddPost()
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                            .font(.title)
+                            .frame(width: 36, height: 36)
+                    }
+                })
+                .navigationTitle("Comunitate")
+                .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
-        .modifier(BlurSafeArea())
-        .navigationViewStyle(.stack)
     }
 }
 

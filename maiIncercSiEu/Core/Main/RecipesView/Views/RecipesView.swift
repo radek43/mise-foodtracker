@@ -19,37 +19,8 @@ struct RecipesView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
+            VStack {
                 ScrollView {
-                    if authViewModel.currentUser?.userType != nil{ // functionalitati de admin
-                        HStack {
-                            Title(numeTitlu: "Retete")
-                            NavigationLink {
-                                SettingsView() // de modificat
-                            } label: {
-                                Image(systemName: "plus.circle")
-                                    .font(.title)
-                                    .foregroundColor(.blue)
-                                    .frame(width: 48, height: 48)
-                            }
-                            .padding([.top, .leading], 25.0)
-                            .padding(.trailing, 10)
-                        }
-                    } else {
-                        HStack {
-                            Title(numeTitlu: "Retete")
-                            Button {
-                                print("felicitari esti un utilizator mai jmeker ca ceilalti")
-                            } label: {
-                                Image(systemName: "plus.circle")
-                                    .font(.title)
-                                    .foregroundColor(.blue)
-                                    .frame(width: 48, height: 48)
-                            }
-                            .padding([.top, .leading], 25.0)
-                            .padding(.trailing, 10)
-                        }
-                    }
                     VStack {
                         SearchBar(text: $viewModel.searchText)
                             .padding(.bottom, 3)
@@ -59,17 +30,29 @@ struct RecipesView: View {
                                     RecipeCard(recipe: recipe)
                                 }
                             }
-                        }.padding(.bottom)
+                        }
+                        .padding(.bottom)
                         
-                    }.padding(.horizontal)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                }
+                .toolbar {
+                    if authViewModel.currentUser?.userType != nil { // functionalitati de admin
+                        HStack {
+                            NavigationLink {
+                                AddRecipeView() // de modificat
+                            } label: {
+                                Image(systemName: "plus.circle")
+                            }
+                        }
+                    
+                    }
                 }
                 .navigationTitle("Retete")
-                .navigationBarHidden(true)
                 .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
         }
-        .modifier(BlurSafeArea())
-        .navigationViewStyle(.stack)
     }
 }
 

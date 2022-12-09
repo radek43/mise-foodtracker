@@ -17,71 +17,51 @@ struct RecipeDetailView: View {
     // MARK: - BODY
     
     var body: some View {
-        ScrollView{
-            
-            WebImage(url: URL(string: recipe.image))
-                .resizable()
-                .scaledToFill()
-                .frame(height: 300)
-                .clipped()
-                .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
-                .padding(.horizontal)
-            
-//            AsyncImage(url: URL(string: recipe.image)) { image in
-//                image
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(height: 300)
-//                    .clipped()
-//                    .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
-//                    .padding(.horizontal)
-//            } placeholder: {
-//                Image(systemName: "photo")
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(width: 100, height: 100, alignment: .center)
-//                    .foregroundColor(.white.opacity(0.7))
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-//                    .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-//                    .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
-//                    .padding(.horizontal)
-//            }
-//            .frame(height: 300)
-            
-            VStack(spacing: 30) {
-                Text(recipe.name)
-                    .font(.largeTitle)
-                    .bold()
-                    .multilineTextAlignment(.center)
+        ScrollView {
+            VStack {
+                WebImage(url: URL(string: recipe.image))
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 300)
+                    .clipped()
+                    .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
+                    .padding([.top, .leading, .trailing])
                 
-                VStack(alignment: .leading, spacing: 30) {
-                    if !recipe.description.isEmpty {
-                        Text(recipe.description)
-                    }
-                    
-                    if !recipe.ingredients.isEmpty {
-                        VStack(alignment: .leading, spacing: 20) {
-                            Text("Ingrediente:")
-                                .font(.headline)
-                            
-                            Text(recipe.ingredients)
+                VStack(spacing: 30) {
+                    Text(recipe.name)
+                        .font(.largeTitle)
+                        .bold()
+                        .multilineTextAlignment(.center)
+                    Divider()
+                    VStack(alignment: .leading, spacing: 30) {
+                        if !recipe.description.isEmpty {
+                            Text(recipe.description)
                         }
-                    }
-                    
-                    if !recipe.directions.isEmpty {
-                        VStack(alignment: .leading, spacing: 20) {
-                            Text("Mod Preparare:")
-                                .font(.headline)
-                            Text(recipe.directions)
+                        Divider()
+                        if !recipe.ingredients.isEmpty {
+                            VStack(alignment: .leading, spacing: 20) {
+                                Text("Ingrediente:")
+                                    .font(.headline)
+                                
+                                Text(recipe.ingredients.replacingOccurrences(of: "•", with: "\n •"))
+                            }
                         }
+                        Divider()
+                        if !recipe.directions.isEmpty {
+                            VStack(alignment: .leading, spacing: 20) {
+                                Text("Mod Preparare:")
+                                    .font(.headline)
+                                Text(recipe.directions.replacingOccurrences(of: "•", with: "\n •"))
+                            }
+                        }
+                        Divider()
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .navigationBarTitleDisplayMode(.inline)
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
         }
-        .navigationBarTitleDisplayMode(.inline)
-        //.ignoresSafeArea(.container, edges: .top)
     }
 }
 

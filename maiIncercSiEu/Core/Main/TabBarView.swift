@@ -11,8 +11,6 @@ struct TabbarView: View {
     
     // MARK: - PROPERTIES
     
-    init() { UITabBar.appearance().backgroundColor = UIColor.white }
-    
     @State private var selection = 0
     
     // MARK: - BODY
@@ -22,11 +20,11 @@ struct TabbarView: View {
             HomeView()
                 .tabItem {
                     if selection == 0 {
-                        Image("homeFill")
-                            .imageScale(.large)
+                        Image("house.fill")
+
                     } else {
-                        Image("homeOutline")
-                            .imageScale(.large)
+                        Image("house")
+                            
                     }
                     Text("Meniu")
                 }
@@ -34,11 +32,9 @@ struct TabbarView: View {
             ActivityProgressView()
                 .tabItem {
                     if selection == 1 {
-                        Image("progressFill")
-                            .imageScale(.large)
+                        Image("chart.bar.fill")
                     } else {
-                        Image("progressOutline")
-                            .imageScale(.large)
+                        Image("chart.bar")
                     }
                     Text("Progres")
                 }
@@ -46,11 +42,9 @@ struct TabbarView: View {
             RecipesView()
                 .tabItem {
                     if selection == 2 {
-                        Image("recipesFill")
-                            .imageScale(.large)
+                        Image("book.fill")
                     } else {
-                        Image("recipesOutline")
-                            .imageScale(.large)
+                        Image("book")
                     }
                     Text("Retete")
                 }
@@ -58,10 +52,10 @@ struct TabbarView: View {
             FitnessView(excersises: Excercise.dummyData)
                 .tabItem {
                     if selection == 3 {
-                        Image("fitnessOutline")
+                        Image("dumbbell.fill")
                             .imageScale(.large)
                     } else {
-                        Image("fitnessOutline")
+                        Image("dumbbell")
                             .imageScale(.large)
                     }
                     Text("Sport")
@@ -70,11 +64,9 @@ struct TabbarView: View {
             CommunityView()
                 .tabItem {
                     if selection == 4 {
-                        Image("communityFill")
-                            .imageScale(.large)
+                        Image("person.2.fill")
                     } else {
-                        Image("communityOutline")
-                            .imageScale(.large)
+                        Image("person.2")
                     }
                     Text("Comunitate")
                 }

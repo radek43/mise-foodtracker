@@ -10,7 +10,7 @@ import SwiftUI
 struct MakeCard: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(width: UIScreen.main.bounds.width * 0.85)
+            //.frame(width: UIScreen.main.bounds.width * 0.85)
             .padding()
             .background(Color(UIColor.tertiarySystemBackground))
             .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
