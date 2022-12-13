@@ -1,5 +1,5 @@
 //
-//  JurnalCaloriiView.swift
+//  DailyCaloriesChart.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 4/29/22.
@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftUICharts
-
 
 struct DailyCaloriesChart: View {
     

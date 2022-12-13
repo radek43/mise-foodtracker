@@ -1,5 +1,5 @@
 //
-//  CommunityReply.swift
+//  ReplyRow.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 10/8/22.
@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ReplyRow: View {
+    // MARK: - PROPERTIES
+    
+    // MARK: - BODY
     var body: some View {
         VStack {
             HStack(alignment: .center) {
@@ -43,6 +46,7 @@ struct ReplyRow: View {
     }
 }
 
+// MARK: - PREVIEWS
 struct CommunityReply_Previews: PreviewProvider {
     static var previews: some View {
         ReplyRow()

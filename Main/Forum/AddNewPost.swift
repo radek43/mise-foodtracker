@@ -1,5 +1,5 @@
 //
-//  CommunityAddMessage.swift
+//  AddNewPost.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 10/8/22.
@@ -77,13 +77,13 @@ struct AddNewPost: View {
                                             .opacity(0.15))
                                 .overlay(
                                     VStack {
-                                            Image("addPhotoOutline")
-                                                .resizable()
-                                                .frame(width: 112, height: 100)
-                                                .foregroundColor(Color.secondary)
-                                    
-                                            Text("Adaugă o imagine")
-                                                .foregroundColor(Color.secondary)
+                                        Image("addPhotoOutline")
+                                            .resizable()
+                                            .frame(width: 112, height: 100)
+                                            .foregroundColor(Color.secondary)
+                                
+                                        Text("Adaugă o imagine")
+                                            .foregroundColor(Color.secondary)
                                             }
                                         )
                         }

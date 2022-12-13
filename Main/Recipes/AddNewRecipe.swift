@@ -1,5 +1,5 @@
 //
-//  AddRecipeView.swift
+//  AddNewRecipe.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 12/9/22.
@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddNewRecipe: View {
     
+    // MARK: - PROPERTIES
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var recipeImage: Image?
@@ -19,6 +20,7 @@ struct AddNewRecipe: View {
     @State private var preparare = ""
     @State private var categorie = "" // de facut field
     
+    // MARK: - BODY
     var body: some View {
         VStack {
             Form(content: {
@@ -64,7 +66,7 @@ struct AddNewRecipe: View {
             }
         }
     }
-    
+    // MARK: - loadImage
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         recipeImage = Image(uiImage: selectedImage)
@@ -73,7 +75,7 @@ struct AddNewRecipe: View {
 }
 
 
-
+// MARK: - PREVIEWS
 struct AddRecipeView_Previews: PreviewProvider {
     static var previews: some View {
         RecipesView()

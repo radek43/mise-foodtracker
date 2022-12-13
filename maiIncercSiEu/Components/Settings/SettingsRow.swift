@@ -1,5 +1,5 @@
 //
-//  FormRowStaticView.swift
+//  SettingsRow.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 8/28/22.

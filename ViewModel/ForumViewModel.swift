@@ -1,5 +1,5 @@
 //
-//  CommunityViewModel.swift
+//  ForumViewModel.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 10/9/22.

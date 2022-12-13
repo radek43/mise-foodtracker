@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// MARK: - TabbarView
 struct TabBar: View {
     
     // MARK: - PROPERTIES

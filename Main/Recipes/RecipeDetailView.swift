@@ -1,5 +1,5 @@
 //
-//  RecipeView.swift
+//  RecipeDetailView.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 4/16/22.

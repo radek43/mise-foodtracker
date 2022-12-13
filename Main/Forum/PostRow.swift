@@ -1,5 +1,5 @@
 //
-//  CommunityCard.swift
+//  PostRow.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 9/28/22.

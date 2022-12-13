@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct FitnessDetailView: View {
+    // MARK: - PROPERTIES
+    
+    // MARK: - BODY
     var body: some View {
         ScrollView {
             VStack(alignment: .center, spacing: 10.0) {
@@ -32,6 +35,7 @@ struct FitnessDetailView: View {
     }
 }
 
+// MARK: - PREVIEW
 struct FitnessViewDetail_Previews: PreviewProvider {
     static var previews: some View {
         FitnessDetailView()

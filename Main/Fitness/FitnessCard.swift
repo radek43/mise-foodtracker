@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FitnessCard: View {
     
+    // MARK: - PROPERTIES
     var exercitiu : Excercise
 //    var numeExercitiu: String
 //    var dificultate: String
@@ -20,6 +21,7 @@ struct FitnessCard: View {
 //        self.timpExecutie = timpExecutie
 //    }
 
+    // MARK: - BODY
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -56,6 +58,7 @@ struct FitnessCard: View {
     }
 }
 
+// MARK: - PREVIEW
 struct FitnessCard_Previews: PreviewProvider {
     static var previews: some View {
         FitnessCard(exercitiu: Excercise.dummyData[0])
