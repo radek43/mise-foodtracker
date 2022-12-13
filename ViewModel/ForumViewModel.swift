@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CommunityViewModel: ObservableObject {
+class ForumViewModel: ObservableObject {
     
     @Published var posts = [Post]() //vizualizarea postarilor in view
     @Published var didUploadPost = false // uploadarea postarilor in db

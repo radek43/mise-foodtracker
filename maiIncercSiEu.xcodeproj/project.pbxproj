@@ -29,7 +29,7 @@
 		178CEBC52809B82700D6DD25 /* AddFoodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CEBC42809B82700D6DD25 /* AddFoodButton.swift */; };
 		1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1791A78A281AE55000FB69E2 /* AddFoodView.swift */; };
 		179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DDB2A2803441D00049C65 /* RecipesView.swift */; };
-		179DDB2D2803443200049C65 /* CommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DDB2C2803443200049C65 /* CommunityView.swift */; };
+		179DDB2D2803443200049C65 /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DDB2C2803443200049C65 /* ForumView.swift */; };
 		17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A08FB228C3410500CD3D92 /* Recipe.swift */; };
 		17A92CFF2801DCEA000CF34F /* maiIncercSiEuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A92CFE2801DCEA000CF34F /* maiIncercSiEuApp.swift */; };
 		17A92D012801DCEA000CF34F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A92D002801DCEA000CF34F /* ContentView.swift */; };
@@ -51,7 +51,7 @@
 		2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0C2901AD4A006ECB21 /* Post.swift */; };
 		2C2CA01F28F35E90005E92B2 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA01E28F35E90005E92B2 /* PostService.swift */; };
 		2C2CA02128F36229005E92B2 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */; };
-		2C2CA02528F363D4005E92B2 /* CommunityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA02428F363D4005E92B2 /* CommunityViewModel.swift */; };
+		2C2CA02528F363D4005E92B2 /* ForumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA02428F363D4005E92B2 /* ForumViewModel.swift */; };
 		2C63538128F0A7E40061A701 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63538028F0A7E40061A701 /* PostDetail.swift */; };
 		2C6A161728F17F5200D9DDE4 /* ReplyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161628F17F5200D9DDE4 /* ReplyRow.swift */; };
 		2C6A161928F1C79500D9DDE4 /* AddNewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161828F1C79400D9DDE4 /* AddNewPost.swift */; };
@@ -82,7 +82,7 @@
 		178CEBC42809B82700D6DD25 /* AddFoodButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodButton.swift; sourceTree = "<group>"; };
 		1791A78A281AE55000FB69E2 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		179DDB2A2803441D00049C65 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
-		179DDB2C2803443200049C65 /* CommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityView.swift; sourceTree = "<group>"; };
+		179DDB2C2803443200049C65 /* ForumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
 		17A08FB228C3410500CD3D92 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		17A92CFB2801DCEA000CF34F /* maiIncercSiEu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = maiIncercSiEu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A92CFE2801DCEA000CF34F /* maiIncercSiEuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maiIncercSiEuApp.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		2C049F0C2901AD4A006ECB21 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2C2CA01E28F35E90005E92B2 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
-		2C2CA02428F363D4005E92B2 /* CommunityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewModel.swift; sourceTree = "<group>"; };
+		2C2CA02428F363D4005E92B2 /* ForumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewModel.swift; sourceTree = "<group>"; };
 		2C63538028F0A7E40061A701 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		2C6A161628F17F5200D9DDE4 /* ReplyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyRow.swift; sourceTree = "<group>"; };
 		2C6A161828F1C79400D9DDE4 /* AddNewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPost.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 				2C77A4CB2948A5E700233AF4 /* Progress */,
 				170C633128297DB80048DFA9 /* Recipes */,
 				1747ABFC28C3BA6200138938 /* Fitness */,
-				2C6E96C328E49B5D000159C4 /* Posts */,
+				2C6E96C328E49B5D000159C4 /* Forum */,
 				1728115128BBB36E001B0BC5 /* Settings */,
 			);
 			path = Main;
@@ -275,16 +275,16 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		2C6E96C328E49B5D000159C4 /* Posts */ = {
+		2C6E96C328E49B5D000159C4 /* Forum */ = {
 			isa = PBXGroup;
 			children = (
-				179DDB2C2803443200049C65 /* CommunityView.swift */,
+				179DDB2C2803443200049C65 /* ForumView.swift */,
 				2C6E96C428E49B78000159C4 /* PostRow.swift */,
 				2C63538028F0A7E40061A701 /* PostDetail.swift */,
 				2C6A161628F17F5200D9DDE4 /* ReplyRow.swift */,
 				2C6A161828F1C79400D9DDE4 /* AddNewPost.swift */,
 			);
-			path = Posts;
+			path = Forum;
 			sourceTree = "<group>";
 		};
 		2C77A4C82948A1AB00233AF4 /* Navigation */ = {
@@ -300,7 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				17E4D1B928B91A10009C42DF /* AuthViewModel.swift */,
-				2C2CA02428F363D4005E92B2 /* CommunityViewModel.swift */,
+				2C2CA02428F363D4005E92B2 /* ForumViewModel.swift */,
 				2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */,
 			);
 			path = ViewModel;
@@ -421,7 +421,7 @@
 				17AD15E42826EF460023C0EF /* ActivityProgressRow.swift in Sources */,
 				17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */,
 				17A92D012801DCEA000CF34F /* ContentView.swift in Sources */,
-				2C2CA02528F363D4005E92B2 /* CommunityViewModel.swift in Sources */,
+				2C2CA02528F363D4005E92B2 /* ForumViewModel.swift in Sources */,
 				1747ABFB28C39E8300138938 /* Excercise.swift in Sources */,
 				17482A7F2804832A006F2186 /* HomeView.swift in Sources */,
 				176372DB28C11537006337A7 /* UserService.swift in Sources */,
@@ -447,7 +447,7 @@
 				17E4D1BA28B91A10009C42DF /* AuthViewModel.swift in Sources */,
 				2CF44A6928ECBB26001689A8 /* SearchBar.swift in Sources */,
 				2C63538128F0A7E40061A701 /* PostDetail.swift in Sources */,
-				179DDB2D2803443200049C65 /* CommunityView.swift in Sources */,
+				179DDB2D2803443200049C65 /* ForumView.swift in Sources */,
 				17007E702824525B0084B39B /* SegueTestView.swift in Sources */,
 				2C72F33629058249004BBB8A /* PullToRefresh.swift in Sources */,
 				17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */,

@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct CommunityView: View {
+struct ForumView: View {
     
     // MARK: - PROPERTIES
     
-    @ObservedObject var viewModel = CommunityViewModel()
+    @ObservedObject var viewModel = ForumViewModel()
     
     // MARK: - BODY
     
@@ -55,6 +55,6 @@ struct CommunityView: View {
 
 struct CommunityView_Previews: PreviewProvider {
     static var previews: some View {
-        CommunityView()
+        ForumView()
     }
 }

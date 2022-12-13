@@ -46,7 +46,7 @@ struct TabBar: View {
                     Text("Sport")
                 }
                 .tag(3)
-            CommunityView()
+            ForumView()
                 .tabItem {
                     if selection == 4 {Image("person.2.fill")}
                     else {Image("person.2")}

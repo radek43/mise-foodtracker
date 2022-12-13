@@ -20,7 +20,7 @@ struct AddNewPost: View {
     @State private var descriere = ""
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authViewModel: AuthViewModel
-    @ObservedObject var viewModel = CommunityViewModel()
+    @ObservedObject var viewModel = ForumViewModel()
     
     // MARK: - BODY
     
