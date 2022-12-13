@@ -20,85 +20,49 @@ struct AddRecipeView: View {
     @State private var categorie = "" // de facut field
     
     var body: some View {
-            VStack {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Titlu rețetă:")
-                        
-                        TextField("", text: $titlu)
-                            .textFieldStyle(.roundedBorder)
-                        
-                        Text("Descriere:")
-                        TextEditor( text: $descriere)
-                            .frame(height: 150, alignment: .leading)
-                            .cornerRadius(8)
-                            .overlay(RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.secondary).opacity(0.15))
-                        
-                        Text("Ingrediente:")
-                        TextEditor( text: $ingrediente)
-                            .frame(height: 150, alignment: .leading)
-                            .cornerRadius(8)
-                            .overlay(RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.secondary).opacity(0.15))
-                        
-                        Text("Mod preparare:")
-                        TextEditor( text: $preparare)
-                            .frame(height: 150, alignment: .leading)
-                            .cornerRadius(8)
-                            .overlay(RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.secondary).opacity(0.15))
-                        
-                        Button {
-                            showImagePicker.toggle()
-                            print("buton de ales imagine apasat")
-                        } label: {
-                            if let profileImage = recipeImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
-                                profileImage
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                            } else {
-                                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                    .frame(height: 200)
-                                    .foregroundColor(Color.white)
-                                    .overlay(RoundedRectangle(cornerRadius: 8)
-                                                .stroke(Color.secondary)
-                                                .opacity(0.15))
-                                    .overlay(
-                                        VStack {
-                                                Image("addPhotoOutline")
-                                                    .resizable()
-                                                    .frame(width: 112, height: 100)
-                                                    .foregroundColor(Color.secondary)
-                                        
-                                                Text("Adaugă o imagine")
-                                                    .foregroundColor(Color.secondary)
-                                                }
-                                            )
-                            }
+        VStack {
+            Form(content: {
+                Section(header: Text("Titlu rețetă:")) {
+                   TextField("", text: $titlu)
+                }
+               
+                Section(header: Text("Descriere:")) {
+                    TextEditor(text: $descriere)
+                        .frame(height: 150, alignment: .leading)
+                }
+                Section(header: Text("Ingrediente:")) {
+                    TextEditor( text: $ingrediente)
+                        .frame(height: 150, alignment: .leading)
+                }
+                Section(header: Text("Mod preparare:")) {
+                    TextEditor( text: $preparare)
+                        .frame(height: 150, alignment: .leading)
+                }
+                Section(header: Text("Poza preparat:")) {
+                    Button {
+                        showImagePicker.toggle()
+                        print("buton imagine apasat ")
+                    } label: {
+                        if let profileImage = recipeImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
+                            profileImage
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        } else {
+                            Text("Adauga o imagine")
                         }
-                        .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-                            ImagePicker(selectedImage: $selectedImage)
-                        }
-                        
-                        Button {
-                            print("trimite rețetă")
-                        } label: {
-                            Text("Trimite rețetă")
-                        }
-
-        //                    .onTapGesture {
-        //                        firestoreManager.createDish(dishName: titlu, dishDescription: descriere, dishIngredients: ingrediente, dishDirections: preparare)
-        //                    }
                     }
-                    .navigationTitle("Adaugă o retetă nouă")
-                    .padding()
-                    .navigationBarTitleDisplayMode(.inline)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                }
+            })
+            .navigationTitle("Adauga o reteta")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button("Trimite") {
+                    print("reteta trimisa")
                 }
             }
-            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
-        
+        }
     }
     
     func loadImage() {
@@ -112,6 +76,7 @@ struct AddRecipeView: View {
 
 struct AddRecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRecipeView()
+        RecipesView()
+            .environmentObject(AuthViewModel())
     }
 }

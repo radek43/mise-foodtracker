@@ -18,15 +18,25 @@ struct RecipeCard: View {
     
     var body: some View {
         VStack {
+            VStack {
                 WebImage(url: URL(string: recipe.image))
                     .resizable()
-                .aspectRatio(CGSize(width: 3, height: 4), contentMode: .fill)
+                    .aspectRatio(3/4, contentMode: .fill)
+                    .clipped()
 
+                
+            }
+            .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .shadow(color: Color.black.opacity(0.1), radius: 12, x: 0, y: 10)
+            
+            Spacer()
+            
+            Text(recipe.name)
+                .font(.callout)
+                .fontWeight(.medium)
+                .foregroundColor(.primary)
         }
-        //.frame(width: 160, height: 217, alignment: .top)
-        .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .shadow(color: Color.black.opacity(0.1), radius: 12, x: 0, y: 10)
         
     }
 }

@@ -210,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				1747ABFF28C3BEBE00138938 /* FitnessCard.swift */,
+				17B1A4DA2826A1E100F1CDEC /* FitnessView.swift */,
 				17FE3DDA28C4BBFB00B7590E /* FitnessViewDetail.swift */,
 			);
 			path = FitnessView;
@@ -227,12 +228,12 @@
 		178CEBBF2809B5AE00D6DD25 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1747ABFC28C3BA6200138938 /* FitnessView */,
 				17482A7A28047F57006F2186 /* TabBarView.swift */,
 				17482A7E2804832A006F2186 /* HomeView.swift */,
 				173F05522810AC5D0058D1F2 /* ActivityProgressView.swift */,
 				2C6E96C328E49B5D000159C4 /* CommunityView */,
 				170C633128297DB80048DFA9 /* RecipesView */,
-				17B1A4DA2826A1E100F1CDEC /* FitnessView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -240,7 +241,6 @@
 		178CEBC02809B5E100D6DD25 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				1747ABFC28C3BA6200138938 /* FitnessView */,
 				1791A78A281AE55000FB69E2 /* AddFoodView.swift */,
 				173F05542810AEC60058D1F2 /* SettingsView.swift */,
 			);
@@ -691,6 +691,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Food Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -724,6 +725,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Food Tracker";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

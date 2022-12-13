@@ -58,7 +58,6 @@ struct HomeView: View {
                                     Text("Net")
                                 }
                                 .frame(maxWidth: .infinity)
-                                
                             }
                         }
                         .modifier(MakeCard())
@@ -125,7 +124,6 @@ struct HomeView: View {
                         Image(systemName: "gearshape")
                     }
                 })
-                //.navigationBarHidden(true)
                 .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
         //} //: end if let

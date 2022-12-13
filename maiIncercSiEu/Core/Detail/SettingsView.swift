@@ -23,11 +23,10 @@ struct SettingsView: View {
                 } label: {
                     Text("Delogare")
                 }
-
             } //: Form
             .listStyle(GroupedListStyle())
             
-            Text("Copyright © 2022 All rights reserved. maiIncercSiEu")
+            Text("Work in progress")
                 .multilineTextAlignment(.center)
                 .font(.footnote)
                 .padding(.top, 6)

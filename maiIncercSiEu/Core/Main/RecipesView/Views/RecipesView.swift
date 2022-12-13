@@ -46,7 +46,16 @@ struct RecipesView: View {
                                 Image(systemName: "plus.circle")
                             }
                         }
+                    }
                     
+                    else {
+                        HStack {
+                            NavigationLink {
+                                AddRecipeView() // de modificat
+                            } label: {
+                                Image(systemName: "plus.circle")
+                            }
+                        }
                     }
                 }
                 .navigationTitle("Retete")

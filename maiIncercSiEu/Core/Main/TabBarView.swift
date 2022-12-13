@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - TabbarView
 struct TabbarView: View {
     
     // MARK: - PROPERTIES
@@ -19,55 +20,36 @@ struct TabbarView: View {
         TabView(selection: $selection) {
             HomeView()
                 .tabItem {
-                    if selection == 0 {
-                        Image("house.fill")
-
-                    } else {
-                        Image("house")
-                            
-                    }
+                    if selection == 0 {Image("house.fill")}
+                    else {Image("house")}
                     Text("Meniu")
                 }
                 .tag(0)
             ActivityProgressView()
                 .tabItem {
-                    if selection == 1 {
-                        Image("chart.bar.fill")
-                    } else {
-                        Image("chart.bar")
-                    }
+                    if selection == 1 {Image("chart.bar.fill")}
+                    else {Image("chart.bar")}
                     Text("Progres")
                 }
                 .tag(1)
             RecipesView()
                 .tabItem {
-                    if selection == 2 {
-                        Image("book.fill")
-                    } else {
-                        Image("book")
-                    }
+                    if selection == 2 {Image("book.fill")}
+                    else {Image("book")}
                     Text("Retete")
                 }
                 .tag(2)
             FitnessView(excersises: Excercise.dummyData)
                 .tabItem {
-                    if selection == 3 {
-                        Image("dumbbell.fill")
-                            .imageScale(.large)
-                    } else {
-                        Image("dumbbell")
-                            .imageScale(.large)
-                    }
+                    if selection == 3 {Image("dumbbell.fill").imageScale(.large)}
+                    else {Image("dumbbell").imageScale(.large)}
                     Text("Sport")
                 }
                 .tag(3)
             CommunityView()
                 .tabItem {
-                    if selection == 4 {
-                        Image("person.2.fill")
-                    } else {
-                        Image("person.2")
-                    }
+                    if selection == 4 {Image("person.2.fill")}
+                    else {Image("person.2")}
                     Text("Comunitate")
                 }
                 .tag(4)

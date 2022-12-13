@@ -32,12 +32,15 @@ struct RecipeDetailView: View {
                         .font(.largeTitle)
                         .bold()
                         .multilineTextAlignment(.center)
-                    Divider()
+                    //Divider()
                     VStack(alignment: .leading, spacing: 30) {
                         if !recipe.description.isEmpty {
                             Text(recipe.description)
                         }
                         Divider()
+                        
+                        // Detalii valori nutritionale
+                        
                         if !recipe.ingredients.isEmpty {
                             VStack(alignment: .leading, spacing: 20) {
                                 Text("Ingrediente:")
