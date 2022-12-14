@@ -10,49 +10,44 @@ import SwiftUI
 struct ForumView: View {
     
     // MARK: - PROPERTIES
-    
     @ObservedObject var viewModel = ForumViewModel()
     
     // MARK: - BODY
-    
     var body: some View {
         NavigationView {
-                VStack {
-                    ScrollView {
-                        //Titlu
+            VStack {
+                ScrollView {
+                    // Titlu
 //                        PullToRefresh(coordinateSpaceName: "pullToRefresh") {
 //                            viewModel.fetchPosts()
 //                        }
-
-                        VStack {
-                            ForEach(viewModel.posts) { post in
-                                NavigationLink(destination: PostDetail(post: post)){
-                                   PostRow(post: post)
-                                        .foregroundColor(.primary)
-                                        .padding(.horizontal)
-                               }
-                            }
+                    VStack {
+                        ForEach(viewModel.posts) { post in
+                            NavigationLink(destination: PostDetail(post: post)){
+                               PostRow(post: post)
+                                    .foregroundColor(.primary)
+                                    .padding(.horizontal)
+                           }
                         }
                     }
-                    .coordinateSpace(name: "pullToRefresh")
                 }
-                .toolbar(content: {
+//                .coordinateSpace(name: "pullToRefresh")
+                .toolbar {
                     NavigationLink {
                         AddNewPost()
                     } label: {
                         Image(systemName: "square.and.pencil")
-                            .font(.title)
-                            .frame(width: 36, height: 36)
+                            .imageScale(.large)
                     }
-                })
-                .navigationTitle("Comunitate")
-                .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+                }
+            }
+            .navigationTitle("Comunitate")
+            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
     }
 }
 
 // MARK: - PREVIEW
-
 struct CommunityView_Previews: PreviewProvider {
     static var previews: some View {
         ForumView()

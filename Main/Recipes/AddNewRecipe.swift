@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AddNewRecipe: View {
-    
     // MARK: - PROPERTIES
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
@@ -27,7 +26,6 @@ struct AddNewRecipe: View {
                 Section(header: Text("Titlu rețetă:")) {
                    TextField("", text: $titlu)
                 }
-               
                 Section(header: Text("Descriere:")) {
                     TextEditor(text: $descriere)
                         .frame(height: 150, alignment: .leading)
@@ -52,9 +50,12 @@ struct AddNewRecipe: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                         } else {
                             Text("Adauga o imagine")
+                                .frame(maxWidth: .infinity, alignment: .center)
                         }
                     }
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+                        ImagePicker(selectedImage: $selectedImage)
+                    }
                 }
             })
             .navigationTitle("Adauga o reteta")
@@ -66,14 +67,12 @@ struct AddNewRecipe: View {
             }
         }
     }
-    // MARK: - loadImage
+    // MARK: - loadImage()
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         recipeImage = Image(uiImage: selectedImage)
     }
-    
 }
-
 
 // MARK: - PREVIEWS
 struct AddRecipeView_Previews: PreviewProvider {

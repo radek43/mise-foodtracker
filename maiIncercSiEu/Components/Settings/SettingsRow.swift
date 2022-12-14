@@ -10,13 +10,11 @@ import SwiftUI
 struct SettingsRow: View {
     
     // MARK: - PROPERTIES
-    
     var icon: String
     var firstText: String
     var secondText: String
     
     // MARK: - BODY
-    
     var body: some View {
         HStack {
             ZStack {
@@ -35,7 +33,6 @@ struct SettingsRow: View {
 }
 
 // MARK: - PREVIEW
-
 struct FormRowStaticView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsRow(icon: "gear", firstText: "Application", secondText: "To-Do")

@@ -1,5 +1,5 @@
 //
-//  TabBarView.swift
+//  TabBar.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 4/11/22.
@@ -10,11 +10,9 @@ import SwiftUI
 struct TabBar: View {
     
     // MARK: - PROPERTIES
-    
     @State private var selection = 0
     
     // MARK: - BODY
-    
     var body: some View {
         TabView(selection: $selection) {
             HomeView()
@@ -57,7 +55,6 @@ struct TabBar: View {
 }
 
 // MARK: - PREVIEW
-
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()

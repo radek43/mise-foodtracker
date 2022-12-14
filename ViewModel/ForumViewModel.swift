@@ -9,6 +9,7 @@ import Foundation
 
 class ForumViewModel: ObservableObject {
     
+    // MARK: - PROPERTIES
     @Published var posts = [Post]() //vizualizarea postarilor in view
     @Published var didUploadPost = false // uploadarea postarilor in db
     
@@ -19,6 +20,7 @@ class ForumViewModel: ObservableObject {
         fetchPosts()
     }
     
+    // MARK: - FUNCTIONS
     func uploadPost(withTitle titluPostare: String, withContent continutPostare: String) {
         service.uploadPost(titluPostare: titluPostare, continutPostare: continutPostare) { success in
             if success {
@@ -29,8 +31,6 @@ class ForumViewModel: ObservableObject {
             self.didUploadPost = false
         }
     }
-    
-
     
     func fetchPosts() {
         service.fetchPosts { posts in
@@ -46,6 +46,3 @@ class ForumViewModel: ObservableObject {
         }
     }
 }
-
-
-

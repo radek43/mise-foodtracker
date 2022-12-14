@@ -26,28 +26,27 @@ struct SegueTestView: View {
         }
     
         var body: some View {
-                VStack {
-                    
-                    Button(action: {
-                        route = .popoverTest})
-                    {
-                        Circle()
-                            .stroke(lineWidth: 2)
-                            .frame(width: 50, height: 50)
-                            .foregroundColor(Color(UIColor.label))
-                            .clipShape(Circle())
-                            .overlay(Image(imageName))
-                    }
-                    Text(title)
-                        .multilineTextAlignment(.center)
+            VStack {
+                Button(action: {
+                    route = .popoverTest})
+                {
+                    Circle()
+                        .stroke(lineWidth: 2)
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(Color(UIColor.label))
+                        .clipShape(Circle())
+                        .overlay(Image(imageName))
                 }
-                .padding(10)
-                .segue(.popover(.rect(.bounds), .top), tag: .popoverTest, selection: $route) {
-                    AddFoodView()
+                Text(title)
+                    .multilineTextAlignment(.center)
+            }
+            .padding(10)
+            .segue(.popover(.rect(.bounds), .top), tag: .popoverTest, selection: $route) {
+                AddFoodView()
 //                    Button("Welcome to modal") {
 //                        route = nil
 //                    }
-                }
+            }
         }
 }
 

@@ -30,13 +30,24 @@ struct FitnessDetailView: View {
                 Spacer()
             }.padding(.horizontal)
         }
+        .toolbar {
+            Button {
+                print("exercitiu inregistrat la jurnal")
+            } label: {
+                HStack {
+                    Text("Adauga la jurnal")
+                    Image(systemName: "text.badge.plus")
+                }
+
+            }
+        }
         .navigationBarTitleDisplayMode(.inline)
         .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
 
 // MARK: - PREVIEW
-struct FitnessViewDetail_Previews: PreviewProvider {
+struct FitnessDetailView_Previews: PreviewProvider {
     static var previews: some View {
         FitnessDetailView()
     }

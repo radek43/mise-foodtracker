@@ -9,10 +9,9 @@ import SwiftUI
 import Kingfisher
 
 struct PostRow: View {
+    
     // MARK: - PROPERTIES
-    
     let post: Post
-    
     
     // MARK: - BODY
     var body: some View {
@@ -115,7 +114,6 @@ struct PostRow: View {
         .modifier(MakeCard())
     }
 }
-
 
 // MARK: - PREVIEW
 struct CommunityCard_Previews: PreviewProvider {

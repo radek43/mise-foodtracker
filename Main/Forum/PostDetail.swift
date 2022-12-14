@@ -9,8 +9,8 @@ import SwiftUI
 import Kingfisher
 
 struct PostDetail: View {
-    // MARK: - PROPERTIES
     
+    // MARK: - PROPERTIES
     let post: Post
     
     // MARK: - BODY
@@ -30,7 +30,8 @@ struct PostDetail: View {
                         VStack(alignment: .leading) {
                             Text(post.titluPostare)
                                 .font(.title)
-                                .fontWeight(.semibold)
+                                .lineLimit(nil)
+
                             
                             Text("@" + user.username)
                                 .font(.footnote)

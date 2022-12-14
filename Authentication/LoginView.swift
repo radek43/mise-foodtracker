@@ -10,25 +10,21 @@ import SwiftUI
 struct LoginView: View {
     
     // MARK: - PROPERTIES
-    
     @State private var email = ""
     @State private var password = ""
     @EnvironmentObject var viewModel: AuthViewModel
     
     // MARK: - BODY
-    
     var body: some View {
         NavigationView {
             // parent container
             VStack {
-                
                 // header view
                 AuthenticationHeaderView(title1: "Bine ai venit!", title2: "")
                 
                 VStack(spacing: 40) {
                     CustomInputFields(imageName: "envelope", placeholderText: "Email", text: $email)
                     CustomInputFields(imageName: "lock", placeholderText: "Parola", isSecureField: true, text: $password)
-                    
                 }
                 .padding(.horizontal, 32)
                 .padding(.top, 44)
@@ -37,12 +33,10 @@ struct LoginView: View {
                     Spacer()
                     NavigationLink {
                         Text("Reset password view..")
-                        
                     } label: {
                         Text("Ai uitat parola?")
                             .font(.caption)
                             .fontWeight(.semibold)
-                            .foregroundColor(Color(.systemBlue))
                             .padding(.top)
                             .padding(.trailing, 24)
                     }
@@ -55,7 +49,7 @@ struct LoginView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 340, height: 50)
-                        .background(Color(.systemBlue))
+                        .background(Color("AccentColor"))
                         .clipShape(Capsule())
                         .padding()
                 }
@@ -76,8 +70,6 @@ struct LoginView: View {
                     }
                 }
                 .padding(.bottom, 32)
-                .foregroundColor(Color(.systemBlue))
-
             }
             .ignoresSafeArea()
             .navigationBarHidden(true)
@@ -87,7 +79,6 @@ struct LoginView: View {
 }
 
 // MARK: - PREVIEWS
-
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()

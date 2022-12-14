@@ -12,6 +12,8 @@ import Foundation
 // DE MODIFICAT FITNESSCARD-UL PENTRU A FI COMPATIBILA IMAGINEA
 
 class RecipeViewModel: ObservableObject {
+    
+    // MARK: - PROPERTIES
     @Published var recipesArray = [Recipe]()
     @Published var searchText = ""
     
@@ -34,20 +36,21 @@ class RecipeViewModel: ObservableObject {
         }
     }
     
+    // MARK: - FUNCTIONS
     func fetchRecipes(completion: @escaping([Recipe]) -> Void) {
-            var recipesArray = [Recipe]()
-    
-            Firestore.firestore().collection("recipes")
-                .getDocuments { snapshot, _ in
-                    guard let documents = snapshot?.documents else { return }
-    
-                    documents.forEach { document in
-                        guard let recipe = try? document.data(as: Recipe.self) else { return }
-                        recipesArray.append(recipe)
-                    }
+        var recipesArray = [Recipe]()
 
-                    completion(recipesArray)
+        Firestore.firestore().collection("recipes")
+            .getDocuments { snapshot, _ in
+                guard let documents = snapshot?.documents else { return }
+
+                documents.forEach { document in
+                    guard let recipe = try? document.data(as: Recipe.self) else { return }
+                    recipesArray.append(recipe)
                 }
+
+                completion(recipesArray)
+            }
     }
 }
 

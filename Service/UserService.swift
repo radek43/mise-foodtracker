@@ -20,5 +20,4 @@ struct UserService {
                 completion(user)
             }
     }
-    
 }

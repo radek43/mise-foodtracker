@@ -38,7 +38,6 @@ extension Post {
              timestamp: Timestamp(seconds: 3, nanoseconds: 1),
              titluPostare: "Lorem Ipsum",
              uid: "h3g43k2432k4jvh")
-        
     ]
 }
 

@@ -32,8 +32,6 @@ struct Recipe: Identifiable, Decodable {
 
 extension Recipe {
     static let dummyData: [Recipe] = [
-
-        
         //https://gourmandelle.com/wp-content/uploads/2013/11/Chiftelute-cu-ciuperci-si-seminte-de-canepa-Protein-Rich-Mushroom-Hemp-Patties-with-Herbs-burger.jpg.webp
         
         Recipe(id: "1",

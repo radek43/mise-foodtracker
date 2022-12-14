@@ -11,7 +11,6 @@ import SwiftUISegues
 struct AddFoodButton: View {
     
     // MARK: - PROPERTIES
-
     @ScaledMetric var size: CGFloat = 1
     
     var imageName: String
@@ -23,7 +22,6 @@ struct AddFoodButton: View {
     }
 
     // MARK: - BODY
-    
     var body: some View {
             VStack {
                 Circle()
@@ -41,14 +39,11 @@ struct AddFoodButton: View {
                     .frame(height: 40)
                     
             }
-            
             .padding(9)
-
     }
 }
 
 // MARK: - PREVIEW
-
 struct ButonMeniuAdaugare_Previews: PreviewProvider {
     static var previews: some View {
         AddFoodButton(imageName: "sportsIcon", title: "mic \ndejun")

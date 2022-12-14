@@ -10,14 +10,12 @@ import SwiftUI
 struct PhotoSelectorView: View {
     
     // MARK: - PROPERTIES
-    
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?             // var pt afisarea imaginii selectate in view
     @EnvironmentObject var viewModel: AuthViewModel
 
     // MARK: - BODY
-    
     var body: some View {
         VStack {
             AuthenticationHeaderView(title1: "Incarca", title2: "o poza de profil")
@@ -41,6 +39,7 @@ struct PhotoSelectorView: View {
                     ImagePicker(selectedImage: $selectedImage)
                 }
                 Text("Adauga o imagine")
+                    .foregroundColor(Color.secondary)
             }
             
             if let selectedImage = selectedImage {
@@ -73,7 +72,6 @@ struct PhotoSelectorView: View {
 }
 
 // MARK: - PREVIEW
-
 struct PhotoSelectorView_Previews: PreviewProvider {
     static var previews: some View {
         PhotoSelectorView()

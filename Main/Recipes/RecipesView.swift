@@ -10,20 +10,28 @@ import SwiftUI
 struct RecipesView: View {
     
     // MARK: - PROPERTIES
-    
     @ObservedObject var viewModel = RecipeViewModel()
     @EnvironmentObject var authViewModel: AuthViewModel
     //var recipes: [Recipe]
 
     // MARK: - BODY
-    
     var body: some View {
         NavigationView {
             VStack {
                 ScrollView {
                     VStack {
-                        SearchBar(text: $viewModel.searchText)
-                            .padding(.bottom, 3)
+                        HStack(alignment: .center, spacing: 3.0) {
+                            SearchBar(placeholderText: "Gaseste-ți inspirația",text: $viewModel.searchText)
+                                .padding(.bottom, 3)
+                            Button {
+                                print("buton setari retete apasat")
+                            } label: {
+                                Image(systemName: "slider.horizontal.3")
+                                    .imageScale(.large)
+                            }
+                        }
+                        .padding(.bottom, 5.0)
+                        
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)], spacing: 15) {
                             ForEach(viewModel.searchableRecipes) { recipe in
                                 NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
@@ -58,7 +66,7 @@ struct RecipesView: View {
                         }
                     }
                 }
-                .navigationTitle("Retete")
+                .navigationTitle("Rețete")
                 .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
         }
@@ -66,7 +74,6 @@ struct RecipesView: View {
 }
 
 // MARK: - PREVIEW
-
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
         RecipesView()

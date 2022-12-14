@@ -11,13 +11,11 @@ import Kingfisher
 struct HomeView: View {
     
     // MARK: - PROPERTIES
-    
     @State var uiTabarController: UITabBarController?
     @EnvironmentObject var authViewModel: AuthViewModel
     @State private var data = Date()
     
     // MARK: - BODY
-    
     var body: some View {
        // if let user = authViewModel.currentUser {
             NavigationView {
@@ -26,7 +24,6 @@ struct HomeView: View {
                         // Vizualizare Data
                         VStack {
                             DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
-                                .accentColor(Color.primary)
                         }
                         .modifier(MakeCard())
                         .padding(.horizontal)
@@ -131,7 +128,6 @@ struct HomeView: View {
 }
 
 // MARK: - PREVIEW
-
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()

@@ -11,7 +11,6 @@ import Kingfisher
 struct AddNewPost: View {
     
     // MARK: - PROPERTIES
-    
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?
@@ -23,43 +22,17 @@ struct AddNewPost: View {
     @ObservedObject var viewModel = ForumViewModel()
     
     // MARK: - BODY
-    
     var body: some View {
         VStack {
-            HStack(alignment: .top) {
-                if let user = authViewModel.currentUser {
-                    KFImage(URL(string: user.profileImageUrl))
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 50, height: 50)
-                        .padding(.trailing, 5)
-                } else {
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.secondary)
-                        .padding(.trailing, 5)
+            Form(content: {
+                Section(header: Text("Titlu postare:")) {
+                    TextField("", text: $titluPostare)
                 }
-                VStack {
-                    HStack {
-                        Text("Titlu:")
-                        Spacer()
-                    }
-                    HStack {
-                        TextField("", text: $titluPostare)
-                            .textFieldStyle(.roundedBorder)
-                    }
-                    HStack {
-                        Text("Descriere:")
-                        Spacer()
-                    }
+                Section(header: Text("Descriere:")) {
                     TextEditor(text: $descriere)
-                        .cornerRadius(8)
-                        .overlay(RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.secondary).opacity(0.15))
+                        .frame(height: 200)
+                }
+                Section(header: Text("Imagine:")) {
                     Button {
                         showImagePicker.toggle()
                         print("buton de ales imagine apasat")
@@ -67,37 +40,23 @@ struct AddNewPost: View {
                         if let profileImage = profileImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
                             profileImage
                                 .resizable()
+                                .aspectRatio(contentMode: .fit)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                         } else {
-                            RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                .frame(height: 200)
-                                .foregroundColor(Color.white)
-                                .overlay(RoundedRectangle(cornerRadius: 8)
-                                            .stroke(Color.secondary)
-                                            .opacity(0.15))
-                                .overlay(
-                                    VStack {
-                                        Image("addPhotoOutline")
-                                            .resizable()
-                                            .frame(width: 112, height: 100)
-                                            .foregroundColor(Color.secondary)
-                                
-                                        Text("Adaugă o imagine")
-                                            .foregroundColor(Color.secondary)
-                                            }
-                                        )
+                            Text("Adauga o imagine")
+                                .frame(maxWidth: .infinity, alignment: .center)
                         }
                     }
                     .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
                         ImagePicker(selectedImage: $selectedImage)
                     }
                 }
-            }
+            })
             .toolbar {
-                Button("Trimite") {
-                    viewModel.uploadPost(withTitle: titluPostare, withContent: descriere)
-                    //viewModel.uploadProfileImage(selectedImage)
-                }
+//                Button("Trimite") {
+//                    viewModel.uploadPost(withTitle: titluPostare, withContent: descriere)
+//                    viewModel.uploadProfileImage(selectedImage)
+//                }
             }
         }
         .onReceive(viewModel.$didUploadPost, perform: { success in

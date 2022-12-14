@@ -11,14 +11,12 @@ import SwiftUICharts
 struct DailyCaloriesChart: View {
     
     // MARK: - PROPERTIES
-    
     var demoData: [Double] = [8, 4, 2]
     let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [
         ColorGradient(.purple, .blue), ColorGradient(.pink, .yellow), ColorGradient(.red, .green)])
     @ScaledMetric var size: CGFloat = 1
     
     // MARK: - BODY
-    
     var body: some View {
         VStack{
             HStack{
@@ -39,9 +37,10 @@ struct DailyCaloriesChart: View {
                 VStack{
                     HStack{
                         Circle()
-                            .fill(
-                                LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .leading, endPoint: .trailing)
-                                )
+                            .fill(LinearGradient(
+                                    gradient: Gradient(colors: [.purple, .blue]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing))
                             .frame(width: 20, height: 20)
                         
                         Text("\(demoData[0], specifier: "%.1f")g \nGrasimi")
@@ -52,9 +51,10 @@ struct DailyCaloriesChart: View {
                     
                     HStack{
                         Circle()
-                            .fill(
-                                LinearGradient(gradient: Gradient(colors: [.pink, .yellow]), startPoint: .leading, endPoint: .trailing)
-                                )
+                            .fill(LinearGradient(
+                                    gradient: Gradient(colors: [.pink, .yellow]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing))
                             .frame(width: 20, height: 20)
                         
                         Text("\(demoData[1], specifier: "%.1f")g \nProteine")
@@ -66,8 +66,10 @@ struct DailyCaloriesChart: View {
                     HStack{
                         Circle()
                             .fill(
-                                LinearGradient(gradient: Gradient(colors: [.red, .green]), startPoint: .leading, endPoint: .trailing)
-                                )
+                                LinearGradient(
+                                    gradient: Gradient(colors: [.red, .green]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing))
                             .frame(width: 20, height: 20)
                         
                         Text("\(demoData[2], specifier: "%.1f")g Carbohidrati")
@@ -84,7 +86,6 @@ struct DailyCaloriesChart: View {
 }
 
 // MARK: - PREVIEW
-
 struct JurnalCaloriiView_Previews: PreviewProvider {
     static var previews: some View {
         DailyCaloriesChart()

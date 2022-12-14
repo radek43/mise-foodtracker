@@ -10,12 +10,10 @@ import SwiftUI
 struct AuthenticationHeaderView: View {
     
     // MARK: - PROPERTIES
-    
     let title1: String
     let title2: String
     
     // MARK: - BODY
-    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -35,14 +33,13 @@ struct AuthenticationHeaderView: View {
         }
         .frame(height: 260)
         .padding(.leading)
-        .background(Color(.systemBlue))
+        .background(Color("AccentColor"))
         .foregroundColor(.white)
         .clipShape(RoundedShape(corners: [.bottomRight]))
     }
 }
 
 // MARK: - PREVIEW
-
 struct AuthenticationHeaderView_Previews: PreviewProvider {
     static var previews: some View {
         AuthenticationHeaderView(title1: "Welcome", title2: "Back")

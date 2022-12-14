@@ -10,13 +10,11 @@ import SwiftUI
 struct SettingsView: View {
     
     // MARK: - PROPERTIES
-    
     @EnvironmentObject var authViewModel: AuthViewModel
 
     // MARK: - BODY
-    
     var body: some View {
-        VStack(alignment: .center, spacing: 0){
+        VStack(alignment: .center, spacing: 0) {
             Form {
                 Button {
                     authViewModel.signOut()
@@ -32,16 +30,13 @@ struct SettingsView: View {
                 .padding(.top, 6)
                 .padding(.bottom, 8)
                 .foregroundColor(Color.secondary)
-            
         } //: VStack
         .navigationBarTitle("Setari", displayMode: .inline)
         .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
-        
     } //: Body
 }
 
 // MARK: - PREVIEW
-
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ReplyRow: View {
+    
     // MARK: - PROPERTIES
     
     // MARK: - BODY
@@ -32,9 +33,8 @@ struct ReplyRow: View {
                         .foregroundColor(Color.secondary)
                         .padding(.bottom, 3)
                 }
-
-                Spacer()
                 
+                Spacer()
             }
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ")
                 .font(.callout)

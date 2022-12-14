@@ -10,7 +10,6 @@ import SwiftUI
 struct RegistrationView: View {
     
     // MARK: - PROPERTIES
-    
     @State private var email = ""
     @State private var username = ""
     @State private var fullname = ""
@@ -20,7 +19,6 @@ struct RegistrationView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     // MARK: - BODY
-    
     var body: some View {
         VStack {
             NavigationLink(destination: PhotoSelectorView(), isActive: $viewModel.didAuthenticateUser, label: { })
@@ -42,7 +40,7 @@ struct RegistrationView: View {
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 340, height: 50)
-                    .background(Color(.systemBlue))
+                    .background(Color("AccentColor"))
                     .clipShape(Capsule())
                     .padding()
             }
@@ -62,7 +60,6 @@ struct RegistrationView: View {
                 }
             }
             .padding(.bottom, 32)
-            
         }
         .ignoresSafeArea()
         .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
@@ -70,7 +67,6 @@ struct RegistrationView: View {
 }
 
 // MARK: - PREVIEWS
-
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationView()

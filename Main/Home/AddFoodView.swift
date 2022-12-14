@@ -7,27 +7,15 @@
 
 import SwiftUI
 
-
-struct ResignKeyboardOnDragGesture: ViewModifier {
-    var gesture = DragGesture().onChanged{_ in
-        UIApplication.shared.endEditing(true)
-    }
-    func body(content: Content) -> some View {
-        content.gesture(gesture)
-    }
-}
-
 struct AddFoodView: View {
     
     // MARK: - PROPERTIES
-    
     init() { UITableView.appearance().backgroundColor = UIColor.clear }
     let array = ["Peter", "Paul", "Mary", "Anna-Lena", "George", "John", "Greg", "Thomas", "Robert", "Bernie", "Mike", "Benno", "Hugo", "Miles", "Michael", "Mikel", "Tim", "Tom", "Lottie", "Lorrie", "Barbara"]
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
     
     // MARK: - BODY
-    
     var body: some View {
         NavigationView {
              VStack {
@@ -55,9 +43,9 @@ struct AddFoodView: View {
                      
                      if showCancelButton {
                          Button("Cancel") {
-                                 UIApplication.shared.endEditing(true) // this must be placed before the other commands here
-                                 self.searchText = ""
-                                 self.showCancelButton = false
+                             UIApplication.shared.endEditing(true) // this must be placed before the other commands here
+                             self.searchText = ""
+                             self.showCancelButton = false
                          }
                          .foregroundColor(Color(.systemBlue))
                      }
@@ -73,10 +61,10 @@ struct AddFoodView: View {
                  }
                  .navigationBarTitle(Text("Search"), displayMode: .inline)
                  .navigationBarItems(trailing: Button(action: {
-                                        print("Dismissing sheet view...")
-                                    }) {
-                                        Text("Done").bold()
-                                    })
+                                                    print("Dismissing sheet view...")
+                                                }) {
+                                                    Text("Done").bold()
+                                                })
                  
                  .resignKeyboardOnDragGesture()
              }
@@ -87,8 +75,16 @@ struct AddFoodView: View {
      }
 }
 
-// MARK: - PREVIEW
+struct ResignKeyboardOnDragGesture: ViewModifier {
+    var gesture = DragGesture().onChanged{_ in
+        UIApplication.shared.endEditing(true)
+    }
+    func body(content: Content) -> some View {
+        content.gesture(gesture)
+    }
+}
 
+// MARK: - PREVIEW
 struct AddFoodView_Previews: PreviewProvider {
     static var previews: some View {
         AddFoodView()
@@ -96,7 +92,6 @@ struct AddFoodView_Previews: PreviewProvider {
 }
 
 // MARK: - EXTEXSIONS
-
 extension UIApplication {
     /// Resigns the keyboard.
     ///
