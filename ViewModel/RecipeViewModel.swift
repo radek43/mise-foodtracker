@@ -12,7 +12,6 @@ import Foundation
 // DE MODIFICAT FITNESSCARD-UL PENTRU A FI COMPATIBILA IMAGINEA
 
 class RecipeViewModel: ObservableObject {
-    
     // MARK: - PROPERTIES
     @Published var recipesArray = [Recipe]()
     @Published var searchText = ""

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TabBar: View {
-    
     // MARK: - PROPERTIES
     @State private var selection = 0
     

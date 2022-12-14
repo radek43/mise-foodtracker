@@ -9,7 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct PostDetail: View {
-    
     // MARK: - PROPERTIES
     let post: Post
     
@@ -30,7 +29,8 @@ struct PostDetail: View {
                         VStack(alignment: .leading) {
                             Text(post.titluPostare)
                                 .font(.title)
-                                .lineLimit(nil)
+                                .fontWeight(.semibold)
+                                .fixedSize(horizontal: false, vertical: true)
 
                             
                             Text("@" + user.username)
@@ -50,6 +50,7 @@ struct PostDetail: View {
                             Text(post.titluPostare)
                                 .font(.title)
                                 .fontWeight(.semibold)
+                                .fixedSize(horizontal: false, vertical: true)
                             
                             Text("@numeutilizator")
                                 .font(.footnote)

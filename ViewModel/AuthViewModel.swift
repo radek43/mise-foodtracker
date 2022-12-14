@@ -9,7 +9,6 @@ import SwiftUI
 import Firebase
 
 class AuthViewModel: ObservableObject {
-    
     // MARK: - PROPERTIES
     @Published var userSession: FirebaseAuth.User?
     @Published var didAuthenticateUser = false

@@ -9,7 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct AddNewPost: View {
-    
     // MARK: - PROPERTIES
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?

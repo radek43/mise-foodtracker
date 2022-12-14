@@ -9,7 +9,6 @@ import SwiftUI
 import Kingfisher
 
 struct HomeView: View {
-    
     // MARK: - PROPERTIES
     @State var uiTabarController: UITabBarController?
     @EnvironmentObject var authViewModel: AuthViewModel

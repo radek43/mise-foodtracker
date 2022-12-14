@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ForumView: View {
-    
     // MARK: - PROPERTIES
     @ObservedObject var viewModel = ForumViewModel()
     

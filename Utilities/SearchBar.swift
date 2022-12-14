@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct SearchBar: View {
-    
     // MARK: - PROPERTIES
     var placeholderText: String
     @Binding var text: String
-    
     
     // MARK: - BODY
     var body: some View {

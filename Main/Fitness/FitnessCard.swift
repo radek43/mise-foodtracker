@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FitnessCard: View {
-    
     // MARK: - PROPERTIES
     var exercitiu : Excercise
 //    var numeExercitiu: String

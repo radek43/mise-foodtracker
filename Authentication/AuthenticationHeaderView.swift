@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AuthenticationHeaderView: View {
-    
     // MARK: - PROPERTIES
     let title1: String
     let title2: String

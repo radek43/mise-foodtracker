@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RoundedShape: Shape {
-    
     // MARK: - PROPERTIES
     var corners: UIRectCorner
     

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     // MARK: - PROPERTIES
     @EnvironmentObject var viewModel: AuthViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass

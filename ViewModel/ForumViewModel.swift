@@ -8,7 +8,6 @@
 import Foundation
 
 class ForumViewModel: ObservableObject {
-    
     // MARK: - PROPERTIES
     @Published var posts = [Post]() //vizualizarea postarilor in view
     @Published var didUploadPost = false // uploadarea postarilor in db

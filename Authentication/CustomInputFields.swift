@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CustomInputFields: View {
-    
     // MARK: - PROPERTIES
     let imageName: String
     let placeholderText: String

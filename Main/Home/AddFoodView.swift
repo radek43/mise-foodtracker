@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AddFoodView: View {
-    
     // MARK: - PROPERTIES
     init() { UITableView.appearance().backgroundColor = UIColor.clear }
     let array = ["Peter", "Paul", "Mary", "Anna-Lena", "George", "John", "Greg", "Thomas", "Robert", "Bernie", "Mike", "Benno", "Hugo", "Miles", "Michael", "Mikel", "Tim", "Tom", "Lottie", "Lorrie", "Barbara"]

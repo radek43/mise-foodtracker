@@ -9,7 +9,6 @@ import Firebase
 import SwiftUI
 
 struct PostService {
-    
     func uploadPost(titluPostare: String, continutPostare: String, completion: @escaping(Bool) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         

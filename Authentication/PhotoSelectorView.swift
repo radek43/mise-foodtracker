@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct PhotoSelectorView: View {
-    
     // MARK: - PROPERTIES
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?

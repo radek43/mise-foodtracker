@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ReplyRow: View {
-    
     // MARK: - PROPERTIES
     
     // MARK: - BODY

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct FitnessView: View {
-    
     // MARK: - PROPERTIES
     var excersises: [Excercise]
     

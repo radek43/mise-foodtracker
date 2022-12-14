@@ -10,7 +10,6 @@ import Firebase
 
 @main
 struct maiIncercSiEuApp: App {
-    
     // MARK: - PROPERTIES
     
     @StateObject var viewModel = AuthViewModel()

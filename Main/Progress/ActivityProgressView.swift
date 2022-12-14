@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftUICharts
 
 struct ActivityProgressView: View {
-    
     // MARK: - PROPERTIES
     var demoData: [Double] = [8, 4, 2, 5, 7, 6, 5]
     let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [ColorGradient(.purple, .blue)])

@@ -9,7 +9,6 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct RecipeCard: View {
-
     // MARK: - PROPERTIES
     var recipe: Recipe
     

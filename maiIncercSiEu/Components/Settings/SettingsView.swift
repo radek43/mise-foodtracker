@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
 

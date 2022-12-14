@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsRow: View {
-    
     // MARK: - PROPERTIES
     var icon: String
     var firstText: String

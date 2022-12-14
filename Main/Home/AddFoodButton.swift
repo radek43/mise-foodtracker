@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftUISegues
 
 struct AddFoodButton: View {
-    
     // MARK: - PROPERTIES
     @ScaledMetric var size: CGFloat = 1
     
