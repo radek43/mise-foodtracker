@@ -11,22 +11,21 @@ struct SettingsRow: View {
     // MARK: - PROPERTIES
     var icon: String
     var firstText: String
-    var secondText: String
+    var color: Color
     
     // MARK: - BODY
     var body: some View {
         HStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .fill(Color.gray)
+                    .fill(color)
                 Image(systemName: icon)
                     .foregroundColor(Color.white)
             }
-            .frame(width: 36, height: 36, alignment: .center)
+            .frame(width: 32, height: 32, alignment: .center)
             Text(firstText)
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color.primary)
             Spacer()
-            Text(secondText)
         }
     }
 }
@@ -34,6 +33,6 @@ struct SettingsRow: View {
 // MARK: - PREVIEW
 struct FormRowStaticView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsRow(icon: "gear", firstText: "Application", secondText: "To-Do")
+        SettingsRow(icon: "gear", firstText: "Application", color: .secondary)
     }
 }

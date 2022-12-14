@@ -16,9 +16,29 @@ struct SettingsView: View {
         VStack(alignment: .center, spacing: 0) {
             Form {
                 Button {
+                    print("Buton cont apasat")
+                } label: {
+                    SettingsRow(icon: "person.crop.circle", firstText: "Administrare Cont", color: .blue)
+                }
+                Button {
+                    print("Buton obiective apasat")
+                } label: {
+                    SettingsRow(icon: "target", firstText: "Obiective", color: .green)
+                }
+                Button {
+                    print("Buton masuratori apasat")
+                } label: {
+                    SettingsRow(icon: "ruler", firstText: "Masuratori", color: Color(hue: 0.096, saturation: 0.962, brightness: 0.941))
+                }
+                Button {
+                    print("Buton notificari apasat")
+                } label: {
+                    SettingsRow(icon: "bell.badge", firstText: "Notificari", color: .red)
+                }
+                Button {
                     authViewModel.signOut()
                 } label: {
-                    Text("Delogare")
+                    SettingsRow(icon: "lock", firstText: "Delogare", color: .secondary)
                 }
             } //: Form
             .listStyle(GroupedListStyle())
