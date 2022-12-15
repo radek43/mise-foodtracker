@@ -10,16 +10,16 @@ import SwiftUI
 struct ActivityProgressRow: View {
     // MARK: - PROPERTIES
     
+    var progressTitle: String
+    var progressValue: String
+    var measurementUnit: String
+    
     // MARK: - BODY
     var body: some View {
-        HStack{
-            Button(action: {
-                print("Buton apasat")
-            }) {
-                Text("Greutate medie")
-            }
+        HStack {
+            Text(progressTitle)
             Spacer()
-            Text("76.90kg")
+            Text("\(progressValue) \(measurementUnit)")
         }
         .frame(maxWidth: .infinity)
         .modifier(MakeCard())
@@ -29,6 +29,6 @@ struct ActivityProgressRow: View {
 // MARK: - PREVIEWS
 struct CardMicut_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityProgressRow()
+        ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
     }
 }

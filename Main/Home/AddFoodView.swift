@@ -27,7 +27,8 @@ struct AddFoodView: View {
                              self.showCancelButton = true
                          }, onCommit: {
                              print("onCommit")
-                         }).foregroundColor(.primary)
+                         })
+                         .foregroundColor(.primary)
                          
                          Button(action: {
                              self.searchText = ""

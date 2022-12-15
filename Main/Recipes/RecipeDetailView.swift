@@ -22,8 +22,9 @@ struct RecipeDetailView: View {
                     .scaledToFill()
                     .frame(height: 300)
                     .clipped()
-                    .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
-                    .padding([.top, .leading, .trailing])
+                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                    .padding()
+                    .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 10)
                 
                 VStack(spacing: 30) {
                     Text(recipe.name)
@@ -68,6 +69,7 @@ struct RecipeDetailView: View {
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)
+                
                 .padding(.horizontal)
             }
         }

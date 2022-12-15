@@ -53,6 +53,8 @@
 		2C2CA02128F36229005E92B2 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */; };
 		2C2CA02528F363D4005E92B2 /* ForumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2CA02428F363D4005E92B2 /* ForumViewModel.swift */; };
 		2C63538128F0A7E40061A701 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63538028F0A7E40061A701 /* PostDetail.swift */; };
+		2C64C03E294B7C9F00E9305F /* DropdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C64C03D294B7C9F00E9305F /* DropdownList.swift */; };
+		2C64C040294B931600E9305F /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C64C03F294B931600E9305F /* ProfileSettingsView.swift */; };
 		2C6A161728F17F5200D9DDE4 /* ReplyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161628F17F5200D9DDE4 /* ReplyRow.swift */; };
 		2C6A161928F1C79500D9DDE4 /* AddNewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161828F1C79400D9DDE4 /* AddNewPost.swift */; };
 		2C6E96C528E49B78000159C4 /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6E96C428E49B78000159C4 /* PostRow.swift */; };
@@ -105,6 +107,8 @@
 		2C2CA02028F36229005E92B2 /* RecipeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		2C2CA02428F363D4005E92B2 /* ForumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewModel.swift; sourceTree = "<group>"; };
 		2C63538028F0A7E40061A701 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
+		2C64C03D294B7C9F00E9305F /* DropdownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownList.swift; sourceTree = "<group>"; };
+		2C64C03F294B931600E9305F /* ProfileSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
 		2C6A161628F17F5200D9DDE4 /* ReplyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyRow.swift; sourceTree = "<group>"; };
 		2C6A161828F1C79400D9DDE4 /* AddNewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPost.swift; sourceTree = "<group>"; };
 		2C6E96C428E49B78000159C4 /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			children = (
 				2CA55FDE2948A89B00C6A8B1 /* SettingsView.swift */,
 				2CA55FDC2948A89400C6A8B1 /* SettingsRow.swift */,
+				2C64C03F294B931600E9305F /* ProfileSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				17007E6F2824525B0084B39B /* SegueTestView.swift */,
+				2C64C03D294B7C9F00E9305F /* DropdownList.swift */,
 			);
 			path = Concept;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 				2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */,
 				2CA55FDD2948A89400C6A8B1 /* SettingsRow.swift in Sources */,
 				17AD15E42826EF460023C0EF /* ActivityProgressRow.swift in Sources */,
+				2C64C03E294B7C9F00E9305F /* DropdownList.swift in Sources */,
 				17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */,
 				17A92D012801DCEA000CF34F /* ContentView.swift in Sources */,
 				2C2CA02528F363D4005E92B2 /* ForumViewModel.swift in Sources */,
@@ -452,6 +459,7 @@
 				2C72F33629058249004BBB8A /* PullToRefresh.swift in Sources */,
 				17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */,
 				2C6A161728F17F5200D9DDE4 /* ReplyRow.swift in Sources */,
+				2C64C040294B931600E9305F /* ProfileSettingsView.swift in Sources */,
 				2C2CA02128F36229005E92B2 /* RecipeViewModel.swift in Sources */,
 				2C6E96C528E49B78000159C4 /* PostRow.swift in Sources */,
 				17F01E8528A2C8FD00285894 /* AuthenticationHeaderView.swift in Sources */,

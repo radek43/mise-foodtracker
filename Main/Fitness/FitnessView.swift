@@ -16,14 +16,26 @@ struct FitnessView: View {
         NavigationView {
             ScrollView {
                 VStack {
+                    HStack(alignment: .center, spacing: 3.0) {
+                        SearchBar(placeholderText: "Cauta un exercitiu",text: .constant("")) // de adaugat bindingul corespunzator pentru functia de cautare
+                            .padding(.bottom, 3)
+                        Button {
+                            print("buton setari retete apasat")
+                        } label: {
+                            Image(systemName: "slider.horizontal.3")
+                                .imageScale(.large)
+                        }
+                    }
+                    .padding(.bottom, 5.0)
+                    
                     ForEach(excersises) { excersise in
                         NavigationLink(destination: FitnessDetailView()) {
                             FitnessCard(exercitiu: excersise)
                                 .foregroundColor(.primary)
-                                .padding(.horizontal)
                         }
                     }
                 }
+                .padding(.horizontal)
             }
             .navigationTitle("Fitness")
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))

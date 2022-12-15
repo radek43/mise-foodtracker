@@ -75,9 +75,8 @@ struct AddNewRecipe: View {
 }
 
 // MARK: - PREVIEWS
-struct AddRecipeView_Previews: PreviewProvider {
+struct AddNewRecipe_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesView()
-            .environmentObject(AuthViewModel())
+        AddNewRecipe()
     }
 }

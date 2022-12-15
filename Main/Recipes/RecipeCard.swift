@@ -22,8 +22,8 @@ struct RecipeCard: View {
                     .clipped()
             }
             .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .shadow(color: Color.black.opacity(0.1), radius: 12, x: 0, y: 10)
+            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+            .shadow(color: Color.gray.opacity(0.2), radius: 20, x: 0, y: 10)
             
             Spacer()
             

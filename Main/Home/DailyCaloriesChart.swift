@@ -20,10 +20,13 @@ struct DailyCaloriesChart: View {
         VStack{
             HStack{
                 Text("Sumar")
-                    .font(.system(size: 20 + size, weight: .semibold, design: .rounded))
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    //.font(.system(size: 20 + size, weight: .semibold))
                 Spacer()
                 Text("1189 kCal")
-                    .font(.system(size: 15 + size, weight: .semibold, design: .rounded))
+                    .font(.body)
+                    .fontWeight(.semibold)
             }
         
             HStack{
@@ -43,8 +46,8 @@ struct DailyCaloriesChart: View {
                             .frame(width: 20, height: 20)
                         
                         Text("\(demoData[0], specifier: "%.1f")g \nGrasimi")
-                            .font(.system(size: 17 + size, weight: .medium, design: .rounded))
-                            .minimumScaleFactor(0.01)
+                            //.font(.system(size: 17 + size, weight: .medium))
+                            //.minimumScaleFactor(0.01)
                         Spacer()
                     }
                     
@@ -57,8 +60,8 @@ struct DailyCaloriesChart: View {
                             .frame(width: 20, height: 20)
                         
                         Text("\(demoData[1], specifier: "%.1f")g \nProteine")
-                            .font(.system(size: 17 + size, weight: .medium, design: .rounded))
-                            .minimumScaleFactor(0.01)
+                            //.font(.system(size: 17 + size, weight: .medium))
+                            //.minimumScaleFactor(0.01)
                         Spacer()
                     }
                     
@@ -72,15 +75,16 @@ struct DailyCaloriesChart: View {
                             .frame(width: 20, height: 20)
                         
                         Text("\(demoData[2], specifier: "%.1f")g Carbohidrati")
-                            .font(.system(size: 17 + size, weight: .medium, design: .rounded))
-                            .minimumScaleFactor(0.01)
+                            //.font(.system(size: 17 + size, weight: .medium))
+                            //.minimumScaleFactor(0.01)
                         Spacer()
                     }
                 }
             }
         }
         .modifier(MakeCard())
-        //.frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
+        .frame(height: 280)
+        
     }
 }
 

@@ -10,10 +10,10 @@ import Kingfisher
 
 struct HomeView: View {
     // MARK: - PROPERTIES
-    @State var uiTabarController: UITabBarController?
     @EnvironmentObject var authViewModel: AuthViewModel
+    @State var uiTabarController: UITabBarController?
     @State private var data = Date()
-    
+
     // MARK: - BODY
     var body: some View {
        // if let user = authViewModel.currentUser {
@@ -23,6 +23,8 @@ struct HomeView: View {
                         // Vizualizare Data
                         VStack {
                             DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
+                                .accentColor(.primary)
+                                
                         }
                         .modifier(MakeCard())
                         .padding(.horizontal)
@@ -60,46 +62,28 @@ struct HomeView: View {
                         .padding(.horizontal)
 
                         // Meniu adaugare alimente consumate
-                        VStack {
+                        VStack(alignment: .leading) {
+                            Text("Jurnal")
+                                .font(.title3)
+                                .fontWeight(.semibold)
                             HStack(alignment: .top) {
-                                Button {
-                                    print("Am apasat")
-                                } label: {
-                                    AddFoodButton(imageName: "micDejunOutline", title: "mic\ndejun")
-                                }
-                                Button {
-                                    print("Am apasat")
-                                } label: {
-                                    AddFoodButton(imageName: "pranzOutline", title: "prânz")
-                                }
-                                Button {
-                                    print("Am apasat")
-                                } label: {
-                                    AddFoodButton(imageName: "cinaOutline", title: "cină")
-                                }
-                                Button {
-                                    print("Am apasat")
-                                } label: {
-                                    AddFoodButton(imageName: "gustariOutline", title: "gustări")
-                                }
+                                Button { print("Buton micDejun apasat")
+                                } label: { AddFoodButton(imageName: "micDejunOutline", title: "mic\ndejun") }
+                                Button { print("Buton pranz apasat")
+                                } label: { AddFoodButton(imageName: "pranzOutline", title: "prânz") }
+                                Button { print("Buton cina apasat")
+                                } label: { AddFoodButton(imageName: "cinaOutline", title: "cină") }
+                                Button { print("Am apasat")
+                                } label: { AddFoodButton(imageName: "gustariOutline", title: "gustări") }
                             }.frame(maxWidth: .infinity)
                             
                             HStack(alignment: .top) {
-                                Button {
-                                    print("Am apasat")
-                                } label: {
-                                    AddFoodButton(imageName: "sportOutline", title: "sport")
-                                }
-                                Button {
-                                    print("Am apasat")
-                                } label: {
-                                    AddFoodButton(imageName: "greutateOutline", title: "greutate")
-                                }
-                                Button {
-                                    print("Am apasat")
-                                } label: {
-                                    AddFoodButton(imageName: "lichideOutline", title: "lichide")
-                                }
+                                Button { print("Buton sport apasat")
+                                } label: {AddFoodButton(imageName: "sportOutline", title: "sport")}
+                                Button { print("Buton greutate apasat")
+                                } label: { AddFoodButton(imageName: "greutateOutline", title: "greutate") }
+                                Button { print("Buton lichide apasat")
+                                } label: { AddFoodButton(imageName: "lichideOutline", title: "lichide") }
                             }.frame(maxWidth: .infinity)
                         }
                         .font(.title)

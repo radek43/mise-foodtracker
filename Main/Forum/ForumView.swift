@@ -21,6 +21,15 @@ struct ForumView: View {
 //                            viewModel.fetchPosts()
 //                        }
                     VStack {
+                        
+                        HStack {
+                            Text("Categorie")
+                                .padding(.leading)
+                            Spacer()
+                            Text("Sorteaza")
+                                .padding(.trailing)
+                        }.padding(.horizontal)
+                        
                         ForEach(viewModel.posts) { post in
                             NavigationLink(destination: PostDetail(post: post)){
                                PostRow(post: post)

@@ -11,7 +11,6 @@ struct RecipesView: View {
     // MARK: - PROPERTIES
     @ObservedObject var viewModel = RecipeViewModel()
     @EnvironmentObject var authViewModel: AuthViewModel
-    //var recipes: [Recipe]
 
     // MARK: - BODY
     var body: some View {
@@ -45,22 +44,12 @@ struct RecipesView: View {
                     .padding(.horizontal)
                 }
                 .toolbar {
-                    if authViewModel.currentUser?.userType != nil { // functionalitati de admin
+                    if authViewModel.currentUser?.userType == 1 { // functionalitati de admin
                         HStack {
                             NavigationLink {
                                 AddNewRecipe() // de modificat
                             } label: {
-                                Image(systemName: "plus.circle")
-                            }
-                        }
-                    }
-                    
-                    else {
-                        HStack {
-                            NavigationLink {
-                                AddNewRecipe() // de modificat
-                            } label: {
-                                Image(systemName: "plus.circle")
+                                Image(systemName: "note.text.badge.plus")
                             }
                         }
                     }

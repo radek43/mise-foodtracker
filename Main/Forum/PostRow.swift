@@ -117,6 +117,7 @@ struct PostRow: View {
 // MARK: - PREVIEW
 struct CommunityCard_Previews: PreviewProvider {
     static var previews: some View {
-        PostRow(post: Post.dummyData[0])
+        ForumView()
+        //PostRow(post: Post.dummyData[0])
     }
 }

@@ -6,44 +6,67 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SettingsView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
+    @State private var doesTrackActivity = false
+    @State private var isShowingSettingsScreen: Bool = false
 
     // MARK: - BODY
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             Form {
-                Button {
-                    print("Buton cont apasat")
-                } label: {
-                    SettingsRow(icon: "person.crop.circle", firstText: "Administrare Cont", color: .blue)
+                Section {
+                    NavigationLink(destination: ProfileSettingsView()) {
+                        HStack(alignment: .center) {
+                            Image(systemName: "person.crop.circle") // placeholder poza de profil
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(Color.secondary)
+                                .padding(.trailing, 5)
+                            VStack(alignment: .leading) {
+                                Text("George Popescu")
+                                    .font(.title3)
+                                    .foregroundColor(Color.primary)
+                                Text("Utilizator simplu")
+                                    .font(.footnote)
+                                    .foregroundColor(Color.primary)
+                            }
+                        }
+                    }
                 }
-                Button {
-                    print("Buton obiective apasat")
-                } label: {
-                    SettingsRow(icon: "target", firstText: "Obiective", color: .green)
-                }
-                Button {
-                    print("Buton masuratori apasat")
-                } label: {
-                    SettingsRow(icon: "ruler", firstText: "Masuratori", color: Color(hue: 0.096, saturation: 0.962, brightness: 0.941))
-                }
-                Button {
-                    print("Buton notificari apasat")
-                } label: {
-                    SettingsRow(icon: "bell.badge", firstText: "Notificari", color: .red)
-                }
-                Button {
-                    authViewModel.signOut()
-                } label: {
-                    SettingsRow(icon: "lock", firstText: "Delogare", color: .secondary)
+                
+                Section {
+                    Button {
+                        print("Buton obiective apasat")
+                    } label: {
+                        SettingsRow(iconDefault: "target", firstText: "Obiective", color: .green)
+                    }
+                    Button {
+                        print("Buton masuratori apasat")
+                    } label: {
+                        SettingsRow(iconDefault: "ruler", firstText: "Masuratori", color: Color(hue: 0.096, saturation: 0.962, brightness: 0.941))
+                    }
+                    Button {
+                        print("Buton notificari apasat")
+                    } label: {
+                        SettingsRow(iconDefault: "bell.badge", firstText: "Notificari", color: .red)
+                    }
+                    Toggle(isOn: $doesTrackActivity) {
+                        SettingsRow(iconAsset: "figure.run", firstText: "Inregistrare activitate", color: .blue, hasChevron: false)
+                    }
+                    Button {
+                        authViewModel.signOut()
+                    } label: {
+                        SettingsRow(iconDefault: "lock", firstText: "Delogare", color: .secondary, hasChevron: false)
+                    }
                 }
             } //: Form
             .listStyle(GroupedListStyle())
             
-            Text("Work in progress")
+            Text("Made in Romania🇷🇴")
                 .multilineTextAlignment(.center)
                 .font(.footnote)
                 .padding(.top, 6)

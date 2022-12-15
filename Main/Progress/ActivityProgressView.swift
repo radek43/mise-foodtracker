@@ -23,44 +23,40 @@ struct ActivityProgressView: View {
                     VStack {
                         HStack {
                             Text("Calorii saptamanale")
-                                .font(.system(size: 20 + size, weight: .semibold, design: .rounded))
+                                .font(.title3)
+                                .fontWeight(.semibold)
                             Spacer()
                         }
                         LineChart()
                             .data(demoData)
                             .chartStyle(mixedColorStyle)
+                            .frame(width: 300)
                     }
                     .modifier(MakeCard())
-                    .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
+                    .frame(height: 250)
+                    .padding(.horizontal)
                     
                     VStack {
                         HStack {
                             Text("Top calorii alimente consumate")
-                                .font(.system(size: 20 + size, weight: .semibold, design: .rounded))
+                                .font(.title3)
+                                .fontWeight(.semibold)
                             Spacer()
                         }
                         BarChart()
                             .data(demoData)
                             .chartStyle(mixedColorStyle)
                     }
+                    .frame(height: 250)
                     .modifier(MakeCard())
-                    .frame(width: UIScreen.main.bounds.width * 0.9, height:  UIScreen.main.bounds.height * 0.33)
-                    
+                    .padding(.horizontal)
+
                     //JurnalCaloriiView()
                     
                     VStack {
-                        ActivityProgressRow()
+                        ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
+                        ActivityProgressRow(progressTitle: "Numar de pasi inregistrati", progressValue: "1573", measurementUnit: "Pasi")
                     }
-                    .padding(.horizontal)
-                    
-                    VStack {
-                        HStack {
-                            Text("Numar de pasi inregistrati:")
-                            Spacer()
-                            Text("1573 Pasi")
-                        }
-                    }
-                    .modifier(MakeCard())
                     .padding(.horizontal)
                 }
             }
