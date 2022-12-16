@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ProfileSettingsView: View {
-    
-    @State private var selectedGender = "Nu spun"
+    // MARK: - PROPERTIES
+    @State private var selectedGender = ""
     @State private var changedName = ""
-    let genders = ["Masculin", "Feminim", "Nu spun"]
+    let genders = ["Masculin", "Feminin", "Nu spun"]
     
-    
+    // MARK: - BODY
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             Form {
@@ -33,9 +33,11 @@ struct ProfileSettingsView: View {
                 
             }
         }
+        .navigationTitle("Setari Profil")
     }
 }
 
+// MARK: - PREVIEW
 struct ProfileSettingsView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileSettingsView()

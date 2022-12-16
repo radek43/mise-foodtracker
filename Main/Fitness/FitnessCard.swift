@@ -50,7 +50,7 @@ struct FitnessCard: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: 60, height: 60)
-                .clipShape(RoundedRectangle(cornerRadius: 7.0, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
         }
         .modifier(MakeCard())
     }

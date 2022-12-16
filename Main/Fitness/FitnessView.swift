@@ -40,6 +40,7 @@ struct FitnessView: View {
             .navigationTitle("Fitness")
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

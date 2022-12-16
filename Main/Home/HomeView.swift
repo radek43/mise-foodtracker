@@ -106,6 +106,7 @@ struct HomeView: View {
                 })
                 .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         //} //: end if let
     }//: end body
 }

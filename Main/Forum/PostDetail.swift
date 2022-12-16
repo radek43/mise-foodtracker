@@ -14,8 +14,8 @@ struct PostDetail: View {
     
     // MARK: - BODY
     var body: some View {
-        ScrollView{
-            VStack(alignment: .leading) {
+        ScrollView {
+            VStack(alignment: .leading) { // titlu, metadata si interaction buttons
                 HStack(alignment: .center) {
                     if let user = post.user {
                         KFImage(URL(string: user.profileImageUrl))
@@ -25,18 +25,14 @@ struct PostDetail: View {
                             .frame(width: 50, height: 50)
                             .foregroundColor(Color.secondary)
                             .padding(.trailing, 5)
-                        
                         VStack(alignment: .leading) {
                             Text(post.titluPostare)
                                 .font(.title)
                                 .fontWeight(.semibold)
                                 .fixedSize(horizontal: false, vertical: true)
-
-                            
                             Text("@" + user.username)
                                 .font(.footnote)
                         }
-                        
                     } else { //dummy data for preview
                         Image(systemName: "person.crop.circle")
                             .resizable()
@@ -48,10 +44,9 @@ struct PostDetail: View {
 
                         VStack(alignment: .leading) {
                             Text(post.titluPostare)
-                                .font(.title)
+                                .font(.title2)
                                 .fontWeight(.semibold)
                                 .fixedSize(horizontal: false, vertical: true)
-                            
                             Text("@numeutilizator")
                                 .font(.footnote)
                         }
@@ -82,37 +77,36 @@ struct PostDetail: View {
                         Text("Comentariu")
                             .font(.footnote)
                     }
-                    
+        
                     Spacer()
                     
                     Text("12/03/2022")
                         .font(.footnote)
                         .foregroundColor(Color.secondary)
                 }
-                .padding([.top, .bottom, .trailing], 3)
+                .padding([.top, .trailing], 3)
             }
-            .padding(.horizontal)
- 
+            .padding([.top, .leading, .trailing])
+            
             Divider()
 
-            HStack {
-                Text("• 3 comentarii")
-                    .font(.footnote)
-                    .foregroundColor(Color.secondary)
-                
+            VStack(alignment: .leading) { //comentarii
+                HStack {
+                    Text("• 3 comentarii")
+                        .font(.footnote)
+                        .foregroundColor(Color.secondary)
+                    Spacer()
+                }
+                ReplyRow()
+                Divider()
+                ReplyRow()
+                Divider()
+                ReplyRow()
                 Spacer()
             }
-            .padding(.leading)
-
-            ReplyRow()
-            ReplyRow()
-            ReplyRow()
-            
-            Spacer()
-            
+            .padding(.horizontal)
         }
         .navigationBarTitleDisplayMode(.inline)
-        //.background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
 

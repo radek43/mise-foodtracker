@@ -20,12 +20,11 @@ struct RecipeDetailView: View {
                 WebImage(url: URL(string: recipe.image))
                     .resizable()
                     .scaledToFill()
-                    .frame(height: 300)
-                    .clipped()
+                    //.clipped()
                     .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                     .padding()
                     .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 10)
-                
+
                 VStack(spacing: 30) {
                     Text(recipe.name)
                         .font(.largeTitle)
@@ -54,7 +53,6 @@ struct RecipeDetailView: View {
                                 Text(recipe.directions.replacingOccurrences(of: "•", with: "\n •"))
                             }
                         }
-                        Divider()
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }

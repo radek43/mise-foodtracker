@@ -63,6 +63,7 @@ struct ActivityProgressView: View {
             .navigationTitle("Progres")
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

@@ -81,6 +81,7 @@ struct SettingsView: View {
 // MARK: - PREVIEW
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        TabBar()
+            .environmentObject(AuthViewModel())
     }
 }

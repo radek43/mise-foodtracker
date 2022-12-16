@@ -72,6 +72,7 @@ struct AddFoodView: View {
              .navigationBarHidden(true)
              .navigationViewStyle(.stack)
          }
+        .navigationViewStyle(StackNavigationViewStyle())
      }
 }
 

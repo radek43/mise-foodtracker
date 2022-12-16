@@ -12,7 +12,7 @@ struct ReplyRow: View {
     
     // MARK: - BODY
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack(alignment: .center) {
                 Image(systemName: "person.crop.circle")
                     .resizable()
@@ -38,10 +38,7 @@ struct ReplyRow: View {
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ")
                 .font(.callout)
                 .multilineTextAlignment(.leading)
-
-            Divider()
         }
-        .padding([.leading, .bottom, .trailing])
     }
 }
 

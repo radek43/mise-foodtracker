@@ -58,6 +58,7 @@ struct RecipesView: View {
                 .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

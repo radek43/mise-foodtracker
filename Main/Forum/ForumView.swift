@@ -41,17 +41,26 @@ struct ForumView: View {
                 }
 //                .coordinateSpace(name: "pullToRefresh")
                 .toolbar {
-                    NavigationLink {
-                        AddNewPost()
-                    } label: {
-                        Image(systemName: "square.and.pencil")
-                            .imageScale(.large)
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink {
+                            AddNewPost()
+                        } label: {
+                            Image(systemName: "square.and.pencil")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink {
+                            //
+                        } label: {
+                            Image(systemName: "person.crop.circle")
+                        }
                     }
                 }
             }
             .navigationTitle("Comunitate")
             .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
