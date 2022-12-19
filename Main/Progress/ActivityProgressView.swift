@@ -17,53 +17,48 @@ struct ActivityProgressView: View {
     
     // MARK: - BODY
     var body: some View {
-        NavigationView {
+        ScrollView {
             VStack {
-                ScrollView {
-                    VStack {
-                        HStack {
-                            Text("Calorii saptamanale")
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                            Spacer()
-                        }
-                        LineChart()
-                            .data(demoData)
-                            .chartStyle(mixedColorStyle)
-                            .frame(width: 300)
-                    }
-                    .modifier(MakeCard())
-                    .frame(height: 250)
-                    .padding(.horizontal)
-                    
-                    VStack {
-                        HStack {
-                            Text("Top calorii alimente consumate")
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                            Spacer()
-                        }
-                        BarChart()
-                            .data(demoData)
-                            .chartStyle(mixedColorStyle)
-                    }
-                    .frame(height: 250)
-                    .modifier(MakeCard())
-                    .padding(.horizontal)
-
-                    //JurnalCaloriiView()
-                    
-                    VStack {
-                        ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
-                        ActivityProgressRow(progressTitle: "Numar de pasi inregistrati", progressValue: "1573", measurementUnit: "Pasi")
-                    }
-                    .padding(.horizontal)
+                HStack {
+                    Text("Calorii saptamanale")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    Spacer()
                 }
+                LineChart()
+                    .data(demoData)
+                    .chartStyle(mixedColorStyle)
+                    .frame(width: UIScreen.main.bounds.width * 0.6)
             }
-            .navigationTitle("Progres")
-            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+            .frame(height: 250)
+            .modifier(MakeCard())
+            .padding(.horizontal)
+            
+            VStack {
+                HStack {
+                    Text("Top calorii alimente consumate")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                BarChart()
+                    .data(demoData)
+                    .chartStyle(mixedColorStyle)
+            }
+            .frame(height: 250)
+            .modifier(MakeCard())
+            .padding(.horizontal)
+
+            //JurnalCaloriiView()
+            
+            VStack {
+                ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
+                ActivityProgressRow(progressTitle: "Numar de pasi inregistrati", progressValue: "1573", measurementUnit: "Pasi")
+            }
+            .padding(.horizontal)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationTitle("Progres")
+        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
 

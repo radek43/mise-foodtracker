@@ -13,34 +13,31 @@ struct FitnessView: View {
     
     // MARK: - BODY
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    HStack(alignment: .center, spacing: 3.0) {
-                        SearchBar(placeholderText: "Cauta un exercitiu",text: .constant("")) // de adaugat bindingul corespunzator pentru functia de cautare
-                            .padding(.bottom, 3)
-                        Button {
-                            print("buton setari retete apasat")
-                        } label: {
-                            Image(systemName: "slider.horizontal.3")
-                                .imageScale(.large)
-                        }
-                    }
-                    .padding(.bottom, 5.0)
-                    
-                    ForEach(excersises) { excersise in
-                        NavigationLink(destination: FitnessDetailView()) {
-                            FitnessCard(exercitiu: excersise)
-                                .foregroundColor(.primary)
-                        }
+        ScrollView {
+            VStack {
+                HStack(alignment: .center, spacing: 3.0) {
+                    SearchBar(placeholderText: "Cauta un exercitiu",text: .constant("")) // de adaugat bindingul corespunzator pentru functia de cautare
+                        .padding(.bottom, 3)
+                    Button {
+                        print("buton setari retete apasat")
+                    } label: {
+                        Image(systemName: "slider.horizontal.3")
+                            .imageScale(.large)
                     }
                 }
-                .padding(.horizontal)
+                .padding(.bottom, 5.0)
+                
+                ForEach(excersises) { excersise in
+                    NavigationLink(destination: FitnessDetailView()) {
+                        FitnessCard(exercitiu: excersise)
+                            .foregroundColor(.primary)
+                    }
+                }
             }
-            .navigationTitle("Fitness")
-            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+            .padding(.horizontal)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationTitle("Fitness")
+        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
 

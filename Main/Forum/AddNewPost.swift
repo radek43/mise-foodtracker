@@ -23,7 +23,7 @@ struct AddNewPost: View {
     // MARK: - BODY
     var body: some View {
         VStack {
-            Form(content: {
+            Form {
                 Section(header: Text("Titlu postare:")) {
                     TextField("", text: $titluPostare)
                 }
@@ -50,12 +50,6 @@ struct AddNewPost: View {
                         ImagePicker(selectedImage: $selectedImage)
                     }
                 }
-            })
-            .toolbar {
-//                Button("Trimite") {
-//                    viewModel.uploadPost(withTitle: titluPostare, withContent: descriere)
-//                    viewModel.uploadProfileImage(selectedImage)
-//                }
             }
         }
         .onReceive(viewModel.$didUploadPost, perform: { success in
@@ -63,9 +57,16 @@ struct AddNewPost: View {
                 presentationMode.wrappedValue.dismiss()
             }
         })
-        .padding()
         .navigationBarTitle("Postare Noua", displayMode: .inline)
-        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+        .toolbar {
+            Button("Posteaza") {
+                print("Buton postare apasat")
+            }
+            //                Button("Trimite") {
+            //                    viewModel.uploadPost(withTitle: titluPostare, withContent: descriere)
+            //                    viewModel.uploadProfileImage(selectedImage)
+            //                }
+        }
     }
     
     func loadImage() {

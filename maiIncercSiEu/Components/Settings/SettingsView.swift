@@ -49,18 +49,18 @@ struct SettingsView: View {
                     } label: {
                         SettingsRow(iconDefault: "ruler", firstText: "Masuratori", color: Color(hue: 0.096, saturation: 0.962, brightness: 0.941))
                     }
-                    Button {
-                        print("Buton notificari apasat")
+                    NavigationLink {
+                        NotificationsSettings()
                     } label: {
                         SettingsRow(iconDefault: "bell.badge", firstText: "Notificari", color: .red)
                     }
                     Toggle(isOn: $doesTrackActivity) {
-                        SettingsRow(iconAsset: "figure.run", firstText: "Inregistrare activitate", color: .blue, hasChevron: false)
+                        SettingsRow(iconAsset: "figure.run", firstText: "Inregistrare activitate", color: .blue)
                     }
                     Button {
                         authViewModel.signOut()
                     } label: {
-                        SettingsRow(iconDefault: "lock", firstText: "Delogare", color: .secondary, hasChevron: false)
+                        SettingsRow(iconDefault: "lock", firstText: "Delogare", color: .secondary)
                     }
                 }
             } //: Form

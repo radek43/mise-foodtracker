@@ -13,7 +13,7 @@ struct SettingsRow: View {
     var iconAsset: String?
     var firstText: String
     var color: Color
-    var hasChevron = true
+
     
     // MARK: - BODY
     var body: some View {
@@ -37,10 +37,6 @@ struct SettingsRow: View {
             Text(firstText)
                 .foregroundColor(Color.primary)
             Spacer()
-            if hasChevron {
-                Image(systemName: "chevron.right")
-                    .foregroundColor(Color.secondary)
-            }
         }
     }
 }

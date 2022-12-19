@@ -9,47 +9,58 @@ import SwiftUI
 
 struct TabBar: View {
     // MARK: - PROPERTIES
-    @State private var selection = 0
+    @State private var tabSelection = 0
     
     // MARK: - BODY
     var body: some View {
-        TabView(selection: $selection) {
-            HomeView()
-                .tabItem {
-                    if selection == 0 {Image("house.fill")}
-                    else {Image("house")}
-                    Text("Meniu")
-                }
-                .tag(0)
-            ActivityProgressView()
-                .tabItem {
-                    if selection == 1 {Image("chart.bar.fill")}
-                    else {Image("chart.bar")}
-                    Text("Progres")
-                }
-                .tag(1)
-            RecipesView()
-                .tabItem {
-                    if selection == 2 {Image("book.fill")}
-                    else {Image("book")}
-                    Text("Retete")
-                }
-                .tag(2)
-            FitnessView(excersises: Excercise.dummyData)
-                .tabItem {
-                    if selection == 3 {Image("dumbbell.fill").imageScale(.large)}
-                    else {Image("dumbbell").imageScale(.large)}
-                    Text("Sport")
-                }
-                .tag(3)
-            ForumView()
-                .tabItem {
-                    if selection == 4 {Image("person.2.fill")}
-                    else {Image("person.2")}
-                    Text("Comunitate")
-                }
-                .tag(4)
+        TabView(selection: $tabSelection) {
+            NavigationView {
+                HomeView()
+            }
+            .tabItem {
+                if tabSelection == 0 {Image("house.fill")}
+                else {Image("house")}
+                Text("Meniu")
+            }
+            .tag(0)
+            NavigationView {
+                ActivityProgressView()
+            }
+            .tabItem {
+                if tabSelection == 1 {Image("chart.bar.fill")}
+                else {Image("chart.bar")}
+                Text("Progres")
+            }
+            .tag(1)
+            NavigationView {
+                RecipesView()
+            }
+            .tabItem {
+                if tabSelection == 2 {Image("book.fill")}
+                else {Image("book")}
+                Text("Retete")
+            }
+            .tag(2)
+            NavigationView {
+                FitnessView(excersises: Excercise.dummyData)
+            }
+            .tabItem {
+                if tabSelection == 3 {Image("dumbbell.fill").imageScale(.large)}
+                else {Image("dumbbell").imageScale(.large)}
+                Text("Sport")
+            }
+            .tag(3)
+            NavigationView {
+                ForumView()
+            }
+            .tabItem {
+                if tabSelection == 4 {Image("person.2.fill")}
+                else {Image("person.2")}
+                Text("Comunitate")
+            }
+            .tag(4)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

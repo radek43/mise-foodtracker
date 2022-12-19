@@ -13,54 +13,74 @@ struct ForumView: View {
     
     // MARK: - BODY
     var body: some View {
-        NavigationView {
+        ScrollView {
             VStack {
-                ScrollView {
-                    // Titlu
-//                        PullToRefresh(coordinateSpaceName: "pullToRefresh") {
-//                            viewModel.fetchPosts()
-//                        }
-                    VStack {
-                        
-                        HStack {
-                            Text("Categorie")
-                                .padding(.leading)
-                            Spacer()
-                            Text("Sorteaza")
-                                .padding(.trailing)
-                        }.padding(.horizontal)
-                        
-                        ForEach(viewModel.posts) { post in
-                            NavigationLink(destination: PostDetail(post: post)){
-                               PostRow(post: post)
-                                    .foregroundColor(.primary)
-                                    .padding(.horizontal)
-                           }
-                        }
-                    }
-                }
-//                .coordinateSpace(name: "pullToRefresh")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink {
-                            AddNewPost()
+                HStack {
+                    Spacer()
+                    Menu {
+                        Button {
+                            // do something
                         } label: {
-                            Image(systemName: "square.and.pencil")
+                            Text("Slabit")
+                            Image(systemName: "arrow.down.right.circle")
                         }
-                    }
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink {
-                            //
+                        Button {
+                            // do something
                         } label: {
-                            Image(systemName: "person.crop.circle")
+                            Text("Crestere musculara")
+                            Image("dumbbell")
                         }
+                        Button {
+                            // do something
+                        } label: {
+                            Text("Sfaturi")
+                            Image(systemName: "questionmark.square")
+                        }
+                        Button {
+                            // do something
+                        } label: {
+                            Text("Retete")
+                            Image("book")
+                        }
+                        Button {
+                            // do something
+                        } label: {
+                            Text("Alergare")
+                            Image("figure.run")
+                        }
+                    } label: {
+                         Text("Sorteaza")
+                         Image(systemName: "chevron.down")
                     }
+                }.padding(.horizontal)
+                
+                ForEach(viewModel.posts) { post in
+                    NavigationLink(destination: PostDetail(post: post)){
+                       PostRow(post: post)
+                            .foregroundColor(.primary)
+                            .padding(.horizontal)
+                   }
                 }
             }
-            .navigationTitle("Comunitate")
-            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                NavigationLink {
+                    AddNewPost()
+                } label: {
+                    Image(systemName: "square.and.pencil")
+                }
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                NavigationLink {
+                    //
+                } label: {
+                    Image(systemName: "person.crop.circle")
+                }
+            }
+        }
+        .navigationTitle("Comunitate")
+        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
 

@@ -9,21 +9,27 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct RecipeDetailView: View {
-    
     // MARK: - PROPERTIES
-    var recipe: Recipe
+    var recipe = Recipe.dummyData[0]
     
     // MARK: - BODY
     var body: some View {
         ScrollView {
             VStack {
-                WebImage(url: URL(string: recipe.image))
+                ZStack {
+                    Rectangle()
+                    .fill(Color(.gray))
+                    .aspectRatio(4/4, contentMode: .fit)
+                            
+                    WebImage(url: URL(string: recipe.image))
                     .resizable()
-                    .scaledToFill()
-                    //.clipped()
-                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                    .padding()
-                    .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 10)
+                    .aspectRatio(contentMode: .fill)
+                    .layoutPriority(-1)
+                }
+                .clipped()
+                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                .padding()
+                .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 10)
 
                 VStack(spacing: 30) {
                     Text(recipe.name)
@@ -67,7 +73,6 @@ struct RecipeDetailView: View {
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)
-                
                 .padding(.horizontal)
             }
         }
@@ -78,7 +83,7 @@ struct RecipeDetailView: View {
 // MARK: - PREVIEW
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesView()
+        RecipeDetailView()
             .environmentObject(AuthViewModel())
     }
 }

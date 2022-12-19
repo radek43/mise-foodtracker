@@ -14,14 +14,23 @@ struct FitnessDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .center, spacing: 10.0) {
-                Image("exercitiu")
-                    .resizable()
-                    .scaledToFill()
-                    //.frame(width: UIScreen.main.bounds.width * 0.9)
-                    .clipped()
-                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                    .padding()
-                    .shadow(color: Color.gray.opacity(0.3), radius: 20, x: 0, y: 10)
+                
+                ZStack {
+                    Rectangle()
+                        .fill(Color(.gray))
+                        .aspectRatio(4/3, contentMode: .fit)
+                            
+                    Image("exercitiu")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .layoutPriority(-1)
+                }
+                .clipped()
+                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                .padding()
+                .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 10)
+                
+
                 
                 Text("Fandari Bulgaresti")
                     .font(.largeTitle)

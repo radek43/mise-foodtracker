@@ -23,7 +23,7 @@ struct FitnessCard: View {
     // MARK: - BODY
     var body: some View {
         HStack {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 2.0) {
                 Text(exercitiu.name)
                     .font(.title2)
                     .fontWeight(.semibold)
