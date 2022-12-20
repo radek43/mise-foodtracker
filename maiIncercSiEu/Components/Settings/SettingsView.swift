@@ -37,17 +37,17 @@ struct SettingsView: View {
                         }
                     }
                 }
-                
                 Section {
-                    Button {
-                        print("Buton obiective apasat")
+                    NavigationLink {
+                        // ObjectiveView()
                     } label: {
                         SettingsRow(iconDefault: "target", firstText: "Obiective", color: .green)
                     }
-                    Button {
-                        print("Buton masuratori apasat")
+                    NavigationLink {
+                        MeasurementsSettings()
                     } label: {
-                        SettingsRow(iconDefault: "ruler", firstText: "Masuratori", color: Color(hue: 0.096, saturation: 0.962, brightness: 0.941))
+                        SettingsRow(iconDefault: "ruler", firstText: "Masuratori",
+                                    color: Color(hue: 0.096, saturation: 0.962, brightness: 0.941))
                     }
                     NavigationLink {
                         NotificationsSettings()

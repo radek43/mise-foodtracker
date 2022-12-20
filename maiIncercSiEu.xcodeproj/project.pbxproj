@@ -195,20 +195,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		178CEBBF2809B5AE00D6DD25 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				2C77A4C82948A1AB00233AF4 /* Navigation */,
-				178CEBC02809B5E100D6DD25 /* Home */,
-				2C77A4CB2948A5E700233AF4 /* Progress */,
-				170C633128297DB80048DFA9 /* Recipes */,
-				1747ABFC28C3BA6200138938 /* Fitness */,
-				2C6E96C328E49B5D000159C4 /* Forum */,
-				1728115128BBB36E001B0BC5 /* Settings */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		178CEBC02809B5E100D6DD25 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,7 +223,13 @@
 				17A92CFE2801DCEA000CF34F /* maiIncercSiEuApp.swift */,
 				178CCC7528BBF7F00074D52E /* Utilities */,
 				17F01E7928A2C79000285894 /* Authentication */,
-				178CEBBF2809B5AE00D6DD25 /* Main */,
+				2C77A4C82948A1AB00233AF4 /* Navigation */,
+				178CEBC02809B5E100D6DD25 /* Home */,
+				2C77A4CB2948A5E700233AF4 /* Progress */,
+				170C633128297DB80048DFA9 /* Recipes */,
+				1747ABFC28C3BA6200138938 /* Fitness */,
+				2C6E96C328E49B5D000159C4 /* Forum */,
+				1728115128BBB36E001B0BC5 /* Settings */,
 				178CEBC32809B63B00D6DD25 /* Model */,
 				2C77A4CA2948A34A00233AF4 /* ViewModel */,
 				17425A3B28A2BB380021F61A /* Service */,
