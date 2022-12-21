@@ -11,7 +11,7 @@ import SwiftUICharts
 struct DailyCaloriesChart: View {
     // MARK: - PROPERTIES
     var demoData: [Double] = [8, 4, 2]
-    let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [
+    let mixedColorStyle = ChartStyle(backgroundColor: Color("CardBackground"), foregroundColor: [
         ColorGradient(.purple, .blue), ColorGradient(.pink, .yellow), ColorGradient(.red, .green)])
     @ScaledMetric var size: CGFloat = 1
     

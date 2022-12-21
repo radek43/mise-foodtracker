@@ -13,7 +13,7 @@ struct FitnessView: View {
     
     // MARK: - BODY
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 HStack(alignment: .center, spacing: 3.0) {
                     SearchBar(placeholderText: "Cauta un exercitiu",text: .constant("")) // de adaugat bindingul corespunzator pentru functia de cautare

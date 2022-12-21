@@ -34,7 +34,7 @@ struct AuthenticationHeaderView: View {
         .padding(.leading)
         .background(Color("AccentColor"))
         .foregroundColor(.white)
-        .clipShape(RoundedShape(corners: [.bottomRight]))
+        .clipShape(RoundedShape(corners: [.bottomRight], cornerRadius: 80))
     }
 }
 

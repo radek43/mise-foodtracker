@@ -13,7 +13,7 @@ struct ForumView: View {
     
     // MARK: - BODY
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 HStack {
                     Spacer()

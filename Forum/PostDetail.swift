@@ -51,7 +51,6 @@ struct PostDetail: View {
                                 .font(.footnote)
                         }
                     }
-    
                     Spacer()
                 }
                 .padding(.bottom, 6.0)
@@ -86,9 +85,11 @@ struct PostDetail: View {
                 }
                 .padding([.top, .trailing], 3)
             }
-            .padding([.top, .leading, .trailing])
-            
-            Divider()
+            .padding()
+            .background(Color("PostDetailColor"))
+            .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], cornerRadius: 13))
+
+            //Divider()
 
             VStack(alignment: .leading) { //comentarii
                 HStack {

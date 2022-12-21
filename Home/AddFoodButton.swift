@@ -25,11 +25,10 @@ struct AddFoodButton: View {
                     .stroke(lineWidth: 0)
                     .frame(width: 48, height: 48)
                     .foregroundColor(Color(UIColor.label))
-                    .background(Circle().fill(Color("ColorBackground")))
+                    .background(Circle().fill(Color("ButtonColor")))
                     .clipShape(Circle())
                     .overlay(
                         Image(imageName)
-                            //.font(.title)
                             .font(Font.title.weight(.light))
                     )
                 Text(title)

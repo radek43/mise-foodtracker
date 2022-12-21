@@ -10,14 +10,14 @@ import SwiftUICharts
 
 struct ActivityProgressView: View {
     // MARK: - PROPERTIES
-    var demoData: [Double] = [8, 4, 2, 5, 7, 6, 5]
+    var demoData: [Double] = [8, 4, 2, 5, 7, 6, 5, 8]
     let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [ColorGradient(.purple, .blue)])
     
     @ScaledMetric var size: CGFloat = 1
     
     // MARK: - BODY
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 HStack {
                     Text("Calorii saptamanale")
@@ -28,7 +28,6 @@ struct ActivityProgressView: View {
                 LineChart()
                     .data(demoData)
                     .chartStyle(mixedColorStyle)
-                    .frame(width: UIScreen.main.bounds.width * 0.6)
             }
             .frame(height: 250)
             .modifier(MakeCard())

@@ -14,7 +14,7 @@ struct RecipesView: View {
 
     // MARK: - BODY
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 HStack(alignment: .center, spacing: 3.0) {
                     SearchBar(placeholderText: "Gaseste-ți inspirația",text: $viewModel.searchText)

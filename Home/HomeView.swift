@@ -16,93 +16,97 @@ struct HomeView: View {
 
     // MARK: - BODY
     var body: some View {
-        // if let user = authViewModel.currentUser {
+    // if let user = authViewModel.currentUser {
+        ZStack {
+            Color("ColorBackground")
+                .edgesIgnoringSafeArea(.all)
+    
             ScrollView(showsIndicators: false) {
-                // Vizualizare Data
-                VStack {
-                    DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
-                        .accentColor(.primary)
-                }
-                .modifier(MakeCard())
-                .padding(.horizontal)
-                
-                // Vizualizare Calorii Ramase
-                VStack {
-                    Text("2342 Calorii Ramase")
-                        .fontWeight(.semibold)
-                        .padding(5)
-                    
-                    ProgressView(value: 0.25)
-                    
-                    HStack {
-                        VStack {
-                            Text("0")
-                                .fontWeight(.medium)
-                            Text("Consumat")
-                        }
-                        .frame(maxWidth: .infinity)
-                        
-                        VStack {
-                            Text("0")
-                                .fontWeight(.medium)
-                            Text("Ars")
-                        }
-                        .frame(maxWidth: .infinity)
-                        
-                        VStack {
-                            Text("0")
-                                .fontWeight(.medium)
-                            Text("Net")
-                        }
-                        .frame(maxWidth: .infinity)
+                    // Vizualizare Data
+                    VStack {
+                        DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
+                            .accentColor(.primary)
                     }
-                }
-                .modifier(MakeCard())
-                .padding(.horizontal)
-
-                // Meniu adaugare alimente consumate
-                VStack(alignment: .leading) {
-                    Text("Jurnal")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                
-                    HStack(alignment: .top) {
-                        Button { print("Buton micDejun apasat")
-                        } label: { AddFoodButton(imageName: "breakfast", title: "mic\ndejun") }
-                        Button { print("Buton pranz apasat")
-                        } label: { AddFoodButton(imageName: "soupLadle", title: "prânz") }
-                        Button { print("Buton cina apasat")
-                        } label: { AddFoodButton(imageName: "pastaDish", title: "cină") }
-                        Button { print("Am apasat")
-                        } label: { AddFoodButton(imageName: "icecream", title: "gustări") }
-                    }.frame(maxWidth: .infinity)
-                    
-                    HStack(alignment: .top) {
-                        Button { print("Buton sport apasat")
-                        } label: {AddFoodButton(imageName: "sprint", title: "sport")}
-                        Button { print("Buton greutate apasat")
-                        } label: { AddFoodButton(imageName: "weightScale", title: "greutate") }
-                        Button { print("Buton lichide apasat")
-                        } label: { AddFoodButton(imageName: "waterDrop", title: "lichide") }
-                    }.frame(maxWidth: .infinity)
-                }
-                .modifier(MakeCard())
-                .padding(.horizontal)
-
-                DailyCaloriesChart()
+                    .modifier(MakeCard())
                     .padding(.horizontal)
-                
-                Spacer()
-            }
-            .navigationTitle("Food Tracker")
-            .toolbar(content: {
-                NavigationLink {
-                    SettingsView()
-                } label: {
-                    Image(systemName: "gearshape")
+                    
+                    // Vizualizare Calorii Ramase
+                    VStack {
+                        Text("2342 Calorii Ramase")
+                            .fontWeight(.semibold)
+                            .padding(5)
+                        
+                        ProgressView(value: 0.25)
+                        
+                        HStack {
+                            VStack {
+                                Text("0")
+                                    .fontWeight(.medium)
+                                Text("Consumat")
+                            }
+                            .frame(maxWidth: .infinity)
+                            
+                            VStack {
+                                Text("0")
+                                    .fontWeight(.medium)
+                                Text("Ars")
+                            }
+                            .frame(maxWidth: .infinity)
+                            
+                            VStack {
+                                Text("0")
+                                    .fontWeight(.medium)
+                                Text("Net")
+                            }
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .modifier(MakeCard())
+                    .padding(.horizontal)
+
+                    // Meniu adaugare alimente consumate
+                    VStack(alignment: .leading) {
+                        Text("Jurnal")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                    
+                        HStack(alignment: .top) {
+                            Button { print("Buton micDejun apasat")
+                            } label: { AddFoodButton(imageName: "breakfast", title: "mic\ndejun") }
+                            Button { print("Buton pranz apasat")
+                            } label: { AddFoodButton(imageName: "soupLadle", title: "prânz") }
+                            Button { print("Buton cina apasat")
+                            } label: { AddFoodButton(imageName: "pastaDish", title: "cină") }
+                            Button { print("Am apasat")
+                            } label: { AddFoodButton(imageName: "icecream", title: "gustări") }
+                        }.frame(maxWidth: .infinity)
+                        
+                        HStack(alignment: .top) {
+                            Button { print("Buton sport apasat")
+                            } label: {AddFoodButton(imageName: "sprint", title: "sport")}
+                            Button { print("Buton greutate apasat")
+                            } label: { AddFoodButton(imageName: "weightScale", title: "greutate") }
+                            Button { print("Buton lichide apasat")
+                            } label: { AddFoodButton(imageName: "waterDrop", title: "lichide") }
+                        }.frame(maxWidth: .infinity)
+                    }
+                    .modifier(MakeCard())
+                    .padding(.horizontal)
+
+                    DailyCaloriesChart()
+                        .padding(.horizontal)
+                    
+                    Spacer()
                 }
-            })
-            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+                .navigationTitle("Food Tracker")
+                .toolbar(content: {
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "gearshape")
+                    }
+                })
+        }
         //} //: end if let
     }//: end body
 }

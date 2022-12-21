@@ -30,3 +30,6 @@ struct ContentView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
+// MARK: - GLOBAL VARIABLES
+let screen = UIScreen.main.bounds
