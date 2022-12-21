@@ -11,7 +11,7 @@ struct MakeCard: ViewModifier {
     @Environment(\.colorScheme) var colorScheme
     
     func body(content: Content) -> some View {
-        if colorScheme == .dark{
+        if colorScheme == .dark {
             content
                 .padding()
                 .background(Color("CardBackground"))

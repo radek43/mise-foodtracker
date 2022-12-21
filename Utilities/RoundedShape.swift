@@ -10,8 +10,7 @@ import SwiftUI
 struct RoundedShape: Shape {
     // MARK: - PROPERTIES
     var corners: UIRectCorner
-    var cornerRadius: Int
-    
+    var cornerRadius: Double
     // MARK: - BODY
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii:  CGSize(width: cornerRadius, height: cornerRadius))

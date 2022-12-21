@@ -66,6 +66,7 @@
 		2CA55FDF2948A89B00C6A8B1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA55FDE2948A89B00C6A8B1 /* SettingsView.swift */; };
 		2CE35E6D2943B0AA00674348 /* AddNewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */; };
 		2CEADAB42953204D002AA0A0 /* PostRowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB32953204D002AA0A0 /* PostRowTest.swift */; };
+		2CEADAB8295330D2002AA0A0 /* AddShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB7295330D2002AA0A0 /* AddShadow.swift */; };
 		2CF44A6928ECBB26001689A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A6828ECBB26001689A8 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,7 @@
 		2CA55FDE2948A89B00C6A8B1 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = maiIncercSiEu/Components/Settings/SettingsView.swift; sourceTree = SOURCE_ROOT; };
 		2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewRecipe.swift; sourceTree = "<group>"; };
 		2CEADAB32953204D002AA0A0 /* PostRowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowTest.swift; sourceTree = "<group>"; };
+		2CEADAB7295330D2002AA0A0 /* AddShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShadow.swift; sourceTree = "<group>"; };
 		2CF44A6828ECBB26001689A8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +192,9 @@
 			isa = PBXGroup;
 			children = (
 				17ABAE5D2827D75A0059E52A /* MakeCard.swift */,
+				2CEADAB7295330D2002AA0A0 /* AddShadow.swift */,
 				178CCC7628BBF8140074D52E /* ImagePicker.swift */,
+				17F01E8628A2C94F00285894 /* RoundedShape.swift */,
 				2C72F33529058249004BBB8A /* PullToRefresh.swift */,
 				2CF44A6828ECBB26001689A8 /* SearchBar.swift */,
 			);
@@ -273,7 +277,6 @@
 			children = (
 				17F01E8228A2C8B900285894 /* CustomInputFields.swift */,
 				17F01E8428A2C8FD00285894 /* AuthenticationHeaderView.swift */,
-				17F01E8628A2C94F00285894 /* RoundedShape.swift */,
 				17F01E7E28A2C81500285894 /* LoginView.swift */,
 				17F01E8028A2C84800285894 /* RegistrationView.swift */,
 				178CCC7328BBE4960074D52E /* PhotoSelectorView.swift */,
@@ -430,6 +433,7 @@
 				17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */,
 				17A92D012801DCEA000CF34F /* ContentView.swift in Sources */,
 				2C2CA02528F363D4005E92B2 /* ForumViewModel.swift in Sources */,
+				2CEADAB8295330D2002AA0A0 /* AddShadow.swift in Sources */,
 				1747ABFB28C39E8300138938 /* Excercise.swift in Sources */,
 				17482A7F2804832A006F2186 /* HomeView.swift in Sources */,
 				176372DB28C11537006337A7 /* UserService.swift in Sources */,
