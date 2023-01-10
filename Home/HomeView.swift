@@ -13,6 +13,7 @@ struct HomeView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @State var uiTabarController: UITabBarController?
     @State private var data = Date()
+    @State var showUpdate = false
 
     // MARK: - BODY
     var body: some View {
@@ -71,10 +72,17 @@ struct HomeView: View {
                             .fontWeight(.semibold)
                     
                         HStack(alignment: .top) {
-                            Button { print("Buton micDejun apasat")
-                            } label: { AddFoodButton(imageName: "breakfast", title: "mic\ndejun") }
+                            Button {
+                                self.showUpdate.toggle()
+                            } label: {
+                                AddFoodButton(imageName: "breakfast", title: "mic\ndejun")
+                            }
+                            .sheet(isPresented: $showUpdate ) {
+                                AddFoodView()
+                            }
                             Button { print("Buton pranz apasat")
                             } label: { AddFoodButton(imageName: "soupLadle", title: "prânz") }
+                            //RingView()
                             Button { print("Buton cina apasat")
                             } label: { AddFoodButton(imageName: "pastaDish", title: "cină") }
                             Button { print("Am apasat")
