@@ -28,6 +28,7 @@ struct HomeView: View {
                         DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
                             .accentColor(.primary)
                     }
+                    .frame(maxWidth: 612)
                     .modifier(MakeCard())
                     .padding(.horizontal)
                     
@@ -42,26 +43,33 @@ struct HomeView: View {
                         HStack {
                             VStack {
                                 Text("0")
+                                    .font(.title3)
                                     .fontWeight(.medium)
                                 Text("Consumat")
+                                    .font(.subheadline)
                             }
                             .frame(maxWidth: .infinity)
                             
                             VStack {
                                 Text("0")
+                                    .font(.title3)
                                     .fontWeight(.medium)
                                 Text("Ars")
+                                    .font(.subheadline)
                             }
                             .frame(maxWidth: .infinity)
                             
                             VStack {
                                 Text("0")
+                                    .font(.title3)
                                     .fontWeight(.medium)
                                 Text("Net")
+                                    .font(.subheadline)
                             }
                             .frame(maxWidth: .infinity)
                         }
                     }
+                    .frame(maxWidth: 612)
                     .modifier(MakeCard())
                     .padding(.horizontal)
 
@@ -71,14 +79,14 @@ struct HomeView: View {
                             .font(.title3)
                             .fontWeight(.semibold)
                     
-                        HStack(alignment: .top) {
+                        HStack(alignment: .top, spacing: 0.0) {
                             Button {
                                 self.showUpdate.toggle()
                             } label: {
                                 AddFoodButton(imageName: "breakfast", title: "mic\ndejun")
                             }
                             .sheet(isPresented: $showUpdate ) {
-                                AddFoodView()
+                                FoodView()
                             }
                             Button { print("Buton pranz apasat")
                             } label: { AddFoodButton(imageName: "soupLadle", title: "prânz") }
@@ -89,7 +97,7 @@ struct HomeView: View {
                             } label: { AddFoodButton(imageName: "icecream", title: "gustări") }
                         }.frame(maxWidth: .infinity)
                         
-                        HStack(alignment: .top) {
+                        HStack(alignment: .top, spacing: 0.0) {
                             Button { print("Buton sport apasat")
                             } label: {AddFoodButton(imageName: "sprint", title: "sport")}
                             Button { print("Buton greutate apasat")
@@ -98,10 +106,13 @@ struct HomeView: View {
                             } label: { AddFoodButton(imageName: "waterDrop", title: "lichide") }
                         }.frame(maxWidth: .infinity)
                     }
+                    .frame(maxWidth: 612)
                     .modifier(MakeCard())
                     .padding(.horizontal)
 
                     DailyCaloriesChart()
+                        .frame(maxWidth: 612)
+                        .modifier(MakeCard())
                         .padding(.horizontal)
                     
                     Spacer()
