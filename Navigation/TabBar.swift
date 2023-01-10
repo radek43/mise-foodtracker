@@ -65,7 +65,7 @@ struct TabBar: View {
 }
 
 // MARK: - PREVIEW
-struct TabbarView_Previews: PreviewProvider {
+struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
             .environmentObject(AuthViewModel())
