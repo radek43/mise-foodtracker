@@ -13,74 +13,81 @@ struct ForumView: View {
     
     // MARK: - BODY
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack {
-                HStack {
-                    Spacer()
-                    Menu {
-                        Button {
-                            // do something
+        ZStack {
+            Color("ColorBackground")
+                .edgesIgnoringSafeArea(.all)
+            
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Menu {
+                            Button {
+                                // do something
+                            } label: {
+                                Text("Slabit")
+                                Image(systemName: "arrow.down.right.circle")
+                            }
+                            Button {
+                                // do something
+                            } label: {
+                                Text("Crestere musculara")
+                                Image("dumbbell")
+                            }
+                            Button {
+                                // do something
+                            } label: {
+                                Text("Sfaturi")
+                                Image(systemName: "questionmark.square")
+                            }
+                            Button {
+                                // do something
+                            } label: {
+                                Text("Retete")
+                                Image("book")
+                            }
+                            Button {
+                                // do something
+                            } label: {
+                                Text("Alergare")
+                                Image("figure.run")
+                            }
                         } label: {
-                            Text("Slabit")
-                            Image(systemName: "arrow.down.right.circle")
+                             Text("Sorteaza")
+                             Image(systemName: "chevron.down")
                         }
-                        Button {
-                            // do something
-                        } label: {
-                            Text("Crestere musculara")
-                            Image("dumbbell")
-                        }
-                        Button {
-                            // do something
-                        } label: {
-                            Text("Sfaturi")
-                            Image(systemName: "questionmark.square")
-                        }
-                        Button {
-                            // do something
-                        } label: {
-                            Text("Retete")
-                            Image("book")
-                        }
-                        Button {
-                            // do something
-                        } label: {
-                            Text("Alergare")
-                            Image("figure.run")
-                        }
-                    } label: {
-                         Text("Sorteaza")
-                         Image(systemName: "chevron.down")
                     }
-                }.padding(.horizontal)
-                
-                ForEach(viewModel.posts) { post in
-                    NavigationLink(destination: PostDetail(post: post)){
-                       PostRow(post: post)
-                            .foregroundColor(.primary)
-                            .padding(.horizontal)
-                   }
+                    .frame(maxWidth: 612)
+                    .padding(.horizontal)
+                    
+                    ForEach(viewModel.posts) { post in
+                        NavigationLink(destination: PostDetail(post: post)){
+                           PostRow(post: post)
+                                .frame(maxWidth: 612)
+                                .foregroundColor(.primary)
+                                .padding(.horizontal)
+                       }
+                    }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        AddNewPost()
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink {
+                        //
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                    }
+                }
+            }
+            .navigationTitle("Comunitate")
         }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                NavigationLink {
-                    AddNewPost()
-                } label: {
-                    Image(systemName: "square.and.pencil")
-                }
-            }
-            ToolbarItem(placement: .navigationBarLeading) {
-                NavigationLink {
-                    //
-                } label: {
-                    Image(systemName: "person.crop.circle")
-                }
-            }
-        }
-        .navigationTitle("Comunitate")
-        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
 
