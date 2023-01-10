@@ -29,7 +29,7 @@ struct RecipeDetailView: View {
                 .clipped()
                 .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                 .padding()
-                .shadow(color: Color.gray.opacity(0.4), radius: 20, x: 0, y: 10)
+                .modifier(AddShadow(opacity: 0.4, radius: 20, x: 0, y: 10))
 
                 VStack(spacing: 30) {
                     Text(recipe.name)
@@ -47,7 +47,8 @@ struct RecipeDetailView: View {
                         if !recipe.ingredients.isEmpty {
                             VStack(alignment: .leading, spacing: 20) {
                                 Text("Ingrediente:")
-                                    .font(.headline)
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
                                 Text(recipe.ingredients.replacingOccurrences(of: "•", with: "\n •"))
                             }
                         }
@@ -55,7 +56,8 @@ struct RecipeDetailView: View {
                         if !recipe.directions.isEmpty {
                             VStack(alignment: .leading, spacing: 20) {
                                 Text("Mod Preparare:")
-                                    .font(.headline)
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
                                 Text(recipe.directions.replacingOccurrences(of: "•", with: "\n •"))
                             }
                         }
@@ -79,7 +81,6 @@ struct RecipeDetailView: View {
         .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
     }
 }
-
 // MARK: - PREVIEW
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
