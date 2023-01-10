@@ -22,7 +22,7 @@ struct AddFoodButton: View {
     var body: some View {
             VStack {
                 Circle()
-                    .stroke(lineWidth: 0)
+                    .stroke(Color("ButtonColor"), style: StrokeStyle(lineWidth: 5))
                     .frame(width: 48, height: 48)
                     .foregroundColor(Color(UIColor.label))
                     .background(Circle().fill(Color("ButtonColor")))
