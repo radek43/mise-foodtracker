@@ -17,7 +17,7 @@ struct DailyCaloriesChart: View {
     
     // MARK: - BODY
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack {
                 Text("Sumar")
                     .font(.title3)
@@ -29,13 +29,13 @@ struct DailyCaloriesChart: View {
                     .fontWeight(.semibold)
             }
         
-            HStack {
+            HStack(alignment: .center) {
                 PieChart()
                     .data(demoData)
                     .chartStyle(mixedColorStyle)
                 Spacer()
-                VStack {
-                    HStack {
+                VStack(alignment: .leading) {
+                    HStack(alignment: .center) {
                         Circle()
                             .fill(LinearGradient(
                                     gradient: Gradient(colors: [.purple, .blue]),
@@ -48,7 +48,7 @@ struct DailyCaloriesChart: View {
                         Spacer()
                     }
                     
-                    HStack{
+                    HStack(alignment: .center) {
                         Circle()
                             .fill(LinearGradient(
                                     gradient: Gradient(colors: [.pink, .yellow]),
@@ -61,7 +61,7 @@ struct DailyCaloriesChart: View {
                         Spacer()
                     }
                     
-                    HStack{
+                    HStack(alignment: .center) {
                         Circle()
                             .fill(
                                 LinearGradient(
@@ -69,21 +69,21 @@ struct DailyCaloriesChart: View {
                                     startPoint: .leading,
                                     endPoint: .trailing))
                             .frame(width: 20, height: 20)
-                        Text("\(demoData[2], specifier: "%.1f")g Carbohidrati")
+                        Text("\(demoData[2], specifier: "%.1f")g \nCarbohidrati")
                             //.font(.system(size: 17 + size, weight: .medium))
                             //.minimumScaleFactor(0.01)
                         Spacer()
                     }
                 }
+                .frame(maxHeight: .infinity)
             }
         }
-        .modifier(MakeCard())
-        .frame(height: 280)
+        .frame(minHeight: 200)
     }
 }
 
 // MARK: - PREVIEW
-struct JurnalCaloriiView_Previews: PreviewProvider {
+struct DailyCaloriesChart_Previews: PreviewProvider {
     static var previews: some View {
         DailyCaloriesChart()
         
