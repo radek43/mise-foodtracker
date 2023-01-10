@@ -41,7 +41,7 @@ struct AddFoodButton: View {
     }
 }
 // MARK: - PREVIEW
-struct ButonMeniuAdaugare_Previews: PreviewProvider {
+struct AddFoodButton_Previews: PreviewProvider {
     static var previews: some View {
         AddFoodButton(imageName: "micDejunOutline", title: "mic \ndejun")
     }
