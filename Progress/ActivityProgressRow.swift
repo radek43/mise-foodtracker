@@ -21,13 +21,14 @@ struct ActivityProgressRow: View {
             Spacer()
             Text("\(progressValue) \(measurementUnit)")
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: 612)
         .modifier(MakeCard())
+        .padding(.horizontal)
     }
 }
 
 // MARK: - PREVIEWS
-struct CardMicut_Previews: PreviewProvider {
+struct ActivityProgressRow_Previews: PreviewProvider {
     static var previews: some View {
         ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
     }
