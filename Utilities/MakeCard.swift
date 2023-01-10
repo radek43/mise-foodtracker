@@ -21,7 +21,7 @@ struct MakeCard: ViewModifier {
                 .padding()
                 .background(Color("CardBackground"))
                 .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                .shadow(color: Color.gray.opacity(0.2), radius: 20, x: 0, y: 10)
+                //.shadow(color: Color.gray.opacity(0.2), radius: 20, x: 0, y: 10)
         }
         //.frame(width: UIScreen.main.bounds.width * 0.85)
     }
