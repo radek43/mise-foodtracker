@@ -1,21 +1,22 @@
 //
-//  AddFoodButton.swift
+//  DishDetailButton.swift
 //  maiIncercSiEu
 //
-//  Created by Radu Bila on 4/15/22.
+//  Created by Radu Bila on 1/10/23.
 //
 
 import SwiftUI
-import SwiftUISegues
 
-struct AddFoodButton: View {
+struct DishDetailButton: View {
     // MARK: - PROPERTIES
     var imageName: String
-    var title: String
+    var propertyTitle: String
+    var propertyValue: String
     
-    init(imageName: String, title: String) {
+    init(imageName: String, propertyTitle: String, propertyValue: String) {
         self.imageName = imageName // assign all the parameters, not only `content`
-        self.title = title
+        self.propertyTitle = propertyTitle
+        self.propertyValue = propertyValue
 
     }
     // MARK: - BODY
@@ -31,18 +32,21 @@ struct AddFoodButton: View {
                         Image(imageName)
                             .font(Font.title.weight(.light))
                     )
-                Text(title)
-                    .font(.system(size: 15, weight: .medium, design: .default))
+                Text(propertyTitle)
+                    .font(.footnote)
                     .foregroundColor(Color.primary)
                     .multilineTextAlignment(.center)
-                    .frame(height: 40)
+                Text(propertyValue)
+                    .foregroundColor(Color.primary)
+                    .multilineTextAlignment(.center)
+
             }
             .padding(9)
     }
 }
-// MARK: - PREVIEW
-struct AddFoodButton_Previews: PreviewProvider {
+
+struct DishDetailButton_Previews: PreviewProvider {
     static var previews: some View {
-        AddFoodButton(imageName: "micDejunOutline", title: "mic \ndejun")
+        DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
     }
 }

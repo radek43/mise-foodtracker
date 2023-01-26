@@ -49,7 +49,7 @@ struct PhotoSelectorView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 340, height: 50)
-                        .background(Color(.systemBlue))
+                        .background(Color("AccentColor"))
                         .clipShape(Capsule())
                         .padding()
                 }

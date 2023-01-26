@@ -20,30 +20,34 @@ struct RegistrationView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
-            NavigationLink(destination: PhotoSelectorView(), isActive: $viewModel.didAuthenticateUser, label: { })
+//            NavigationLink(destination: PhotoSelectorView(), isActive: $viewModel.didAuthenticateUser, label: { })
                 
             AuthenticationHeaderView(title1: "Creaza un cont nou", title2: "")
             
             VStack(spacing: 40) {
                 CustomInputFields(imageName: "envelope", placeholderText: "Email", text: $email)
+                    .keyboardType(.emailAddress)
                 CustomInputFields(imageName: "person", placeholderText: "Nume Utilizator", text: $username)
                 CustomInputFields(imageName: "person", placeholderText: "Nume Complet", text: $fullname)
                 CustomInputFields(imageName: "lock", placeholderText: "Parola", isSecureField: true, text: $password)
             }
             .padding(32)
 
-            Button {
-                viewModel.register(withEmail: email, password: password, fullname: fullname, username: username)
-            } label: {
-                Text("Inregistreaza-te")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(width: 340, height: 50)
-                    .background(Color("AccentColor"))
-                    .clipShape(Capsule())
-                    .padding()
-            }
-            .shadow(color: Color.black.opacity(0.1), radius: 12)
+//            Button {
+//                viewModel.register(withEmail: email, password: password, fullname: fullname, username: username)
+//            } label: {
+//                RegistrationButton(text: "Continua")
+//            }
+            
+            Button(action: {
+                print("Floating Button Click")
+            }, label: {
+                NavigationLink(destination: PhotoSelectorView()) {
+                    RegistrationButton(text: "Continua")
+
+                }
+            })
+            
             
             Spacer()
             

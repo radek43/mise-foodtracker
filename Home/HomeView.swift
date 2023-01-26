@@ -13,7 +13,7 @@ struct HomeView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @State var uiTabarController: UITabBarController?
     @State private var data = Date()
-    @State var showUpdate = false
+    @State var showDishSheet = false
 
     // MARK: - BODY
     var body: some View {
@@ -33,11 +33,23 @@ struct HomeView: View {
                     .padding(.horizontal)
                     
                     // Vizualizare Calorii Ramase
-                    VStack {
-                        Text("2342 Calorii Ramase")
-                            .fontWeight(.semibold)
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Obiectiv")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            Spacer()
+                            Text("2342 kCal")
+                                .font(.body)
+                                .fontWeight(.semibold)
+                        }
+                        HStack {
+                            Spacer()
+                            Text("2342 kCal Ramase")
+                                .fontWeight(.semibold)
                             .padding(5)
-                        
+                            Spacer()
+                        }
                         ProgressView(value: 0.25)
                         
                         HStack {
@@ -81,29 +93,29 @@ struct HomeView: View {
                     
                         HStack(alignment: .top, spacing: 0.0) {
                             Button {
-                                self.showUpdate.toggle()
+                                self.showDishSheet.toggle()
                             } label: {
-                                AddFoodButton(imageName: "breakfast", title: "mic\ndejun")
+                                AddDishButton(imageName: "breakfast", title: "mic\ndejun")
                             }
-                            .sheet(isPresented: $showUpdate ) {
-                                FoodView()
+                            .sheet(isPresented: $showDishSheet ) {
+                                DishDetailConfirm()
                             }
                             Button { print("Buton pranz apasat")
-                            } label: { AddFoodButton(imageName: "soupLadle", title: "prânz") }
+                            } label: { AddDishButton(imageName: "soupLadle", title: "prânz") }
                             //RingView()
                             Button { print("Buton cina apasat")
-                            } label: { AddFoodButton(imageName: "pastaDish", title: "cină") }
+                            } label: { AddDishButton(imageName: "pastaDish", title: "cină") }
                             Button { print("Am apasat")
-                            } label: { AddFoodButton(imageName: "icecream", title: "gustări") }
+                            } label: { AddDishButton(imageName: "icecream", title: "gustări") }
                         }.frame(maxWidth: .infinity)
                         
                         HStack(alignment: .top, spacing: 0.0) {
                             Button { print("Buton sport apasat")
-                            } label: {AddFoodButton(imageName: "sprint", title: "sport")}
+                            } label: {AddDishButton(imageName: "sprint", title: "sport")}
                             Button { print("Buton greutate apasat")
-                            } label: { AddFoodButton(imageName: "weightScale", title: "greutate") }
+                            } label: { AddDishButton(imageName: "weightScale", title: "greutate") }
                             Button { print("Buton lichide apasat")
-                            } label: { AddFoodButton(imageName: "waterDrop", title: "lichide") }
+                            } label: { AddDishButton(imageName: "waterDrop", title: "lichide") }
                         }.frame(maxWidth: .infinity)
                     }
                     .frame(maxWidth: 612)

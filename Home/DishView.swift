@@ -1,5 +1,5 @@
 //
-//  FoodView.swift
+//  DishView.swift
 //  maiIncercSiEu
 //
 //  Created by Radu Bila on 1/10/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FoodView: View {
+struct DishView: View {
     @State var searchText = ""  // de modificat
     
     var body: some View {
@@ -100,8 +100,8 @@ struct FoodView: View {
     }
 }
 
-struct FoodView_Previews: PreviewProvider {
+struct DishView_Previews: PreviewProvider {
     static var previews: some View {
-        FoodView()
+        DishView()
     }
 }
