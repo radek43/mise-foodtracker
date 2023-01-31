@@ -46,17 +46,25 @@ struct RecipesView: View {
                 .frame(maxWidth: 612)
                 .padding(.horizontal)
             }
-            .toolbar {
-                if authViewModel.currentUser?.userType == 1 { // functionalitati de admin
-                    HStack {
-                        NavigationLink {
-                            AddNewRecipe() // de modificat
-                        } label: {
-                            Image(systemName: "note.text.badge.plus")
-                        }
+            .navigationBarItems(
+                trailing:
+                    NavigationLink {
+                        AddNewRecipe()
+                    } label: {
+                        Image(systemName: "note.text.badge.plus")
                     }
-                }
-            }
+            )
+//            .toolbar {
+//                if authViewModel.currentUser?.userType == 1 { // functionalitati de admin
+//                    HStack {
+//                        NavigationLink {
+//                            AddNewRecipe() // de modificat
+//                        } label: {
+//                            Image(systemName: "note.text.badge.plus")
+//                        }
+//                    }
+//                }
+//            }
             .navigationTitle("Rețete")
         }
     }
@@ -65,7 +73,9 @@ struct RecipesView: View {
 // MARK: - PREVIEW
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipesView()
-            .environmentObject(AuthViewModel())
+        NavigationView {
+            RecipesView()
+                .environmentObject(AuthViewModel())
+        }
     }
 }

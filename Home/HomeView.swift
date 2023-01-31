@@ -92,6 +92,7 @@ struct HomeView: View {
                             .fontWeight(.semibold)
                     
                         HStack(alignment: .top, spacing: 0.0) {
+                            Spacer()
                             Button {
                                 self.showDishSheet.toggle()
                             } label: {
@@ -107,16 +108,19 @@ struct HomeView: View {
                             } label: { AddDishButton(imageName: "pastaDish", title: "cină") }
                             Button { print("Am apasat")
                             } label: { AddDishButton(imageName: "icecream", title: "gustări") }
-                        }.frame(maxWidth: .infinity)
+                            Spacer()
+                        }
                         
                         HStack(alignment: .top, spacing: 0.0) {
+                            Spacer()
                             Button { print("Buton sport apasat")
                             } label: {AddDishButton(imageName: "sprint", title: "sport")}
                             Button { print("Buton greutate apasat")
                             } label: { AddDishButton(imageName: "weightScale", title: "greutate") }
                             Button { print("Buton lichide apasat")
                             } label: { AddDishButton(imageName: "waterDrop", title: "lichide") }
-                        }.frame(maxWidth: .infinity)
+                            Spacer()
+                        }
                     }
                     .frame(maxWidth: 612)
                     .modifier(MakeCard())
@@ -130,13 +134,14 @@ struct HomeView: View {
                     Spacer()
                 }
                 .navigationTitle("Food Tracker")
-                .toolbar(content: {
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Image(systemName: "gearshape")
-                    }
-                })
+                .navigationBarItems(
+                    trailing:
+                        NavigationLink {
+                            SettingsView()
+                        } label: {
+                            Image(systemName: "gearshape")
+                        }
+                )
         }
         //} //: end if let
     }//: end body

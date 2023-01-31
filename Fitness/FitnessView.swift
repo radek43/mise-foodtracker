@@ -52,6 +52,8 @@ struct FitnessView: View {
 // MARK: - PREVIEW
 struct FitnessView_Previews: PreviewProvider {
     static var previews: some View {
-        FitnessView(excersises: Excercise.dummyData)
+        NavigationView {
+            FitnessView(excersises: Excercise.dummyData)
+        }
     }
 }

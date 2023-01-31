@@ -21,7 +21,7 @@ struct ForumView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Menu {
+                        Menu { // sorteaza
                             Button {
                                 // do something
                             } label: {
@@ -70,30 +70,30 @@ struct ForumView: View {
                     }
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+            .navigationBarItems(
+                leading:
+                    NavigationLink {
+                        //
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                    },
+                trailing:
                     NavigationLink {
                         AddNewPost()
                     } label: {
                         Image(systemName: "square.and.pencil")
                     }
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink {
-                        //
-                    } label: {
-                        Image(systemName: "person.crop.circle")
-                    }
-                }
-            }
+            )
             .navigationTitle("Comunitate")
         }
     }
 }
 
 // MARK: - PREVIEW
-struct CommunityView_Previews: PreviewProvider {
+struct ForumView_Previews: PreviewProvider {
     static var previews: some View {
-        ForumView()
+        NavigationView {
+            ForumView()
+        }
     }
 }

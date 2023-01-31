@@ -68,6 +68,8 @@ struct ActivityProgressView: View {
 // MARK: - PREVIEW
 struct ActivityProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityProgressView()
+        NavigationView {
+            ActivityProgressView()
+        }
     }
 }
