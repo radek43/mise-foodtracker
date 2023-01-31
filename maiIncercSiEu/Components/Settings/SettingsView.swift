@@ -70,12 +70,6 @@ struct SettingsView: View {
                 } //: Form
                 .listStyle(GroupedListStyle())
                 
-                Text("Made in Romania🇷🇴")
-                    .multilineTextAlignment(.center)
-                    .font(.footnote)
-                    .padding(.top, 6)
-                    .padding(.bottom, 8)
-                    .foregroundColor(Color.secondary)
             } //: VStack
             .navigationBarTitle("Setari", displayMode: .inline)
         }//: ZStack
@@ -85,7 +79,9 @@ struct SettingsView: View {
 // MARK: - PREVIEW
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
-            .environmentObject(AuthViewModel())
+        NavigationView {
+            SettingsView()
+                .environmentObject(AuthViewModel())
+        }
     }
 }
