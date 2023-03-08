@@ -11,7 +11,7 @@ struct LoginView: View {
     // MARK: - PROPERTIES
     @State private var email = ""
     @State private var password = ""
-    @EnvironmentObject var viewModel: AuthViewModel
+//    @EnvironmentObject var viewModel: AuthViewModel
     
     // MARK: - BODY
     var body: some View {
@@ -42,7 +42,7 @@ struct LoginView: View {
                 }
                 
                 Button {
-                    viewModel.login(withEmail: email, password: password)
+//                    viewModel.login(withEmail: email, password: password)
                 } label: {
                     Text("Autentifica-te")
                         .font(.headline)

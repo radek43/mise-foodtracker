@@ -12,7 +12,7 @@ struct PhotoSelectorView: View {
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var profileImage: Image?             // var pt afisarea imaginii selectate in view
-    @EnvironmentObject var viewModel: AuthViewModel
+//    @EnvironmentObject var viewModel: AuthViewModel
 
     // MARK: - BODY
     var body: some View {
@@ -43,7 +43,7 @@ struct PhotoSelectorView: View {
             
             if let selectedImage = selectedImage {
                 Button {
-                    viewModel.uploadProfileImage(selectedImage)
+//                    viewModel.uploadProfileImage(selectedImage)
                 } label: {
                     Text("Contiuna")
                         .font(.headline)

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
+import Kingfisher
 
 struct RecipeDetailView: View {
     // MARK: - PROPERTIES
@@ -24,7 +24,7 @@ struct RecipeDetailView: View {
                         Rectangle()
                             .fill(Color(.gray))
                             .aspectRatio(4/4, contentMode: .fit)
-                        WebImage(url: URL(string: recipe.image))
+                        KFImage(URL(string: recipe.image))
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .layoutPriority(-1)
@@ -86,6 +86,6 @@ struct RecipeDetailView: View {
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeDetailView()
-            .environmentObject(AuthViewModel())
+//            .environmentObject(AuthViewModel())
     }
 }

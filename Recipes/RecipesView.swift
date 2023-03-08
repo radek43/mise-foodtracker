@@ -9,8 +9,9 @@ import SwiftUI
 
 struct RecipesView: View {
     // MARK: - PROPERTIES
-    @ObservedObject var viewModel = RecipeViewModel()
-    @EnvironmentObject var authViewModel: AuthViewModel
+//    @ObservedObject var viewModel = RecipeViewModel()
+//    @EnvironmentObject var authViewModel: AuthViewModel
+    var recipes: [Recipe] = Recipe.dummyData
 
     // MARK: - BODY
     var body: some View {
@@ -21,7 +22,7 @@ struct RecipesView: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     HStack(alignment: .center) {
-                        SearchBar(placeholderText: "Gaseste-ți inspirația",text: $viewModel.searchText)
+                        SearchBar(placeholderText: "Gaseste-ți inspirația",text: .constant(""))
                             .padding(.bottom, 3)
                         Button {
                             print("buton setari retete apasat")
@@ -33,9 +34,17 @@ struct RecipesView: View {
                     .padding(.bottom, 5.0)
                     
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 15)], spacing: 15) {
-                        ForEach(viewModel.searchableRecipes) { recipe in
+//                        ForEach(viewModel.searchableRecipes) { recipe in
+//                            NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
+//                                RecipeCard(recipe: recipe)
+//                            }
+//                        }
+                        ForEach(recipes) { recipe in
                             NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                                 RecipeCard(recipe: recipe)
+                                    .frame(maxWidth: 612)
+                                    .foregroundColor(.primary)
+    
                             }
                         }
                     }
@@ -54,17 +63,6 @@ struct RecipesView: View {
                         Image(systemName: "note.text.badge.plus")
                     }
             )
-//            .toolbar {
-//                if authViewModel.currentUser?.userType == 1 { // functionalitati de admin
-//                    HStack {
-//                        NavigationLink {
-//                            AddNewRecipe() // de modificat
-//                        } label: {
-//                            Image(systemName: "note.text.badge.plus")
-//                        }
-//                    }
-//                }
-//            }
             .navigationTitle("Rețete")
         }
     }
@@ -75,7 +73,7 @@ struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             RecipesView()
-                .environmentObject(AuthViewModel())
+//                .environmentObject(AuthViewModel())
         }
     }
 }

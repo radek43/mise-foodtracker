@@ -10,7 +10,7 @@ import Kingfisher
 
 struct HomeView: View {
     // MARK: - PROPERTIES
-    @EnvironmentObject var authViewModel: AuthViewModel
+//    @EnvironmentObject var authViewModel: AuthViewModel
     @State var uiTabarController: UITabBarController?
     @State private var data = Date()
     @State var showDishSheet = false
@@ -151,6 +151,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
-            .environmentObject(AuthViewModel())
+//            .environmentObject(AuthViewModel())
     }
 }

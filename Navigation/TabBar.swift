@@ -42,7 +42,7 @@ struct TabBar: View {
             }
             .tag(2)
             NavigationView {
-                FitnessView(excersises: Excercise.dummyData)
+                FitnessView()
             }
             .tabItem {
                 if tabSelection == 3 {Image("dumbbell.fill").imageScale(.large)}
@@ -68,6 +68,6 @@ struct TabBar: View {
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
-            .environmentObject(AuthViewModel())
+//            .environmentObject(AuthViewModel())
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import FirebaseFirestoreSwift
 
 enum Category: String {
     case micDejun  = "Mic Dejun"
@@ -20,7 +19,7 @@ enum Category: String {
 }
 
 struct Recipe: Identifiable, Decodable {
-    @DocumentID var id: String?
+    var id: String?
     let name: String
     let image: String
     let description: String
@@ -33,14 +32,6 @@ struct Recipe: Identifiable, Decodable {
 extension Recipe {
     static let dummyData: [Recipe] = [
         //https://gourmandelle.com/wp-content/uploads/2013/11/Chiftelute-cu-ciuperci-si-seminte-de-canepa-Protein-Rich-Mushroom-Hemp-Patties-with-Herbs-burger.jpg.webp
-        
-        Recipe(id: "1",
-               name: "Chiftelute de ciuperci cu seminte de canepa",
-               image: "https://onco-plan.ro/wp-content/uploads/2021/07/rice-porridge-with-nuts-honey.jpg",
-               description: "Incearca reteta vegana de chiftelute de ciuperci cu seminte de canepa, foarte bogate in proteine si gata in doar jumatate de ora!",
-               ingredients: "360g ciuperci, marunite \n5 Linguri de seminte de canepa \no legatura de marar, maruntit \no ceapa, maruntita \n2 lingurite de cimbru uscat \n2 Linguri in macinat + 3 Linguri apa \n4 Linguri fulgi de drojdie inactiva \n3-4 Linguri de pudra proteica de canepa, adauga doar 3 linguri la inceput. Daca amestecul este inca prea umed, mai adauga cate o lingura pana ajunge la consistenta optima si se pot asambla usor chiftelutele. \n4 Linguri vin alb, optional \n3 Linguri de ulei (pentru prajit/copt) + 1 Lingura de ulei (pentru sotat) sare si piper, dupa gust",
-               directions: "Amesteca inul macinat cu apa si lasa-le intr-un bol mic pana se ingroasa - aprox. 5 minute. Incinge o lingura de ulei intr-o tigaie mai mare. Adauga ceapa si caleste-o. Adauga ciupercile maruntite, cimbrul uscat, vinul alb, sare si piper. Soteaza-le 10 minute si acopera-le cu un capac. Da tigaia la o parte de pe foc. Adauga ouale batute sau inul + drojdia inactiva si amesteca bine. Adauga marar maruntit, seminte de canepa si pudra proteica de canepa. Adauga doar 3 linguri la inceput. Daca amestecul este inca prea umed, mai adauga cate o lingura pana ajunge la consistenta optima si se pot asambla usor chiftelutele. Acum, sunt doua metode de a prepara chiftelutele de ciuperci. 1. Prin prajire usoara in f. putin ulei sau 2. Prin coacere. Am testat ambele metode si chiftelutele vor iesi bune indiferent de metoda utilizata. Prajirea usoara este insa ceva mai rapida.",
-               category: "Main"),
 
         Recipe(id: "2",
                name: "Terci de ovăz copt, cu unt de susan și mere",
@@ -88,14 +79,6 @@ extension Recipe {
                description: "Salata cu ou este un fel de mâncare versatil pentru cei care au nevoie de o variantă cu aport caloric ridicat, ușor de mestecat și înghițit. Ouăle sunt o sursă bună de proteină de înaltă calitate, iar avocado oferă un aport de grăsime monosaturată benefică pentru inimă și pentru reducerea inflamației din corp. Această salată poate fi consumată singură sau alături de un sandviș, wrap, crackerși integrali sau crudități.",
                ingredients: "• 6 ouă, fierte tari și tocate \n• 3 avocado, tăiate pe jumătate, fără sâmburi \n• 2 linguri de iaurt grecesc gras \n• 1 linguriță de suc de lămâie \n• 2 lingurițe de mărar proaspăt \n• ½ linguriță de sare himalayană",
                directions: "• Adăugă toate ingredientele într-un vas și zdrobește-le ușor cu o furculiță \n• Servește cu pâine, crackerși integrai, salată sau orez brun",
-               category: "Main"),
-
-        Recipe(id: "8",
-               name: "Smoothie cu cheesecake cu căpșuni",
-               image: "https://onco-plan.ro/wp-content/uploads/2021/07/strawberry-smoothie-with-basil-table.jpg",
-               description: "Acest smoothie delicios este o modalitate sănătoasă de a te răsfăța cu un preparat foarte nutritiv. Brânza dulce de vaci și laptele sunt surse bogate de proteine și calciu. Brânza de vaci poate fi înlocuită cu iaurt sau varianta sa fără lactoza sau cu iaurt vegetal (cum ar fi cele de cocos sau soia). Pentru un plus caloric, folosește smântână dulce, iar pentru un plus de proteine, adăugă lapte praf degresat sau pulbere de proteină, în funcție de recomandările primite de la medicul nutriționist.",
-               ingredients: "• 1 cană de căpșuni congelate \n• ¼ cană de brânză de vaci din lapte integral \n• ½ cană de lapte integral \n• 4 biscuiți digestivi din ovăz mărunțiți (30 de grame) \n• 1 linguriță de miere sau xilitol din mesteacăn (varianta pentru cei cu surplus corporal sau pentru cei cu diabet zaharat)",
-               directions: "• Adăugă toate ingredientele într-un blender \n• Amestecă până se omogenizează",
                category: "Main")
     ]
 }

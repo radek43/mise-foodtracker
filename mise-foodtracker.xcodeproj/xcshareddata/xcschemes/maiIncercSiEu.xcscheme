@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "17A92CFA2801DCEA000CF34F"
-               BuildableName = "maiIncercSiEu.app"
-               BlueprintName = "maiIncercSiEu"
-               ReferencedContainer = "container:maiIncercSiEu.xcodeproj">
+               BuildableName = "mise-foodtracker.app"
+               BlueprintName = "mise-foodtracker"
+               ReferencedContainer = "container:mise-foodtracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17A92CFA2801DCEA000CF34F"
-            BuildableName = "maiIncercSiEu.app"
-            BlueprintName = "maiIncercSiEu"
-            ReferencedContainer = "container:maiIncercSiEu.xcodeproj">
+            BuildableName = "mise-foodtracker.app"
+            BlueprintName = "mise-foodtracker"
+            ReferencedContainer = "container:mise-foodtracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17A92CFA2801DCEA000CF34F"
-            BuildableName = "maiIncercSiEu.app"
-            BlueprintName = "maiIncercSiEu"
-            ReferencedContainer = "container:maiIncercSiEu.xcodeproj">
+            BuildableName = "mise-foodtracker.app"
+            BlueprintName = "mise-foodtracker"
+            ReferencedContainer = "container:mise-foodtracker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

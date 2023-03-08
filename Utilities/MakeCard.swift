@@ -30,6 +30,6 @@ struct MakeCard: ViewModifier {
 struct MakeCard_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
-            .environmentObject(AuthViewModel())
+//            .environmentObject(AuthViewModel())
     }
 }

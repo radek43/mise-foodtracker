@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FitnessView: View {
     // MARK: - PROPERTIES
-    var excersises: [Excercise]
+    var excersises: [Excercise] = Excercise.dummyData
     
     // MARK: - BODY
     var body: some View {
@@ -53,7 +53,7 @@ struct FitnessView: View {
 struct FitnessView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            FitnessView(excersises: Excercise.dummyData)
+            FitnessView()
         }
     }
 }

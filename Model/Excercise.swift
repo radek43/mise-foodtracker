@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import FirebaseFirestoreSwift
 
 struct Excercise: Identifiable {
-    @DocumentID var id: String?
+    var id: String?
     //let id = UUID()
     let name: String
     let video: String

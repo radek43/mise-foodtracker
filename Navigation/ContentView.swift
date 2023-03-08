@@ -9,18 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - PROPERTIES
-    @EnvironmentObject var viewModel: AuthViewModel
+//    @EnvironmentObject var viewModel: AuthViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     // MARK: - BODY
     var body: some View {
-        if viewModel.userSession == nil {
-            // no user logged in
-            LoginView()
-        } else {
-            // user logged in
-            TabBar()
-        }
+//        if viewModel.userSession == nil {
+//            // no user logged in
+//            LoginView()
+//        } else {
+//            // user logged in
+//            TabBar()
+//        }
+        TabBar()
     }
 }
 

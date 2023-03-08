@@ -27,6 +27,6 @@ struct AddShadow: ViewModifier {
 struct AddShadow_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
-            .environmentObject(AuthViewModel())
+//            .environmentObject(AuthViewModel())
     }
 }

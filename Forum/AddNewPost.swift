@@ -17,8 +17,8 @@ struct AddNewPost: View {
     @State private var titluPostare = ""
     @State private var descriere = ""
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var authViewModel: AuthViewModel
-    @ObservedObject var viewModel = ForumViewModel()
+//    @EnvironmentObject var authViewModel: AuthViewModel
+//    @ObservedObject var viewModel = ForumViewModel()
     
     // MARK: - BODY
     var body: some View {
@@ -52,11 +52,11 @@ struct AddNewPost: View {
                 }
             }
         }
-        .onReceive(viewModel.$didUploadPost, perform: { success in
-            if success {
-                presentationMode.wrappedValue.dismiss()
-            }
-        })
+//        .onReceive(viewModel.$didUploadPost, perform: { success in
+//            if success {
+//                presentationMode.wrappedValue.dismiss()
+//            }
+//        })
         .navigationBarTitle("Postare Noua", displayMode: .inline)
         .toolbar {
             Button("Posteaza") {
@@ -79,6 +79,5 @@ struct AddNewPost: View {
 struct CommunityAddMessage_Previews: PreviewProvider {
     static var previews: some View {
         AddNewPost()
-            .environmentObject(AuthViewModel())
     }
 }

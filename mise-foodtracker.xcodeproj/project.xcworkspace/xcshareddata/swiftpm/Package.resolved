@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "chartview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AppPear/ChartView",
+      "state" : {
+        "revision" : "3265d3e16b6480158b748095a227ea04c48f80ad",
+        "version" : "2.0.0-beta.1"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "af4be924ad984cf4d16f4ae4df424e79a443d435",
+        "version" : "7.6.2"
+      }
+    },
+    {
+      "identity" : "swiftui-segues",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/globulus/swiftui-segues",
+      "state" : {
+        "revision" : "5a2e4fe15d789ded9160705692f6e1dfc825a76e",
+        "version" : "1.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}

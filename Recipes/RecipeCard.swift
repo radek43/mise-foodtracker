@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
+import Kingfisher
 
 struct RecipeCard: View {
     // MARK: - PROPERTIES
@@ -21,7 +21,7 @@ struct RecipeCard: View {
                     .fill(Color(.gray))
                     .aspectRatio(3/4, contentMode: .fit)
                             
-                    WebImage(url: URL(string: recipe.image))
+                    KFImage(URL(string: recipe.image))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .layoutPriority(-1)
