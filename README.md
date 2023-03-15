@@ -1,2 +1,2 @@
 # mise-foodtracker
-Aplicatie de monitorizare a mancarii consumate
+iOS app that manages your activity and nutrition
