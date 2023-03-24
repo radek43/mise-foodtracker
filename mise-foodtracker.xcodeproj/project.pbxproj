@@ -42,6 +42,8 @@
 		17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8628A2C94F00285894 /* RoundedShape.swift */; };
 		17FE3DDB28C4BBFB00B7590E /* FitnessDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE3DDA28C4BBFB00B7590E /* FitnessDetailView.swift */; };
 		2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0C2901AD4A006ECB21 /* Post.swift */; };
+		2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8629CC843E00371FE9 /* Extensions.swift */; };
+		2C082D8929CC925E00371FE9 /* ChartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8829CC925E00371FE9 /* ChartTest.swift */; };
 		2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */; };
 		2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* RingView.swift */; };
 		2C63538128F0A7E40061A701 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63538028F0A7E40061A701 /* PostDetail.swift */; };
@@ -56,6 +58,7 @@
 		2C7918F3296DB519009F2194 /* DishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7918F2296DB519009F2194 /* DishView.swift */; };
 		2C7918F5296DBC35009F2194 /* DishDetailConfirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7918F4296DBC35009F2194 /* DishDetailConfirm.swift */; };
 		2C7918F7296DBFB1009F2194 /* DishDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7918F6296DBFB1009F2194 /* DishDetailButton.swift */; };
+		2C79C8D529BF71DF00243940 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79C8D429BF71DF00243940 /* KeychainService.swift */; };
 		2C8F034E296F0B67003AA27C /* DishDetailChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8F034D296F0B67003AA27C /* DishDetailChart.swift */; };
 		2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */; };
 		2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196729B8E8ED00B064B9 /* SettingsView.swift */; };
@@ -101,6 +104,8 @@
 		17F01E8628A2C94F00285894 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
 		17FE3DDA28C4BBFB00B7590E /* FitnessDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessDetailView.swift; sourceTree = "<group>"; };
 		2C049F0C2901AD4A006ECB21 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2C082D8629CC843E00371FE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2C082D8829CC925E00371FE9 /* ChartTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTest.swift; sourceTree = "<group>"; };
 		2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		2C56DEE729546FAF006A4A5A /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		2C63538028F0A7E40061A701 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 		2C7918F2296DB519009F2194 /* DishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishView.swift; sourceTree = "<group>"; };
 		2C7918F4296DBC35009F2194 /* DishDetailConfirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailConfirm.swift; sourceTree = "<group>"; };
 		2C7918F6296DBFB1009F2194 /* DishDetailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailButton.swift; sourceTree = "<group>"; };
+		2C79C8D429BF71DF00243940 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		2C8F034D296F0B67003AA27C /* DishDetailChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailChart.swift; sourceTree = "<group>"; };
 		2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2CC4196729B8E8ED00B064B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 		17425A3B28A2BB380021F61A /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2C79C8D429BF71DF00243940 /* KeychainService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -237,6 +244,7 @@
 				2C77A4CA2948A34A00233AF4 /* ViewModel */,
 				17425A3B28A2BB380021F61A /* Service */,
 				17B1A4DD2826A24D00F1CDEC /* Concept */,
+				2C082D8529CC840C00371FE9 /* Extensions */,
 				17A92D042801DCEC000CF34F /* Preview Content */,
 				2CA55FE02948AACE00C6A8B1 /* Resources */,
 				17A92CFC2801DCEA000CF34F /* Products */,
@@ -266,6 +274,7 @@
 				17007E6F2824525B0084B39B /* SegueTestView.swift */,
 				2C64C03D294B7C9F00E9305F /* DropdownList.swift */,
 				2CEADAB32953204D002AA0A0 /* PostRowTest.swift */,
+				2C082D8829CC925E00371FE9 /* ChartTest.swift */,
 			);
 			path = Concept;
 			sourceTree = "<group>";
@@ -282,6 +291,14 @@
 				178CCC7828BC035C0074D52E /* ImageUploader.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		2C082D8529CC840C00371FE9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C082D8629CC843E00371FE9 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2C6E96C328E49B5D000159C4 /* Forum */ = {
@@ -430,6 +447,7 @@
 				178CEBC52809B82700D6DD25 /* AddDishButton.swift in Sources */,
 				17F01E8128A2C84800285894 /* RegistrationView.swift in Sources */,
 				2C8F034E296F0B67003AA27C /* DishDetailChart.swift in Sources */,
+				2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */,
 				2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */,
 				1747AC0028C3BEBE00138938 /* FitnessCard.swift in Sources */,
 				176372DD28C117E4006337A7 /* User.swift in Sources */,
@@ -453,10 +471,12 @@
 				17007E702824525B0084B39B /* SegueTestView.swift in Sources */,
 				2C72F33629058249004BBB8A /* PullToRefresh.swift in Sources */,
 				17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */,
+				2C082D8929CC925E00371FE9 /* ChartTest.swift in Sources */,
 				2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */,
 				2C6A161728F17F5200D9DDE4 /* ReplyRow.swift in Sources */,
 				2CFC2B3229705BF800451922 /* RegistrationButton.swift in Sources */,
 				2C64C040294B931600E9305F /* ProfileSettingsView.swift in Sources */,
+				2C79C8D529BF71DF00243940 /* KeychainService.swift in Sources */,
 				2C7918F5296DBC35009F2194 /* DishDetailConfirm.swift in Sources */,
 				2C6E96C528E49B78000159C4 /* PostRow.swift in Sources */,
 				2C7918F3296DB519009F2194 /* DishView.swift in Sources */,
@@ -698,7 +718,7 @@
 			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
 				kind = exactVersion;
-				version = "2.0.0-beta.1";
+				version = "2.0.0-beta.2";
 			};
 		};
 		17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */ = {

@@ -78,6 +78,10 @@ struct DishDetailChart: View {
 
 struct DishDetail_Previews: PreviewProvider {
     static var previews: some View {
-        DishDetailChart()
+        Group {
+            DishDetailChart()
+            DishDetailChart()
+                .preferredColorScheme(.dark)
+        }
     }
 }

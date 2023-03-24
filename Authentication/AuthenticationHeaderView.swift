@@ -64,7 +64,7 @@ struct AuthenticationHeaderView: View {
                     .animation(Animation.linear(duration: 40).repeatForever())
             }
         )
-        .background(Color("AccentColor"))
+        .background(Color.accent)
         .foregroundColor(.white)
         .clipShape(RoundedShape(corners: [.bottomRight], cornerRadius: 80))
     }
@@ -73,7 +73,12 @@ struct AuthenticationHeaderView: View {
 // MARK: - PREVIEW
 struct AuthenticationHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationHeaderView(title1: "Welcome", title2: "Back")
+        Group {
+            AuthenticationHeaderView(title1: "Welcome", title2: "Back")
+            AuthenticationHeaderView(title1: "Welcome", title2: "Back")
+                .preferredColorScheme(.dark)
+        }
+        
     }
 }
 

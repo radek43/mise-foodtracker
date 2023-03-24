@@ -11,48 +11,56 @@ import SwiftUICharts
 struct ActivityProgressView: View {
     // MARK: - PROPERTIES
     var demoData: [Double] = [8, 4, 2, 5, 7, 6, 5, 8]
-    let mixedColorStyle = ChartStyle(backgroundColor: .white, foregroundColor: [ColorGradient(.purple, .blue)])
+    let mixedColorStyle = ChartStyle(backgroundColor: Color.background, foregroundColor: [ColorGradient(Color.accent, .blue)])
     
     @ScaledMetric var size: CGFloat = 1
     
     // MARK: - BODY
     var body: some View {
         ZStack {
-            Color("ColorBackground")
+            Color.background
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView(showsIndicators: false) {
-                VStack {
-                    HStack {
+                CardView(showShadow: false) {
+                    VStack(alignment: .leading) {
                         Text("Calorii saptamanale")
                             .font(.title3)
                             .fontWeight(.semibold)
-                        Spacer()
+                            .padding()
+                        LineChart()
+                            .data(demoData)
+                            .chartStyle(mixedColorStyle)
                     }
-                    LineChart()
-                        .data(demoData)
-                        .chartStyle(mixedColorStyle)
+                    .background(Color.card)
+                    
                 }
-                .frame(minHeight: 256)
+                .frame(height: 250)
                 .frame(maxWidth: 612)
-                .modifier(MakeCard())
+                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                 .padding(.horizontal)
+                    
                 
-                VStack {
-                    HStack {
-                        Text("Top calorii alimente consumate")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                        Spacer()
+                
+                    CardView(showShadow: false) {
+                        VStack(alignment: .leading) {
+                            Text("Top alimente calorice consumate")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                            BarChart()
+                                .data(demoData)
+                                .chartStyle(mixedColorStyle)
+                        }
+
+                        .padding([.top, .leading, .trailing])
+                        .background(Color.card)
+
                     }
-                    BarChart()
-                        .data(demoData)
-                        .chartStyle(mixedColorStyle)
-                }
-                .frame(minHeight: 256)
-                .frame(maxWidth: 612)
-                .modifier(MakeCard())
-                .padding(.horizontal)
+                    .frame(height: 250)
+                    .frame(maxWidth: 612)
+                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                    .padding(.horizontal)
+                
                 
                 VStack {
                     ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
@@ -68,8 +76,15 @@ struct ActivityProgressView: View {
 // MARK: - PREVIEW
 struct ActivityProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            ActivityProgressView()
+        
+        Group {
+            NavigationView {
+                ActivityProgressView()
+            }
+            NavigationView {
+                ActivityProgressView()
+                    .preferredColorScheme(.dark)
+            }
         }
     }
 }

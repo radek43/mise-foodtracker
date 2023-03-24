@@ -16,7 +16,7 @@ struct RecipesView: View {
     // MARK: - BODY
     var body: some View {
         ZStack {
-            Color("ColorBackground")
+            Color.background
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView(showsIndicators: false) {
@@ -71,9 +71,15 @@ struct RecipesView: View {
 // MARK: - PREVIEW
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            RecipesView()
-//                .environmentObject(AuthViewModel())
+        Group {
+            NavigationView {
+                RecipesView()
+            }
+            NavigationView {
+                RecipesView()
+                    .preferredColorScheme(.dark)
+            }
         }
+//                .environmentObject(AuthViewModel())
     }
 }

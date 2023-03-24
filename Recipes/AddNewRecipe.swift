@@ -67,7 +67,7 @@ struct AddNewRecipe: View {
             }
         }
     }
-    // MARK: - loadImage()
+    // MARK: - FUNCTIONS
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         recipeImage = Image(uiImage: selectedImage)
@@ -77,6 +77,10 @@ struct AddNewRecipe: View {
 // MARK: - PREVIEWS
 struct AddNewRecipe_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewRecipe()
+        Group {
+            AddNewRecipe()
+            AddNewRecipe()
+                .preferredColorScheme(.dark)
+        }
     }
 }

@@ -15,26 +15,26 @@ struct PostDetail: View {
     // MARK: - BODY
     var body: some View {
         ZStack {
-            Color("ColorBackground")
+            Color.background
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView {
                 VStack(alignment: .leading) { // titlu, metadata si interaction buttons
                     HStack(alignment: .center) {
                         if let user = post.user {
-                            KFImage(URL(string: user.profileImageUrl))
-                                .resizable()
-                                .scaledToFill()
-                                .clipShape(Circle())
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(Color.secondary)
-                                .padding(.trailing, 5)
+//                            KFImage(URL(string: user.profileImageUrl))
+//                                .resizable()
+//                                .scaledToFill()
+//                                .clipShape(Circle())
+//                                .frame(width: 50, height: 50)
+//                                .foregroundColor(Color.secondary)
+//                                .padding(.trailing, 5)
                             VStack(alignment: .leading) {
                                 Text(post.titluPostare)
                                     .font(.title)
                                     .fontWeight(.semibold)
                                     .fixedSize(horizontal: false, vertical: true)
-                                Text("@" + user.username)
+                                Text("@") //+ user.token
                                     .font(.footnote)
                             }
                         } else { //dummy data for preview
@@ -90,7 +90,7 @@ struct PostDetail: View {
                     .padding([.top, .trailing], 3)
                 }
                 .padding()
-                .background(Color("PostDetailColor"))
+                .background(Color.post)
                 .clipShape(RoundedShape(corners: [.bottomLeft, .bottomRight], cornerRadius: 18))
                 .modifier(AddShadow(opacity: 0.3, radius: 20, x: 0, y: 10))
                 .padding(.bottom)
@@ -121,6 +121,10 @@ struct PostDetail: View {
 // MARK: - PREVIEW
 struct CommunityViewDetail_Previews: PreviewProvider {
     static var previews: some View {
-        PostDetail(post: Post.dummyData[1])
+        Group {
+            PostDetail(post: Post.dummyData[1])
+            PostDetail(post: Post.dummyData[1])
+                .preferredColorScheme(.dark)
+        }
     }
 }

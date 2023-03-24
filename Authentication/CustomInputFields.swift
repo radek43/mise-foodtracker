@@ -42,9 +42,17 @@ struct CustomInputFields: View {
 // MARK: - PREVIEW
 struct CustomInputFields_Previews: PreviewProvider {
     static var previews: some View {
-        CustomInputFields(imageName: "envelope",
-                          placeholderText: "Email",
-                          isSecureField: false,
-                          text: .constant(""))
+        Group {
+            CustomInputFields(imageName: "envelope",
+                              placeholderText: "Email",
+                              isSecureField: false,
+                              text: .constant(""))
+            CustomInputFields(imageName: "envelope",
+                              placeholderText: "Email",
+                              isSecureField: false,
+                              text: .constant(""))
+            .preferredColorScheme(.dark)
+        }
+        
     }
 }

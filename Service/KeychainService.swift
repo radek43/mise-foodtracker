@@ -7,7 +7,7 @@
 
 import Foundation
 
-class KeychainService {
+struct KeychainService {
     enum KeychainError: Error {
         case duplicateEntry
         case unknown(OSStatus)

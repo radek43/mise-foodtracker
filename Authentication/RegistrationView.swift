@@ -65,14 +65,20 @@ struct RegistrationView: View {
             .padding(.bottom, 32)
         }
         .ignoresSafeArea()
-        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+        .background(Color.background.edgesIgnoringSafeArea(.all))
     }
 }
 
 // MARK: - PREVIEWS
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationView()
+        Group {
+            RegistrationView()
+            RegistrationView()
+                .preferredColorScheme(.dark)
+        }
+        
+        
 //            .environmentObject(AuthViewModel())
     }
 }

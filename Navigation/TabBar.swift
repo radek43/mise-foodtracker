@@ -18,8 +18,8 @@ struct TabBar: View {
                 HomeView()
             }
             .tabItem {
-                if tabSelection == 0 {Image("house.fill")}
-                else {Image("house")}
+                if tabSelection == 0 { Image("house.fill") }
+                else { Image("house") }
                 Text("Meniu")
             }
             .tag(0)
@@ -27,8 +27,8 @@ struct TabBar: View {
                 ActivityProgressView()
             }
             .tabItem {
-                if tabSelection == 1 {Image("chart.bar.fill")}
-                else {Image("chart.bar")}
+                if tabSelection == 1 { Image("chart.bar.fill") }
+                else { Image("chart.bar") }
                 Text("Progres")
             }
             .tag(1)
@@ -36,8 +36,8 @@ struct TabBar: View {
                 RecipesView()
             }
             .tabItem {
-                if tabSelection == 2 {Image("book.fill")}
-                else {Image("book")}
+                if tabSelection == 2 { Image("book.fill") }
+                else { Image("book") }
                 Text("Retete")
             }
             .tag(2)
@@ -45,8 +45,8 @@ struct TabBar: View {
                 FitnessView()
             }
             .tabItem {
-                if tabSelection == 3 {Image("dumbbell.fill").imageScale(.large)}
-                else {Image("dumbbell").imageScale(.large)}
+                if tabSelection == 3 { Image("dumbbell.fill").imageScale(.large) }
+                else { Image("dumbbell").imageScale(.large) }
                 Text("Sport")
             }
             .tag(3)
@@ -54,8 +54,8 @@ struct TabBar: View {
                 ForumView()
             }
             .tabItem {
-                if tabSelection == 4 {Image("person.2.fill")}
-                else {Image("person.2")}
+                if tabSelection == 4 { Image("person.2.fill") }
+                else { Image("person.2") }
                 Text("Comunitate")
             }
             .tag(4)
@@ -67,7 +67,11 @@ struct TabBar: View {
 // MARK: - PREVIEW
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
-//            .environmentObject(AuthViewModel())
+        Group {
+            TabBar()
+            TabBar()
+                .preferredColorScheme(.dark)
+        }
+//      .environmentObject(AuthViewModel())
     }
 }

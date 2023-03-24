@@ -43,9 +43,13 @@ struct SettingsRow: View {
 }
 
 // MARK: - PREVIEW
-struct FormRowStaticView_Previews: PreviewProvider {
+struct SettingsRow_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsRow(iconAsset: "figure.run", firstText: "Application", color: .secondary)
+        Group {
+            SettingsRow(iconAsset: "figure.run", firstText: "Application", color: .secondary)
+            SettingsRow(iconAsset: "figure.run", firstText: "Application", color: .secondary)
+                .preferredColorScheme(.dark)
+        }
     }
 }
 

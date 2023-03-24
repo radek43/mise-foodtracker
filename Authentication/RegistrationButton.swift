@@ -15,7 +15,7 @@ struct RegistrationButton: View {
             .font(.headline)
             .foregroundColor(.white)
             .frame(width: 340, height: 50)
-            .background(Color("AccentColor"))
+            .background(Color.accent)
             .clipShape(Capsule())
             .padding()
             .shadow(color: Color.black.opacity(0.1), radius: 12)
@@ -24,6 +24,10 @@ struct RegistrationButton: View {
 
 struct RegistrationButton_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationButton(text: "Inregistreaza-te")
+        Group {
+            RegistrationButton(text: "Inregistreaza-te")
+            RegistrationButton(text: "Inregistreaza-te")
+                .preferredColorScheme(.dark)
+        }
     }
 }

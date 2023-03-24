@@ -58,6 +58,9 @@ struct MeasurementsSettings: View {
 // MARK: - PREVIEW
 struct MeasurementsSettings_Previews: PreviewProvider {
     static var previews: some View {
-        MeasurementsSettings()
+        Group {
+            MeasurementsSettings()
+            MeasurementsSettings()
+        }
     }
 }

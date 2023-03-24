@@ -19,7 +19,7 @@ struct HomeView: View {
     var body: some View {
     // if let user = authViewModel.currentUser {
         ZStack {
-            Color("ColorBackground")
+            Color.background
                 .edgesIgnoringSafeArea(.all)
     
             ScrollView(showsIndicators: false) {
@@ -128,7 +128,8 @@ struct HomeView: View {
 
                     DailyCaloriesChart()
                         .frame(maxWidth: 612)
-                        .modifier(MakeCard())
+                        .background(Color("CardBackground"))
+                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                         .padding(.horizontal)
                     
                     Spacer()
@@ -150,7 +151,15 @@ struct HomeView: View {
 // MARK: - PREVIEW
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
-//            .environmentObject(AuthViewModel())
+        Group {
+            NavigationView {
+                HomeView()
+            }
+            NavigationView {
+                HomeView()
+                    .preferredColorScheme(.dark)
+            }
+        }
+//      .environmentObject(AuthViewModel())
     }
 }

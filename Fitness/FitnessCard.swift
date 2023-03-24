@@ -60,6 +60,10 @@ struct FitnessCard: View {
 // MARK: - PREVIEW
 struct FitnessCard_Previews: PreviewProvider {
     static var previews: some View {
-        FitnessCard(exercitiu: Excercise.dummyData[0])
+        Group {
+            FitnessCard(exercitiu: Excercise.dummyData[0])
+            FitnessCard(exercitiu: Excercise.dummyData[0])
+                .preferredColorScheme(.dark)
+        }
     }
 }

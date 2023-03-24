@@ -16,7 +16,7 @@ struct ForumView: View {
     // MARK: - BODY
     var body: some View {
         ZStack {
-            Color("ColorBackground")
+            Color.background
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView(showsIndicators: false) {
@@ -95,8 +95,14 @@ struct ForumView: View {
 // MARK: - PREVIEW
 struct ForumView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            ForumView()
+        Group {
+            NavigationView {
+                ForumView()
+            }
+            NavigationView {
+                ForumView()
+                    .preferredColorScheme(.dark)
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ struct DishView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color("ColorBackground")
+                Color.background
                     .edgesIgnoringSafeArea(.all)
                 ScrollView {
                     VStack {
@@ -102,6 +102,10 @@ struct DishView: View {
 
 struct DishView_Previews: PreviewProvider {
     static var previews: some View {
-        DishView()
+        Group {
+            DishView()
+            DishView()
+                .preferredColorScheme(.dark)
+        }
     }
 }

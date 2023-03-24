@@ -17,13 +17,13 @@ struct PostRow: View {
         VStack(alignment: .leading) {
             if let user = post.user {
                 HStack(alignment: .top) {
-                    KFImage(URL(string: user.profileImageUrl))
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.secondary)
-                        .padding(.trailing, 5)
+//                    KFImage(URL(string: user.profileImageUrl))
+//                        .resizable()
+//                        .scaledToFill()
+//                        .clipShape(Circle())
+//                        .frame(width: 50, height: 50)
+//                        .foregroundColor(Color.secondary)
+//                        .padding(.trailing, 5)
 
                     VStack(alignment: .leading) {
                         Text(post.titluPostare)
@@ -31,7 +31,7 @@ struct PostRow: View {
                             .fontWeight(.semibold)
                             .multilineTextAlignment(.leading)
                         
-                        Text("@" + user.username)
+                        Text("@\(user.name)")
                             .font(.footnote)
                             .padding(.bottom, 3)
                         
@@ -62,29 +62,29 @@ struct PostRow: View {
                 HStack(alignment: .top) {
                     Circle() // placeholder poza de profil
                         .frame(width: 50, height: 50)
-                        .foregroundColor(Color("ButtonColor"))
+                        .foregroundColor(Color.button)
                         .padding(.trailing, 5)
                     VStack(alignment: .leading) {
     
                     //placeholder titlu
                     RoundedRectangle(cornerRadius: 5, style: .continuous)
                         .frame(width: 250, height: 30)
-                        .foregroundColor(Color("ButtonColor"))
+                        .foregroundColor(Color.button)
                     
                     //placeholder username
                         RoundedRectangle(cornerRadius: 3, style: .continuous)
                         .frame(width: 100, height: 10)
-                        .foregroundColor(Color("ButtonColor"))
+                        .foregroundColor(Color.button)
                     
                     //placeholder linie1 continutText
                         RoundedRectangle(cornerRadius: 4, style: .continuous)
                         .frame(width: 250, height: 15)
-                        .foregroundColor(Color("ButtonColor"))
+                        .foregroundColor(Color.button)
                         
                     //placeholder linie2 continutText
                     RoundedRectangle(cornerRadius: 4, style: .continuous)
                         .frame(width: 225, height: 13)
-                        .foregroundColor(Color("ButtonColor"))
+                        .foregroundColor(Color.button)
                     }
                 }
                 
@@ -92,19 +92,19 @@ struct PostRow: View {
                     //placeholder aprecieri
                     RoundedRectangle(cornerRadius: 3, style: .continuous)
                         .frame(width: 80, height: 10)
-                        .foregroundColor(Color("ButtonColor"))
+                        .foregroundColor(Color.button)
                     
                     //placeholder comentarii
                     RoundedRectangle(cornerRadius: 3, style: .continuous)
                         .frame(width: 80, height: 10)
-                        .foregroundColor(Color("ButtonColor"))
+                        .foregroundColor(Color.button)
                     
                     Spacer()
                     
                     //placeholder dataPostare
                     RoundedRectangle(cornerRadius: 3, style: .continuous)
                         .frame(width: 70, height: 10)
-                        .foregroundColor(Color("ButtonColor"))
+                        .foregroundColor(Color.button)
                 }
                 .foregroundColor(Color.secondary)
                 .font(.footnote)
@@ -117,7 +117,12 @@ struct PostRow: View {
 // MARK: - PREVIEW
 struct CommunityCard_Previews: PreviewProvider {
     static var previews: some View {
-        ForumView()
+        Group {
+            ForumView()
+            ForumView()
+                .preferredColorScheme(.dark)
+        }
+        
         //PostRow(post: Post.dummyData[0])
     }
 }

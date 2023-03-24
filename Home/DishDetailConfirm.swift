@@ -10,7 +10,7 @@ import SwiftUI
 struct DishDetailConfirm: View {
     var body: some View {
         ZStack {
-            Color("ColorBackground")
+            Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .center) {
                 VStack {
@@ -51,7 +51,7 @@ struct DishDetailConfirm: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 340, height: 50)
-                        .background(Color("AccentColor"))
+                        .background(Color.accent)
                         .clipShape(Capsule())
                         .padding()
                 }
@@ -66,6 +66,11 @@ struct DishDetailConfirm: View {
 
 struct DishDetailConfirm_Previews: PreviewProvider {
     static var previews: some View {
-        DishDetailConfirm()
+        Group {
+            DishDetailConfirm()
+            DishDetailConfirm()
+                .preferredColorScheme(.dark)
+        }
+        
     }
 }

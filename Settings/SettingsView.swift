@@ -11,14 +11,14 @@ import Kingfisher
 
 struct SettingsView: View {
     // MARK: - PROPERTIES
-//    @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var ViewModel: AuthViewModel
     @State private var doesTrackActivity = false
     @State private var isShowingSettingsScreen: Bool = false
 
     // MARK: - BODY
     var body: some View {
         ZStack {
-            Color("ColorBackground")
+            Color.background
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .center, spacing: 0) {
@@ -63,7 +63,7 @@ struct SettingsView: View {
                             SettingsRow(iconAsset: "figure.run", firstText: "Inregistrare activitate", color: .blue)
                         }
                         Button {
-//                            authViewModel.signOut()
+                            ViewModel.signOut()
                         } label: {
                             SettingsRow(iconDefault: "lock", firstText: "Delogare", color: .secondary)
                         }
@@ -81,8 +81,12 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SettingsView()
-//                .environmentObject(AuthViewModel())
+            Group {
+                SettingsView()
+                SettingsView()
+                    .preferredColorScheme(.dark)
+            }
+//          .environmentObject(AuthViewModel())
         }
     }
 }

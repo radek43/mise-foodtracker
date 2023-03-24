@@ -16,7 +16,7 @@ struct RingView: View {
             ZStack {
                 Circle()
                     .stroke(Color.primary.opacity(0.2), style: StrokeStyle(lineWidth: 0))
-                    .background(Circle().fill(Color("ButtonColor")))
+                    .background(Circle().fill(Color.button))
                     .frame(width: 48, height: 48)
                 Circle()
                     .trim(from: 0.6, to: 1)

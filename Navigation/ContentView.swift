@@ -9,26 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - PROPERTIES
-//    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var viewModel: AuthViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    
+    private var keychainService = KeychainService()
+ 
     // MARK: - BODY
     var body: some View {
-//        if viewModel.userSession == nil {
-//            // no user logged in
+        if viewModel.isLoggedIn == false {
+            // no user logged in
 //            LoginView()
-//        } else {
-//            // user logged in
-//            TabBar()
-//        }
-        TabBar()
+            TabBar()
+        } else {
+            // user logged in
+            TabBar()
+        }
     }
 }
 
 // MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        Group {
+            LoginView()
+            LoginView()
+                .preferredColorScheme(.dark)
+        }
+        
     }
 }
 

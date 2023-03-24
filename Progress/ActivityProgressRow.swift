@@ -30,6 +30,10 @@ struct ActivityProgressRow: View {
 // MARK: - PREVIEWS
 struct ActivityProgressRow_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
+        Group {
+            ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
+            ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
+                .preferredColorScheme(.dark)
+        }
     }
 }

@@ -49,7 +49,7 @@ struct PhotoSelectorView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 340, height: 50)
-                        .background(Color("AccentColor"))
+                        .background(Color.accent)
                         .clipShape(Capsule())
                         .padding()
                 }
@@ -60,7 +60,7 @@ struct PhotoSelectorView: View {
             
         }
         .ignoresSafeArea()
-        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+        .background(Color.background.edgesIgnoringSafeArea(.all))
     }
     
     func loadImage() {
@@ -73,6 +73,11 @@ struct PhotoSelectorView: View {
 // MARK: - PREVIEW
 struct PhotoSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoSelectorView()
+        Group {
+            PhotoSelectorView()
+            PhotoSelectorView()
+                .preferredColorScheme(.dark)
+        }
+        
     }
 }

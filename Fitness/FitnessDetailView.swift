@@ -57,13 +57,17 @@ struct FitnessDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+        .background(Color.background.edgesIgnoringSafeArea(.all))
     }
 }
 
 // MARK: - PREVIEW
 struct FitnessDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FitnessDetailView()
+        Group {
+            FitnessDetailView()
+            FitnessDetailView()
+                .preferredColorScheme(.dark)
+        }
     }
 }

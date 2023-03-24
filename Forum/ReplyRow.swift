@@ -45,6 +45,10 @@ struct ReplyRow: View {
 // MARK: - PREVIEWS
 struct CommunityReply_Previews: PreviewProvider {
     static var previews: some View {
-        ReplyRow()
+        Group {
+            ReplyRow()
+            ReplyRow()
+                .preferredColorScheme(.dark)
+        }
     }
 }

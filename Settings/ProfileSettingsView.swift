@@ -44,6 +44,10 @@ struct ProfileSettingsView: View {
 // MARK: - PREVIEW
 struct ProfileSettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileSettingsView()
+        Group {
+            ProfileSettingsView()
+            ProfileSettingsView()
+                .preferredColorScheme(.dark)
+        }
     }
 }

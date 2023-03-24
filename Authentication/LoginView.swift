@@ -1,4 +1,4 @@
-//
+    //
 //  LoginView.swift
 //  maiIncercSiEu
 //
@@ -11,7 +11,7 @@ struct LoginView: View {
     // MARK: - PROPERTIES
     @State private var email = ""
     @State private var password = ""
-//    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var viewModel: AuthViewModel
     
     // MARK: - BODY
     var body: some View {
@@ -42,13 +42,13 @@ struct LoginView: View {
                 }
                 
                 Button {
-//                    viewModel.login(withEmail: email, password: password)
+                    viewModel.postCredentials(email: email, password: password)
                 } label: {
                     Text("Autentifica-te")
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 340, height: 50)
-                        .background(Color("AccentColor"))
+                        .background(Color.accent)
                         .clipShape(Capsule())
                         .padding()
                 }
@@ -72,7 +72,7 @@ struct LoginView: View {
             }
             .ignoresSafeArea()
             .navigationBarHidden(true)
-            .background(Color("ColorBackground").edgesIgnoringSafeArea(.all))
+            .background(Color.background.edgesIgnoringSafeArea(.all))
         }
     }
 }
@@ -80,7 +80,11 @@ struct LoginView: View {
 // MARK: - PREVIEWS
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        Group {
+            LoginView()
+            LoginView()
+                .preferredColorScheme(.dark)
+        }
     }
 }
 

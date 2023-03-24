@@ -92,6 +92,10 @@ struct NotificationsSettings: View {
 // MARK: - PREVIEW
 struct NotificationsSettings_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationsSettings()
+        Group {
+            NotificationsSettings()
+            NotificationsSettings()
+                .preferredColorScheme(.dark)
+        }
     }
 }

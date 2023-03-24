@@ -49,6 +49,11 @@ struct RecipeCard: View {
 // MARK: - PREVIEW
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeCard(recipe: Recipe.dummyData[2])
+        Group {
+            RecipeCard(recipe: Recipe.dummyData[2])
+            RecipeCard(recipe: Recipe.dummyData[2])
+                .preferredColorScheme(.dark)
+        }
+        
     }
 }

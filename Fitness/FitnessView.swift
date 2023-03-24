@@ -14,7 +14,7 @@ struct FitnessView: View {
     // MARK: - BODY
     var body: some View {
         ZStack {
-            Color("ColorBackground")
+            Color.background
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView(showsIndicators: false) {
@@ -52,8 +52,14 @@ struct FitnessView: View {
 // MARK: - PREVIEW
 struct FitnessView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            FitnessView()
+        Group {
+            NavigationView {
+                FitnessView()
+            }
+            NavigationView {
+                FitnessView()
+                    .preferredColorScheme(.dark)
+            }
         }
     }
 }

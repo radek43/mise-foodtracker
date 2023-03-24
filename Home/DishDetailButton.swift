@@ -23,10 +23,10 @@ struct DishDetailButton: View {
     var body: some View {
             VStack {
                 Circle()
-                    .stroke(Color("ButtonColor"), style: StrokeStyle(lineWidth: 5))
+                    .stroke(Color.button, style: StrokeStyle(lineWidth: 5))
                     .frame(width: 48, height: 48)
                     .foregroundColor(Color(UIColor.label))
-                    .background(Circle().fill(Color("ButtonColor")))
+                    .background(Circle().fill(Color.button))
                     .clipShape(Circle())
                     .overlay(
                         Image(imageName)
@@ -47,6 +47,10 @@ struct DishDetailButton: View {
 
 struct DishDetailButton_Previews: PreviewProvider {
     static var previews: some View {
-        DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
+        Group {
+            DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
+            DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
+                .preferredColorScheme(.dark)
+        }
     }
 }

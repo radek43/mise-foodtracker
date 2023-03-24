@@ -76,8 +76,12 @@ struct AddNewPost: View {
 }
 
 // MARK: - PREVIEW
-struct CommunityAddMessage_Previews: PreviewProvider {
+struct AddNewPost_Previews: PreviewProvider {
     static var previews: some View {
-        AddNewPost()
+        Group {
+            AddNewPost()
+            AddNewPost()
+                .preferredColorScheme(.dark)
+        }
     }
 }
