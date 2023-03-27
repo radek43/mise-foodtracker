@@ -14,4 +14,5 @@ extension Color {
     static let card = Color("CardBackground")
     static let background = Color("ColorBackground")
     static let post = Color("PostDetailColor")
+    static let accentLight = Color("AccentLight")
 }
