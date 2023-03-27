@@ -72,6 +72,7 @@ struct SettingsView: View {
                 .listStyle(GroupedListStyle())
                 
             } //: VStack
+            .frame(maxWidth: 612)
             .navigationBarTitle("Setari", displayMode: .inline)
         }//: ZStack
     } //: Body
@@ -80,13 +81,18 @@ struct SettingsView: View {
 // MARK: - PREVIEW
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
             Group {
-                SettingsView()
-                SettingsView()
-                    .preferredColorScheme(.dark)
+                NavigationView {
+                    SettingsView()
+                }
+                .navigationViewStyle(StackNavigationViewStyle())
+                NavigationView {
+                    SettingsView()
+                        .preferredColorScheme(.dark)
+                }
+                .navigationViewStyle(StackNavigationViewStyle())
             }
 //          .environmentObject(AuthViewModel())
-        }
+        
     }
 }

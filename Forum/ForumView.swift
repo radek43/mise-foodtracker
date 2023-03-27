@@ -99,10 +99,12 @@ struct ForumView_Previews: PreviewProvider {
             NavigationView {
                 ForumView()
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             NavigationView {
                 ForumView()
                     .preferredColorScheme(.dark)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

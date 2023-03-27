@@ -56,10 +56,12 @@ struct FitnessView_Previews: PreviewProvider {
             NavigationView {
                 FitnessView()
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             NavigationView {
                 FitnessView()
                     .preferredColorScheme(.dark)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
