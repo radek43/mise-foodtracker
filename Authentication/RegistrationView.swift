@@ -15,12 +15,12 @@ struct RegistrationView: View {
     @State private var password = ""
     
     @Environment(\.presentationMode) var presentationMode
-//    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var viewModel: AuthViewModel
     
     // MARK: - BODY
     var body: some View {
         VStack {
-//            NavigationLink(destination: PhotoSelectorView(), isActive: $viewModel.didAuthenticateUser, label: { })
+//          NavigationLink(destination: PhotoSelectorView(), isActive: $viewModel.didAuthenticateUser, label: { })
                 
             AuthenticationHeaderView(title1: "Creaza un cont nou", title2: "")
             
@@ -33,22 +33,12 @@ struct RegistrationView: View {
             }
             .padding(32)
 
-//            Button {
-//                viewModel.register(withEmail: email, password: password, fullname: fullname, username: username)
-//            } label: {
-//                RegistrationButton(text: "Continua")
-//            }
-            
-            Button(action: {
-                print("Floating Button Click")
-            }, label: {
-                NavigationLink(destination: PhotoSelectorView()) {
-                    RegistrationButton(text: "Continua")
+            Button {
+                viewModel.register(email: email, username: username, fullname: fullname, password: password)
+            } label: {
+                RegistrationButton(text: "Continua")
+            }
 
-                }
-            })
-            
-            
             Spacer()
             
             Button {
@@ -77,9 +67,6 @@ struct RegistrationView_Previews: PreviewProvider {
             RegistrationView()
                 .preferredColorScheme(.dark)
         }
-        
-        
-//            .environmentObject(AuthViewModel())
     }
 }
 
