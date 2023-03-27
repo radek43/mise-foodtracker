@@ -59,6 +59,7 @@ struct HomeView: View {
                                     .fontWeight(.medium)
                                 Text("Consumat")
                                     .font(.subheadline)
+                                    .fontWeight(.medium)
                             }
                             .frame(maxWidth: .infinity)
                             
@@ -68,6 +69,7 @@ struct HomeView: View {
                                     .fontWeight(.medium)
                                 Text("Ars")
                                     .font(.subheadline)
+                                    .fontWeight(.medium)
                             }
                             .frame(maxWidth: .infinity)
                             
@@ -77,6 +79,7 @@ struct HomeView: View {
                                     .fontWeight(.medium)
                                 Text("Net")
                                     .font(.subheadline)
+                                    .fontWeight(.medium)
                             }
                             .frame(maxWidth: .infinity)
                         }
@@ -98,7 +101,7 @@ struct HomeView: View {
                             } label: {
                                 AddDishButton(imageName: "breakfast", title: "mic\ndejun")
                             }
-                            .sheet(isPresented: $showDishSheet ) {
+                            .sheet(isPresented: $showDishSheet) {
                                 DishDetailConfirm()
                             }
                             Button { print("Buton pranz apasat")
@@ -131,8 +134,6 @@ struct HomeView: View {
                         .background(Color("CardBackground"))
                         .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                         .padding(.horizontal)
-                    
-                    Spacer()
                 }
                 .navigationTitle("Food Tracker")
                 .navigationBarItems(
@@ -155,10 +156,12 @@ struct HomeView_Previews: PreviewProvider {
             NavigationView {
                 HomeView()
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             NavigationView {
                 HomeView()
                     .preferredColorScheme(.dark)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
 //      .environmentObject(AuthViewModel())
     }
