@@ -36,7 +36,7 @@ struct KeychainService {
             throw KeychainError.unknown(status)
         }
         
-        print("saved")
+        print("Keychain Service: Token saved successfully")
     }
     
     func get(
