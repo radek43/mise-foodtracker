@@ -10,10 +10,9 @@ import SwiftUICharts
 
 struct DailyCaloriesChart: View {
     // MARK: - PROPERTIES
-    var demoData: [Double] = [8, 4, 2]
+    var demoData: [Double] = [19, 13, 12]
     let mixedColorStyle = ChartStyle(backgroundColor: Color.card, foregroundColor: [
-        ColorGradient(Color.accent, .blue), ColorGradient(.pink, .yellow), ColorGradient(.red, .green)])
-    @ScaledMetric var size: CGFloat = 1
+        ColorGradient(Color.accent, Color.accent), ColorGradient(Color("Pallette1"), Color("Pallette1")), ColorGradient(Color("Pallette2"), Color("Pallette2"))])
     
     // MARK: - BODY
     var body: some View {
@@ -30,7 +29,7 @@ struct DailyCaloriesChart: View {
                                 Circle()
                                     .fill(
                                         LinearGradient(
-                                            gradient: Gradient(colors: [.pink, .yellow]),
+                                            gradient: Gradient(colors: [Color("Pallette1"), Color("Pallette1")]),
                                             startPoint: .leading,
                                             endPoint: .trailing))
                                     .frame(width: 15, height: 15)
@@ -41,7 +40,7 @@ struct DailyCaloriesChart: View {
                                 Circle()
                                     .fill(
                                         LinearGradient(
-                                            gradient: Gradient(colors: [.red, .green]),
+                                            gradient: Gradient(colors: [Color("Pallette2"), Color("Pallette2")]),
                                             startPoint: .leading,
                                             endPoint: .trailing))
                                     .frame(width: 15, height: 15)
@@ -51,22 +50,22 @@ struct DailyCaloriesChart: View {
                                 Circle()
                                     .fill(
                                         LinearGradient(
-                                            gradient: Gradient(colors: [Color.accent, .blue]),
+                                            gradient: Gradient(colors: [Color.accent, Color.accent]),
                                             startPoint: .leading,
                                             endPoint: .trailing))
                                     .frame(width: 15, height: 15)
                                 ChartLabel("\(demoData[0])g \nGrasimi", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
                             }
                         }
-                        
                     }
                 }
                 .background(Color.card)
-
             }
             .data(demoData)
             .chartStyle(mixedColorStyle)
+            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
             .frame(height: 250)
+
     }
 }
 
