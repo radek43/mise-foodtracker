@@ -17,8 +17,7 @@ struct ContentView: View {
     var body: some View {
         if viewModel.isLoggedIn == false {
             // no user logged in
-//            LoginView()
-            TabBar()
+            LoginView()
         } else {
             // user logged in
             TabBar()
