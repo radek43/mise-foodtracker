@@ -11,7 +11,7 @@ import SwiftUICharts
 struct ActivityProgressView: View {
     // MARK: - PROPERTIES
     var demoData: [Double] = [8, 4, 2, 5, 7, 6, 5, 8]
-    let mixedColorStyle = ChartStyle(backgroundColor: Color.background, foregroundColor: [ColorGradient(Color.accent, .blue)])
+    let mixedColorStyle = ChartStyle(backgroundColor: Color.card, foregroundColor: [ColorGradient(Color.accent, Color.accent)])
     
     @ScaledMetric var size: CGFloat = 1
     
@@ -41,25 +41,23 @@ struct ActivityProgressView: View {
                 .padding(.horizontal)
                     
                 
-                
-                    CardView(showShadow: false) {
-                        VStack(alignment: .leading) {
-                            Text("Top alimente calorice consumate")
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                            BarChart()
-                                .data(demoData)
-                                .chartStyle(mixedColorStyle)
-                        }
-
-                        .padding([.top, .leading, .trailing])
-                        .background(Color.card)
-
+                CardView(showShadow: false) {
+                    VStack(alignment: .leading) {
+                        Text("Top alimente calorice consumate")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        BarChart()
+                            .data(demoData)
+                            .chartStyle(mixedColorStyle)
                     }
-                    .frame(height: 250)
-                    .frame(maxWidth: 612)
-                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                    .padding(.horizontal)
+                    .padding([.top, .leading, .trailing])
+                    .background(Color.card)
+
+                }
+                .frame(height: 250)
+                .frame(maxWidth: 612)
+                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                .padding(.horizontal)
                 
                 
                 VStack {
@@ -81,10 +79,12 @@ struct ActivityProgressView_Previews: PreviewProvider {
             NavigationView {
                 ActivityProgressView()
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             NavigationView {
                 ActivityProgressView()
                     .preferredColorScheme(.dark)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
