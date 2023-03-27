@@ -42,7 +42,7 @@ struct LoginView: View {
                 }
                 
                 Button {
-                    viewModel.postCredentials(email: email, password: password)
+                    viewModel.login(email: email, password: password)
                 } label: {
                     Text("Autentifica-te")
                         .font(.headline)
