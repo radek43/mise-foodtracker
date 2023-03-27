@@ -45,6 +45,7 @@
 		2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8629CC843E00371FE9 /* Extensions.swift */; };
 		2C082D8929CC925E00371FE9 /* ChartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8829CC925E00371FE9 /* ChartTest.swift */; };
 		2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */; };
+		2C362BC329D1998700397AAC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C362BC229D1998700397AAC /* AuthService.swift */; };
 		2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* RingView.swift */; };
 		2C63538128F0A7E40061A701 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63538028F0A7E40061A701 /* PostDetail.swift */; };
 		2C64C03E294B7C9F00E9305F /* DropdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C64C03D294B7C9F00E9305F /* DropdownList.swift */; };
@@ -107,6 +108,7 @@
 		2C082D8629CC843E00371FE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2C082D8829CC925E00371FE9 /* ChartTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTest.swift; sourceTree = "<group>"; };
 		2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		2C362BC229D1998700397AAC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		2C56DEE729546FAF006A4A5A /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		2C63538028F0A7E40061A701 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		2C64C03D294B7C9F00E9305F /* DropdownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownList.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2C79C8D429BF71DF00243940 /* KeychainService.swift */,
+				2C362BC229D1998700397AAC /* AuthService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				17D9D156281C3EF700DD0406 /* DailyCaloriesChart.swift in Sources */,
 				178CCC7928BC035C0074D52E /* ImageUploader.swift in Sources */,
 				2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */,
+				2C362BC329D1998700397AAC /* AuthService.swift in Sources */,
 				2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */,
 				17AD15E42826EF460023C0EF /* ActivityProgressRow.swift in Sources */,
 				2C64C03E294B7C9F00E9305F /* DropdownList.swift in Sources */,
