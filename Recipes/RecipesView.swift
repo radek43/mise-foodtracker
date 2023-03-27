@@ -75,10 +75,12 @@ struct RecipesView_Previews: PreviewProvider {
             NavigationView {
                 RecipesView()
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             NavigationView {
                 RecipesView()
                     .preferredColorScheme(.dark)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
 //                .environmentObject(AuthViewModel())
     }
