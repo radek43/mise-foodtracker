@@ -12,94 +12,87 @@ class AuthViewModel: ObservableObject {
     // MARK: - PROPERTIES
     @Published var currentUser: User?
     @Published var isLoggedIn = false
+    
     private var keychainService = KeychainService()
-    let defaults = UserDefaults.standard
     
     init() {
         // check if user is already logged in
+        let user = UserDefaults.standard.string(forKey: "userEmail")
         self.fetchUser()
+        
+        
     }
     
     // MARK: - METHODS
+    
+    func register(email: String, username: String, fullname: String, password: String) {
+        AuthServices.register(email: email, username: username, fullname: fullname, password: password) { result in
+            switch result {
+                case .success(let data):
+                    guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else { return }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func login(email: String, password: String) {
+        AuthServices.login(email: email, password: password) { result in
+            switch result {
+                case .success(let data):
+                    guard let response = try? JSONDecoder().decode(Token.self, from: data as! Data) else {
+                        print("AuthServices-Login: No response from API")
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        
+                        do { // save token in keychain
+                            UserDefaults.standard.set(String(email), forKey: "userEmail")
+                            try self.keychainService.save(service: "mise-foodtracker", account: email, password: response.token.data(using: .utf8) ?? Data())
+                        } catch {
+                            print("KeychainServiceError:\(error)")
+                        }
+                    }
+                    
+                    print("Token: \(response.token)")
+                    self.isLoggedIn = true
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+    }
+    
     func fetchUser() {
         do {
-            guard let email = defaults.string(forKey: "userEmail") else {
+            guard let email = UserDefaults.standard.string(forKey: "userEmail") else {
                 isLoggedIn = false
                 return
             }
             
             // get token from keychain
             guard (try self.keychainService.get(service: "mise-foodtracker", account: email)) != nil else {
-                print("failed to read password")
+                print("KeychainService: Failed to read token")
                 isLoggedIn = false
                 return
             }
             
         } catch {
-            print("keychainError:\(error)")
+            print("KeychainServiceError:\(error)")
         }
         isLoggedIn = true
     }
-    
-    func postCredentials(email: String, password: String) {
-        let tokenUrl = "http://127.0.0.1:8000/api/user/token/"
-        
-        guard
-            let url = URL(string: tokenUrl)
-        else {
-            print("DEBUG: API is not available")
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        let body: [String: Any] = ["email": email, "password": password]
-        
-        do {
-            let finalData = try JSONSerialization.data(withJSONObject: body)
-            request.httpBody = finalData
-        } catch (let error) {
-            print(error)
-        }
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        URLSession.shared.dataTask(with: request) { (data, res, err) in
-            do {
-                if let data = data { // if auth success
-                    let result = try JSONDecoder().decode(Token.self, from: data)
-                    print(result)
-
-                    do { // save token in keychain
-                        try self.keychainService.save(service: "mise-foodtracker", account: email, password: result.token.data(using: .utf8) ?? Data())
-                    } catch {
-                        print("keychainError:\(error)")
-                    }
-                    
-                    // set email in userDefaults
-                    self.defaults.set(email, forKey: "userEmail")
-                    
-                } else {
-                    print("DEBUG: No data returned from API")
-                }
-            } catch (let error) {
-                print("API:\(error)")
-            }
-            self.fetchUser()
-        }.resume() 
-    }
 
     func signOut() {
-        guard let email = defaults.string(forKey: "userEmail") else { return }
+        guard let email = UserDefaults.standard.string(forKey: "userEmail") else { return }
         
         // delete from token from keychain
         guard (try? self.keychainService.remove(service: "mise-foodtracker", account: email)) != nil else {
-            print("failed to remove keychain data")
+            print("KeychainService: Failed to remove keychain data")
             return
         }
-        defaults.removeObject(forKey: "userEmail")
+        UserDefaults.standard.removeObject(forKey: "userEmail")
         isLoggedIn = false
     }
-    
 }
