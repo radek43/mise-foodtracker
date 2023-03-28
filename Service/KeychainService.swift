@@ -13,12 +13,8 @@ struct KeychainService {
         case unknown(OSStatus)
     }
      
-    func save(
-        service: String,
-        account: String,
-        password: Data
-    ) throws {
-        print("Keychain Service: Starting save..")
+    func save(service: String, account: String, password: Data) throws {
+        print("KeychainService: Starting save..")
         let query: [String: AnyObject] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
@@ -35,15 +31,11 @@ struct KeychainService {
         guard status == errSecSuccess else {
             throw KeychainError.unknown(status)
         }
-        
-        print("Keychain Service: Token saved successfully")
+        print("KeychainService: Token saved successfully")
     }
     
-    func get(
-        service: String,
-        account: String
-    ) throws -> Data? {
-        print("Keychain Service: Fetching \(account) keychain data..")
+    func get(service: String, account: String) throws -> Data? {
+        print("KeychainService: Fetching \(account) keychain data..")
         let query: [String: AnyObject] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
@@ -54,15 +46,13 @@ struct KeychainService {
         
         var result: AnyObject?
         let status = SecItemCopyMatching(query as CFDictionary, &result)
-        print("Status: \(status)")
+        print("KeychainService: status \(status)")
         
         return result as? Data
     }
     
-    func remove(service: String,
-                account: String
-    ) throws {
-        print("Keychain Service: Deleting \(account) keychain data..")
+    func remove(service: String, account: String) throws {
+        print("KeychainService: Deleting \(account) keychain data..")
         let query: [String: AnyObject] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
@@ -72,6 +62,6 @@ struct KeychainService {
         guard status == errSecSuccess || status == errSecItemNotFound else {
              throw KeychainError.unknown(status)
         }
-        
+        print("KeychainService: Keychain data deleted successfully")
     }
 }
