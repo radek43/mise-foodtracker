@@ -11,7 +11,7 @@ import Kingfisher
 
 struct SettingsView: View {
     // MARK: - PROPERTIES
-    @EnvironmentObject var ViewModel: AuthViewModel
+    @EnvironmentObject var viewModel: AuthViewModel
     @State private var doesTrackActivity = false
     @State private var isShowingSettingsScreen: Bool = false
 
@@ -32,9 +32,10 @@ struct SettingsView: View {
                                     .foregroundColor(Color.secondary)
                                     .padding(.trailing, 5)
                                 VStack(alignment: .leading) {
-                                    Text("George Popescu")
+                                    Text(viewModel.currentUser?.fullname ?? "George Popescu")
                                         .font(.title3)
                                         .foregroundColor(Color.primary)
+                                    
                                     Text("Utilizator simplu")
                                         .font(.footnote)
                                         .foregroundColor(Color.primary)
@@ -63,7 +64,7 @@ struct SettingsView: View {
                             SettingsRow(iconAsset: "figure.run", firstText: "Inregistrare activitate", color: .blue)
                         }
                         Button {
-                            ViewModel.signOut()
+                            viewModel.signOut()
                         } label: {
                             SettingsRow(iconDefault: "lock", firstText: "Delogare", color: .secondary)
                         }
@@ -92,7 +93,7 @@ struct SettingsView_Previews: PreviewProvider {
                 }
                 .navigationViewStyle(StackNavigationViewStyle())
             }
-//          .environmentObject(AuthViewModel())
+            .environmentObject(AuthViewModel())
         
     }
 }
