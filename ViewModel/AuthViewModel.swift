@@ -17,14 +17,24 @@ class AuthViewModel: ObservableObject {
     
     init() {
         // check if user is already logged in
-        let user = UserDefaults.standard.string(forKey: "userEmail")
-        self.fetchUser()
-        
-        
+        if let userEmail = UserDefaults.standard.string(forKey: "userEmail") {
+            do {
+                if let keychainResult = try self.keychainService.get(service: "mise-foodtracker", account: userEmail) {
+                    self.isLoggedIn = true
+                }
+            } catch {
+                print("KeychainServiceError:\(error)")
+            }
+            if self.isLoggedIn == true {
+                self.fetchUser(email: userEmail)
+            }
+        }
     }
     
-    // MARK: - METHODS
+    static let shared = AuthViewModel()
     
+    
+    // MARK: - METHODS
     func register(email: String, username: String, fullname: String, password: String) {
         AuthServices.register(email: email, username: username, fullname: fullname, password: password) { result in
             switch result {
@@ -46,42 +56,37 @@ class AuthViewModel: ObservableObject {
                     }
                     
                     DispatchQueue.main.async {
-                        
                         do { // save token in keychain
                             UserDefaults.standard.set(String(email), forKey: "userEmail")
                             try self.keychainService.save(service: "mise-foodtracker", account: email, password: response.token.data(using: .utf8) ?? Data())
                         } catch {
                             print("KeychainServiceError:\(error)")
                         }
+                        self.isLoggedIn = true
+                        self.fetchUser(email: email)
                     }
-                    
-                    print("Token: \(response.token)")
-                    self.isLoggedIn = true
-                    
                 case .failure(let error):
                     print(error.localizedDescription)
             }
         }
     }
     
-    func fetchUser() {
-        do {
-            guard let email = UserDefaults.standard.string(forKey: "userEmail") else {
-                isLoggedIn = false
-                return
+    func fetchUser(email: String) {
+        AuthServices.fetchUser(email: email) { result in
+            switch result {
+                case .success(let data):
+                    guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else { return }
+                    
+                    DispatchQueue.main.async {
+                        UserDefaults.standard.set(user.email, forKey: "userEmail")
+                        self.isLoggedIn = true
+                        self.currentUser = user
+                    }
+                    
+                case .failure(let error):
+                    print("AuthViewModel.fetchUser: \(error.localizedDescription)")
             }
-            
-            // get token from keychain
-            guard (try self.keychainService.get(service: "mise-foodtracker", account: email)) != nil else {
-                print("KeychainService: Failed to read token")
-                isLoggedIn = false
-                return
-            }
-            
-        } catch {
-            print("KeychainServiceError:\(error)")
         }
-        isLoggedIn = true
     }
 
     func signOut() {
@@ -93,6 +98,9 @@ class AuthViewModel: ObservableObject {
             return
         }
         UserDefaults.standard.removeObject(forKey: "userEmail")
-        isLoggedIn = false
+        
+        DispatchQueue.main.async {
+            self.isLoggedIn = false
+        }
     }
 }
