@@ -33,7 +33,6 @@ struct ContentView_Previews: PreviewProvider {
             LoginView()
                 .preferredColorScheme(.dark)
         }
-        
     }
 }
 
