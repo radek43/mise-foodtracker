@@ -72,8 +72,10 @@ struct LoginView: View {
             }
             .ignoresSafeArea()
             .navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
             .background(Color.background.edgesIgnoringSafeArea(.all))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

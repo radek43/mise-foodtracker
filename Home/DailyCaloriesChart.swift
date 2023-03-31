@@ -22,7 +22,7 @@ struct DailyCaloriesChart: View {
                     .padding([.top, .leading, .trailing])
                 HStack(alignment: .center) {
                         PieChart()
-                            .padding(.leading)
+                        .padding([.leading, .bottom])
                         
                         VStack {
                             HStack {

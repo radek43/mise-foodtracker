@@ -52,7 +52,7 @@ struct DishView: View {
                                 Image(systemName: "checkmark")
                             }
                         }
-                        .modifier(MakeCard())
+                        .card()
                         .padding(.horizontal)
                         
                         VStack {
@@ -88,7 +88,7 @@ struct DishView: View {
                                 Image(systemName: "plus")
                             }
                         }
-                        .modifier(MakeCard())
+                        .card()
                         .padding(.horizontal)
                         Spacer()
                     }

@@ -44,6 +44,8 @@
 		2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0C2901AD4A006ECB21 /* Post.swift */; };
 		2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8629CC843E00371FE9 /* Extensions.swift */; };
 		2C082D8929CC925E00371FE9 /* ChartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8829CC925E00371FE9 /* ChartTest.swift */; };
+		2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D03F129D44A92005C8C4B /* PreviewData.swift */; };
+		2C0D03F429D45F67005C8C4B /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D03F329D45F67005C8C4B /* SettingsScreen.swift */; };
 		2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */; };
 		2C362BC329D1998700397AAC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C362BC229D1998700397AAC /* AuthService.swift */; };
 		2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* RingView.swift */; };
@@ -67,6 +69,8 @@
 		2CE35E6D2943B0AA00674348 /* AddNewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */; };
 		2CEADAB42953204D002AA0A0 /* PostRowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB32953204D002AA0A0 /* PostRowTest.swift */; };
 		2CEADAB8295330D2002AA0A0 /* AddShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB7295330D2002AA0A0 /* AddShadow.swift */; };
+		2CED766E29D5A5850093E035 /* KeyboardToolbars in Frameworks */ = {isa = PBXBuildFile; productRef = 2CED766D29D5A5850093E035 /* KeyboardToolbars */; };
+		2CED767029D5A9460093E035 /* NumbersOnlyViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED766F29D5A9460093E035 /* NumbersOnlyViewModifier.swift */; };
 		2CF44A6928ECBB26001689A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A6828ECBB26001689A8 /* SearchBar.swift */; };
 		2CFC2B3229705BF800451922 /* RegistrationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC2B3129705BF800451922 /* RegistrationButton.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +111,8 @@
 		2C049F0C2901AD4A006ECB21 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2C082D8629CC843E00371FE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2C082D8829CC925E00371FE9 /* ChartTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTest.swift; sourceTree = "<group>"; };
+		2C0D03F129D44A92005C8C4B /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		2C0D03F329D45F67005C8C4B /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		2C362BC229D1998700397AAC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		2C56DEE729546FAF006A4A5A /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 		2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewRecipe.swift; sourceTree = "<group>"; };
 		2CEADAB32953204D002AA0A0 /* PostRowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowTest.swift; sourceTree = "<group>"; };
 		2CEADAB7295330D2002AA0A0 /* AddShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShadow.swift; sourceTree = "<group>"; };
+		2CED766F29D5A9460093E035 /* NumbersOnlyViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOnlyViewModifier.swift; sourceTree = "<group>"; };
 		2CF44A6828ECBB26001689A8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		2CFC2B3129705BF800451922 /* RegistrationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +149,7 @@
 				17D9D151281C3AB800DD0406 /* SwiftUISegues in Frameworks */,
 				176372E028C12445006337A7 /* Kingfisher in Frameworks */,
 				17CC53EF2827E1A7006A8FFD /* SwiftUICharts in Frameworks */,
+				2CED766E29D5A5850093E035 /* KeyboardToolbars in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +175,7 @@
 				2C74B75B2950BB510063A4F4 /* NotificationsSettings.swift */,
 				2C74B75D2950EE580063A4F4 /* MeasurementsSettings.swift */,
 				2CC4196729B8E8ED00B064B9 /* SettingsView.swift */,
+				2C0D03F329D45F67005C8C4B /* SettingsScreen.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -201,6 +210,7 @@
 				2C72F33529058249004BBB8A /* PullToRefresh.swift */,
 				2CF44A6828ECBB26001689A8 /* SearchBar.swift */,
 				2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */,
+				2CED766F29D5A9460093E035 /* NumbersOnlyViewModifier.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -266,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				17A92D052801DCEC000CF34F /* Preview Assets.xcassets */,
+				2C0D03F129D44A92005C8C4B /* PreviewData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -370,6 +381,7 @@
 				17D9D150281C3AB800DD0406 /* SwiftUISegues */,
 				17CC53EE2827E1A7006A8FFD /* SwiftUICharts */,
 				176372DF28C12445006337A7 /* Kingfisher */,
+				2CED766D29D5A5850093E035 /* KeyboardToolbars */,
 			);
 			productName = maiIncercSiEu;
 			productReference = 17A92CFB2801DCEA000CF34F /* mise-foodtracker.app */;
@@ -403,6 +415,7 @@
 				17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */,
 				17CC53ED2827E1A7006A8FFD /* XCRemoteSwiftPackageReference "ChartView" */,
 				176372DE28C12445006337A7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				2CED766C29D5A5850093E035 /* XCRemoteSwiftPackageReference "KeyboardToolbarsSwiftUI" */,
 			);
 			productRefGroup = 17A92CFC2801DCEA000CF34F /* Products */;
 			projectDirPath = "";
@@ -462,8 +475,10 @@
 				17A92CFF2801DCEA000CF34F /* miseFoodTrackerApp.swift in Sources */,
 				1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */,
 				17F01E8328A2C8B900285894 /* CustomInputFields.swift in Sources */,
+				2CED767029D5A9460093E035 /* NumbersOnlyViewModifier.swift in Sources */,
 				178CCC7428BBE4960074D52E /* PhotoSelectorView.swift in Sources */,
 				17B1A4DB2826A1E100F1CDEC /* FitnessView.swift in Sources */,
+				2C0D03F429D45F67005C8C4B /* SettingsScreen.swift in Sources */,
 				179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */,
 				2C6A161928F1C79500D9DDE4 /* AddNewPost.swift in Sources */,
 				2CEADAB42953204D002AA0A0 /* PostRowTest.swift in Sources */,
@@ -476,6 +491,7 @@
 				2C72F33629058249004BBB8A /* PullToRefresh.swift in Sources */,
 				17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */,
 				2C082D8929CC925E00371FE9 /* ChartTest.swift in Sources */,
+				2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */,
 				2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */,
 				2C6A161728F17F5200D9DDE4 /* ReplyRow.swift in Sources */,
 				2CFC2B3229705BF800451922 /* RegistrationButton.swift in Sources */,
@@ -733,6 +749,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		2CED766C29D5A5850093E035 /* XCRemoteSwiftPackageReference "KeyboardToolbarsSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ArnavMotwani/KeyboardToolbarsSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -750,6 +774,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */;
 			productName = SwiftUISegues;
+		};
+		2CED766D29D5A5850093E035 /* KeyboardToolbars */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CED766C29D5A5850093E035 /* XCRemoteSwiftPackageReference "KeyboardToolbarsSwiftUI" */;
+			productName = KeyboardToolbars;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

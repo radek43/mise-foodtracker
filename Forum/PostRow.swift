@@ -110,7 +110,7 @@ struct PostRow: View {
                 .font(.footnote)
             }
         }
-        .modifier(MakeCard())
+        .card()
     }
 }
 

@@ -22,7 +22,7 @@ struct ActivityProgressRow: View {
             Text("\(progressValue) \(measurementUnit)")
         }
         .frame(maxWidth: 612)
-        .modifier(MakeCard())
+        .card()
         .padding(.horizontal)
     }
 }

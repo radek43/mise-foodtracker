@@ -46,7 +46,6 @@ struct RingView: View {
                 .frame(height: 40)
         }
         .padding(9)
-        
     }
 }
 

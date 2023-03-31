@@ -60,7 +60,7 @@ struct PostRowTest: View {
             .foregroundColor(Color.secondary)
             .font(.footnote)
         }
-        .modifier(MakeCard())
+        .card()
     }
 }
 

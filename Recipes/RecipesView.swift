@@ -11,7 +11,7 @@ struct RecipesView: View {
     // MARK: - PROPERTIES
 //    @ObservedObject var viewModel = RecipeViewModel()
 //    @EnvironmentObject var authViewModel: AuthViewModel
-    var recipes: [Recipe] = Recipe.dummyData
+    var recipes: [Recipe]
 
     // MARK: - BODY
     var body: some View {
@@ -34,17 +34,11 @@ struct RecipesView: View {
                     .padding(.bottom, 5.0)
                     
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 15)], spacing: 15) {
-//                        ForEach(viewModel.searchableRecipes) { recipe in
-//                            NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
-//                                RecipeCard(recipe: recipe)
-//                            }
-//                        }
                         ForEach(recipes) { recipe in
                             NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
                                 RecipeCard(recipe: recipe)
                                     .frame(maxWidth: 612)
                                     .foregroundColor(.primary)
-    
                             }
                         }
                     }
@@ -73,11 +67,11 @@ struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NavigationView {
-                RecipesView()
+                RecipesView(recipes: recipePreviewData)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             NavigationView {
-                RecipesView()
+                RecipesView(recipes: recipePreviewData)
                     .preferredColorScheme(.dark)
             }
             .navigationViewStyle(StackNavigationViewStyle())

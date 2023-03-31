@@ -10,7 +10,7 @@ import Kingfisher
 
 struct RecipeDetailView: View {
     // MARK: - PROPERTIES
-    var recipe = Recipe.dummyData[1]
+    var recipe: Recipe
     
     // MARK: - BODY
     var body: some View {
@@ -24,19 +24,19 @@ struct RecipeDetailView: View {
                         Rectangle()
                             .fill(Color(.gray))
                             .aspectRatio(4/4, contentMode: .fit)
-                        KFImage(URL(string: recipe.image))
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .layoutPriority(-1)
+                        if let image = recipe.image {
+                            KFImage(URL(string: image))
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .layoutPriority(-1)
+                        }
                     }
                     .clipped()
                     .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                     .padding()
-                    
-                    
 
                     VStack(spacing: 30) {
-                        Text(recipe.name)
+                        Text(recipe.title)
                             .font(.title)
                             .bold()
                             .multilineTextAlignment(.center)
@@ -52,15 +52,6 @@ struct RecipeDetailView: View {
                                         .font(.title2)
                                         .fontWeight(.semibold)
                                     Text(recipe.ingredients.replacingOccurrences(of: "•", with: "\n •"))
-                                }
-                            }
-                            Divider()
-                            if !recipe.directions.isEmpty {
-                                VStack(alignment: .leading, spacing: 20) {
-                                    Text("Mod Preparare:")
-                                        .font(.title2)
-                                        .fontWeight(.semibold)
-                                    Text(recipe.directions.replacingOccurrences(of: "•", with: "\n •"))
                                 }
                             }
                         }
@@ -86,8 +77,8 @@ struct RecipeDetailView: View {
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RecipeDetailView()
-            RecipeDetailView()
+            RecipeDetailView(recipe: recipePreviewData[0])
+            RecipeDetailView(recipe: recipePreviewData[0])
                 .preferredColorScheme(.dark)
         }
 //      .environmentObject(AuthViewModel())

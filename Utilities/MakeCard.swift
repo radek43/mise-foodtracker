@@ -8,28 +8,25 @@
 import SwiftUI
 
 struct MakeCard: ViewModifier {
-    @Environment(\.colorScheme) var colorScheme
     
     func body(content: Content) -> some View {
-        if colorScheme == .dark {
-            content
-                .padding()
-                .background(Color("CardBackground"))
-                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-        } else {
-            content
-                .padding()
-                .background(Color("CardBackground"))
-                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                //.shadow(color: Color.gray.opacity(0.2), radius: 20, x: 0, y: 10)
-        }
-        //.frame(width: UIScreen.main.bounds.width * 0.85)
+        content
+            .frame(maxWidth: 580)
+            .padding()
+            .background(Color.card)
+            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+            .padding(.horizontal)
+    }
+}
+
+extension View {
+    func card() -> some View {
+        self.modifier(MakeCard())
     }
 }
 
 struct MakeCard_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
-//            .environmentObject(AuthViewModel())
     }
 }

@@ -15,4 +15,5 @@ extension Color {
     static let background = Color("ColorBackground")
     static let post = Color("PostDetailColor")
     static let accentLight = Color("AccentLight")
+    static let formText = Color("SectionText")
 }

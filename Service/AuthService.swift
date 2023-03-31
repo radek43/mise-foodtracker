@@ -141,7 +141,7 @@ public class AuthServices {
             completion(.success(data))
             
             do {
-                if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {}
+                if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] { print(json) }
                 
             } catch let error {
                 completion(.failure(.invalidCredentials))

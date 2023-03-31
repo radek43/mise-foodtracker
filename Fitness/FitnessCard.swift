@@ -52,7 +52,7 @@ struct FitnessCard: View {
                 .frame(width: 60, height: 60)
                 .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
         }
-        .modifier(MakeCard())
+        .card()
         .padding(.horizontal)
     }
 }

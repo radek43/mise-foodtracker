@@ -21,10 +21,12 @@ struct RecipeCard: View {
                     .fill(Color(.gray))
                     .aspectRatio(3/4, contentMode: .fit)
                             
-                    KFImage(URL(string: recipe.image))
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .layoutPriority(-1)
+                    if let image = recipe.image {
+                        KFImage(URL(string: image))
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .layoutPriority(-1)
+                    }
                 }
                 .clipped()   
             }
@@ -32,13 +34,13 @@ struct RecipeCard: View {
             .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
             .shadow(color: Color.gray.opacity(0.2), radius: 20, x: 0, y: 10)
             
-            Text(recipe.name)
+            Text(recipe.title)
                 .font(.callout)
                 .fontWeight(.medium)
                 .foregroundColor(.primary)
                 .lineLimit(2)
             
-            Text("200 kCal")
+            Text("\(recipe.calories) kCal")
                 .font(.caption)
                 .foregroundColor(Color.secondary)
         }
@@ -50,8 +52,8 @@ struct RecipeCard: View {
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RecipeCard(recipe: Recipe.dummyData[2])
-            RecipeCard(recipe: Recipe.dummyData[2])
+            RecipeCard(recipe: recipePreviewData[0])
+            RecipeCard(recipe: recipePreviewData[0])
                 .preferredColorScheme(.dark)
         }
         

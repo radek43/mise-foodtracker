@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "keyboardtoolbarsswiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ArnavMotwani/KeyboardToolbarsSwiftUI.git",
+      "state" : {
+        "revision" : "203ed27ee7fc2d7529a1b7e8b18e36651fe680d7",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",

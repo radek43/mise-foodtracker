@@ -33,7 +33,7 @@ struct TabBar: View {
             }
             .tag(1)
             NavigationView {
-                RecipesView()
+                AddNewRecipe()
             }
             .tabItem {
                 if tabSelection == 2 { Image("book.fill") }

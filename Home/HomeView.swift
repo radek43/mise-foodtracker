@@ -7,10 +7,10 @@
 
 import SwiftUI
 import Kingfisher
+import SwiftUICharts
 
 struct HomeView: View {
     // MARK: - PROPERTIES
-//    @EnvironmentObject var authViewModel: AuthViewModel
     @State var uiTabarController: UITabBarController?
     @State private var data = Date()
     @State var showDishSheet = false
@@ -28,9 +28,7 @@ struct HomeView: View {
                         DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
                             .accentColor(.primary)
                     }
-                    .frame(maxWidth: 612)
-                    .modifier(MakeCard())
-                    .padding(.horizontal)
+                    .card()
                     
                     // Vizualizare Calorii Ramase
                     VStack(alignment: .leading) {
@@ -84,9 +82,7 @@ struct HomeView: View {
                             .frame(maxWidth: .infinity)
                         }
                     }
-                    .frame(maxWidth: 612)
-                    .modifier(MakeCard())
-                    .padding(.horizontal)
+                    .card()
 
                     // Meniu adaugare alimente consumate
                     VStack(alignment: .leading) {
@@ -125,9 +121,7 @@ struct HomeView: View {
                             Spacer()
                         }
                     }
-                    .frame(maxWidth: 612)
-                    .modifier(MakeCard())
-                    .padding(.horizontal)
+                    .card()
 
                     DailyCaloriesChart()
                         .frame(maxWidth: 612)
@@ -139,7 +133,7 @@ struct HomeView: View {
                 .navigationBarItems(
                     trailing:
                         NavigationLink {
-                            SettingsView()
+                            SettingsView(viewModel: AuthViewModel.shared)
                         } label: {
                             Image(systemName: "gearshape")
                         }

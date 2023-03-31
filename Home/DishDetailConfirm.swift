@@ -36,12 +36,12 @@ struct DishDetailConfirm: View {
                     DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
                 }
                 .frame(maxWidth: .infinity)
-                .modifier(MakeCard())
+                .card()
                 .padding(.horizontal)
                 
                 DishDetailChart()
                     .frame(maxWidth: 612, maxHeight: 200)
-                    .modifier(MakeCard())
+                    .card()
                     .padding(.horizontal)
                 
                 Button {

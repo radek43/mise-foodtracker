@@ -12,13 +12,14 @@ struct Token: Codable {
 }
 
 struct User: Codable {
-    let email: String
-    let name: String
     let fullname: String
+    let name: String
+    let email: String
+    let is_staff: Bool
 }
 
 extension User {
     static let dummyData: [User] = [
-        User(email: "john.doe@email.com", name: "john.doe", fullname: "John Doe")
+        User(fullname: "John Doe", name: "john.doe", email: "john.doe@email.com", is_staff: false)
     ]
 }
