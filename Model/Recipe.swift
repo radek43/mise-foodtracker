@@ -1,13 +1,15 @@
 //
 //  Recipe.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 9/3/22.
 //
 
 import Foundation
+import SwiftUI
 
-enum Category: String {
+// RECIPE CATEGORY
+enum Category: String, CaseIterable {
     case supa  = "Supa"
     case ciorba = "Ciorba"
     case mancaruri = "Mancaruri"
@@ -16,6 +18,7 @@ enum Category: String {
     case desert = "Desert"
 }
 
+// RECIPE MODEL
 struct Recipe: Codable, Identifiable {
     let id: Int
     let title: String

@@ -12,7 +12,7 @@ struct KeychainService {
         case duplicateEntry
         case unknown(OSStatus)
     }
-     
+    
     func save(service: String, account: String, password: Data) throws {
         print("KeychainService: Starting save..")
         let query: [String: AnyObject] = [
@@ -60,7 +60,7 @@ struct KeychainService {
         ]
         let status = SecItemDelete(query as CFDictionary)
         guard status == errSecSuccess || status == errSecItemNotFound else {
-             throw KeychainError.unknown(status)
+            throw KeychainError.unknown(status)
         }
         print("KeychainService: Keychain data deleted successfully")
     }

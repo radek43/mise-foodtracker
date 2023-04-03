@@ -1,6 +1,6 @@
 //
 //  FitnessView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 5/7/22.
 //
@@ -22,7 +22,7 @@ struct FitnessView: View {
                     HStack(alignment: .center) {
                         SearchBar(placeholderText: "Cauta un exercitiu",text: .constant("")) // de adaugat bindingul corespunzator pentru functia de cautare
                             .padding(.bottom, 3)
-                            
+                        
                         Button {
                             print("buton setari retete apasat")
                         } label: {
@@ -30,24 +30,25 @@ struct FitnessView: View {
                                 .imageScale(.large)
                         }
                     }
-                    .padding(.horizontal)
+                    .padding([.top, .leading, .trailing])
                     .padding(.bottom, 5.0)
-                    .frame(maxWidth: 612)
-
+                    .frame(maxWidth: 580)
+                    
                     ForEach(excersises) { excersise in
                         NavigationLink(destination: FitnessDetailView()) {
                             FitnessCard(exercitiu: excersise)
                                 .frame(maxWidth: 612)
                                 .foregroundColor(.primary)
-                                
                         }
                     }
-                }
-            }
+                } //: END MAIN VSTACK
+            } //: END SCROLL VIEW
             .navigationTitle("Fitness")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
+
 
 // MARK: - PREVIEW
 struct FitnessView_Previews: PreviewProvider {

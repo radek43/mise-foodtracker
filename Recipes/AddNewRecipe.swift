@@ -1,6 +1,6 @@
 //
 //  AddNewRecipe.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 12/9/22.
 //
@@ -9,35 +9,52 @@ import SwiftUI
 import Combine
 import KeyboardToolbars
 
+
 struct AddNewRecipe: View {
-    // MARK: - PROPERTIES    
+    // MARK: - PROPERTIES
+    @ObservedObject var viewModel = CreateRecipeViewModel()
+    
     @State private var title = ""
+    @State private var time_minutes = ""
     @State private var description = ""
     @State private var ingredients = ""
-    @State private var category = "" // de facut field
     @State private var calories = ""
-    @State private var protein: Decimal = 0
+    @State private var protein = ""
     @State private var carbs = ""
     @State private var fibers = ""
     @State private var fat = ""
+    
+    @State private var selectedCategory = Category.supa.rawValue
+    let category: [String] = Category.allCases.map { $0.rawValue }
     
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
     @State private var recipeImage: Image?
     
-    let formatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter
-    }()
-    
     // MARK: - BODY
     var body: some View {
-        VStack {
-            Form(content: {
+        ZStack {
+            Color.background
+                .edgesIgnoringSafeArea(.all)
+            Form {
+                // RECIPE TITLE
                 Section(header: Text("Titlu rețetă:")) {
-                   TextField("", text: $title)
+                    TextField("Supă de legume", text: $title)
                 }
+                // CATEGORY
+                Section(header: Text("Categorie:")) {
+                    Picker("Alege o categorie:", selection: $selectedCategory) {
+                        ForEach(category, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                }
+                // TIME MINUTES
+                Section(header: Text("Durată preparare:")) {
+                    TextField("Durata in minute", text: $time_minutes)
+                        .numbersOnly($time_minutes)
+                }
+                // RECIPE VALUES
                 Section(header: Text("Valori nutritive: ")) {
                     HStack {
                         Text("Calorii:")
@@ -48,74 +65,59 @@ struct AddNewRecipe: View {
                     HStack {
                         Text("Proteine:")
                             .foregroundColor(Color.formText)
-                        TextField("", value: $calories, formatter: formatter)
-                            .keyboardType(.numberPad)
+                        TextField("", text: $protein)
+                            .numbersOnly($protein, includeDecimal: true)
                     }
                     HStack {
-                        Text("Grasimi:")
+                        Text("Grăsimi:")
                             .foregroundColor(Color.formText)
                         TextField("", text: $fat)
-                            .keyboardType(.decimalPad)
-                            .onReceive(Just(fat)) { newValue in
-                                let filtered = newValue.filter { "0123456789".contains($0) }
-                                if filtered != newValue {
-                                    self.fat = filtered
-                                }
-                        }
+                            .numbersOnly($fat, includeDecimal: true)
                     }
                     HStack {
                         Text("Fibre:")
                             .foregroundColor(Color.formText)
                         TextField("", text: $fibers)
-                            .keyboardType(.decimalPad)
-                            .onReceive(Just(fibers)) { newValue in
-                                let filtered = newValue.filter { "0123456789".contains($0) }
-                                if filtered != newValue {
-                                    self.fibers = filtered
-                                }
-                        }
+                            .numbersOnly($fibers, includeDecimal: true)
                     }
                     HStack {
-                        Text("Carbohidrati:")
+                        Text("Carbohidrați:")
                             .foregroundColor(Color.formText)
                         TextField("", text: $carbs)
-                            .keyboardType(.decimalPad)
-                            .onReceive(Just(carbs)) { newValue in
-                                let filtered = newValue.filter { "0123456789".contains($0) }
-                                if filtered != newValue {
-                                    self.carbs = filtered
-                                }
-                        }
+                            .numbersOnly($carbs, includeDecimal: true)
                     }
                 }
+                // RECIPE INGREDIENTS
                 Section(header: Text("Ingrediente:")) {
                     TextEditor(text: $ingredients)
                         .frame(height: 150, alignment: .leading)
                 }
+                // RECIPE DIRECTIONS
                 Section(header: Text("Mod preparare:")) {
                     TextEditor(text: $description)
                         .frame(height: 150, alignment: .leading)
                 }
-//                Section(header: Text("Poza preparat:")) {
-//                    Button {
-//                        showImagePicker.toggle()
-//                        print("buton imagine apasat ")
-//                    } label: {
-//                        if let profileImage = recipeImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
-//                            profileImage
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .clipShape(RoundedRectangle(cornerRadius: 8))
-//                        } else {
-//                            Text("Adauga o imagine")
-//                                .frame(maxWidth: .infinity, alignment: .center)
-//                        }
-//                    }
-//                    .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-//                        ImagePicker(selectedImage: $selectedImage)
-//                    }
-//                }
-            })
+                // RECIPE IMAGE
+                Section(header: Text("Poză preparat:")) {
+                    Button {
+                        showImagePicker.toggle()
+                    } label: {
+                        if let profileImage = recipeImage {    // an image was picked
+                            profileImage
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        } else {
+                            Text("Adaugă o imagine")
+                                .frame(maxWidth: .infinity, alignment: .center)
+                        }
+                    }
+                    .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
+                        ImagePicker(selectedImage: $selectedImage)
+                    }
+                }
+            } //: END FORM
+            .frame(maxWidth: 580)
             .navigationTitle("Adauga o reteta")
             .navigationBarTitleDisplayMode(.inline)
             .addHideKeyboardButton()
@@ -124,25 +126,35 @@ struct AddNewRecipe: View {
             }
             .toolbar {
                 Button("Trimite") {
-                    print("reteta trimisa")
+                    self.viewModel.uploadRecipe(title: title, time_minutes: Int(time_minutes)!, category: selectedCategory, description: description, ingredients: ingredients, calories: calories , protein: protein, carbs: carbs, fibers: fibers, fat: fat)
                 }
             }
-        }
+        } //: END ZSTACK
     }
-    // MARK: - FUNCTIONS
+}
+
+
+// MARK: - EXTENSIONS
+extension AddNewRecipe {
     func loadImage() {
         guard let selectedImage = selectedImage else { return }
         recipeImage = Image(uiImage: selectedImage)
     }
 }
 
+
 // MARK: - PREVIEWS
 struct AddNewRecipe_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            AddNewRecipe()
-            AddNewRecipe()
-                .preferredColorScheme(.dark)
+            NavigationView {
+                AddNewRecipe()
+            }
+            NavigationView {
+                AddNewRecipe()
+            }
+            .preferredColorScheme(.dark)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

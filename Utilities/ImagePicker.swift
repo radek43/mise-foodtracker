@@ -1,17 +1,19 @@
 //
 //  ImagePicker.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 8/28/22.
 //
 
 import SwiftUI
 
+
 struct ImagePicker: UIViewControllerRepresentable {
-    
+    // MARK: - PROPERTIES
     @Binding var selectedImage: UIImage?
     @Environment(\.presentationMode) var presentationMode
     
+    // MARK: - FUNCTIONS
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
@@ -27,6 +29,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 }
 
+// MARK: - EXTENSIONS
 extension ImagePicker {
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         

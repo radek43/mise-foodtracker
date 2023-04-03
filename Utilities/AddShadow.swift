@@ -1,19 +1,22 @@
 //
 //  AddShadow.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 12/21/22.
 //
 
 import SwiftUI
 
+
 struct AddShadow: ViewModifier {
+    // MARK: - PROPERTIES
     @Environment(\.colorScheme) var colorScheme
     var opacity: Double
     var radius: Double
     var x: Double
     var y: Double
     
+    // MARK: - BODY
     func body(content: Content) -> some View {
         if colorScheme != .dark {
             content
@@ -24,9 +27,10 @@ struct AddShadow: ViewModifier {
     }
 }
 
+// MARK: - PREVIEWS
 struct AddShadow_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()
-//            .environmentObject(AuthViewModel())
+        //            .environmentObject(AuthViewModel())
     }
 }

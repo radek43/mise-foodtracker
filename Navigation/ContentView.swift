@@ -1,25 +1,24 @@
 //
 //  ContentView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 4/9/22.
 //
 
 import SwiftUI
 
+
 struct ContentView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var viewModel: AuthViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     private var keychainService = KeychainService()
- 
+    
     // MARK: - BODY
     var body: some View {
-        if viewModel.isLoggedIn == false {
-            // no user logged in
+        if viewModel.isLoggedIn == false {  //  NO USER LOGGED IN
             LoginView()
-        } else {
-            // user logged in
+        } else {  //  USER LOGGED IN
             TabBar()
         }
     }

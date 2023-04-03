@@ -1,6 +1,6 @@
 //
 //  PostDetail.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 10/7/22.
 //
@@ -22,13 +22,13 @@ struct PostDetail: View {
                 VStack(alignment: .leading) { // titlu, metadata si interaction buttons
                     HStack(alignment: .center) {
                         if let user = post.user {
-//                            KFImage(URL(string: user.profileImageUrl))
-//                                .resizable()
-//                                .scaledToFill()
-//                                .clipShape(Circle())
-//                                .frame(width: 50, height: 50)
-//                                .foregroundColor(Color.secondary)
-//                                .padding(.trailing, 5)
+                            //  KFImage(URL(string: user.profileImageUrl))
+                            //      .resizable()
+                            //      .scaledToFill()
+                            //      .clipShape(Circle())
+                            //      .frame(width: 50, height: 50)
+                            //      .foregroundColor(Color.secondary)
+                            //      .padding(.trailing, 5)
                             VStack(alignment: .leading) {
                                 Text(post.titluPostare)
                                     .font(.title)
@@ -45,7 +45,7 @@ struct PostDetail: View {
                                 .frame(width: 50, height: 50)
                                 .foregroundColor(Color.secondary)
                                 .padding(.trailing, 5)
-
+                            
                             VStack(alignment: .leading) {
                                 Text(post.titluPostare)
                                     .font(.title2)
@@ -62,7 +62,7 @@ struct PostDetail: View {
                     Text(post.continutPostare)
                         .font(.callout)
                         .multilineTextAlignment(.leading)
-                        
+                    
                     HStack {
                         Button {
                             print("Buton de like apasat")
@@ -80,7 +80,7 @@ struct PostDetail: View {
                             Text("Comentariu")
                                 .font(.footnote)
                         }
-            
+                        
                         Spacer()
                         
                         Text("12/03/2022")
@@ -95,9 +95,7 @@ struct PostDetail: View {
                 .modifier(AddShadow(opacity: 0.3, radius: 20, x: 0, y: 10))
                 .padding(.bottom)
 
-                //Divider()
-
-                VStack(alignment: .leading) { //comentarii
+                VStack(alignment: .leading) {
                     HStack {
                         Text("• 3 comentarii")
                             .font(.footnote)
@@ -117,6 +115,7 @@ struct PostDetail: View {
         }
     }
 }
+
 
 // MARK: - PREVIEW
 struct CommunityViewDetail_Previews: PreviewProvider {

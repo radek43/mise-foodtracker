@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 import Kingfisher
 
+
 struct SettingsView: View {
     // MARK: - PROPERTIES
     @ObservedObject var viewModel: AuthViewModel
     
-
     // MARK: - BODY
     var body: some View {
         if let user = viewModel.currentUser {

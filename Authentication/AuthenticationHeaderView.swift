@@ -1,11 +1,12 @@
 //
 //  AuthenticationHeaderView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 8/9/22.
 //
 
 import SwiftUI
+
 
 struct AuthenticationHeaderView: View {
     // MARK: - PROPERTIES
@@ -78,7 +79,6 @@ struct AuthenticationHeaderView_Previews: PreviewProvider {
             AuthenticationHeaderView(title1: "Welcome", title2: "Back")
                 .preferredColorScheme(.dark)
         }
-        
     }
 }
 

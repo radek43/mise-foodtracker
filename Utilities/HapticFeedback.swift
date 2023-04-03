@@ -1,6 +1,6 @@
 //
 //  HapticFeedback.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 1/9/23.
 //

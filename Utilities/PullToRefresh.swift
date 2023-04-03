@@ -1,19 +1,21 @@
 //
 //  PullToRefresh.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 10/23/22.
 //
 
 import SwiftUI
 
+
 struct PullToRefresh: View {
-    
+    // MARK: - PROPERTIES
     var coordinateSpaceName: String
     var onRefresh: ()->Void
     
     @State var needRefresh: Bool = false
     
+    // MARK: - BODY
     var body: some View {
         GeometryReader { geo in
             if (geo.frame(in: .named(coordinateSpaceName)).midY > 50) {
@@ -30,6 +32,7 @@ struct PullToRefresh: View {
                         }
                     }
             }
+            
             HStack {
                 Spacer()
                 if needRefresh {
@@ -45,7 +48,6 @@ struct PullToRefresh: View {
 }
 
 // MARK: - PREVIEW
-
 struct PullToRefresh_Previews: PreviewProvider {
     static var previews: some View {
         ForumView()

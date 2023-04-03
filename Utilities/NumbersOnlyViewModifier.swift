@@ -8,11 +8,13 @@
 import SwiftUI
 import Combine
 
+
 struct NumbersOnlyViewModifier: ViewModifier {
-    
+    // MARK: - PROPERTIES
     @Binding var text: String
     var includeDecimal: Bool
     
+    // MARK: - BODY
     func body(content: Content) -> some View {
         content
             .keyboardType(includeDecimal ? .decimalPad: .numberPad)
@@ -35,6 +37,7 @@ struct NumbersOnlyViewModifier: ViewModifier {
     }
 }
 
+// MARK: - EXTENSIONS
 extension View {
     func numbersOnly(_ text: Binding<String>, includeDecimal: Bool = false) -> some View {
         self.modifier(NumbersOnlyViewModifier(text: text, includeDecimal: includeDecimal))

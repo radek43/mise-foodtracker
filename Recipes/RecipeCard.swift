@@ -1,6 +1,6 @@
 //
 //  RecipeCard.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 4/16/22.
 //
@@ -18,17 +18,17 @@ struct RecipeCard: View {
             VStack {
                 ZStack {
                     Rectangle()
-                    .fill(Color(.gray))
-                    .aspectRatio(3/4, contentMode: .fit)
-                            
+                        .fill(Color(.gray))
+                        .aspectRatio(3/4, contentMode: .fit)
+                    
                     if let image = recipe.image {
                         KFImage(URL(string: image))
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .layoutPriority(-1)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .layoutPriority(-1)
                     }
                 }
-                .clipped()   
+                .clipped()
             }
             .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
             .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
@@ -40,13 +40,13 @@ struct RecipeCard: View {
                 .foregroundColor(.primary)
                 .lineLimit(2)
             
-            Text("\(recipe.calories) kCal")
+            Text("\(recipe.calories, specifier: "%.2f") kCal")
                 .font(.caption)
                 .foregroundColor(Color.secondary)
-        }
-        //.frame(width: 160, height: 213)
+        } //: END MAIN VSTACK
     }
 }
+
 
 // MARK: - PREVIEW
 struct RecipeCard_Previews: PreviewProvider {

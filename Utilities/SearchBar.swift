@@ -1,11 +1,12 @@
 //
 //  SearchBar.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 10/4/22.
 //
 
 import SwiftUI
+
 
 struct SearchBar: View {
     // MARK: - PROPERTIES

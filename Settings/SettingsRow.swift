@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 struct SettingsRow: View {
     // MARK: - PROPERTIES
     var iconDefault: String?
@@ -15,7 +16,6 @@ struct SettingsRow: View {
     var firstText: String
     var color: Color
 
-    
     // MARK: - BODY
     var body: some View {
         HStack {
@@ -27,12 +27,10 @@ struct SettingsRow: View {
                     Image(systemName: iconDefault!)
                         .foregroundColor(Color.white)
                 }
-                
                 if (iconAsset != nil) {
                     Image(iconAsset!)
                         .foregroundColor(Color.white)
                 }
-                
             }
             .frame(width: 32, height: 32, alignment: .center)
             Text(firstText)
@@ -41,6 +39,7 @@ struct SettingsRow: View {
         }
     }
 }
+
 
 // MARK: - PREVIEW
 struct SettingsRow_Previews: PreviewProvider {

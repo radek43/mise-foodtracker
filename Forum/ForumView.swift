@@ -1,6 +1,6 @@
 //
 //  ForumView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 4/10/22.
 //
@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ForumView: View {
     // MARK: - PROPERTIES
-
-//    @ObservedObject var viewModel = ForumViewModel()
+    
+    //    @ObservedObject var viewModel = ForumViewModel()
     var posts: [Post] = Post.dummyData
     
     // MARK: - BODY
@@ -55,22 +55,22 @@ struct ForumView: View {
                                 Image("figure.run")
                             }
                         } label: {
-                             Text("Sorteaza")
-                             Image(systemName: "chevron.down")
+                            Text("Sorteaza")
+                            Image(systemName: "chevron.down")
                         }
                     }
-                    .frame(maxWidth: 612)
-                    .padding(.horizontal)
+                    .frame(maxWidth: 580)
+                    .padding([.top, .leading, .trailing])
+                    .padding(.trailing)
                     
                     ForEach(posts) { post in
                         NavigationLink(destination: PostDetail(post: post)){
-                           PostRow(post: post)
+                            PostRow(post: post)
                                 .frame(maxWidth: 612)
                                 .foregroundColor(.primary)
                                 .padding(.horizontal)
-                       }
+                        }
                     }
-
                 }
             }
             .navigationBarItems(
@@ -88,6 +88,7 @@ struct ForumView: View {
                     }
             )
             .navigationTitle("Comunitate")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

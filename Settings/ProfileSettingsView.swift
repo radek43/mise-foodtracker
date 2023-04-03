@@ -1,11 +1,12 @@
 //
 //  ProfileSettingsView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 12/15/22.
 //
 
 import SwiftUI
+
 
 struct ProfileSettingsView: View {
     // MARK: - PROPERTIES
@@ -15,31 +16,36 @@ struct ProfileSettingsView: View {
     
     // MARK: - BODY
     var body: some View {
-        VStack(alignment: .center, spacing: 0) {
-            Form {
-                Section(header: Text("Sex")) {
-                    Picker("", selection: $selectedGender) {
-                        ForEach(genders, id: \.self) {
-                            Text($0)
+        ZStack {
+            Color.background
+                .edgesIgnoringSafeArea(.all)
+            VStack(alignment: .center, spacing: 0) {
+                Form {
+                    Section(header: Text("Sex")) {
+                        Picker("", selection: $selectedGender) {
+                            ForEach(genders, id: \.self) {
+                                Text($0)
+                            }
                         }
+                        .scaledToFit()
+                        .labelsHidden()
+                        .padding(.horizontal, -8)
+                        
                     }
-                    .scaledToFit()
-                    .labelsHidden()
-                    .padding(.horizontal, -8)
-                    
+                    Section(header: Text("Numele tau")) {
+                        TextField("", text: $changedName)
+                    }
+                    Section(header: Text("Data nasterii")) {
+                        TextField("", text: $changedName)
+                    }
                 }
-                Section(header: Text("Numele tau")) {
-                    TextField("", text: $changedName)
-                }
-                Section(header: Text("Data nasterii")) {
-                    TextField("", text: $changedName)
-                }
-                
             }
+            .frame(maxWidth: 580)
+            .navigationTitle("Setari Profil")
         }
-        .navigationTitle("Setari Profil")
     }
 }
+
 
 // MARK: - PREVIEW
 struct ProfileSettingsView_Previews: PreviewProvider {

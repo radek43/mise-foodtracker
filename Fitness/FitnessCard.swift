@@ -1,6 +1,6 @@
 //
 //  FitnessCard.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 9/3/22.
 //
@@ -10,16 +10,16 @@ import SwiftUI
 struct FitnessCard: View {
     // MARK: - PROPERTIES
     var exercitiu : Excercise
-//    var numeExercitiu: String
-//    var dificultate: String
-//    var timpExecutie: String
-
-//    init(numeExercitiu: String, dificultate: String, timpExecutie: String) {
-//        self.numeExercitiu = numeExercitiu
-//        self.dificultate = dificultate
-//        self.timpExecutie = timpExecutie
-//    }
-
+    //    var numeExercitiu: String
+    //    var dificultate: String
+    //    var timpExecutie: String
+    
+    //    init(numeExercitiu: String, dificultate: String, timpExecutie: String) {
+    //        self.numeExercitiu = numeExercitiu
+    //        self.dificultate = dificultate
+    //        self.timpExecutie = timpExecutie
+    //    }
+    
     // MARK: - BODY
     var body: some View {
         HStack {
@@ -27,7 +27,7 @@ struct FitnessCard: View {
                 Text(exercitiu.name)
                     .font(.title2)
                     .fontWeight(.semibold)
-                    
+                
                 HStack(spacing: 2) {
                     Image(systemName: "speedometer")
                     Text("Dificultate: \(exercitiu.dificulty)")
@@ -53,7 +53,6 @@ struct FitnessCard: View {
                 .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
         }
         .card()
-        .padding(.horizontal)
     }
 }
 

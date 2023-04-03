@@ -1,11 +1,12 @@
 //
 //  CustomInputFields.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 8/9/22.
 //
 
 import SwiftUI
+
 
 struct CustomInputFields: View {
     // MARK: - PROPERTIES
@@ -36,6 +37,7 @@ struct CustomInputFields: View {
             Divider()
                 .background(Color(.darkGray))
         }
+        .frame(maxWidth: 580)
     }
 }
 
@@ -51,8 +53,7 @@ struct CustomInputFields_Previews: PreviewProvider {
                               placeholderText: "Email",
                               isSecureField: false,
                               text: .constant(""))
-            .preferredColorScheme(.dark)
+                .preferredColorScheme(.dark)
         }
-        
     }
 }

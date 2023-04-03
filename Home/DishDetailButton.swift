@@ -1,6 +1,6 @@
 //
 //  DishDetailButton.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 1/10/23.
 //
@@ -17,34 +17,35 @@ struct DishDetailButton: View {
         self.imageName = imageName // assign all the parameters, not only `content`
         self.propertyTitle = propertyTitle
         self.propertyValue = propertyValue
-
     }
+    
     // MARK: - BODY
     var body: some View {
-            VStack {
-                Circle()
-                    .stroke(Color.button, style: StrokeStyle(lineWidth: 5))
-                    .frame(width: 48, height: 48)
-                    .foregroundColor(Color(UIColor.label))
-                    .background(Circle().fill(Color.button))
-                    .clipShape(Circle())
-                    .overlay(
-                        Image(imageName)
-                            .font(Font.title.weight(.light))
-                    )
-                Text(propertyTitle)
-                    .font(.footnote)
-                    .foregroundColor(Color.primary)
-                    .multilineTextAlignment(.center)
-                Text(propertyValue)
-                    .foregroundColor(Color.primary)
-                    .multilineTextAlignment(.center)
-
-            }
-            .padding(9)
+        VStack {
+            Circle()
+                .stroke(Color.button, style: StrokeStyle(lineWidth: 5))
+                .frame(width: 48, height: 48)
+                .foregroundColor(Color(UIColor.label))
+                .background(Circle().fill(Color.button))
+                .clipShape(Circle())
+                .overlay(
+                    Image(imageName)
+                        .font(Font.title.weight(.light))
+                )
+            Text(propertyTitle)
+                .font(.footnote)
+                .foregroundColor(Color.primary)
+                .multilineTextAlignment(.center)
+            Text(propertyValue)
+                .foregroundColor(Color.primary)
+                .multilineTextAlignment(.center)
+            
+        }
+        .padding(9)
     }
 }
 
+// MARK: - PREVIEWS
 struct DishDetailButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {

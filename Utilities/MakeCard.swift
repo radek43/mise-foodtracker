@@ -1,14 +1,15 @@
 //
 //  MakeCard.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 5/8/22.
 //
 
 import SwiftUI
 
+
 struct MakeCard: ViewModifier {
-    
+    // MARK: - BODY
     func body(content: Content) -> some View {
         content
             .frame(maxWidth: 580)
@@ -19,12 +20,14 @@ struct MakeCard: ViewModifier {
     }
 }
 
+// MARK: - EXTENSIONS
 extension View {
     func card() -> some View {
         self.modifier(MakeCard())
     }
 }
 
+// MARK: - PREVIEWS
 struct MakeCard_Previews: PreviewProvider {
     static var previews: some View {
         TabBar()

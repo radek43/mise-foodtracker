@@ -1,11 +1,12 @@
 //
 //  RegistrationView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 8/9/22.
 //
 
 import SwiftUI
+
 
 struct RegistrationView: View {
     // MARK: - PROPERTIES
@@ -20,10 +21,10 @@ struct RegistrationView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
-//          NavigationLink(destination: PhotoSelectorView(), isActive: $viewModel.didAuthenticateUser, label: { })
-                
+            //  HEADER
             AuthenticationHeaderView(title1: "Creaza un cont nou", title2: "")
             
+            // AUTH FORM
             VStack(spacing: 40) {
                 CustomInputFields(imageName: "envelope", placeholderText: "Email", text: $email)
                     .keyboardType(.emailAddress)
@@ -32,15 +33,16 @@ struct RegistrationView: View {
                 CustomInputFields(imageName: "lock", placeholderText: "Parola", isSecureField: true, text: $password)
             }
             .padding(32)
-
+            
+            // REGISTRATION
             Button {
                 viewModel.register(email: email, username: username, fullname: fullname, password: password)
             } label: {
                 RegistrationButton(text: "Continua")
             }
-
             Spacer()
             
+            // DISMISS
             Button {
                 presentationMode.wrappedValue.dismiss()
             } label: {
@@ -59,6 +61,7 @@ struct RegistrationView: View {
     }
 }
 
+
 // MARK: - PREVIEWS
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
@@ -69,4 +72,3 @@ struct RegistrationView_Previews: PreviewProvider {
         }
     }
 }
-

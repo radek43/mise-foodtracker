@@ -1,6 +1,6 @@
 //
 //  Excercise.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 9/3/22.
 //

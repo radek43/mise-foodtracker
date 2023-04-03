@@ -1,6 +1,6 @@
 //
 //  TabBar.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 4/11/22.
 //
@@ -64,6 +64,7 @@ struct TabBar: View {
     }
 }
 
+
 // MARK: - PREVIEW
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
@@ -72,6 +73,6 @@ struct TabBar_Previews: PreviewProvider {
             TabBar()
                 .preferredColorScheme(.dark)
         }
-//      .environmentObject(AuthViewModel())
+        //      .environmentObject(AuthViewModel())
     }
 }

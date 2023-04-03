@@ -1,6 +1,6 @@
 //
 //  ReplyRow.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 10/8/22.
 //
@@ -21,7 +21,7 @@ struct ReplyRow: View {
                     .frame(width: 50, height: 50)
                     .foregroundColor(Color.secondary)
                     .padding(.trailing, 5)
-
+                
                 VStack(alignment: .leading) {
                     Text("@numeutilizator")
                         .font(.headline)

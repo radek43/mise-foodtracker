@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Kingfisher
 
+
 struct SettingsScreen: View {
     // MARK: - PROPERTIES
     let name: String
@@ -16,7 +17,7 @@ struct SettingsScreen: View {
     let logoutAction: () -> Void
     
     @State private var doesTrackActivity = false
-
+    
     // MARK: - BODY
     var body: some View {
         ZStack {
@@ -77,33 +78,34 @@ struct SettingsScreen: View {
                 .listStyle(GroupedListStyle())
                 
             } //: VStack
-            .frame(maxWidth: 612)
-            .navigationBarTitle("Setari", displayMode: .inline)
+            .frame(maxWidth: 580)
+            .navigationTitle("Setari")
+            .navigationBarTitleDisplayMode(.inline)
+            
         }//: ZStack
+        
     } //: Body
 }
 
 struct SettingsScreen_Previews: PreviewProvider {
     static var previews: some View {
-            Group {
-                NavigationView {
-                    SettingsScreen(
-                        name: "Radu Bila",
-                        is_staff: false,
-                        logoutAction: { }
-                    )
-                }
-                .navigationViewStyle(StackNavigationViewStyle())
-                
-                NavigationView {
-                    SettingsScreen(
-                        name: "Radu Bila",
-                        is_staff: false,
-                        logoutAction: { }
-                    )
-                    .preferredColorScheme(.dark)
-                }
-                .navigationViewStyle(StackNavigationViewStyle())
+        Group {
+            NavigationView {
+                SettingsScreen(
+                    name: "Radu Bila",
+                    is_staff: false,
+                    logoutAction: { }
+                )
             }
+            NavigationView {
+                SettingsScreen(
+                    name: "Radu Bila",
+                    is_staff: false,
+                    logoutAction: { }
+                )
+                .preferredColorScheme(.dark)
+            }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

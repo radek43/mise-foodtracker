@@ -1,6 +1,6 @@
 //
 //  AuthViewModel.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 08.03.2023.
 //
@@ -16,7 +16,7 @@ class AuthViewModel: ObservableObject {
     private var keychainService = KeychainService()
     
     init() {
-        // check if user is already logged in
+        // CHECK IF USER IS ALREADY LOGGED IN
         if let userEmail = UserDefaults.standard.string(forKey: "userEmail") {
             do {
                 if let keychainResult = try self.keychainService.get(service: "mise-foodtracker", account: userEmail) {
@@ -88,7 +88,7 @@ class AuthViewModel: ObservableObject {
             }
         }
     }
-
+    
     func signOut() {
         guard let email = UserDefaults.standard.string(forKey: "userEmail") else { return }
         

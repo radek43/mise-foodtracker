@@ -1,6 +1,6 @@
 //
 //  RecipesView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 4/10/22.
 //
@@ -9,10 +9,10 @@ import SwiftUI
 
 struct RecipesView: View {
     // MARK: - PROPERTIES
-//    @ObservedObject var viewModel = RecipeViewModel()
-//    @EnvironmentObject var authViewModel: AuthViewModel
+    //    @ObservedObject var viewModel = RecipeViewModel()
+    //    @EnvironmentObject var authViewModel: AuthViewModel
     var recipes: [Recipe]
-
+    
     // MARK: - BODY
     var body: some View {
         ZStack {
@@ -21,6 +21,7 @@ struct RecipesView: View {
             
             ScrollView(showsIndicators: false) {
                 VStack {
+                    // SEARCH BAR
                     HStack(alignment: .center) {
                         SearchBar(placeholderText: "Gaseste-ți inspirația",text: .constant(""))
                             .padding(.bottom, 3)
@@ -31,8 +32,10 @@ struct RecipesView: View {
                                 .imageScale(.large)
                         }
                     }
+                    .padding(.top)
                     .padding(.bottom, 5.0)
                     
+                    // RECIPE GRID
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 15)], spacing: 15) {
                         ForEach(recipes) { recipe in
                             NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
@@ -48,7 +51,7 @@ struct RecipesView: View {
                 }
                 .frame(maxWidth: 612)
                 .padding(.horizontal)
-            }
+            } //: END SCROLL VIEW
             .navigationBarItems(
                 trailing:
                     NavigationLink {
@@ -58,7 +61,8 @@ struct RecipesView: View {
                     }
             )
             .navigationTitle("Rețete")
-        }
+            .navigationBarTitleDisplayMode(.inline)
+        } //: END ZSTACK
     }
 }
 
@@ -69,13 +73,12 @@ struct RecipesView_Previews: PreviewProvider {
             NavigationView {
                 RecipesView(recipes: recipePreviewData)
             }
-            .navigationViewStyle(StackNavigationViewStyle())
             NavigationView {
                 RecipesView(recipes: recipePreviewData)
                     .preferredColorScheme(.dark)
             }
-            .navigationViewStyle(StackNavigationViewStyle())
         }
-//                .environmentObject(AuthViewModel())
+        .navigationViewStyle(StackNavigationViewStyle())
+        // .environmentObject(AuthViewModel())
     }
 }

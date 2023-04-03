@@ -1,6 +1,6 @@
 //
 //  ImageUploader.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 8/28/22.
 //

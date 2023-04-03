@@ -1,6 +1,6 @@
 //
 //  DishDetailChart.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 1/11/23.
 //
@@ -10,72 +10,68 @@ import SwiftUICharts
 
 struct DishDetailChart: View {
     // MARK: - PROPERTIES
-    var demoData: [Double] = [8, 4, 2]
-    let mixedColorStyle = ChartStyle(backgroundColor: Color("CardBackground"), foregroundColor: [
-        ColorGradient(.purple, .blue), ColorGradient(.pink, .yellow), ColorGradient(.red, .green)])
-    @ScaledMetric var size: CGFloat = 1
+    var demoData: [Double] = [19, 13, 12]
+    let mixedColorStyle = ChartStyle(backgroundColor: Color.card, foregroundColor: [
+        ColorGradient(Color.accent, Color.accent), ColorGradient(Color("Pallette1"), Color("Pallette1")), ColorGradient(Color("Pallette2"), Color("Pallette2"))])
     
     // MARK: - BODY
     var body: some View {
-        VStack(alignment: .leading) {
-                Text("Calorii totale: 324 kCal")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-            
-        
-            HStack(alignment: .center) {
-                PieChart()
-                    .data(demoData)
-                    .chartStyle(mixedColorStyle)
-                Spacer()
-                VStack(alignment: .leading) {
-                    HStack(alignment: .center) {
-                        Circle()
-                            .fill(LinearGradient(
-                                    gradient: Gradient(colors: [.purple, .blue]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing))
-                            .frame(width: 20, height: 20)
-                        Text("Grasimi:\n\(demoData[0], specifier: "%.1f")g  / 57%")
-                            //.font(.system(size: 17 + size, weight: .medium))
-                            //.minimumScaleFactor(0.01)
-                        Spacer()
-                    }
-                    
-                    HStack(alignment: .center) {
-                        Circle()
-                            .fill(LinearGradient(
-                                    gradient: Gradient(colors: [.pink, .yellow]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing))
-                            .frame(width: 20, height: 20)
-                        Text("Proteine:\n\(demoData[1], specifier: "%.1f")g / 29%")
-                            //.font(.system(size: 17 + size, weight: .medium))
-                            //.minimumScaleFactor(0.01)
-                        Spacer()
-                    }
-                    
-                    HStack(alignment: .center) {
-                        Circle()
-                            .fill(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [.red, .green]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing))
-                            .frame(width: 20, height: 20)
-                        Text("Carbohidrati:\n\(demoData[2], specifier: "%.1f")g / 14%")
-                            //.font(.system(size: 17 + size, weight: .medium))
-                            //.minimumScaleFactor(0.01)
-                        Spacer()
+        CardView(showShadow: false) {
+            VStack {
+                // CHART HEADER
+                ChartLabel("Sumar", type: .subTitle)
+                    .padding([.top, .leading, .trailing])
+                // CHART
+                HStack(alignment: .center) {
+                    PieChart()
+                        .padding([.leading, .bottom])
+                    // CHART LEGEND
+                    VStack {
+                        HStack {
+                            Circle()
+                                .fill(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [Color("Pallette1"), Color("Pallette1")]),
+                                        startPoint: .leading,
+                                        endPoint: .trailing))
+                                .frame(width: 15, height: 15)
+                            ChartLabel("\(demoData[1])g \nProteine", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
+                        }
+                        HStack {
+                            Circle()
+                                .fill(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [Color("Pallette2"), Color("Pallette2")]),
+                                        startPoint: .leading,
+                                        endPoint: .trailing))
+                                .frame(width: 15, height: 15)
+                            ChartLabel("\(demoData[2])g \nCarbohidrati", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
+                        }
+                        HStack {
+                            Circle()
+                                .fill(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [Color.accent, Color.accent]),
+                                        startPoint: .leading,
+                                        endPoint: .trailing))
+                                .frame(width: 15, height: 15)
+                            ChartLabel("\(demoData[0])g \nGrasimi", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
+                        }
                     }
                 }
-                .frame(maxHeight: .infinity)
-            }
-        }
-        .frame(minHeight: 200)
+            } //: END VSTACK
+            .background(Color.card)
+        } //: END CARDVIEW
+        .data(demoData)
+        .chartStyle(mixedColorStyle)
+        .frame(height: 250)
+        .frame(maxWidth: 612)
+        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+        .padding(.horizontal)
     }
 }
 
+// MARK: - PREVIEWS
 struct DishDetail_Previews: PreviewProvider {
     static var previews: some View {
         Group {

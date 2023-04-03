@@ -1,6 +1,6 @@
 //
 //  RecipeDetailView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 4/16/22.
 //
@@ -20,6 +20,7 @@ struct RecipeDetailView: View {
             
             ScrollView(showsIndicators: false) {
                 VStack {
+                    // RECIPE IMAGE
                     ZStack {
                         Rectangle()
                             .fill(Color(.gray))
@@ -34,7 +35,8 @@ struct RecipeDetailView: View {
                     .clipped()
                     .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                     .padding()
-
+                    
+                    // RECIPE DETAILS
                     VStack(spacing: 30) {
                         Text(recipe.title)
                             .font(.title)
@@ -43,6 +45,7 @@ struct RecipeDetailView: View {
                         VStack(alignment: .leading, spacing: 30) {
                             if !recipe.description.isEmpty {
                                 Text(recipe.description)
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
                             Divider()
                             // Detalii valori nutritionale
@@ -51,36 +54,45 @@ struct RecipeDetailView: View {
                                     Text("Ingrediente:")
                                         .font(.title2)
                                         .fontWeight(.semibold)
-                                    Text(recipe.ingredients.replacingOccurrences(of: "•", with: "\n •"))
+                                    Text(recipe.ingredients)
+                                        .fixedSize(horizontal: false, vertical: true)
                                 }
                             }
                         }
                     }
-                    .frame(maxWidth: 612)
                     .padding(.horizontal)
                     .toolbar {
                         Button {
-                            print("reteta inregistrata in jurnal")
+                            print("DEBUG: Recipe logged")
                         } label: {
                             HStack {
-                                Text("Adauga la jurnal")
+                                Text("Adaugă la jurnal")
                                 Image(systemName: "text.badge.plus")
                             }
                         }
                     }
-                }
-            }
-        }
+                } //: END MAIN VSTACK
+                .frame(maxWidth: 580)
+            } //: END SCROLL VIEW
+        } //: END ZSTACK
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
+
+
 // MARK: - PREVIEW
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RecipeDetailView(recipe: recipePreviewData[0])
-            RecipeDetailView(recipe: recipePreviewData[0])
-                .preferredColorScheme(.dark)
+            NavigationView {
+                RecipeDetailView(recipe: recipePreviewData[0])
+            }
+            NavigationView {
+                RecipeDetailView(recipe: recipePreviewData[0])
+            }
+            .preferredColorScheme(.dark)
         }
-//      .environmentObject(AuthViewModel())
+        .navigationViewStyle(StackNavigationViewStyle())
+        // .environmentObject(AuthViewModel())
     }
 }

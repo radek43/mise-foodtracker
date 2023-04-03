@@ -1,6 +1,6 @@
 //
 //  DishView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 1/10/23.
 //
@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct DishView: View {
+    // MARK: - PROPERTIES
     @State var searchText = ""  // de modificat
     
+    // MARK: - BODY
     var body: some View {
         NavigationView {
             ZStack {
@@ -18,7 +20,10 @@ struct DishView: View {
                 ScrollView {
                     VStack {
                         SearchBar(placeholderText: "Ce ai mancat azi?", text: $searchText)
+                            .frame(maxWidth: 580)
                             .padding([.top, .leading, .trailing])
+                        
+                        // RECENT LOGGED FOODS
                         VStack {
                             Text("Adaugate astazi")
                                 .font(.headline)
@@ -55,6 +60,7 @@ struct DishView: View {
                         .card()
                         .padding(.horizontal)
                         
+                        // FOOD HISTORY
                         VStack {
                             Text("Istoric meniuri servite")
                                 .font(.headline)
@@ -91,15 +97,16 @@ struct DishView: View {
                         .card()
                         .padding(.horizontal)
                         Spacer()
-                    }
-                }
-                
-            }
+                    } //: END VSTACK
+                } //: END SCROLL VIEW
+            } //: END ZSTACK
             .navigationBarTitle("Adauga un fel de mancare", displayMode: .inline)
-        }
+        } //: END NAVIGATION VIEW
     }
 }
 
+
+// MARK: - PREVIEWS
 struct DishView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -107,5 +114,6 @@ struct DishView_Previews: PreviewProvider {
             DishView()
                 .preferredColorScheme(.dark)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

@@ -1,15 +1,14 @@
 //
 //  RingView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 12/22/22.
 //
 
 import SwiftUI
 
+
 struct RingView: View {
-    // MARK: - PROPERTIES
-    
     // MARK: - BODY
     var body: some View {
         VStack {
@@ -26,7 +25,6 @@ struct RingView: View {
                     )
                     .rotationEffect(Angle(degrees: 90))
                     .rotation3DEffect(Angle(degrees: 180), axis: (x: 1, y: 0, z: 0))
-                
                     .frame(width: 48, height: 48)
                 
                 VStack(alignment: .center, spacing: 0.0) {

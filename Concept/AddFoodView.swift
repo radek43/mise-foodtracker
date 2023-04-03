@@ -1,6 +1,6 @@
 //
 //  AddFoodView.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 4/28/22.
 //

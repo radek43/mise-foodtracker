@@ -1,15 +1,18 @@
 //
 //  RegistrationButton.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 1/12/23.
 //
 
 import SwiftUI
 
+
 struct RegistrationButton: View {
+    // MARK: - PROPERTIES
     var text: String
     
+    // MARK: - BODY
     var body: some View {
         Text(text)
             .font(.headline)
@@ -22,6 +25,8 @@ struct RegistrationButton: View {
     }
 }
 
+
+// MARK: - PREVIEWS
 struct RegistrationButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {

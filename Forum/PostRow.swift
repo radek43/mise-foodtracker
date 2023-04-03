@@ -1,6 +1,6 @@
 //
 //  PostRow.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 9/28/22.
 //
@@ -17,14 +17,14 @@ struct PostRow: View {
         VStack(alignment: .leading) {
             if let user = post.user {
                 HStack(alignment: .top) {
-//                    KFImage(URL(string: user.profileImageUrl))
-//                        .resizable()
-//                        .scaledToFill()
-//                        .clipShape(Circle())
-//                        .frame(width: 50, height: 50)
-//                        .foregroundColor(Color.secondary)
-//                        .padding(.trailing, 5)
-
+                    //                    KFImage(URL(string: user.profileImageUrl))
+                    //                        .resizable()
+                    //                        .scaledToFill()
+                    //                        .clipShape(Circle())
+                    //                        .frame(width: 50, height: 50)
+                    //                        .foregroundColor(Color.secondary)
+                    //                        .padding(.trailing, 5)
+                    
                     VStack(alignment: .leading) {
                         Text(post.titluPostare)
                             .font(.title3)
@@ -46,10 +46,10 @@ struct PostRow: View {
                 HStack {
                     Text(String(post.likes) + " Aprecieri")
                         .font(.footnote)
-
+                    
                     Text(String(post.likes) + " Comentarii") //de remediat
                         .font(.footnote)
-
+                    
                     Spacer()
                     
                     Text("12/04/2022")
@@ -65,26 +65,25 @@ struct PostRow: View {
                         .foregroundColor(Color.button)
                         .padding(.trailing, 5)
                     VStack(alignment: .leading) {
-    
-                    //placeholder titlu
-                    RoundedRectangle(cornerRadius: 5, style: .continuous)
-                        .frame(width: 250, height: 30)
-                        .foregroundColor(Color.button)
-                    
-                    //placeholder username
-                        RoundedRectangle(cornerRadius: 3, style: .continuous)
-                        .frame(width: 100, height: 10)
-                        .foregroundColor(Color.button)
-                    
-                    //placeholder linie1 continutText
-                        RoundedRectangle(cornerRadius: 4, style: .continuous)
-                        .frame(width: 250, height: 15)
-                        .foregroundColor(Color.button)
+                        //placeholder titlu
+                        RoundedRectangle(cornerRadius: 5, style: .continuous)
+                            .frame(width: 250, height: 30)
+                            .foregroundColor(Color.button)
                         
-                    //placeholder linie2 continutText
-                    RoundedRectangle(cornerRadius: 4, style: .continuous)
-                        .frame(width: 225, height: 13)
-                        .foregroundColor(Color.button)
+                        //placeholder username
+                        RoundedRectangle(cornerRadius: 3, style: .continuous)
+                            .frame(width: 100, height: 10)
+                            .foregroundColor(Color.button)
+                        
+                        //placeholder linie1 continutText
+                        RoundedRectangle(cornerRadius: 4, style: .continuous)
+                            .frame(width: 250, height: 15)
+                            .foregroundColor(Color.button)
+                        
+                        //placeholder linie2 continutText
+                        RoundedRectangle(cornerRadius: 4, style: .continuous)
+                            .frame(width: 225, height: 13)
+                            .foregroundColor(Color.button)
                     }
                 }
                 
@@ -122,7 +121,5 @@ struct CommunityCard_Previews: PreviewProvider {
             ForumView()
                 .preferredColorScheme(.dark)
         }
-        
-        //PostRow(post: Post.dummyData[0])
     }
 }

@@ -1,15 +1,15 @@
 //
 //  ActivityProgressRow.swift
-//  maiIncercSiEu
+//  mise-foodtracker
 //
 //  Created by Radu Bila on 5/7/22.
 //
 
 import SwiftUI
 
+
 struct ActivityProgressRow: View {
     // MARK: - PROPERTIES
-    
     var progressTitle: String
     var progressValue: String
     var measurementUnit: String
@@ -21,9 +21,7 @@ struct ActivityProgressRow: View {
             Spacer()
             Text("\(progressValue) \(measurementUnit)")
         }
-        .frame(maxWidth: 612)
         .card()
-        .padding(.horizontal)
     }
 }
 
