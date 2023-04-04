@@ -40,15 +40,32 @@ struct RecipeDetailView: View {
                     VStack(spacing: 30) {
                         Text(recipe.title)
                             .font(.title)
-                            .bold()
+                            .fontWeight(.bold)
                             .multilineTextAlignment(.center)
-                        VStack(alignment: .leading, spacing: 30) {
-                            if !recipe.description.isEmpty {
-                                Text(recipe.description)
-                                    .fixedSize(horizontal: false, vertical: true)
+                            .fixedSize(horizontal: false, vertical: true)
+                        
+                        HStack {
+                            Text("Timp de preparare: \(recipe.time_minutes) minute")
+                                .font(.callout)
+                                .foregroundColor(Color.secondary)
+                            Spacer()
+                        }
+                        Divider()
+                        VStack(alignment: .leading, spacing: 20) {
+                            Text("Informații nutriționale:")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                            VStack(alignment: .leading) {
+                                Text("• Calorii: \(recipe.calories, specifier: "%.1f")g")
+                                Text("• Proteine: \(recipe.protein, specifier: "%.1f")g")
+                                Text("• Lipide: \(recipe.fat, specifier: "%.1f")g")
+                                Text("• Carbohidrați: \(recipe.carbs, specifier: "%.1f")g")
+                                Text("• Fibre: \(recipe.fibers, specifier: "%.1f")g")
                             }
+                            Text("*Informații nutriționale pentru o porție de 100gr")
+                                .font(.footnote)
+                                .foregroundColor(Color.secondary)
                             Divider()
-                            // Detalii valori nutritionale
                             if !recipe.ingredients.isEmpty {
                                 VStack(alignment: .leading, spacing: 20) {
                                     Text("Ingrediente:")
@@ -58,8 +75,19 @@ struct RecipeDetailView: View {
                                         .fixedSize(horizontal: false, vertical: true)
                                 }
                             }
+                            Divider()
+                            if !recipe.description.isEmpty {
+                                VStack(alignment: .leading, spacing: 20) {
+                                    Text("Mod de preparare:")
+                                        .font(.title2)
+                                        .fontWeight(.semibold)
+                                    Text(recipe.description)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                }
+                                .padding(.bottom, 30)
+                            }
                         }
-                    }
+                    } //: END DETAILS VSTACK
                     .padding(.horizontal)
                     .toolbar {
                         Button {
@@ -85,10 +113,10 @@ struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NavigationView {
-                RecipeDetailView(recipe: recipePreviewData[0])
+                RecipeDetailView(recipe: recipePreviewData[1])
             }
             NavigationView {
-                RecipeDetailView(recipe: recipePreviewData[0])
+                RecipeDetailView(recipe: recipePreviewData[1])
             }
             .preferredColorScheme(.dark)
         }
