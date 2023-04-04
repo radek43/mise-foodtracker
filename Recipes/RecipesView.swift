@@ -9,8 +9,6 @@ import SwiftUI
 
 struct RecipesView: View {
     // MARK: - PROPERTIES
-    //    @ObservedObject var viewModel = RecipeViewModel()
-    //    @EnvironmentObject var authViewModel: AuthViewModel
     var recipes: [Recipe]
     
     // MARK: - BODY
@@ -79,6 +77,5 @@ struct RecipesView_Previews: PreviewProvider {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        // .environmentObject(AuthViewModel())
     }
 }
