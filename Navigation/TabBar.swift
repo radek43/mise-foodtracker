@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TabBar: View {
     // MARK: - PROPERTIES
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     @State private var tabSelection = 0
     
     // MARK: - BODY
@@ -68,11 +70,14 @@ struct TabBar: View {
 // MARK: - PREVIEW
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            TabBar()
-            TabBar()
-                .preferredColorScheme(.dark)
-        }
-        //      .environmentObject(AuthViewModel())
+        let viewModel = AuthViewModel()
+        viewModel.currentUser = User(fullname: "George Popescu", name: "popescu.george", email: "george.popescu@yahoo.com", is_staff: false)
+        return
+            Group {
+                TabBar()
+                TabBar()
+                    .preferredColorScheme(.dark)
+            }
+            .environmentObject(viewModel)
     }
 }
