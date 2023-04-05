@@ -30,7 +30,13 @@ struct AddShadow: ViewModifier {
 // MARK: - PREVIEWS
 struct AddShadow_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
-        //            .environmentObject(AuthViewModel())
+        let viewModel = AuthViewModel()
+        viewModel.currentUser = User(fullname: "George Popescu", name: "popescu.george", email: "george.popescu@yahoo.com", is_staff: false)
+        return Group {
+            TabBar()
+            TabBar()
+                .preferredColorScheme(.dark)
+        }
+        .environmentObject(viewModel)
     }
 }
