@@ -30,6 +30,13 @@ extension View {
 // MARK: - PREVIEWS
 struct MakeCard_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar()
+        let viewModel = AuthViewModel()
+        viewModel.currentUser = User(fullname: "George Popescu", name: "popescu.george", email: "george.popescu@yahoo.com", is_staff: false)
+        return Group {
+            TabBar()
+            TabBar()
+                .preferredColorScheme(.dark)
+        }
+        .environmentObject(viewModel)
     }
 }
