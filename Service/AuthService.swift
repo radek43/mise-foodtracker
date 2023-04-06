@@ -36,7 +36,7 @@ public class AuthServices {
             switch result {
                 case .success(let data):
                     completion(.success(data))
-                case .failure(let error):
+                case .failure(_):
                     completion(.failure(.invalidCredentials))
             }
         }
@@ -51,7 +51,7 @@ public class AuthServices {
             switch result {
                 case .success(let data):
                     completion(.success(data))
-                case .failure(let error):
+                case .failure(_):
                     completion(.failure(.invalidCredentials))
             }
         }
@@ -92,7 +92,7 @@ public class AuthServices {
             completion(.success(data))
             
             do {
-                if let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] {}
+                if try JSONSerialization.jsonObject(with: data, options: .mutableContainers) is [String: Any] {}
                 
             } catch let error {
                 completion(.failure(.decodingError))
@@ -148,13 +148,9 @@ public class AuthServices {
             
             completion(.success(data))
             
-            do {
-                if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] { print(json) }
-                
-            } catch let error {
-                completion(.failure(.invalidCredentials))
-                print(error)
-            }
+
+            if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] { print(json) }
+
         }
         task.resume()
     }
