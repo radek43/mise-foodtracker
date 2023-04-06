@@ -16,11 +16,13 @@ struct HomeView: View {
     @State var uiTabarController: UITabBarController?
     @State private var data = Date()
     @State var showDishSheet = false
+    
+    @State private var height = 0
 
     
     // MARK: - BODY
     var body: some View {
-        if let user = viewModel.currentUser {
+        if viewModel.currentUser != nil {
             NavigationView {
                 ZStack {
                     Color.background
@@ -36,7 +38,7 @@ struct HomeView: View {
                         .padding(.top)
                         
                         // USER OBJECTIVE
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .center) {
                             HStack {
                                 Text("Obiectiv")
                                     .font(.title3)
@@ -90,13 +92,16 @@ struct HomeView: View {
                         .card()
                         
                         // LOG EATEN FOOD
-                        VStack(alignment: .leading) {
-                            Text("Jurnal")
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                            
-                            HStack(alignment: .top, spacing: 0.0) {
+                        VStack(alignment: .center) {
+                            HStack {
+                                Text("Jurnal")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
                                 Spacer()
+                            }
+                            
+                            HStack(alignment: .top) {
+                                
                                 Button {
                                     self.showDishSheet.toggle()
                                 } label: {
@@ -105,50 +110,40 @@ struct HomeView: View {
                                 .sheet(isPresented: $showDishSheet) {
                                     DishDetailConfirm()
                                 }
-                                Spacer()
                                 Button {
                                     print("Buton pranz apasat")
                                 } label: {
                                     AddDishButton(imageName: "soupLadle", title: "prânz")
                                 }
-                                Spacer()
                                 // RingView()
                                 Button {
                                     print("Buton cina apasat")
                                 } label: {
                                     AddDishButton(imageName: "pastaDish", title: "cină")
                                 }
-                                Spacer()
                                 Button {
                                     print("Am apasat")
                                 } label: {
                                     AddDishButton(imageName: "icecream", title: "gustări")
                                 }
-                                Spacer()
                             }
                             
-                            HStack(alignment: .top, spacing: 0.0) {
-                                Spacer()
-                                Spacer()
+                            HStack(alignment: .top) {
                                 Button {
                                     print("Buton sport apasat")
                                 } label: {
                                     AddDishButton(imageName: "sprint", title: "sport")
                                 }
-                                Spacer()
                                 Button {
                                     print("Buton greutate apasat")
                                 } label: {
                                     AddDishButton(imageName: "weightScale", title: "greutate")
                                 }
-                                Spacer()
                                 Button {
                                     print("Buton lichide apasat")
                                 } label: {
                                     AddDishButton(imageName: "waterDrop", title: "lichide")
                                 }
-                                Spacer()
-                                Spacer()
                             }
                         }
                         .card()
@@ -157,7 +152,7 @@ struct HomeView: View {
                             .padding(.bottom, 20)
                         
                     } //: END SCROLL VIEW
-                    .navigationTitle("Pagina Principală")
+                    .navigationTitle("Bine ai venit!")
                     .navigationBarItems(
                         trailing:
                             NavigationLink {
