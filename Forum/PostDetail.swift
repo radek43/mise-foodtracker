@@ -21,7 +21,7 @@ struct PostDetail: View {
             ScrollView {
                 VStack(alignment: .leading) { // titlu, metadata si interaction buttons
                     HStack(alignment: .center) {
-                        if let user = post.user {
+                        if post.user != nil {
                             //  KFImage(URL(string: user.profileImageUrl))
                             //      .resizable()
                             //      .scaledToFill()
