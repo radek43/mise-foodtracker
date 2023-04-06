@@ -24,7 +24,7 @@ func Greetings() -> String {
         case NEW_DAY..<NOON:
             greetingText = "Bună dimineața"
         case NOON..<SUNSET:
-            greetingText = "Salut"
+            greetingText = "Bine ai venit"
         case SUNSET..<MIDNIGHT:
             greetingText = "Bună seara"
         default:
