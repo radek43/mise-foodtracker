@@ -25,7 +25,7 @@ struct ImageUploader {
         
         var token = ""
         
-        // GET TOKEN FROM KEYCHAIN
+        // Get token from KeyChain
         do {
             guard let keychainResult = (try self.keychainService.get(service: "mise-foodtracker", account: email)) else {
                 print("KeychainService: Failed to read token.")
@@ -36,8 +36,7 @@ struct ImageUploader {
             print("keychain-imageUploader: \(error)")
         }
         
-        // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
-        // And the boundary is also set here
+        // Set Content-Type Header to multipart/form-data and add the boundary
         urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         urlRequest.setValue("Token \(token)", forHTTPHeaderField: "Authorization")
         var data = Data()
