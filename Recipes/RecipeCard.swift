@@ -34,13 +34,13 @@ struct RecipeCard: View {
             .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
             .shadow(color: Color.gray.opacity(0.2), radius: 20, x: 0, y: 10)
             
-            Text(recipe.title)
+            Text(recipe.title + "\n")
                 .font(.callout)
                 .fontWeight(.medium)
                 .foregroundColor(.primary)
                 .lineLimit(2)
             
-            Text("\(recipe.calories, specifier: "%.2f") kCal")
+            Text("\(recipe.calories) kCal" as String)
                 .font(.caption)
                 .foregroundColor(Color.secondary)
         } //: END MAIN VSTACK
@@ -52,8 +52,8 @@ struct RecipeCard: View {
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RecipeCard(recipe: recipePreviewData[0])
-            RecipeCard(recipe: recipePreviewData[0])
+            RecipeCard(recipe: recipePreviewData[1])
+            RecipeCard(recipe: recipePreviewData[1])
                 .preferredColorScheme(.dark)
         }
         
