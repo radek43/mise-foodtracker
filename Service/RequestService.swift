@@ -15,7 +15,7 @@ public class RequestService {
     // MARK: - FUNCTIONS
     public static func postRecipe(email: String, title: String, category: String, time_minutes: Int, description: String, ingredients: String, calories: Decimal, protein: Decimal, carbs: Decimal, fibers: Decimal, fat: Decimal, completion: @escaping (_ result: [String: Any]?) -> Void) {
         
-        // REQUEST PAYLOAD
+        // Add the payload to the http request data
         let params = [
             "title": title,
             "calories": calories,
@@ -31,7 +31,7 @@ public class RequestService {
         
         var token = ""
         
-        // GET TOKEN FROM KEYCHAIN
+        // Get token from KeyChain
         do {
             guard let keychainResult = (try self.keychainService.get(service: "mise-foodtracker", account: email)) else {
                 print("KeychainService: Failed to read token.")
@@ -42,9 +42,8 @@ public class RequestService {
             print("fetchUser:\(error)")
         }
         
-        // REQUEST PROPERTIES
+        // Set the URLRequest to POST and to the specified URL
         let url = URL(string: requestDomain)!
-        
         var request = URLRequest(url: url)
         
         request.httpMethod = "POST"
@@ -59,7 +58,7 @@ public class RequestService {
             print("postRecipe: \(error)")
         }
         
-        // CREATE REQUEST
+        // Send a POST request to the URL, with the data we created earlier
         let task = URLSession.shared.dataTask(with: request) { data, result, error in
             guard error == nil else { return }
             guard let data = data else { return }
@@ -71,6 +70,44 @@ public class RequestService {
             } catch let error {
                 print("fetchUser.dataTask: \(error)")
             }
+        }
+        task.resume()
+    }
+    
+    static func fetchRecipes(email: String, completion: @escaping (_ result: Result<Data?, NetworkError>) -> Void) {
+        // Get token from KeyChain
+        var token = ""
+        
+        do {
+            guard let keychainResult = (try self.keychainService.get(service: "mise-foodtracker", account: email)) else {
+                print("KeychainService: Failed to read token.")
+                return
+            }
+            token = String(decoding: keychainResult, as: UTF8.self)
+        } catch {
+            print("fetchUser:\(error)")
+        }
+        
+        // Set the URLRequest parameters
+        let url = URL(string: requestDomain)!
+        let session = URLSession.shared
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Token \(token)", forHTTPHeaderField: "Authorization")
+        
+        // Send a GET request to the URL and parse the response
+        let task = session.dataTask(with: request) { data, response, error in
+            guard error == nil else {
+                completion(.failure(.noData))
+                return
+            }
+            guard let data = data else {
+                return
+            }
+            completion(.success(data))
         }
         task.resume()
     }
