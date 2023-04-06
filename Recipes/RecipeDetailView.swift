@@ -56,36 +56,35 @@ struct RecipeDetailView: View {
                                 .font(.title2)
                                 .fontWeight(.semibold)
                             VStack(alignment: .leading) {
-                                Text("• Calorii: \(recipe.calories, specifier: "%.1f")g")
-                                Text("• Proteine: \(recipe.protein, specifier: "%.1f")g")
-                                Text("• Lipide: \(recipe.fat, specifier: "%.1f")g")
-                                Text("• Carbohidrați: \(recipe.carbs, specifier: "%.1f")g")
-                                Text("• Fibre: \(recipe.fibers, specifier: "%.1f")g")
+                                Text("• Calorii: \(recipe.calories)g")
+                                Text("• Proteine: \(recipe.protein)g")
+                                Text("• Lipide: \(recipe.fat)g")
+                                Text("• Carbohidrați: \(recipe.carbs)g")
+                                Text("• Fibre: \(recipe.fibers)g")
                             }
                             Text("*Informații nutriționale pentru o porție de 100gr")
                                 .font(.footnote)
                                 .foregroundColor(Color.secondary)
                             Divider()
-                            if !recipe.ingredients.isEmpty {
-                                VStack(alignment: .leading, spacing: 20) {
-                                    Text("Ingrediente:")
-                                        .font(.title2)
-                                        .fontWeight(.semibold)
-                                    Text(recipe.ingredients)
-                                        .fixedSize(horizontal: false, vertical: true)
-                                }
+                            
+                            VStack(alignment: .leading, spacing: 20) {
+                                Text("Ingrediente:")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                Text(recipe.ingredients)
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
+                            
                             Divider()
-                            if !recipe.description.isEmpty {
-                                VStack(alignment: .leading, spacing: 20) {
-                                    Text("Mod de preparare:")
-                                        .font(.title2)
-                                        .fontWeight(.semibold)
-                                    Text(recipe.description)
-                                        .fixedSize(horizontal: false, vertical: true)
-                                }
-                                .padding(.bottom, 30)
+                            
+                            VStack(alignment: .leading, spacing: 20) {
+                                Text("Mod de preparare:")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                Text(recipe.description)
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
+                            .padding(.bottom, 30)
                         }
                     } //: END DETAILS VSTACK
                     .padding(.horizontal)
