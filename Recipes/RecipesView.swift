@@ -12,7 +12,6 @@ struct RecipesView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     @ObservedObject var recipeViewModel = RecipeViewModel()
-
     
     // MARK: - BODY
     var body: some View {
