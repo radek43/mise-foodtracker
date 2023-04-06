@@ -12,7 +12,7 @@ import KeyboardToolbars
 
 struct AddNewRecipe: View {
     // MARK: - PROPERTIES
-    @ObservedObject var viewModel = CreateRecipeViewModel()
+    @ObservedObject var viewModel = RecipeViewModel()
     
     @State private var title = ""
     @State private var time_minutes = ""
@@ -26,6 +26,8 @@ struct AddNewRecipe: View {
     
     @State private var selectedCategory = Category.supa.rawValue
     let category: [String] = Category.allCases.map { $0.rawValue }
+    
+    @Environment(\.presentationMode) var presentationMode
     
     @State private var showImagePicker = false
     @State private var selectedImage: UIImage?
@@ -121,14 +123,19 @@ struct AddNewRecipe: View {
             .navigationTitle("Adauga o reteta")
             .navigationBarTitleDisplayMode(.inline)
             .addHideKeyboardButton()
-            .onAppear{
+            .onAppear {
                 UITextField.appearance().clearButtonMode = .whileEditing
             }
             .toolbar {
                 Button("Trimite") {
-                    self.viewModel.uploadRecipe(title: title, time_minutes: Int(time_minutes)!, category: selectedCategory, description: description, ingredients: ingredients, calories: calories , protein: protein, carbs: carbs, fibers: fibers, fat: fat)
+                    self.viewModel.uploadRecipe(title: title, time_minutes: Int(time_minutes)!, category: selectedCategory, description: description, ingredients: ingredients, calories: calories , protein: protein, carbs: carbs, fibers: fibers, fat: fat, image: selectedImage)
                 }
             }
+            .onReceive(viewModel.$didUploadRecipe, perform: { success in
+                if success {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            })
         } //: END ZSTACK
     }
 }
