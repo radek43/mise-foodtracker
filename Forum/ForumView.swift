@@ -10,9 +10,6 @@ import SwiftUI
 struct ForumView: View {
     // MARK: - PROPERTIES
     
-    //    @ObservedObject var viewModel = ForumViewModel()
-    var posts: [Post] = Post.dummyData
-    
     // MARK: - BODY
     var body: some View {
         NavigationView {
@@ -63,15 +60,6 @@ struct ForumView: View {
                         .frame(maxWidth: 580)
                         .padding([.top, .leading, .trailing])
                         .padding(.trailing)
-                        
-                        ForEach(posts) { post in
-                            NavigationLink(destination: PostDetail(post: post)){
-                                PostRow(post: post)
-                                    .frame(maxWidth: 612)
-                                    .foregroundColor(.primary)
-                                    .padding(.horizontal)
-                            }
-                        }
                     }
                 }
                 .navigationBarItems(
