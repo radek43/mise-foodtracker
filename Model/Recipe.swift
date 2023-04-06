@@ -22,13 +22,13 @@ enum Category: String, CaseIterable {
 struct Recipe: Codable, Identifiable {
     let id: Int
     let title: String
-    let category: Category.RawValue
+    let calories: String
+    let category: String
     let time_minutes: Int
-    let calories: Double
-    let protein: Double
-    let carbs: Double
-    let fibers: Double
-    let fat: Double
+    let protein: String
+    let carbs: String
+    let fibers: String
+    let fat: String
     let description: String
     let ingredients: String
     let image: String?
