@@ -19,7 +19,7 @@ class AuthViewModel: ObservableObject {
         // CHECK IF USER IS ALREADY LOGGED IN
         if let userEmail = UserDefaults.standard.string(forKey: "userEmail") {
             do {
-                if let keychainResult = try self.keychainService.get(service: "mise-foodtracker", account: userEmail) {
+                if (try self.keychainService.get(service: "mise-foodtracker", account: userEmail)) != nil {
                     self.isLoggedIn = true
                 }
             } catch {
@@ -39,7 +39,7 @@ class AuthViewModel: ObservableObject {
         AuthServices.register(email: email, username: username, fullname: fullname, password: password) { result in
             switch result {
                 case .success(let data):
-                    guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else { return }
+                    guard (try? JSONDecoder().decode(User.self, from: data!)) != nil else { return }
                 case .failure(let error):
                     print(error.localizedDescription)
             }
@@ -50,7 +50,7 @@ class AuthViewModel: ObservableObject {
         AuthServices.login(email: email, password: password) { result in
             switch result {
                 case .success(let data):
-                    guard let response = try? JSONDecoder().decode(Token.self, from: data as! Data) else {
+                    guard let response = try? JSONDecoder().decode(Token.self, from: data!) else {
                         print("AuthServices-Login: No response from API")
                         return
                     }
@@ -75,7 +75,7 @@ class AuthViewModel: ObservableObject {
         AuthServices.fetchUser(email: email) { result in
             switch result {
                 case .success(let data):
-                    guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else { return }
+                    guard let user = try? JSONDecoder().decode(User.self, from: data!) else { return }
                     
                     DispatchQueue.main.async {
                         UserDefaults.standard.set(user.email, forKey: "userEmail")
