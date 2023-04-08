@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DishView: View {
     // MARK: - PROPERTIES
-    @State var searchText = ""  // de modificat
+    @State private var searchText = ""  // de modificat
     
     // MARK: - BODY
     var body: some View {
