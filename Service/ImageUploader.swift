@@ -57,6 +57,7 @@ struct ImageUploader {
                     print(json)
                 }
             }
-        }).resume()
+        })
+        .resume()
     }
 }
