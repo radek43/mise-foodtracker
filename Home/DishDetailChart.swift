@@ -64,6 +64,7 @@ struct DishDetailChart: View {
         } //: END CARDVIEW
         .data(demoData)
         .chartStyle(mixedColorStyle)
+        .allowsHitTesting(false)
         .frame(height: 250)
         .frame(maxWidth: 612)
         .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
