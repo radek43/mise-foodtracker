@@ -64,6 +64,7 @@ struct DailyCaloriesChart: View {
         } //: END CARDVIEW
         .data(demoData)
         .chartStyle(mixedColorStyle)
+        .allowsHitTesting(false)
         .frame(height: 250)
         .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
         .frame(maxWidth: 612)
