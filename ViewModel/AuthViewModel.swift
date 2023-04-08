@@ -14,25 +14,14 @@ class AuthViewModel: ObservableObject {
     @Published var isLoggedIn = false
     
     private var keychainService = KeychainService()
+    private let service = UserService()
     
     init() {
         // CHECK IF USER IS ALREADY LOGGED IN
-        if let userEmail = UserDefaults.standard.string(forKey: "userEmail") {
-            do {
-                if (try self.keychainService.get(service: "mise-foodtracker", account: userEmail)) != nil {
-                    self.isLoggedIn = true
-                }
-            } catch {
-                print("KeychainServiceError:\(error)")
-            }
-            if self.isLoggedIn == true {
-                self.fetchUser(email: userEmail)
-            }
-        }
+        self.fetchUser()
     }
     
     static let shared = AuthViewModel()
-    
     
     // MARK: - METHODS
     func register(email: String, username: String, fullname: String, password: String) {
@@ -40,6 +29,9 @@ class AuthViewModel: ObservableObject {
             switch result {
                 case .success(let data):
                     guard (try? JSONDecoder().decode(User.self, from: data!)) != nil else { return }
+                    DispatchQueue.main.async {
+                        self.fetchUser()
+                    }
                 case .failure(let error):
                     print(error.localizedDescription)
             }
@@ -54,16 +46,15 @@ class AuthViewModel: ObservableObject {
                         print("AuthServices-Login: No response from API")
                         return
                     }
-                    
+                    do { // save token in keychain
+                        UserDefaults.standard.set(String(email), forKey: "userEmail")
+                        try self.keychainService.save(service: "mise-foodtracker", account: email, password: response.token.data(using: .utf8) ?? Data())
+                    } catch {
+                        print("KeychainServiceError:\(error)")
+                    }
                     DispatchQueue.main.async {
-                        do { // save token in keychain
-                            UserDefaults.standard.set(String(email), forKey: "userEmail")
-                            try self.keychainService.save(service: "mise-foodtracker", account: email, password: response.token.data(using: .utf8) ?? Data())
-                        } catch {
-                            print("KeychainServiceError:\(error)")
-                        }
                         self.isLoggedIn = true
-                        self.fetchUser(email: email)
+                        self.fetchUser()
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -71,12 +62,14 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func fetchUser(email: String) {
-        AuthServices.fetchUser(email: email) { result in
+    func fetchUser() {
+        guard let email = UserDefaults.standard.string(forKey: "userEmail") else { return }
+        
+        service.fetchUser(email: email) { result in
             switch result {
                 case .success(let data):
                     guard let user = try? JSONDecoder().decode(User.self, from: data!) else { return }
-                    
+                    print("fetchUser: Succes fetching user")
                     DispatchQueue.main.async {
                         UserDefaults.standard.set(user.email, forKey: "userEmail")
                         self.isLoggedIn = true
