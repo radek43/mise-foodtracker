@@ -9,14 +9,14 @@ import SwiftUI
 
 struct TabBar: View {
     // MARK: - PROPERTIES
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     @State private var tabSelection = 0
     
     init() {
         UITabBar.appearance().barTintColor = UIColor(Color.mono)
         UITabBar.appearance().backgroundColor = UIColor(Color.mono)
-       }
+    }
     
     // MARK: - BODY
     var body: some View {
@@ -69,8 +69,6 @@ struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
-        let recipeViewModel = RecipeViewModel()
-        recipeViewModel.recipes = recipePreviewData
         return Group {
             TabBar()
             TabBar()

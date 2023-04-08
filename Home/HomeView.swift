@@ -12,17 +12,17 @@ import SwiftUICharts
 
 struct HomeView: View {
     // MARK: - PROPERTIES
-    @EnvironmentObject var viewModel: AuthViewModel
-    @State var uiTabarController: UITabBarController?
-    @State private var data = Date()
-    @State var showDishSheet = false
+    @EnvironmentObject var authViewModel: AuthViewModel
     
+    @State private var uiTabarController: UITabBarController?
+    @State private var data = Date()
+    @State private var showDishSheet = false
     @State private var height = 0
-
+    
     
     // MARK: - BODY
     var body: some View {
-        if viewModel.currentUser != nil {
+        if authViewModel.currentUser != nil {
             NavigationView {
                 ZStack {
                     Color.background
@@ -88,6 +88,7 @@ struct HomeView: View {
                                 }
                                 .frame(maxWidth: .infinity)
                             }
+                            .fixedSize(horizontal: false, vertical: true)
                         }
                         .card()
                         

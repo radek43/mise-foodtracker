@@ -10,13 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: - PROPERTIES
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     private var keychainService = KeychainService()
     
     // MARK: - BODY
     var body: some View {
-        if viewModel.isLoggedIn == false {  //  NO USER LOGGED IN
+        if authViewModel.isLoggedIn == false {  //  NO USER LOGGED IN
             LoginView()
         } else {  //  USER LOGGED IN
             TabBar()
