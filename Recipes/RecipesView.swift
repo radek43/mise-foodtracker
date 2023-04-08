@@ -9,19 +9,24 @@ import SwiftUI
 
 struct RecipesView: View {
     // MARK: - PROPERTIES
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
-    @ObservedObject var recipeViewModel = RecipeViewModel()
+    @StateObject var recipeListViewModel = RecipeListViewModel()
     
     // MARK: - BODY
     var body: some View {
-        if viewModel.currentUser != nil {
+        if authViewModel.currentUser != nil {
             NavigationView {
                 ZStack {
                     Color.background
                         .edgesIgnoringSafeArea(.all)
                     
                     ScrollView(showsIndicators: false) {
+                        RefreshControl(coordinateSpace: .named("RefreshControl")) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                recipeListViewModel.fetchRecipeList()
+                            }
+                        }
                         VStack {
                             // SEARCH BAR
                             HStack(alignment: .center) {
@@ -39,9 +44,11 @@ struct RecipesView: View {
                             
                             // RECIPE GRID
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 15)], spacing: 15) {
-                                ForEach(recipeViewModel.recipes) { recipe in
-                                    NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
-                                        RecipeCard(recipe: recipe)
+                                ForEach(recipeListViewModel.recipeList) { recipe in
+                                    NavigationLink {
+                                        RecipeDetailView(recipeDetailViewModel: RecipeDetailViewModel(withrecipeId: recipe.id))
+                                    } label: {
+                                        RecipeCard(title: recipe.title, image: recipe.image ?? "", calories: recipe.calories)
                                             .frame(maxWidth: 580)
                                             .foregroundColor(.primary)
                                     }
@@ -55,10 +62,11 @@ struct RecipesView: View {
                         .frame(maxWidth: 580)
                         .padding(.horizontal)
                     } //: END SCROLL VIEW
+                    .coordinateSpace(name: "RefreshControl")
                     .navigationBarItems(
                         trailing:
                             NavigationLink {
-                                AddNewRecipe()
+                                AddNewRecipe(recipeViewModel: recipeListViewModel)
                             } label: {
                                 Image(systemName: "note.text.badge.plus")
                             }
@@ -76,11 +84,11 @@ struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
-        let recipeViewModel = RecipeViewModel()
-        recipeViewModel.recipes = recipePreviewData
+        let recipeViewModel = RecipeListViewModel()
+        recipeViewModel.recipeList = recipePreviewData
         return Group {
-            RecipesView(recipeViewModel: recipeViewModel)
-            RecipesView(recipeViewModel: recipeViewModel)
+            RecipesView(recipeListViewModel: recipeViewModel)
+            RecipesView(recipeListViewModel: recipeViewModel)
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)
