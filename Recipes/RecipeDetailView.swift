@@ -10,26 +10,27 @@ import Kingfisher
 
 struct RecipeDetailView: View {
     // MARK: - PROPERTIES
-    var recipe: Recipe
+    @ObservedObject var recipeDetailViewModel: RecipeDetailViewModel
     
     // MARK: - BODY
     var body: some View {
         ZStack {
             Color.background
                 .edgesIgnoringSafeArea(.all)
-            
-            ScrollView(showsIndicators: false) {
-                VStack {
-                    // RECIPE IMAGE
-                    ZStack {
-                        Rectangle()
-                            .fill(Color(.gray))
-                            .aspectRatio(4/4, contentMode: .fit)
-                        if let image = recipe.image {
-                            KFImage(URL(string: image))
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .layoutPriority(-1)
+            if let recipe = recipeDetailViewModel.recipe {
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        // RECIPE IMAGE
+                        ZStack {
+                            Rectangle()
+                                .fill(Color(.gray))
+                                .aspectRatio(4/4, contentMode: .fit)
+                            if let image = recipe.image {
+                                KFImage(URL(string: image))
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .layoutPriority(-1)
+                            }
                         }
                     }
                     .clipped()
@@ -39,22 +40,17 @@ struct RecipeDetailView: View {
                     // RECIPE DETAILS
                     VStack(spacing: 30) {
                         Text(recipe.title)
-                            .font(.title)
+                            .font(.largeTitle)
                             .fontWeight(.bold)
                             .multilineTextAlignment(.center)
                             .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal)
                         
-                        HStack {
-                            Text("Timp de preparare: \(recipe.time_minutes) minute")
-                                .font(.callout)
-                                .foregroundColor(Color.secondary)
-                            Spacer()
-                        }
-                        Divider()
-                        VStack(alignment: .leading, spacing: 20) {
+                        VStack(alignment: .leading, spacing: 10) {
                             Text("Informații nutriționale:")
                                 .font(.title2)
                                 .fontWeight(.semibold)
+                            Divider()
                             VStack(alignment: .leading) {
                                 Text("• Calorii: \(recipe.calories)g")
                                 Text("• Proteine: \(recipe.protein)g")
@@ -62,32 +58,50 @@ struct RecipeDetailView: View {
                                 Text("• Carbohidrați: \(recipe.carbs)g")
                                 Text("• Fibre: \(recipe.fibers)g")
                             }
-                            Text("*Informații nutriționale pentru o porție de 100gr")
-                                .font(.footnote)
-                                .foregroundColor(Color.secondary)
-                            Divider()
-                            
-                            VStack(alignment: .leading, spacing: 20) {
-                                Text("Ingrediente:")
-                                    .font(.title2)
-                                    .fontWeight(.semibold)
-                                Text(recipe.ingredients)
-                                    .fixedSize(horizontal: false, vertical: true)
-                            }
                             
                             Divider()
-                            
-                            VStack(alignment: .leading, spacing: 20) {
-                                Text("Mod de preparare:")
-                                    .font(.title2)
-                                    .fontWeight(.semibold)
-                                Text(recipe.description)
-                                    .fixedSize(horizontal: false, vertical: true)
+                            VStack(alignment: .leading) {
+                                Text("Timp de preparare: \(recipe.time_minutes) minute")
+                                    .font(.footnote)
+                                    .foregroundColor(Color.secondary)
+                                Text("*Informații nutriționale pentru o porție de 100gr")
+                                    .font(.footnote)
+                                    .foregroundColor(Color.secondary)
                             }
-                            .padding(.bottom, 30)
                         }
+                        .padding()
+                        .background(Color.card)
+                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                        .padding(.horizontal)
+                        
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Ingrediente:")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                            Divider()
+                            Text(recipe.ingredients)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                        .padding()
+                        .background(Color.card)
+                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                        .padding(.horizontal)
+
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Mod de preparare:")
+                                .font(.title2)
+                                .fontWeight(.semibold)
+                            Divider()
+                            Text(recipe.description)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                        .padding()
+                        .background(Color.card)
+                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                        .padding(.horizontal)
+                        .padding(.bottom, 30)
+                        
                     } //: END DETAILS VSTACK
-                    .padding(.horizontal)
                     .toolbar {
                         Button {
                             print("DEBUG: Recipe logged")
@@ -102,6 +116,9 @@ struct RecipeDetailView: View {
                 .frame(maxWidth: 580)
             } //: END SCROLL VIEW
         } //: END ZSTACK
+        .onAppear {
+            self.recipeDetailViewModel.fetchRecipeDetail()
+        }
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -110,16 +127,17 @@ struct RecipeDetailView: View {
 // MARK: - PREVIEW
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        let viewModel = RecipeDetailViewModel(withrecipeId: 1)
+        viewModel.recipe = recipeDetailPreviewData
+        return Group {
             NavigationView {
-                RecipeDetailView(recipe: recipePreviewData[1])
+                RecipeDetailView(recipeDetailViewModel: viewModel)
             }
             NavigationView {
-                RecipeDetailView(recipe: recipePreviewData[1])
+                RecipeDetailView(recipeDetailViewModel: viewModel)
             }
             .preferredColorScheme(.dark)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        // .environmentObject(AuthViewModel())
     }
 }
