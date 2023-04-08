@@ -35,7 +35,7 @@ struct KeychainService {
     }
     
     func get(service: String, account: String) throws -> Data? {
-//        print("KeychainService: Fetching \(account) keychain data..")
+//      print("KeychainService: Fetching \(account) keychain data..")
         let query: [String: AnyObject] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrService as String: service as AnyObject,
@@ -46,7 +46,7 @@ struct KeychainService {
         
         var result: AnyObject?
         _ = SecItemCopyMatching(query as CFDictionary, &result)
-        //        print("KeychainService: status \(status)")
+//      print("KeychainService: status \(status)")
         
         return result as? Data
     }
