@@ -12,7 +12,7 @@ struct AuthenticationHeaderView: View {
     // MARK: - PROPERTIES
     let title1: String
     let title2: String
-    @State var show = false
+    @State private var show = false
     
     // MARK: - BODY
     var body: some View {
