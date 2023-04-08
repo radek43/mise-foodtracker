@@ -12,7 +12,8 @@ import KeyboardToolbars
 
 struct AddNewRecipe: View {
     // MARK: - PROPERTIES
-    @ObservedObject var viewModel = RecipeViewModel()
+    @StateObject var viewModel = CreateRecipeViewModel()
+    @ObservedObject var recipeViewModel: RecipeListViewModel
     
     @State private var title = ""
     @State private var time_minutes = ""
@@ -152,16 +153,17 @@ extension AddNewRecipe {
 
 // MARK: - PREVIEWS
 struct AddNewRecipe_Previews: PreviewProvider {
+    
     static var previews: some View {
-        Group {
+        let viewModel = RecipeListViewModel()
+        return Group {
             NavigationView {
-                AddNewRecipe()
+                AddNewRecipe(recipeViewModel: viewModel)
             }
             NavigationView {
-                AddNewRecipe()
+                AddNewRecipe(recipeViewModel: viewModel)
             }
             .preferredColorScheme(.dark)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
