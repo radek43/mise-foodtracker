@@ -72,43 +72,5 @@ public class RequestService {
             }
         }
         task.resume()
-    }
-    
-    static func fetchRecipes(email: String, completion: @escaping (_ result: Result<Data?, NetworkError>) -> Void) {
-        // Get token from KeyChain
-        var token = ""
-        
-        do {
-            guard let keychainResult = (try self.keychainService.get(service: "mise-foodtracker", account: email)) else {
-                print("KeychainService: Failed to read token.")
-                return
-            }
-            token = String(decoding: keychainResult, as: UTF8.self)
-        } catch {
-            print("fetchUser:\(error)")
-        }
-        
-        // Set the URLRequest parameters
-        let url = URL(string: requestDomain)!
-        let session = URLSession.shared
-        var request = URLRequest(url: url)
-        
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("Token \(token)", forHTTPHeaderField: "Authorization")
-        
-        // Send a GET request to the URL and parse the response
-        let task = session.dataTask(with: request) { data, response, error in
-            guard error == nil else {
-                completion(.failure(.noData))
-                return
-            }
-            guard let data = data else {
-                return
-            }
-            completion(.success(data))
-        }
-        task.resume()
-    }
+    }    
 }
