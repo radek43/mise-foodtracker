@@ -12,12 +12,12 @@ import Kingfisher
 
 struct SettingsView: View {
     // MARK: - PROPERTIES
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     @State private var doesTrackActivity = false
     
     // MARK: - BODY
     var body: some View {
-        if let user = viewModel.currentUser {
+        if let user = authViewModel.currentUser {
             ZStack {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
@@ -67,19 +67,17 @@ struct SettingsView: View {
                                 SettingsRow(iconAsset: "figure.run", firstText: "Inregistrare activitate", color: .blue)
                             }
                             Button {
-                                viewModel.signOut()
+                                authViewModel.signOut()
                             } label: {
                                 SettingsRow(iconDefault: "lock", firstText: "Delogare", color: .secondary)
                             }
                         }
                     } //: Form
                     .listStyle(GroupedListStyle())
-                    
                 } //: VStack
                 .frame(maxWidth: 580)
                 .navigationTitle("Setari")
                 .navigationBarTitleDisplayMode(.inline)
-                
             } //: ZStack
         }
     }
