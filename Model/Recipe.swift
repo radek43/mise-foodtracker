@@ -18,6 +18,15 @@ enum Category: String, CaseIterable {
     case desert = "Desert"
 }
 
+
+struct RecipeList: Codable, Identifiable {
+    let id: Int
+    let title: String
+    let calories: String
+    let image: String?
+}
+
+
 // RECIPE MODEL
 struct Recipe: Codable, Identifiable {
     let id: Int
@@ -32,5 +41,5 @@ struct Recipe: Codable, Identifiable {
     let description: String
     let ingredients: String
     let image: String?
-    
+
 }
