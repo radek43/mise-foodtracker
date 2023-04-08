@@ -30,44 +30,58 @@ extension UINavigationController {
         navigationBar.standardAppearance = standard
         navigationBar.compactAppearance = standard
         navigationBar.scrollEdgeAppearance = standard
- }
+    }
 }
 
 // Override TabBar Color
 extension View {
-  func tabViewStyle(backgroundColor: UIColor? = nil,
-                    itemColor: UIColor? = nil,
-                    selectedItemColor: UIColor? = nil,
-                    badgeColor: UIColor? = nil) -> some View {
-    onAppear {
-      let itemAppearance = UITabBarItemAppearance()
-      if let uiItemColor = itemColor {
-        itemAppearance.normal.iconColor = uiItemColor
-        itemAppearance.normal.titleTextAttributes = [
-          .foregroundColor: uiItemColor
-        ]
-      }
-      if let uiSelectedItemColor = selectedItemColor {
-        itemAppearance.selected.iconColor = uiSelectedItemColor
-        itemAppearance.selected.titleTextAttributes = [
-          .foregroundColor: uiSelectedItemColor
-        ]
-      }
-      if let uiBadgeColor = badgeColor {
-        itemAppearance.normal.badgeBackgroundColor = uiBadgeColor
-        itemAppearance.selected.badgeBackgroundColor = uiBadgeColor
-      }
-
-      let appearance = UITabBarAppearance()
-      if let uiBackgroundColor = backgroundColor {
-        appearance.backgroundColor = uiBackgroundColor
-      }
-
-      appearance.stackedLayoutAppearance = itemAppearance
-      appearance.inlineLayoutAppearance = itemAppearance
-      appearance.compactInlineLayoutAppearance = itemAppearance
-
-      UITabBar.appearance().standardAppearance = appearance
+    func tabViewStyle(backgroundColor: UIColor? = nil,
+                      itemColor: UIColor? = nil,
+                      selectedItemColor: UIColor? = nil,
+                      badgeColor: UIColor? = nil) -> some View {
+        onAppear {
+            let itemAppearance = UITabBarItemAppearance()
+            if let uiItemColor = itemColor {
+                itemAppearance.normal.iconColor = uiItemColor
+                itemAppearance.normal.titleTextAttributes = [
+                    .foregroundColor: uiItemColor
+                ]
+            }
+            if let uiSelectedItemColor = selectedItemColor {
+                itemAppearance.selected.iconColor = uiSelectedItemColor
+                itemAppearance.selected.titleTextAttributes = [
+                    .foregroundColor: uiSelectedItemColor
+                ]
+            }
+            if let uiBadgeColor = badgeColor {
+                itemAppearance.normal.badgeBackgroundColor = uiBadgeColor
+                itemAppearance.selected.badgeBackgroundColor = uiBadgeColor
+            }
+            
+            let appearance = UITabBarAppearance()
+            if let uiBackgroundColor = backgroundColor {
+                appearance.backgroundColor = uiBackgroundColor
+            }
+            
+            appearance.stackedLayoutAppearance = itemAppearance
+            appearance.inlineLayoutAppearance = itemAppearance
+            appearance.compactInlineLayoutAppearance = itemAppearance
+            
+            UITabBar.appearance().standardAppearance = appearance
+        }
     }
-  }
+    
+    func getScreenBounds() -> CGRect{
+        return UIScreen.main.bounds
+    }
+}
+
+extension UIDevice {
+    static var isIPad: Bool {
+        UIDevice.current.userInterfaceIdiom == .pad
+    }
+    
+    static var isIPhone: Bool {
+        UIDevice.current.userInterfaceIdiom == .phone
+    }
 }
