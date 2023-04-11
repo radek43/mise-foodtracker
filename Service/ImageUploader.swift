@@ -11,7 +11,7 @@ import UIKit
 struct ImageUploader {
     static var keychainService = KeychainService()
     
-    static func uploadImage1(email: String, paramName: String, fileName: String, image: UIImage, urlPath: String) {
+    static func uploadImage(email: String, paramName: String, fileName: String, image: UIImage, urlPath: String) {
         let url = URL(string: "http://127.0.0.1:8000\(urlPath)")
         
         // generate boundary string using a unique per-app string
@@ -45,7 +45,7 @@ struct ImageUploader {
         data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
         data.append("Content-Disposition: form-data; name=\"\(paramName)\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
         data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
-        data.append(image.pngData()!)
+        data.append(image.jpegData(compressionQuality: 0.5)!)
 
         data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
 
