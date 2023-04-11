@@ -41,5 +41,24 @@ struct Recipe: Codable, Identifiable {
     let description: String
     let ingredients: String
     let image: String?
+}
 
+enum RecipeError: Error, LocalizedError {
+    case invalidURL
+    case serverError
+    case invalidData
+    case unknown(Error)
+    
+    var errorDescription: String? {
+        switch self {
+            case .invalidURL:
+                return ""
+            case .serverError:
+                return "S-a produs o eroare la partea de server. Va rugam incercati mai tarziu"
+            case .invalidData:
+                return "A aparut o eroare. Va rugam incercati mai tarziu."
+            case .unknown(let error):
+                return error.localizedDescription
+        }
+    }
 }
