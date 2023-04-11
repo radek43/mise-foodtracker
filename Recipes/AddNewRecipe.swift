@@ -129,7 +129,10 @@ struct AddNewRecipe: View {
             }
             .toolbar {
                 Button("Trimite") {
-                    self.viewModel.uploadRecipe(title: title, time_minutes: Int(time_minutes)!, category: selectedCategory, description: description, ingredients: ingredients, calories: calories , protein: protein, carbs: carbs, fibers: fibers, fat: fat, image: selectedImage)
+                    Task(priority: .medium) {
+                        try await self.viewModel.postRecipe(title: title, category: selectedCategory, time_minutes: Int(time_minutes)!, description: description, ingredients: ingredients, calories: calories , protein: protein, carbs: carbs, fibers: fibers, fat: fat, image: selectedImage)
+                    }
+                    
                 }
             }
             .onReceive(viewModel.$didUploadRecipe, perform: { success in

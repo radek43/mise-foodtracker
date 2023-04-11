@@ -13,6 +13,8 @@ struct RecipesView: View {
     
     @StateObject var recipeListViewModel = RecipeListViewModel()
     
+    @State private var showAlert = false
+
     // MARK: - BODY
     var body: some View {
         if authViewModel.currentUser != nil {
@@ -24,7 +26,7 @@ struct RecipesView: View {
                     ScrollView(showsIndicators: false) {
                         RefreshControl(coordinateSpace: .named("RefreshControl")) {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                recipeListViewModel.fetchRecipeList()
+                                recipeListViewModel.loadData()
                             }
                         }
                         VStack {
@@ -44,7 +46,7 @@ struct RecipesView: View {
                             
                             // RECIPE GRID
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 15)], spacing: 15) {
-                                ForEach(recipeListViewModel.recipeList) { recipe in
+                                ForEach(recipeListViewModel.recipes) { recipe in
                                     NavigationLink {
                                         RecipeDetailView(recipeDetailViewModel: RecipeDetailViewModel(withrecipeId: recipe.id))
                                     } label: {
@@ -54,7 +56,14 @@ struct RecipesView: View {
                                     }
                                 }
                             }
-                            .id(UUID())
+                            .onReceive(recipeListViewModel.$error, perform: { error in
+                                if error != nil {
+                                    showAlert.toggle()
+                                }
+                            })
+                            .alert(isPresented: $showAlert, content: {
+                                Alert(title: Text("Eroare"), message: Text(recipeListViewModel.error?.localizedDescription ?? ""))
+                            })
                             .padding(.bottom)
                             
                             Spacer()
@@ -85,7 +94,7 @@ struct RecipesView_Previews: PreviewProvider {
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
         let recipeViewModel = RecipeListViewModel()
-        recipeViewModel.recipeList = recipePreviewData
+        recipeViewModel.recipes = recipePreviewData
         return Group {
             RecipesView(recipeListViewModel: recipeViewModel)
             RecipesView(recipeListViewModel: recipeViewModel)

@@ -117,7 +117,9 @@ struct RecipeDetailView: View {
             } //: END SCROLL VIEW
         } //: END ZSTACK
         .onAppear {
-            self.recipeDetailViewModel.fetchRecipeDetail()
+            Task(priority: .medium) {
+                try await self.recipeDetailViewModel.fetchRecipe()
+            }
         }
         .navigationBarTitleDisplayMode(.inline)
     }
