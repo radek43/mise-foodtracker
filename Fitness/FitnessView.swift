@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FitnessView: View {
     // MARK: - PROPERTIES
-    var excersises: [Excercise] = Excercise.dummyData
+    var excersises: [Excersise]
     
     // MARK: - BODY
     var body: some View {
@@ -57,8 +57,8 @@ struct FitnessView: View {
 struct FitnessView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FitnessView()
-            FitnessView()
+            FitnessView(excersises: excercisePreviewData)
+            FitnessView(excersises: excercisePreviewData)
                 .preferredColorScheme(.dark)
         }
     }

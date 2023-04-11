@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FitnessCard: View {
     // MARK: - PROPERTIES
-    var exercitiu : Excercise
+    var exercitiu : Excersise
     //    var numeExercitiu: String
     //    var dificultate: String
     //    var timpExecutie: String
@@ -23,34 +23,14 @@ struct FitnessCard: View {
     // MARK: - BODY
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 2.0) {
-                Text(exercitiu.name)
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                
-                HStack(spacing: 2) {
-                    Image(systemName: "speedometer")
-                    Text("Dificultate: \(exercitiu.dificulty)")
-                        .padding(.trailing)
-                }
-                .font(.footnote)
-                .foregroundColor(Color.secondary)
-                
-                HStack(spacing: 2) {
-                    Image(systemName: "clock")
-                    Text("Timp executie: \(exercitiu.duration) min.")
-                }
-                .font(.footnote)
-                .foregroundColor(Color.secondary)
-            }
-            
+            Text("Abdomene")
+                .font(.title3)
+                .fontWeight(.semibold)
             Spacer()
-            
-            Image("exercitiu")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 60, height: 60)
-                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+            Text("Abdomene")
+                .font(.title3)
+                .fontWeight(.semibold)
+
         }
         .card()
     }
@@ -60,9 +40,17 @@ struct FitnessCard: View {
 struct FitnessCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            FitnessCard(exercitiu: Excercise.dummyData[0])
-            FitnessCard(exercitiu: Excercise.dummyData[0])
-                .preferredColorScheme(.dark)
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                FitnessCard(exercitiu: Excersise.dummyData[0])
+            }
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                FitnessCard(exercitiu: Excersise.dummyData[0])
+            }
+            .preferredColorScheme(.dark)
         }
     }
 }
