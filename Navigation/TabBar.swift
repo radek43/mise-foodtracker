@@ -44,7 +44,7 @@ struct TabBar: View {
                     Text("Retete")
                 }
                 .tag(2)
-            FitnessView()
+            FitnessView(excersises: Excersise.dummyData)
                 .tabItem {
                     if tabSelection == 3 { Image("dumbbell.fill").imageScale(.large) }
                     else { Image("dumbbell").imageScale(.large) }
