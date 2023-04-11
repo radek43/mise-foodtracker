@@ -42,3 +42,9 @@ Recipe(id: 4,
        ingredients: "• 2 legături de sparanghel curățat și tăiat \n• 1 cană de fasole boabe albă, spălată și scursă \n• 1 ceapă medie \n• 2 linguri de ulei de măsline extravirgin \n• 4 căni de supă de pui \n• ¼ cană de smântână dulce \n• ⅛ linguriță de sare himalayană \n• ⅛ linguriță de piper \n• ½ linguriță de cimbru \n• 1 avocado copt, tăiat cuburi \n• Smântână (asezonare opțională)",
        image: "https://onco-plan.ro/wp-content/uploads/2021/07/asparagus-spinach-soup.jpg")
     
+var excercisePreviewData: [Excersise] = [
+    Excersise(id: 1, title: "abdomene", met: "4.5"),
+    Excersise(id: 2, title: "aerobic", met: "6.5"),
+    Excersise(id: 3, title: "baschet", met: "8"),
+    Excersise(id: 4, title: "patinaj", met: "7"),
+]
