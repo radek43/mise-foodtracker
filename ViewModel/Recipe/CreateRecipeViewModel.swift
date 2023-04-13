@@ -15,6 +15,7 @@ class CreateRecipeViewModel: ObservableObject {
     private var keychainService = KeychainService()
     
     // MARK: - METHODS
+    @MainActor
     func postRecipe(title: String, category: String, time_minutes: Int, description: String, ingredients: String, calories: String, protein: String, carbs: String, fibers: String, fat: String, image: UIImage?) async throws {
         guard let user = AuthViewModel.shared.currentUser else { return }
         guard let url = URL(string: "http://127.0.0.1:8000/api/recipe/recipes/") else {
