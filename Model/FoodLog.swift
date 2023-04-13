@@ -27,17 +27,6 @@ struct FoodLog {
     let date: String
     let meals: String
     let liquids: String
-    let excersises: [Excersise]
+    let activity: [Activity]
 }
 
-struct Excersise: Identifiable {
-    var id: Int
-    let title: String
-    let met: String
-}
-
-extension Excersise {
-    static let dummyData: [Excersise] = [
-        Excersise(id: 1, title: "title", met: "2.4")
-    ]
-}
