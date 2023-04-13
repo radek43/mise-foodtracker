@@ -17,7 +17,7 @@ struct RecipesView: View {
 
     // MARK: - BODY
     var body: some View {
-        if authViewModel.currentUser != nil {
+        if let user = authViewModel.currentUser {
             NavigationView {
                 ZStack {
                     Color.background
@@ -72,15 +72,20 @@ struct RecipesView: View {
                         .padding(.horizontal)
                     } //: END SCROLL VIEW
                     .coordinateSpace(name: "RefreshControl")
-                    .navigationBarItems(
-                        trailing:
+                    .navigationBarItems( trailing: user.is_staff == true ?
                             NavigationLink {
                                 AddNewRecipe(recipeViewModel: recipeListViewModel)
                             } label: {
                                 Image(systemName: "note.text.badge.plus")
                             }
+                        : nil
                     )
                     .navigationTitle("Rețete")
+                }
+                .onAppear {
+                    Task(priority: .medium) {
+                        try await self.recipeListViewModel.fetchRecipes()
+                    }
                 }
             } //: END ZSTACK
             .navigationViewStyle(StackNavigationViewStyle())
