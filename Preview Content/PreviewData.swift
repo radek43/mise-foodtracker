@@ -29,22 +29,23 @@ var recipePreviewData: [RecipeList] = [
 ]
 
 var recipeDetailPreviewData: Recipe = 
-Recipe(id: 4,
-       title: "Supă cremă de sparanghel",
-       calories: "295",
-       category: "Mancaruri",
-       time_minutes: 35,
-       protein: "12",
-       carbs: "42",
-       fibers: "7.5",
-       fat: "11",
-       description: "• Lasă sparanghelul la aburi 20 de minute sau până când este moale când îl încerci cu furculița \n• Toacă ceapa \n• Încălzește uleiul de măsline într-o tigaie mare, adaugă puțină apă și sotează ceapa până devine translucidă, aproximativ 2-3 minute \n• Redu focul la mediu și adăugați fasolea, sarea, piperul și cimbrul și lăsă pe foc încă 5 minute \n• Adăugă sparanghelul gătit la aburi; când devine moale, adăugă supa de pui și fierbe la foc mic timp de 10 minute. \n• Ia supa gătită de pe foc și pune în vas. Folosește blenderul vertical pentru a transforma supa în piure. Ai grijă însă; supa este fierbinte. \n• Adăugă smântâna dulce și pune la loc pe foc mic, timp de încă 5 minute \n• Lăsă să se răcească înainte de a servi. Decorează fiecare vas cu avocado cuburi „crutoane” (¼ avocado per vas) \n• La final, decorează cu smântână și stoarcei o lămâie (dacă poți tolera aciditatea) pentru un plus de aromă și prospețime ",
-       ingredients: "• 2 legături de sparanghel curățat și tăiat \n• 1 cană de fasole boabe albă, spălată și scursă \n• 1 ceapă medie \n• 2 linguri de ulei de măsline extravirgin \n• 4 căni de supă de pui \n• ¼ cană de smântână dulce \n• ⅛ linguriță de sare himalayană \n• ⅛ linguriță de piper \n• ½ linguriță de cimbru \n• 1 avocado copt, tăiat cuburi \n• Smântână (asezonare opțională)",
-       image: "https://onco-plan.ro/wp-content/uploads/2021/07/asparagus-spinach-soup.jpg")
+    Recipe(id: 4,
+           title: "Supă cremă de sparanghel",
+           calories: "295",
+           category: "Mancaruri",
+           time_minutes: 35,
+           protein: "12",
+           carbs: "42",
+           fibers: "7.5",
+           fat: "11",
+           description: "• Lasă sparanghelul la aburi 20 de minute sau până când este moale când îl încerci cu furculița \n• Toacă ceapa \n• Încălzește uleiul de măsline într-o tigaie mare, adaugă puțină apă și sotează ceapa până devine translucidă, aproximativ 2-3 minute \n• Redu focul la mediu și adăugați fasolea, sarea, piperul și cimbrul și lăsă pe foc încă 5 minute \n• Adăugă sparanghelul gătit la aburi; când devine moale, adăugă supa de pui și fierbe la foc mic timp de 10 minute. \n• Ia supa gătită de pe foc și pune în vas. Folosește blenderul vertical pentru a transforma supa în piure. Ai grijă însă; supa este fierbinte. \n• Adăugă smântâna dulce și pune la loc pe foc mic, timp de încă 5 minute \n• Lăsă să se răcească înainte de a servi. Decorează fiecare vas cu avocado cuburi „crutoane” (¼ avocado per vas) \n• La final, decorează cu smântână și stoarcei o lămâie (dacă poți tolera aciditatea) pentru un plus de aromă și prospețime ",
+           ingredients: "• 2 legături de sparanghel curățat și tăiat \n• 1 cană de fasole boabe albă, spălată și scursă \n• 1 ceapă medie \n• 2 linguri de ulei de măsline extravirgin \n• 4 căni de supă de pui \n• ¼ cană de smântână dulce \n• ⅛ linguriță de sare himalayană \n• ⅛ linguriță de piper \n• ½ linguriță de cimbru \n• 1 avocado copt, tăiat cuburi \n• Smântână (asezonare opțională)",
+           image: "https://onco-plan.ro/wp-content/uploads/2021/07/asparagus-spinach-soup.jpg")
     
-var excercisePreviewData: [Excersise] = [
-    Excersise(id: 1, title: "abdomene", met: "4.5"),
-    Excersise(id: 2, title: "aerobic", met: "6.5"),
-    Excersise(id: 3, title: "baschet", met: "8"),
-    Excersise(id: 4, title: "patinaj", met: "7"),
+
+var activityPreviewData: [Activity] = [
+    Activity(id: 1, title: "abdomene", met: "4.5"),
+    Activity(id: 2, title: "aerobic", met: "6.5"),
+    Activity(id: 3, title: "baschet", met: "8"),
+    Activity(id: 4, title: "patinaj", met: "7"),
 ]
