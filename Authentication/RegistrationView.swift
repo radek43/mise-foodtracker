@@ -36,7 +36,9 @@ struct RegistrationView: View {
             
             // REGISTRATION
             Button {
-                authViewModel.register(email: email, username: username, fullname: fullname, password: password)
+                Task {
+                    try await authViewModel.signUp(email: email, username: username, fullname: fullname, password: password)
+                }
             } label: {
                 RegistrationButton(text: "Continua")
             }
