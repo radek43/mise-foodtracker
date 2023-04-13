@@ -15,9 +15,9 @@ class RecipeListViewModel: ObservableObject {
     
     private var keychainService = KeychainService()
     
-    init() {
-        loadData()
-    }
+//    init() {
+//        loadData()
+//    }
     
     // MARK: - METHODS
     @MainActor
