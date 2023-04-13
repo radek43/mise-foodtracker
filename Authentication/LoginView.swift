@@ -45,7 +45,9 @@ struct LoginView: View {
                     }
                     //  AUTHENTICATION
                     Button {
-                        authViewModel.login(email: email, password: password)
+                        Task {
+                            try await authViewModel.signIn(email: email, password: password)
+                        }
                     } label: {
                         Text("Autentifica-te")
                             .font(.headline)
