@@ -109,6 +109,7 @@ struct AddNewRecipe: View {
                             profileImage
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
+                                .listRowInsets(EdgeInsets())
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                         } else {
                             Text("Adaugă o imagine")
