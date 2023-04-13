@@ -10,118 +10,157 @@ import Kingfisher
 
 struct RecipeDetailView: View {
     // MARK: - PROPERTIES
+    @EnvironmentObject var authViewModel: AuthViewModel
     @ObservedObject var recipeDetailViewModel: RecipeDetailViewModel
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var showDeleteConfirmation = false
     
     // MARK: - BODY
     var body: some View {
-        ZStack {
-            Color.background
-                .edgesIgnoringSafeArea(.all)
-            if let recipe = recipeDetailViewModel.recipe {
-                ScrollView(showsIndicators: false) {
-                    VStack {
-                        // RECIPE IMAGE
-                        ZStack {
-                            Rectangle()
-                                .fill(Color(.gray))
-                                .aspectRatio(4/4, contentMode: .fit)
-                            if let image = recipe.image {
-                                KFImage(URL(string: image))
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .layoutPriority(-1)
+        if authViewModel.currentUser != nil {
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                if let recipe = recipeDetailViewModel.recipe {
+                    ScrollView(showsIndicators: false) {
+                        VStack {
+                            // RECIPE IMAGE
+                            ZStack {
+                                Rectangle()
+                                    .fill(Color(.gray))
+                                    .aspectRatio(4/4, contentMode: .fit)
+                                if let image = recipe.image {
+                                    KFImage(URL(string: image))
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .layoutPriority(-1)
+                                }
                             }
                         }
-                    }
-                    .clipped()
-                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                    .padding()
-                    
-                    // RECIPE DETAILS
-                    VStack(spacing: 30) {
-                        Text(recipe.title)
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding(.horizontal)
+                        .clipped()
+                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                        .padding()
                         
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Informații nutriționale:")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            Divider()
-                            VStack(alignment: .leading) {
-                                Text("• Calorii: \(recipe.calories)g")
-                                Text("• Proteine: \(recipe.protein)g")
-                                Text("• Lipide: \(recipe.fat)g")
-                                Text("• Carbohidrați: \(recipe.carbs)g")
-                                Text("• Fibre: \(recipe.fibers)g")
-                            }
+                        // RECIPE DETAILS
+                        VStack(spacing: 30) {
+                            Text(recipe.title)
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .padding(.horizontal)
                             
-                            Divider()
-                            VStack(alignment: .leading) {
-                                Text("Timp de preparare: \(recipe.time_minutes) minute")
-                                    .font(.footnote)
-                                    .foregroundColor(Color.secondary)
-                                Text("*Informații nutriționale pentru o porție de 100gr")
-                                    .font(.footnote)
-                                    .foregroundColor(Color.secondary)
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text("Informații nutriționale:")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                Divider()
+                                VStack(alignment: .leading) {
+                                    Text("• Calorii: \(recipe.calories)g")
+                                    Text("• Proteine: \(recipe.protein)g")
+                                    Text("• Lipide: \(recipe.fat)g")
+                                    Text("• Carbohidrați: \(recipe.carbs)g")
+                                    Text("• Fibre: \(recipe.fibers)g")
+                                }
+                                
+                                Divider()
+                                VStack(alignment: .leading) {
+                                    Text("Timp de preparare: \(recipe.time_minutes) minute")
+                                        .font(.footnote)
+                                        .foregroundColor(Color.secondary)
+                                    Text("*Informații nutriționale pentru o porție de 100gr")
+                                        .font(.footnote)
+                                        .foregroundColor(Color.secondary)
+                                }
                             }
-                        }
-                        .padding()
-                        .background(Color.card)
-                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                        .padding(.horizontal)
-                        
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Ingrediente:")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            Divider()
-                            Text(recipe.ingredients)
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
-                        .padding()
-                        .background(Color.card)
-                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                        .padding(.horizontal)
-
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Mod de preparare:")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            Divider()
-                            Text(recipe.description)
-                                .fixedSize(horizontal: false, vertical: true)
-                        }
-                        .padding()
-                        .background(Color.card)
-                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                        .padding(.horizontal)
-                        .padding(.bottom, 30)
-                        
-                    } //: END DETAILS VSTACK
-                    .toolbar {
-                        Button {
-                            print("DEBUG: Recipe logged")
-                        } label: {
-                            HStack {
-                                Text("Adaugă la jurnal")
-                                Image(systemName: "text.badge.plus")
+                            .padding()
+                            .background(Color.card)
+                            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                            .padding(.horizontal)
+                            
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text("Ingrediente:")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                Divider()
+                                Text(recipe.ingredients)
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
-                        }
-                    }
-                } //: END MAIN VSTACK
-                .frame(maxWidth: 580)
-            } //: END SCROLL VIEW
-        } //: END ZSTACK
-        .onAppear {
-            Task(priority: .medium) {
-                try await self.recipeDetailViewModel.fetchRecipe()
+                            .padding()
+                            .background(Color.card)
+                            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                            .padding(.horizontal)
+                            
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text("Mod de preparare:")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                Divider()
+                                Text(recipe.description)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            .padding()
+                            .background(Color.card)
+                            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                            .padding(.horizontal)
+                            
+                            
+                            Text("Adaugă la jurnal")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(width: 340, height: 50)
+                                .background(Color.accent)
+                                .clipShape(Capsule())
+                                .padding()
+                                .padding(.bottom, 30)
+                        } //: END DETAILS VSTACK
+                        .navigationBarItems(trailing: authViewModel.currentUser?.is_staff == true ?
+                            HStack(spacing: 15) {
+                                Button {
+                                    // showDeleteConfirmation.toggle()
+                                } label: {
+                                    HStack {
+                                        Text("Editează")
+                                        Image(systemName: "square.and.pencil")
+                                    }
+                                }
+                                Button {
+                                     showDeleteConfirmation.toggle()
+                                } label: {
+                                    HStack {
+                                        Text("Șterge")
+                                        Image(systemName: "trash")
+                                    }
+                                }
+                                .alert(isPresented:$showDeleteConfirmation) {
+                                    Alert(
+                                        title: Text("Ești sigur că vrei să ștergi această rețetă?"),
+                                        message: Text("Această acțiune este permanentă"),
+                                        primaryButton: .destructive(Text("Șterge")) {
+                                            print("Deleting...")
+                                            Task {
+                                                try await recipeDetailViewModel.deleteRecipe()
+                                            }
+                                            self.presentationMode.wrappedValue.dismiss()
+                                        },
+                                        secondaryButton: .cancel(Text("Renunță"))
+                                    )
+                                }
+                            }
+                            : nil
+                        )
+                    } //: END MAIN VSTACK
+                    .frame(maxWidth: 580)
+                } //: END SCROLL VIEW
+            } //: END ZSTACK
+            .onAppear {
+                Task(priority: .medium) {
+                    try await self.recipeDetailViewModel.fetchRecipe()
+                }
             }
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -129,6 +168,8 @@ struct RecipeDetailView: View {
 // MARK: - PREVIEW
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
+        let authViewModel = AuthViewModel()
+        authViewModel.currentUser = userPreviewData
         let viewModel = RecipeDetailViewModel(withrecipeId: 1)
         viewModel.recipe = recipeDetailPreviewData
         return Group {
@@ -140,6 +181,6 @@ struct RecipeDetailView_Previews: PreviewProvider {
             }
             .preferredColorScheme(.dark)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .environmentObject(authViewModel)
     }
 }
