@@ -72,6 +72,8 @@
 		2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196729B8E8ED00B064B9 /* SettingsView.swift */; };
 		2CC4196A29B8E8FD00B064B9 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */; };
 		2CE35E6D2943B0AA00674348 /* AddNewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */; };
+		2CE9260429E94D97005E6803 /* RecipeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260329E94D97005E6803 /* RecipeEditView.swift */; };
+		2CE9260629E96182005E6803 /* RecipeEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260529E96182005E6803 /* RecipeEditViewModel.swift */; };
 		2CE9C54C29E1C96000DDBA20 /* FoodLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9C54B29E1C96000DDBA20 /* FoodLog.swift */; };
 		2CEADAB42953204D002AA0A0 /* PostRowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB32953204D002AA0A0 /* PostRowTest.swift */; };
 		2CEADAB8295330D2002AA0A0 /* AddShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB7295330D2002AA0A0 /* AddShadow.swift */; };
@@ -144,6 +146,8 @@
 		2CC4196729B8E8ED00B064B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewRecipe.swift; sourceTree = "<group>"; };
+		2CE9260329E94D97005E6803 /* RecipeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditView.swift; sourceTree = "<group>"; };
+		2CE9260529E96182005E6803 /* RecipeEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditViewModel.swift; sourceTree = "<group>"; };
 		2CE9C54B29E1C96000DDBA20 /* FoodLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLog.swift; sourceTree = "<group>"; };
 		2CEADAB32953204D002AA0A0 /* PostRowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowTest.swift; sourceTree = "<group>"; };
 		2CEADAB7295330D2002AA0A0 /* AddShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShadow.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				171C1723280AE513004F17DE /* RecipeDetailView.swift */,
 				2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */,
 				178C8138280A992700EB29C1 /* RecipeCard.swift */,
+				2CE9260329E94D97005E6803 /* RecipeEditView.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				2C8D797C29DC238D00B9AB47 /* RecipeListViewModel.swift */,
 				2CA54DED29DF0B92003D317B /* CreateRecipeViewModel.swift */,
 				2CA12FDB29E1779800CC6CC8 /* RecipeDetailViewModel.swift */,
+				2CE9260529E96182005E6803 /* RecipeEditViewModel.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 				17482A7F2804832A006F2186 /* HomeView.swift in Sources */,
 				17F01E7F28A2C81500285894 /* LoginView.swift in Sources */,
 				2C74B75E2950EE580063A4F4 /* MeasurementsSettings.swift in Sources */,
+				2CE9260629E96182005E6803 /* RecipeEditViewModel.swift in Sources */,
 				178CEBC52809B82700D6DD25 /* AddDishButton.swift in Sources */,
 				17F01E8128A2C84800285894 /* RegistrationView.swift in Sources */,
 				2C8F034E296F0B67003AA27C /* DishDetailChart.swift in Sources */,
@@ -506,6 +513,7 @@
 				17F01E8328A2C8B900285894 /* CustomInputFields.swift in Sources */,
 				2CED767029D5A9460093E035 /* NumbersOnlyViewModifier.swift in Sources */,
 				17B1A4DB2826A1E100F1CDEC /* ActivityView.swift in Sources */,
+				2CE9260429E94D97005E6803 /* RecipeEditView.swift in Sources */,
 				179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */,
 				2C6A161928F1C79500D9DDE4 /* AddNewPost.swift in Sources */,
 				2C8D797D29DC238D00B9AB47 /* RecipeListViewModel.swift in Sources */,
