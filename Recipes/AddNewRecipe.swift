@@ -122,7 +122,7 @@ struct AddNewRecipe: View {
                 }
             } //: END FORM
             .frame(maxWidth: 580)
-            .navigationTitle("Adauga o reteta")
+            .navigationTitle("Adaugă o retetă nouă")
             .navigationBarTitleDisplayMode(.inline)
             .addHideKeyboardButton()
             .onAppear {
