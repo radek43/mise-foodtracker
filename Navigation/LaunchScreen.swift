@@ -9,10 +9,11 @@ import SwiftUI
 
 struct LaunchScreen: View {
     @State private var showMainView = false
+    @State private var hasTimeElapsed = false
     
     var body: some View {
         Group {
-            if showMainView {
+            if showMainView && hasTimeElapsed {
                 ContentView()
             } else {
                 ZStack {
@@ -26,9 +27,18 @@ struct LaunchScreen: View {
             }
         }
         .onAppear {
+            Task {
+               await delaView()
+            }
             withAnimation(.linear(duration: 2)) {
                 showMainView = true
             }
         }
+    }
+    
+    private func delaView() async {
+        // Delay of 7.5 seconds (1 second = 1_000_000_000 nanoseconds)
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        hasTimeElapsed = true
     }
 }
