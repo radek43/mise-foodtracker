@@ -117,8 +117,8 @@ struct RecipeDetailView: View {
                         } //: END DETAILS VSTACK
                         .navigationBarItems(trailing: authViewModel.currentUser?.is_staff == true ?
                             HStack(spacing: 15) {
-                                Button {
-                                    // showDeleteConfirmation.toggle()
+                                NavigationLink {
+                                    RecipeEditView(recipe: recipe)
                                 } label: {
                                     HStack {
                                         Text("Editează")
