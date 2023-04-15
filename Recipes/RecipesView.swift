@@ -31,14 +31,16 @@ struct RecipesView: View {
                         }
                         VStack {
                             // SEARCH BAR
-                            HStack(alignment: .center) {
+                            HStack(alignment: .center, spacing: 5.0) {
                                 SearchBar(placeholderText: "Gaseste-ți inspirația",text: .constant(""))
-                                    .padding(.bottom, 3)
                                 Button {
                                     print("buton setari retete apasat")
                                 } label: {
                                     Image(systemName: "slider.horizontal.3")
                                         .imageScale(.large)
+                                        .padding(10)
+                                        .background(Color.card)
+                                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                                 }
                             }
                             .padding(.top)
