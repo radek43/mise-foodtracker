@@ -17,57 +17,61 @@ struct ActivityProgressView: View {
     // MARK: - BODY
     var body: some View {
         NavigationView {
-            ZStack {
-                Color.background
-                    .edgesIgnoringSafeArea(.all)
-                
-                ScrollView(showsIndicators: false) {
-                    // WEEKLY CALORIES
-                    CardView(showShadow: false) {
-                        VStack(alignment: .leading) {
-                            Text("Calorii saptamanale")
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                                .padding()
-                            LineChart()
-                                .data(demoData)
-                                .chartStyle(mixedColorStyle)
-                        }
-                        .background(Color.card)
-                    }
-                    .frame(height: 250)
-                    .frame(maxWidth: 612)
-                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                    .padding([.horizontal, .top])
+            ScrollView(showsIndicators: false) {
+                ZStack {
+                    Color.background
+                        .edgesIgnoringSafeArea(.all)
                     
-                    // MOST EATEN FOODS
-                    CardView(showShadow: false) {
-                        VStack(alignment: .leading) {
-                            Text("Top alimente calorice consumate")
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                            BarChart()
-                                .data(demoData)
-                                .chartStyle(mixedColorStyle)
-                        }
-                        .padding([.top, .leading, .trailing])
-                        .background(Color.card)
-                        
-                    }
-                    .frame(height: 250)
-                    .frame(maxWidth: 612)
-                    .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                    .padding(.horizontal)
-                    
-                    // USER STATS
                     VStack {
-                        ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
-                        ActivityProgressRow(progressTitle: "Medie pasi facuti saptamanal", progressValue: "5749", measurementUnit: "pasi")
-                        ActivityProgressRow(progressTitle: "Indice Masa Corporala", progressValue: "22.3", measurementUnit: "IMC")
-                    }
-                } //: END SCROLL VIEW
-                .navigationTitle("Progres")
+                        // WEEKLY CALORIES
+                        CardView(showShadow: false) {
+                            VStack(alignment: .leading) {
+                                Text("Calorii saptamanale")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                    .padding()
+                                LineChart()
+                                    .data(demoData)
+                                    .chartStyle(mixedColorStyle)
+                            }
+                            .background(Color.card)
+                        }
+                        .frame(height: 250)
+                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                        .padding([.horizontal, .top])
+                        .frame(maxWidth: 580)
+                        
+                        // MOST EATEN FOODS
+                        CardView(showShadow: false) {
+                            VStack(alignment: .leading) {
+                                Text("Top alimente calorice consumate")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                BarChart()
+                                    .data(demoData)
+                                    .chartStyle(mixedColorStyle)
+                            }
+                            .padding([.top, .leading, .trailing])
+                            .background(Color.card)
+                            
+                        }
+                        .frame(height: 250)
+                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                        .padding(.horizontal)
+                        .frame(maxWidth: 580)
+                        
+                        // USER STATS
+                        VStack {
+                            ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
+                            ActivityProgressRow(progressTitle: "Medie pasi facuti saptamanal", progressValue: "5749", measurementUnit: "pasi")
+                            ActivityProgressRow(progressTitle: "Indice Masa Corporala", progressValue: "22.3", measurementUnit: "IMC")
+                        }
+                    } //: END SCROLL VIEW
+                    .navigationTitle("Progres")
+                }
             }
+            .background(Color.background.edgesIgnoringSafeArea(.all))
+            
         } //: END ZSTACK
         .navigationViewStyle(StackNavigationViewStyle())
     }
