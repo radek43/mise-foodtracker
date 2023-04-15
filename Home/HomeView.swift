@@ -24,145 +24,149 @@ struct HomeView: View {
     var body: some View {
         if authViewModel.currentUser != nil {
             NavigationView {
-                ZStack {
-                    Color.background
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    ScrollView(showsIndicators: false) {
-                        // DATE PICKER
+                ScrollView(showsIndicators: false) {
+                    ZStack {
+                        Color.background
+                            .edgesIgnoringSafeArea(.all)
+                        
                         VStack {
-                            DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
-                                .accentColor(.primary)
-                        }
-                        .card()
-                        .padding(.top)
-                        
-                        // USER OBJECTIVE
-                        VStack(alignment: .center) {
-                            HStack {
-                                Text("Obiectiv")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                Spacer()
-                                Text("2342 kCal")
-                                    .font(.body)
-                                    .fontWeight(.semibold)
-                            }
-                            HStack {
-                                Spacer()
-                                Text("2342 kCal Ramase")
-                                    .fontWeight(.semibold)
-                                    .padding(5)
-                                Spacer()
-                            }
-                            ProgressView(value: 0.25)
+                            // DATE PICKER
                             
-                            HStack {
-                                VStack {
-                                    Text("0")
-                                        .font(.title3)
-                                        .fontWeight(.medium)
-                                    Text("Consumat")
-                                        .font(.subheadline)
-                                        .fontWeight(.medium)
-                                }
-                                .frame(maxWidth: .infinity)
-                                
-                                VStack {
-                                    Text("0")
-                                        .font(.title3)
-                                        .fontWeight(.medium)
-                                    Text("Ars")
-                                        .font(.subheadline)
-                                        .fontWeight(.medium)
-                                }
-                                .frame(maxWidth: .infinity)
-                                
-                                VStack {
-                                    Text("0")
-                                        .font(.title3)
-                                        .fontWeight(.medium)
-                                    Text("Net")
-                                        .font(.subheadline)
-                                        .fontWeight(.medium)
-                                }
-                                .frame(maxWidth: .infinity)
-                            }
-                            .fixedSize(horizontal: false, vertical: true)
-                        }
-                        .card()
-                        
-                        // LOG EATEN FOOD
-                        VStack(alignment: .center) {
-                            HStack {
-                                Text("Jurnal")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                Spacer()
-                            }
                             
-                            HStack(alignment: .top) {
-                                
-                                Button {
-                                    self.showDishSheet.toggle()
-                                } label: {
-                                    AddDishButton(imageName: "breakfast", title: "mic\ndejun")
-                                }
-                                .sheet(isPresented: $showDishSheet) {
-                                    DishDetailConfirm()
-                                }
-                                Button {
-                                    print("Buton pranz apasat")
-                                } label: {
-                                    AddDishButton(imageName: "soupLadle", title: "prânz")
-                                }
-                                // RingView()
-                                Button {
-                                    print("Buton cina apasat")
-                                } label: {
-                                    AddDishButton(imageName: "pastaDish", title: "cină")
-                                }
-                                Button {
-                                    print("Am apasat")
-                                } label: {
-                                    AddDishButton(imageName: "icecream", title: "gustări")
-                                }
+                            VStack(alignment: .center) {
+                                DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
+                                    .accentColor(.primary)
                             }
+                            .card()
                             
-                            HStack(alignment: .top) {
-                                Button {
-                                    print("Buton sport apasat")
-                                } label: {
-                                    AddDishButton(imageName: "sprint", title: "sport")
+                            
+                            // USER OBJECTIVE
+                            VStack(alignment: .center) {
+                                HStack {
+                                    Text("Obiectiv")
+                                        .font(.title2)
+                                        .fontWeight(.semibold)
+                                    Spacer()
+                                    Text("2342 kCal")
+                                        .font(.body)
+                                        .fontWeight(.semibold)
                                 }
-                                Button {
-                                    print("Buton greutate apasat")
-                                } label: {
-                                    AddDishButton(imageName: "weightScale", title: "greutate")
+                                HStack {
+                                    Spacer()
+                                    Text("2342 kCal Ramase")
+                                        .fontWeight(.semibold)
+                                        .padding(5)
+                                    Spacer()
                                 }
-                                Button {
-                                    print("Buton lichide apasat")
-                                } label: {
-                                    AddDishButton(imageName: "waterDrop", title: "lichide")
+                                ProgressView(value: 0.25)
+                                
+                                HStack(alignment: .center) {
+                                    VStack {
+                                        Text("0")
+                                            .font(.title3)
+                                            .fontWeight(.medium)
+                                        Text("Consumat")
+                                            .font(.subheadline)
+                                            .fontWeight(.medium)
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    
+                                    VStack(alignment: .center) {
+                                        Text("0")
+                                            .font(.title3)
+                                            .fontWeight(.medium)
+                                        Text("Ars")
+                                            .font(.subheadline)
+                                            .fontWeight(.medium)
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    
+                                    VStack(alignment: .center) {
+                                        Text("0")
+                                            .font(.title3)
+                                            .fontWeight(.medium)
+                                        Text("Net")
+                                            .font(.subheadline)
+                                            .fontWeight(.medium)
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                }
+                                .fixedSize(horizontal: false, vertical: true)
+                            }
+                            .card()
+                            
+                            // LOG EATEN FOOD
+                            VStack(alignment: .center) {
+                                HStack {
+                                    Text("Jurnal")
+                                        .font(.title2)
+                                        .fontWeight(.semibold)
+                                    Spacer()
+                                }
+                                
+                                HStack(alignment: .top) {
+                                    Button {
+                                        self.showDishSheet.toggle()
+                                    } label: {
+                                        AddDishButton(imageName: "breakfast", title: "mic\ndejun")
+                                    }
+                                    .sheet(isPresented: $showDishSheet) {
+                                        DishDetailConfirm()
+                                    }
+                                    Button {
+                                        print("Buton pranz apasat")
+                                    } label: {
+                                        AddDishButton(imageName: "soupLadle", title: "prânz")
+                                    }
+                                    // RingView()
+                                    Button {
+                                        print("Buton cina apasat")
+                                    } label: {
+                                        AddDishButton(imageName: "pastaDish", title: "cină")
+                                    }
+                                    Button {
+                                        print("Am apasat")
+                                    } label: {
+                                        AddDishButton(imageName: "icecream", title: "gustări")
+                                    }
+                                }
+                                
+                                HStack(alignment: .top) {
+                                    Button {
+                                        print("Buton sport apasat")
+                                    } label: {
+                                        AddDishButton(imageName: "sprint", title: "sport")
+                                    }
+                                    Button {
+                                        print("Buton greutate apasat")
+                                    } label: {
+                                        AddDishButton(imageName: "weightScale", title: "greutate")
+                                    }
+                                    Button {
+                                        print("Buton lichide apasat")
+                                    } label: {
+                                        AddDishButton(imageName: "waterDrop", title: "lichide")
+                                    }
                                 }
                             }
-                        }
-                        .card()
-                        
-                        DailyCaloriesChart()
-                            .padding(.bottom, 20)
-                        
-                    } //: END SCROLL VIEW
-                    .navigationTitle("Bine ai venit!")
-                    .navigationBarItems(
-                        trailing:
-                            NavigationLink {
-                                SettingsView()
-                            } label: {
-                                Image(systemName: "gearshape")
-                            }
-                    )
+                            .card()
+                            
+                            DailyCaloriesChart()
+                                .padding(.bottom, 20)
+                            
+                        } //: END SCROLL VIEW
+                        .navigationTitle("Bine ai venit!")
+                        .navigationBarItems(
+                            trailing:
+                                NavigationLink {
+                                    SettingsView()
+                                } label: {
+                                    Image(systemName: "gearshape")
+                                }
+                        )
+                    }
                 } //: END ZSTACK
+                .background(Color.background.edgesIgnoringSafeArea(.all))
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
