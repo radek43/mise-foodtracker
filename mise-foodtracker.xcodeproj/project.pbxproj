@@ -42,7 +42,6 @@
 		2C082D8929CC925E00371FE9 /* ChartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8829CC925E00371FE9 /* ChartTest.swift */; };
 		2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D03F129D44A92005C8C4B /* PreviewData.swift */; };
 		2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */; };
-		2C362BC329D1998700397AAC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C362BC229D1998700397AAC /* AuthService.swift */; };
 		2C47869E29E084A500BFBADF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C47869D29E084A500BFBADF /* RefreshControl.swift */; };
 		2C4786A129E09BBD00BFBADF /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 2C4786A029E09BBD00BFBADF /* WrappingHStack */; };
 		2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* RingView.swift */; };
@@ -66,7 +65,6 @@
 		2CA0398029E891830079A614 /* ActivityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0397F29E891830079A614 /* ActivityInfoView.swift */; };
 		2CA12FDC29E1779800CC6CC8 /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA12FDB29E1779800CC6CC8 /* RecipeDetailViewModel.swift */; };
 		2CA54DEE29DF0B92003D317B /* CreateRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA54DED29DF0B92003D317B /* CreateRecipeViewModel.swift */; };
-		2CA54DF029DF4AF5003D317B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA54DEF29DF4AF5003D317B /* UserService.swift */; };
 		2CABC86F29D96B3D00D79F18 /* Greetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABC86E29D96B3D00D79F18 /* Greetings.swift */; };
 		2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */; };
 		2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196729B8E8ED00B064B9 /* SettingsView.swift */; };
@@ -74,6 +72,7 @@
 		2CE35E6D2943B0AA00674348 /* AddNewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */; };
 		2CE9260429E94D97005E6803 /* RecipeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260329E94D97005E6803 /* RecipeEditView.swift */; };
 		2CE9260629E96182005E6803 /* RecipeEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260529E96182005E6803 /* RecipeEditViewModel.swift */; };
+		2CE9260829E9765C005E6803 /* ActivityDetailConfrim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260729E9765C005E6803 /* ActivityDetailConfrim.swift */; };
 		2CE9C54C29E1C96000DDBA20 /* FoodLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9C54B29E1C96000DDBA20 /* FoodLog.swift */; };
 		2CEADAB42953204D002AA0A0 /* PostRowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB32953204D002AA0A0 /* PostRowTest.swift */; };
 		2CEADAB8295330D2002AA0A0 /* AddShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB7295330D2002AA0A0 /* AddShadow.swift */; };
@@ -117,7 +116,6 @@
 		2C082D8829CC925E00371FE9 /* ChartTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTest.swift; sourceTree = "<group>"; };
 		2C0D03F129D44A92005C8C4B /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
-		2C362BC229D1998700397AAC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		2C47869D29E084A500BFBADF /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		2C56DEE729546FAF006A4A5A /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		2C63538028F0A7E40061A701 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 		2CA0397F29E891830079A614 /* ActivityInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInfoView.swift; sourceTree = "<group>"; };
 		2CA12FDB29E1779800CC6CC8 /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
 		2CA54DED29DF0B92003D317B /* CreateRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipeViewModel.swift; sourceTree = "<group>"; };
-		2CA54DEF29DF4AF5003D317B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		2CABC86E29D96B3D00D79F18 /* Greetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greetings.swift; sourceTree = "<group>"; };
 		2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2CC4196729B8E8ED00B064B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -148,6 +145,7 @@
 		2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewRecipe.swift; sourceTree = "<group>"; };
 		2CE9260329E94D97005E6803 /* RecipeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditView.swift; sourceTree = "<group>"; };
 		2CE9260529E96182005E6803 /* RecipeEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditViewModel.swift; sourceTree = "<group>"; };
+		2CE9260729E9765C005E6803 /* ActivityDetailConfrim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailConfrim.swift; sourceTree = "<group>"; };
 		2CE9C54B29E1C96000DDBA20 /* FoodLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLog.swift; sourceTree = "<group>"; };
 		2CEADAB32953204D002AA0A0 /* PostRowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowTest.swift; sourceTree = "<group>"; };
 		2CEADAB7295330D2002AA0A0 /* AddShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShadow.swift; sourceTree = "<group>"; };
@@ -201,8 +199,6 @@
 			children = (
 				178CCC7828BC035C0074D52E /* ImageUploader.swift */,
 				2C79C8D429BF71DF00243940 /* KeychainService.swift */,
-				2C362BC229D1998700397AAC /* AuthService.swift */,
-				2CA54DEF29DF4AF5003D317B /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -212,6 +208,7 @@
 			children = (
 				17B1A4DA2826A1E100F1CDEC /* ActivityView.swift */,
 				2CA0397F29E891830079A614 /* ActivityInfoView.swift */,
+				2CE9260729E9765C005E6803 /* ActivityDetailConfrim.swift */,
 			);
 			path = Fitness;
 			sourceTree = "<group>";
@@ -483,7 +480,6 @@
 				17D9D156281C3EF700DD0406 /* DailyCaloriesChart.swift in Sources */,
 				178CCC7928BC035C0074D52E /* ImageUploader.swift in Sources */,
 				2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */,
-				2C362BC329D1998700397AAC /* AuthService.swift in Sources */,
 				2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */,
 				17AD15E42826EF460023C0EF /* ActivityProgressRow.swift in Sources */,
 				2CABC86F29D96B3D00D79F18 /* Greetings.swift in Sources */,
@@ -492,6 +488,7 @@
 				17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */,
 				17A92D012801DCEA000CF34F /* ContentView.swift in Sources */,
 				2CEADAB8295330D2002AA0A0 /* AddShadow.swift in Sources */,
+				2CE9260829E9765C005E6803 /* ActivityDetailConfrim.swift in Sources */,
 				1747ABFB28C39E8300138938 /* Excercise.swift in Sources */,
 				17482A7F2804832A006F2186 /* HomeView.swift in Sources */,
 				17F01E7F28A2C81500285894 /* LoginView.swift in Sources */,
@@ -504,7 +501,6 @@
 				2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */,
 				176372DD28C117E4006337A7 /* User.swift in Sources */,
 				2C74B75C2950BB510063A4F4 /* NotificationsSettings.swift in Sources */,
-				2CA54DF029DF4AF5003D317B /* UserService.swift in Sources */,
 				2CA0397829E859D30079A614 /* ActivityViewModel.swift in Sources */,
 				171C1724280AE513004F17DE /* RecipeDetailView.swift in Sources */,
 				178CCC7728BBF8140074D52E /* ImagePicker.swift in Sources */,
