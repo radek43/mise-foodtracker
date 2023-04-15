@@ -28,17 +28,27 @@ struct LaunchScreen: View {
         }
         .onAppear {
             Task {
-               await delaView()
+               await delayView()
             }
-            withAnimation(.linear(duration: 2)) {
+            withAnimation(.easeInOut) {
                 showMainView = true
             }
         }
     }
     
-    private func delaView() async {
+    private func delayView() async {
         // Delay of 7.5 seconds (1 second = 1_000_000_000 nanoseconds)
         try? await Task.sleep(nanoseconds: 2_000_000_000)
         hasTimeElapsed = true
     }
 }
+
+//struct LaunchScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            LaunchScreen()
+//            LaunchScreen()
+//                .preferredColorScheme(.dark)
+//        }
+//    }
+//}
