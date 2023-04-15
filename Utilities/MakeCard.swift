@@ -12,11 +12,11 @@ struct MakeCard: ViewModifier {
     // MARK: - BODY
     func body(content: Content) -> some View {
         content
-            .frame(maxWidth: 580)
             .padding()
             .background(Color.card)
             .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
             .padding(.horizontal)
+            .frame(maxWidth: 580)
     }
 }
 
