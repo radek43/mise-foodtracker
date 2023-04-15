@@ -8,28 +8,47 @@
 import SwiftUI
 
 struct ActivityInfoView: View {
+    // MARK: - PROPERTIES
+    @Environment(\.presentationMode) var presentationMode
+    
+    // MARK: - BODY
     var body: some View {
         ZStack {
             Color.background
                 .edgesIgnoringSafeArea(.all)
-            
-            VStack(alignment: .leading, spacing: 10.0) {
+            VStack(alignment: .leading) {
                 HStack {
                     Text("Ce este MET?")
                         .font(.title)
                         .fontWeight(.bold)
                     Spacer()
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle")
+                            .font(.title2)
+                    }
                 }
-                Text("„Echivalentul metabolic” (notat MET) e o masura a consumului energetic ce ne permite sa comparam activitati diferite intre persoane diferite. MET-ul e un multiplu al Ratei Metabolice de Baza per ora. \r\n\n1 MET reprezinta caloriile arse prin rata metabolica de baza, iar toate activitatile sunt un multiplu al acesteia. Somnul e singurul ce consuma mai putin (0.9 MET) iar pe masura ce intensitatea creste se poate ajunge chiar si la 23 MET. \r\n\nFormula simpla: Caloriile arse de o activitate intr-o ora = MET specific activitatii x Greutatea ta corporala \r\n\nFormula mai precisa: Caloriile arse de o activitate intr-o ora = MET specific activitatii x Rata Metabolica de Baza / 24")
+                .padding(.horizontal, 24)
+                .padding(.top, 40)
+                
+                VStack {
+                    Text("„Echivalentul metabolic” (notat MET) e o masura a consumului energetic ce ne permite sa comparam activitati diferite intre persoane diferite. MET-ul e un multiplu al Ratei Metabolice de Baza per ora.")
+                        .card()
+                    Text("MET reprezinta caloriile arse prin rata metabolica de baza, iar toate activitatile sunt un multiplu al acesteia. Somnul e singurul ce consuma mai putin (0.9 MET) iar pe masura ce intensitatea creste se poate ajunge chiar si la 23 MET.")
+                        .card()
+                    Text("Formula simpla: Caloriile arse de o activitate intr-o ora = MET specific activitatii x Greutatea ta corporala \r\n\nFormula mai precisa: Caloriile arse de o activitate intr-o ora = MET specific activitatii x Rata Metabolica de Baza / 24 \r\n\nPentru a calcula in minute, pur si simplu imparti rezultatul la 60 (de minute intr-o ora) si inmultesti cu numarul de minute.")
+                        .card()
+                }
             }
-            .card()
+            .frame(maxWidth: 580)
         }
     }
 }
 
+// MARK: - PREVIEW
 struct ActivityInfoView_Previews: PreviewProvider {
     static var previews: some View {
-
             Group {
                 ZStack {
                     Color.background
@@ -43,7 +62,5 @@ struct ActivityInfoView_Previews: PreviewProvider {
                 }
                 .preferredColorScheme(.dark)
             }
-            
-        
     }
 }
