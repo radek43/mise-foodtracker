@@ -17,7 +17,6 @@ struct ChartTest: View {
     var body: some View {
         VStack {
             CardView {
-                
                 PieChart()
                     .data(demoData)
                     .chartStyle(mixedColorStyle)
