@@ -18,6 +18,7 @@ extension Color {
     static let accentLight = Color("AccentLight")
     static let formText = Color("SectionText")
     static let mono = Color("BlackAndWhite")
+    static let navigation = Color("NavigationBackground")
 }
 
 // Override NavigationBar Color
@@ -25,11 +26,9 @@ extension UINavigationController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         let standard = UINavigationBarAppearance()
-        standard.backgroundColor = UIColor(Color.background)
-        standard.shadowColor = UIColor(Color.background)
+        standard.configureWithOpaqueBackground()
+        standard.backgroundColor = UIColor(Color.navigation)
         navigationBar.standardAppearance = standard
-        navigationBar.compactAppearance = standard
-        navigationBar.scrollEdgeAppearance = standard
     }
 }
 
@@ -80,8 +79,8 @@ extension UIDevice {
     static var isIPad: Bool {
         UIDevice.current.userInterfaceIdiom == .pad
     }
-    
     static var isIPhone: Bool {
         UIDevice.current.userInterfaceIdiom == .phone
     }
 }
+
