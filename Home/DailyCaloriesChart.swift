@@ -20,7 +20,7 @@ struct DailyCaloriesChart: View {
             VStack {
                 // CHART HEADER
                 ChartLabel("Sumar", type: .subTitle)
-                    .padding([.top, .leading, .trailing])
+                    .padding([.top, .leading, .trailing], 8)
                 // CHART
                 HStack(alignment: .center) {
                     PieChart()
@@ -67,8 +67,8 @@ struct DailyCaloriesChart: View {
         .allowsHitTesting(false)
         .frame(height: 250)
         .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-        .frame(maxWidth: 612)
         .padding(.horizontal)
+        .frame(maxWidth: 580)
     }
 }
 
@@ -77,8 +77,16 @@ struct DailyCaloriesChart: View {
 struct DailyCaloriesChart_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            DailyCaloriesChart()
-            DailyCaloriesChart()
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                DailyCaloriesChart()
+            }
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                DailyCaloriesChart()
+            }
                 .preferredColorScheme(.dark)
         }
     }
