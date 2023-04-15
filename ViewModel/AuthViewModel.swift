@@ -15,7 +15,6 @@ class AuthViewModel: ObservableObject {
     @Published var error: Error?
     
     private var keychainService = KeychainService()
-    private let service = UserService()
     
     init() {
         // CHECK IF USER IS ALREADY LOGGED IN
