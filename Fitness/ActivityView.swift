@@ -19,13 +19,22 @@ struct ActivityView: View {
     var body: some View {
         if let user = authViewModel.currentUser {
             NavigationView {
-                ZStack {
-                    Color.background
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    
-                    List {
-                        Section {
+                ScrollView(showsIndicators: false) {
+                    ZStack {
+                        Color.background.ignoresSafeArea(.all)
+                        VStack {
+                            HStack {
+                                Text("Nume activitate")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Spacer()
+                                Text("MET")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                            }
+                            
+                            Divider()
+                            
                             ForEach(activityViewModel.activities) { activity in
                                 Button {
                                     self.showActivityConfirmSheet.toggle()
@@ -39,26 +48,29 @@ struct ActivityView: View {
                                     }
                                 }
                                 .sheet(isPresented: $showActivityConfirmSheet) {
-                                    DishDetailConfirm()
+                                    ActivityDetailConfrim()
+                                }
+                                if activity.id != activityViewModel.activities.last?.id {
+                                    Divider()
                                 }
                             }
-                        } header: {
-                            HStack {
-                                Text("Activitate:")
-                                Spacer()
-                                Text("MET:")
+                        }
+                        .card()
+                        .padding(.bottom)
+                        .onAppear {
+                            Task {
+                                try await self.activityViewModel.fetchActivities()
                             }
                         }
+                        
+                        .navigationTitle("Activitate")
+                        .navigationBarTitleDisplayMode(.automatic)
+                        
                     }
-                    .listStyle(InsetGroupedListStyle())
-                    .onAppear {
-                        Task {
-                            try await self.activityViewModel.fetchActivities()
-                        }
-                    }
-                    .navigationTitle("Activitate")
-                    .navigationBarTitleDisplayMode(.automatic)
                 }
+                .background(Color.background.edgesIgnoringSafeArea(.all))
+                
+                
                 .navigationBarItems(
                     leading:
                         Button {
@@ -72,6 +84,7 @@ struct ActivityView: View {
                 )
             }
             .navigationViewStyle(StackNavigationViewStyle())
+            
         }
     }
 }
