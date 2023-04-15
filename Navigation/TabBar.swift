@@ -52,13 +52,13 @@ struct TabBar: View {
                 }
                 .tag(3)
             
-            ForumView()
-                .tabItem {
-                    if tabSelection == 4 { Image("person.2.fill") }
-                    else { Image("person.2") }
-                    Text("Comunitate")
-                }
-                .tag(4)
+//            ForumView()
+//                .tabItem {
+//                    if tabSelection == 4 { Image("person.2.fill") }
+//                    else { Image("person.2") }
+//                    Text("Comunitate")
+//                }
+//                .tag(4)
         }
     }
 }
