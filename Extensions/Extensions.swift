@@ -19,6 +19,7 @@ extension Color {
     static let formText = Color("SectionText")
     static let mono = Color("BlackAndWhite")
     static let navigation = Color("NavigationBackground")
+    static let progress = Color("ProgressViewColor")
 }
 
 // Override NavigationBar Color
