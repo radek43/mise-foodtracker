@@ -66,7 +66,7 @@ struct DishDetailChart: View {
         .chartStyle(mixedColorStyle)
         .allowsHitTesting(false)
         .frame(height: 250)
-        .frame(maxWidth: 612)
+        .frame(maxWidth: 580)
         .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
         .padding(.horizontal)
     }
