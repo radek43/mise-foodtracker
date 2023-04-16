@@ -42,6 +42,8 @@
 		2C082D8929CC925E00371FE9 /* ChartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8829CC925E00371FE9 /* ChartTest.swift */; };
 		2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D03F129D44A92005C8C4B /* PreviewData.swift */; };
 		2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */; };
+		2C3ED20429EAEE14007CE412 /* CreateActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED20329EAEE13007CE412 /* CreateActivityViewModel.swift */; };
+		2C3ED20629EB2C51007CE412 /* AddNewActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED20529EB2C51007CE412 /* AddNewActivity.swift */; };
 		2C47869E29E084A500BFBADF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C47869D29E084A500BFBADF /* RefreshControl.swift */; };
 		2C4786A129E09BBD00BFBADF /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 2C4786A029E09BBD00BFBADF /* WrappingHStack */; };
 		2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* RingView.swift */; };
@@ -70,6 +72,9 @@
 		2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196729B8E8ED00B064B9 /* SettingsView.swift */; };
 		2CC4196A29B8E8FD00B064B9 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */; };
 		2CE35E6D2943B0AA00674348 /* AddNewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */; };
+		2CE43D2729EC445C00BD9E82 /* ActivityEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE43D2629EC445C00BD9E82 /* ActivityEditViewModel.swift */; };
+		2CE43D2929EC460000BD9E82 /* ActivityDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE43D2829EC460000BD9E82 /* ActivityDetailViewModel.swift */; };
+		2CE43D2B29EC4C2900BD9E82 /* EditActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE43D2A29EC4C2900BD9E82 /* EditActivityView.swift */; };
 		2CE9260429E94D97005E6803 /* RecipeEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260329E94D97005E6803 /* RecipeEditView.swift */; };
 		2CE9260629E96182005E6803 /* RecipeEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260529E96182005E6803 /* RecipeEditViewModel.swift */; };
 		2CE9260829E9765C005E6803 /* ActivityDetailConfrim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260729E9765C005E6803 /* ActivityDetailConfrim.swift */; };
@@ -116,6 +121,8 @@
 		2C082D8829CC925E00371FE9 /* ChartTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTest.swift; sourceTree = "<group>"; };
 		2C0D03F129D44A92005C8C4B /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		2C3ED20329EAEE13007CE412 /* CreateActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewModel.swift; sourceTree = "<group>"; };
+		2C3ED20529EB2C51007CE412 /* AddNewActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewActivity.swift; sourceTree = "<group>"; };
 		2C47869D29E084A500BFBADF /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		2C56DEE729546FAF006A4A5A /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		2C63538028F0A7E40061A701 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
@@ -143,6 +150,9 @@
 		2CC4196729B8E8ED00B064B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		2CE35E6C2943B0AA00674348 /* AddNewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewRecipe.swift; sourceTree = "<group>"; };
+		2CE43D2629EC445C00BD9E82 /* ActivityEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEditViewModel.swift; sourceTree = "<group>"; };
+		2CE43D2829EC460000BD9E82 /* ActivityDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewModel.swift; sourceTree = "<group>"; };
+		2CE43D2A29EC4C2900BD9E82 /* EditActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityView.swift; sourceTree = "<group>"; };
 		2CE9260329E94D97005E6803 /* RecipeEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditView.swift; sourceTree = "<group>"; };
 		2CE9260529E96182005E6803 /* RecipeEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditViewModel.swift; sourceTree = "<group>"; };
 		2CE9260729E9765C005E6803 /* ActivityDetailConfrim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailConfrim.swift; sourceTree = "<group>"; };
@@ -203,14 +213,16 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		1747ABFC28C3BA6200138938 /* Fitness */ = {
+		1747ABFC28C3BA6200138938 /* Activity */ = {
 			isa = PBXGroup;
 			children = (
 				17B1A4DA2826A1E100F1CDEC /* ActivityView.swift */,
 				2CA0397F29E891830079A614 /* ActivityInfoView.swift */,
 				2CE9260729E9765C005E6803 /* ActivityDetailConfrim.swift */,
+				2C3ED20529EB2C51007CE412 /* AddNewActivity.swift */,
+				2CE43D2A29EC4C2900BD9E82 /* EditActivityView.swift */,
 			);
-			path = Fitness;
+			path = Activity;
 			sourceTree = "<group>";
 		};
 		178CCC7528BBF7F00074D52E /* Utilities */ = {
@@ -267,7 +279,7 @@
 				178CEBC02809B5E100D6DD25 /* Home */,
 				2C77A4CB2948A5E700233AF4 /* Progress */,
 				170C633128297DB80048DFA9 /* Recipes */,
-				1747ABFC28C3BA6200138938 /* Fitness */,
+				1747ABFC28C3BA6200138938 /* Activity */,
 				2C6E96C328E49B5D000159C4 /* Forum */,
 				1728115128BBB36E001B0BC5 /* Settings */,
 				178CEBC32809B63B00D6DD25 /* Model */,
@@ -354,9 +366,9 @@
 		2C77A4CA2948A34A00233AF4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2CE43D2529EC443300BD9E82 /* Activity */,
 				2CA0397529E859AE0079A614 /* Recipe */,
 				2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */,
-				2CA0397729E859D30079A614 /* ActivityViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -387,6 +399,17 @@
 				17A92D022801DCEC000CF34F /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CE43D2529EC443300BD9E82 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				2CA0397729E859D30079A614 /* ActivityViewModel.swift */,
+				2C3ED20329EAEE13007CE412 /* CreateActivityViewModel.swift */,
+				2CE43D2629EC445C00BD9E82 /* ActivityEditViewModel.swift */,
+				2CE43D2829EC460000BD9E82 /* ActivityDetailViewModel.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,7 +519,9 @@
 				2CE9260629E96182005E6803 /* RecipeEditViewModel.swift in Sources */,
 				178CEBC52809B82700D6DD25 /* AddDishButton.swift in Sources */,
 				17F01E8128A2C84800285894 /* RegistrationView.swift in Sources */,
+				2C3ED20629EB2C51007CE412 /* AddNewActivity.swift in Sources */,
 				2C8F034E296F0B67003AA27C /* DishDetailChart.swift in Sources */,
+				2C3ED20429EAEE14007CE412 /* CreateActivityViewModel.swift in Sources */,
 				2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */,
 				2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */,
 				176372DD28C117E4006337A7 /* User.swift in Sources */,
@@ -512,6 +537,7 @@
 				2CE9260429E94D97005E6803 /* RecipeEditView.swift in Sources */,
 				179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */,
 				2C6A161928F1C79500D9DDE4 /* AddNewPost.swift in Sources */,
+				2CE43D2B29EC4C2900BD9E82 /* EditActivityView.swift in Sources */,
 				2C8D797D29DC238D00B9AB47 /* RecipeListViewModel.swift in Sources */,
 				2CEADAB42953204D002AA0A0 /* PostRowTest.swift in Sources */,
 				2CA0397A29E87EF70079A614 /* Activity.swift in Sources */,
@@ -533,6 +559,8 @@
 				2CFC2B3229705BF800451922 /* RegistrationButton.swift in Sources */,
 				2C64C040294B931600E9305F /* ProfileSettingsView.swift in Sources */,
 				2C79C8D529BF71DF00243940 /* KeychainService.swift in Sources */,
+				2CE43D2929EC460000BD9E82 /* ActivityDetailViewModel.swift in Sources */,
+				2CE43D2729EC445C00BD9E82 /* ActivityEditViewModel.swift in Sources */,
 				2C7918F5296DBC35009F2194 /* DishDetailConfirm.swift in Sources */,
 				2C6E96C528E49B78000159C4 /* PostRow.swift in Sources */,
 				2C7918F3296DB519009F2194 /* DishView.swift in Sources */,

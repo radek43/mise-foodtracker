@@ -12,6 +12,7 @@ struct ActivityView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @StateObject var activityViewModel = ActivityViewModel()
     
+    @State private var showEditView = false
     @State private var showActivityConfirmSheet = false
     @State private var showInfoSheet = false
     
@@ -32,12 +33,10 @@ struct ActivityView: View {
                                     .font(.headline)
                                     .fontWeight(.bold)
                             }
-                            
                             Divider()
-                            
                             ForEach(activityViewModel.activities) { activity in
-                                Button {
-                                    self.showActivityConfirmSheet.toggle()
+                                NavigationLink {
+                                    ActivityDetailConfrim(activityDetailViewModel: ActivityDetailViewModel(withActivityId: activity.id))
                                 } label: {
                                     HStack {
                                         Text(activity.title)
@@ -46,9 +45,6 @@ struct ActivityView: View {
                                         Text(activity.met)
                                             .foregroundColor(Color(UIColor.label))
                                     }
-                                }
-                                .sheet(isPresented: $showActivityConfirmSheet) {
-                                    ActivityDetailConfrim()
                                 }
                                 if activity.id != activityViewModel.activities.last?.id {
                                     Divider()
@@ -62,15 +58,9 @@ struct ActivityView: View {
                                 try await self.activityViewModel.fetchActivities()
                             }
                         }
-                        
-                        .navigationTitle("Activitate")
-                        .navigationBarTitleDisplayMode(.automatic)
-                        
-                    }
+                        .navigationTitle("Activitate")                    }
                 }
                 .background(Color.background.edgesIgnoringSafeArea(.all))
-                
-                
                 .navigationBarItems(
                     leading:
                         Button {
@@ -80,11 +70,20 @@ struct ActivityView: View {
                         }
                         .sheet(isPresented: $showInfoSheet) {
                             ActivityInfoView()
+                        },
+                    trailing: user.is_staff == true ?
+                        NavigationLink {
+                            AddNewActivity()
+                        } label: {
+                            Image(systemName: "note.text.badge.plus")
                         }
+                        .sheet(isPresented: $showInfoSheet) {
+                            ActivityInfoView()
+                        }
+                    : nil
                 )
             }
             .navigationViewStyle(StackNavigationViewStyle())
-            
         }
     }
 }
@@ -96,7 +95,7 @@ struct ActivityView_Previews: PreviewProvider {
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
         let activityViewModel = ActivityViewModel()
-        activityViewModel.activities = activityPreviewData
+        activityViewModel.activities = previewActivityData
         return Group {
             ActivityView()
             ActivityView()

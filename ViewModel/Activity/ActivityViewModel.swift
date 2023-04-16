@@ -57,5 +57,10 @@ class ActivityViewModel: ObservableObject {
             self.error = error
         }
     }
-
+    
+    func loadActivities() {
+        Task(priority: .medium) {
+            try await fetchActivities()
+        }
+    }
 }
