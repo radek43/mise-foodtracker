@@ -7,7 +7,7 @@
 
 import Foundation
 
-var userPreviewData = User(fullname: "John Doe", name: "john.doe", email: "john.doe@email.com", is_staff: false)
+var userPreviewData = User(fullname: "John Doe", name: "john.doe", email: "john.doe@email.com", is_staff: true)
 
 var recipePreviewData: [RecipeList] = [
     RecipeList(id: 1,
@@ -43,9 +43,10 @@ var recipeDetailPreviewData: Recipe =
            image: "https://onco-plan.ro/wp-content/uploads/2021/07/asparagus-spinach-soup.jpg")
     
 
-var activityPreviewData: [Activity] = [
+var previewActivityData: [Activity] = [
     Activity(id: 1, title: "abdomene", met: "4.5"),
     Activity(id: 2, title: "aerobic", met: "6.5"),
     Activity(id: 3, title: "baschet", met: "8"),
     Activity(id: 4, title: "patinaj", met: "7"),
 ]
+
