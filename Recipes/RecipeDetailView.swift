@@ -57,13 +57,12 @@ struct RecipeDetailView: View {
                                     .fontWeight(.semibold)
                                 Divider()
                                 VStack(alignment: .leading) {
-                                    Text("• Calorii: \(recipe.calories)g")
+                                    Text("• Calorii: \(recipe.calories)kCal")
                                     Text("• Proteine: \(recipe.protein)g")
                                     Text("• Lipide: \(recipe.fat)g")
                                     Text("• Carbohidrați: \(recipe.carbs)g")
                                     Text("• Fibre: \(recipe.fibers)g")
                                 }
-                                
                                 Divider()
                                 VStack(alignment: .leading) {
                                     Text("Timp de preparare: \(recipe.time_minutes) minute")
@@ -138,7 +137,6 @@ struct RecipeDetailView: View {
                                         title: Text("Ești sigur că vrei să ștergi această rețetă?"),
                                         message: Text("Această acțiune este permanentă"),
                                         primaryButton: .destructive(Text("Șterge")) {
-                                            print("Deleting...")
                                             Task {
                                                 try await recipeDetailViewModel.deleteRecipe()
                                             }
