@@ -172,6 +172,6 @@ extension RecipeEditView {
 
 struct RecipeEditView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeEditView(recipe: recipeDetailPreviewData )
+        RecipeEditView(recipe: recipeDetailPreviewData)
     }
 }
