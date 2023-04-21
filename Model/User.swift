@@ -34,16 +34,20 @@ struct Token: Codable {
 
 // USER MODEL
 struct User: Codable {
-    let fullname: String
-    let name: String
     let email: String
+    let name: String
+    let fullname: String
     let is_staff: Bool
+    let calorie_goal: String
+    let weight: String
+    let height: String
+    let gender: String
 }
 
 // EXTENSIONS
 extension User {
     static let dummyData: [User] = [
-        User(fullname: "John Doe", name: "john.doe", email: "john.doe@email.com", is_staff: false)
+        User(email: "John Doe", name: "john.doe", fullname: "john.doe@email.com", is_staff: false, calorie_goal: "2854", weight: "84", height: "187", gender: "Masculin")
     ]
 }
 
