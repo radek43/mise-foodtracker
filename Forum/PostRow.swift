@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct PostRow: View {
     // MARK: - PROPERTIES
