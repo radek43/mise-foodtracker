@@ -6,12 +6,32 @@
 //
 
 import SwiftUI
-import Kingfisher
+import SDWebImageSwiftUI
+
 
 struct RecipeCard: View {
+    // MARK: - STRUCTS
+    struct BodyView: View {
+        @State var url: String
+        var body: some View {
+            VStack {
+                WebImage(url: URL(string: url))
+                    .onSuccess { image, data, cacheType in
+                    }
+                    .resizable()
+                    .placeholder {
+                        ProgressView()
+                    }
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fill)
+                    .layoutPriority(-1)
+            }
+        }
+    }
+    
     // MARK: - PROPERTIES
     var title: String
-    var image: String
+    var imageString: String
     var calories: String
     
     // MARK: - BODY
@@ -23,11 +43,8 @@ struct RecipeCard: View {
                         .fill(Color(.gray))
                         .aspectRatio(3/4, contentMode: .fit)
                     
-                    if let image = image {
-                        KFImage(URL(string: image))
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .layoutPriority(-1)
+                    if let imageString = imageString {
+                        BodyView(url: imageString)    
                     }
                 }
                 .clipped()
@@ -54,10 +71,9 @@ struct RecipeCard: View {
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RecipeCard(title: recipePreviewData[1].title, image: recipePreviewData[1].image!, calories: recipePreviewData[1].calories)
-            RecipeCard(title: recipePreviewData[1].title, image: recipePreviewData[1].image!, calories: recipePreviewData[1].calories)
+            RecipeCard(title: recipePreviewData[1].title, imageString: recipePreviewData[1].image!, calories: recipePreviewData[1].calories)
+            RecipeCard(title: recipePreviewData[1].title, imageString: recipePreviewData[1].image!, calories: recipePreviewData[1].calories)
                 .preferredColorScheme(.dark)
         }
-        
     }
 }
