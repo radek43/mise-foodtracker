@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUISegues
 
 struct AddDishButton: View {
     // MARK: - PROPERTIES
