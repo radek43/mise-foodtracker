@@ -41,6 +41,7 @@ struct ActivityView: View {
                                     HStack {
                                         Text(activity.title)
                                             .foregroundColor(Color(UIColor.label))
+                                            .fixedSize(horizontal: false, vertical: true)
                                         Spacer()
                                         Text(activity.met)
                                             .foregroundColor(Color(UIColor.label))
