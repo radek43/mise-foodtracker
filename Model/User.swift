@@ -43,11 +43,3 @@ struct User: Codable {
     let height: String
     let gender: String
 }
-
-// EXTENSIONS
-extension User {
-    static let dummyData: [User] = [
-        User(email: "John Doe", name: "john.doe", fullname: "john.doe@email.com", is_staff: false, calorie_goal: "2854", weight: "84", height: "187", gender: "Masculin")
-    ]
-}
-
