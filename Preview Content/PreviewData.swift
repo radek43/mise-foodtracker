@@ -7,7 +7,7 @@
 
 import Foundation
 
-var userPreviewData = User(fullname: "John Doe", name: "john.doe", email: "john.doe@email.com", is_staff: true)
+var userPreviewData = User(email: "John Doe", name: "john.doe", fullname: "john.doe@email.com", is_staff: false, calorie_goal: "2854", weight: "84", height: "187", gender: "Masculin")
 
 var recipePreviewData: [RecipeList] = [
     RecipeList(id: 1,
