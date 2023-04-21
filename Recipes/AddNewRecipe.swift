@@ -63,31 +63,31 @@ struct AddNewRecipe: View {
                         Text("Calorii:")
                             .foregroundColor(Color.formText)
                         TextField("", text: $calories)
-                            .numbersOnly($calories, includeDecimal: true)
+                            .numbersOnly($calories, includeDecimal: true, decimalPlaces: 2)
                     }
                     HStack {
                         Text("Proteine:")
                             .foregroundColor(Color.formText)
                         TextField("", text: $protein)
-                            .numbersOnly($protein, includeDecimal: true)
+                            .numbersOnly($protein, includeDecimal: true, decimalPlaces: 2)
                     }
                     HStack {
                         Text("Grăsimi:")
                             .foregroundColor(Color.formText)
                         TextField("", text: $fat)
-                            .numbersOnly($fat, includeDecimal: true)
+                            .numbersOnly($fat, includeDecimal: true, decimalPlaces: 2)
                     }
                     HStack {
                         Text("Fibre:")
                             .foregroundColor(Color.formText)
                         TextField("", text: $fibers)
-                            .numbersOnly($fibers, includeDecimal: true)
+                            .numbersOnly($fibers, includeDecimal: true, decimalPlaces: 2)
                     }
                     HStack {
                         Text("Carbohidrați:")
                             .foregroundColor(Color.formText)
                         TextField("", text: $carbs)
-                            .numbersOnly($carbs, includeDecimal: true)
+                            .numbersOnly($carbs, includeDecimal: true, decimalPlaces: 2)
                     }
                 }
                 // RECIPE INGREDIENTS
