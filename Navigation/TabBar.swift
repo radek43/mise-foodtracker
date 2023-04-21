@@ -51,14 +51,6 @@ struct TabBar: View {
                     Text("Sport")
                 }
                 .tag(3)
-            
-//            ForumView()
-//                .tabItem {
-//                    if tabSelection == 4 { Image("person.2.fill") }
-//                    else { Image("person.2") }
-//                    Text("Comunitate")
-//                }
-//                .tag(4)
         }
     }
 }
