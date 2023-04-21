@@ -7,12 +7,12 @@
 
 import Foundation
 import SwiftUI
-import Kingfisher
 
 
 struct SettingsView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
+    @StateObject var settingsViewModel = SettingsViewModel()
     @State private var doesTrackActivity = false
     
     // MARK: - BODY
@@ -48,20 +48,20 @@ struct SettingsView: View {
                         }
                         Section {
                             NavigationLink {
-                                // ObjectiveView()
+                                ObjectiveView(user: user)
                             } label: {
-                                SettingsRow(iconDefault: "target", firstText: "Obiective", color: .green)
+                                SettingsRow(iconDefault: "target", firstText: "Obiectiv", color: .green)
                             }
                             NavigationLink {
-                                MeasurementsSettings()
+                                MeasurementsSettings(user: user)
                             } label: {
-                                SettingsRow(iconDefault: "ruler", firstText: "Masuratori",
+                                SettingsRow(iconDefault: "ruler", firstText: "Măsurători",
                                             color: Color(hue: 0.096, saturation: 0.962, brightness: 0.941))
                             }
                             NavigationLink {
                                 NotificationsSettings()
                             } label: {
-                                SettingsRow(iconDefault: "bell.badge", firstText: "Notificari", color: .red)
+                                SettingsRow(iconDefault: "bell.badge", firstText: "Notificări", color: .red)
                             }
                             Toggle(isOn: $doesTrackActivity) {
                                 SettingsRow(iconAsset: "figure.run", firstText: "Inregistrare activitate", color: .blue)
@@ -76,7 +76,7 @@ struct SettingsView: View {
                     .listStyle(GroupedListStyle())
                 } //: VStack
                 .frame(maxWidth: 580)
-                .navigationTitle("Setari")
+                .navigationTitle("Setări")
                 .navigationBarTitleDisplayMode(.inline)
             } //: ZStack
         }
@@ -87,7 +87,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = AuthViewModel()
-        viewModel.currentUser = User(fullname: "George Popescu", name: "popescu.george", email: "george.popescu@yahoo.com", is_staff: false)
+        viewModel.currentUser = userPreviewData
         return
             Group {
                 NavigationView {
