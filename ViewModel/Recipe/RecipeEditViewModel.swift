@@ -66,7 +66,7 @@ class RecipeEditViewModel: ObservableObject {
             print("postRecipe: \(error)")
         }
         
-        // Send a POST request to the URL, with the data we created earlier
+        // Send a PUT request to the URL, with the data we created earlier
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {
