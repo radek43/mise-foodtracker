@@ -11,54 +11,59 @@ import Combine
 
 struct MeasurementsSettings: View {
     // MARK: - PROPERTIES
-    @State private var userWeight = "0"
-    @State private var userHeight = "0"
+    @StateObject var settingsViewModel = SettingsViewModel()
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
+    @State private var userWeight: String
+    @State private var userHeight: String
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    init(user: User) {
+        _userWeight = State(initialValue: user.weight)
+        _userHeight = State(initialValue: user.height)
+    }
     
     // MARK: - BODY
     var body: some View {
         ZStack {
             Color.background
                 .edgesIgnoringSafeArea(.all)
-            
-            VStack(alignment: .center, spacing: 0) {
-                Form {
-                    Section(header: Text("Greutate")) {
-                        HStack {
-                            TextField("Introduceti greutatea dvs.", text: $userWeight)
-                                .keyboardType(.numberPad)
-                                .onReceive(Just(userWeight)) { newValue in
-                                    let filtered = newValue.filter { "0123456789".contains($0) }
-                                    if filtered != newValue {
-                                        self.userWeight = filtered
-                                    }
-                                }
-                            Text("kg")
-                        }
-                    }
-                    Section(header: Text("Inaltime")) {
-                        HStack {
-                            TextField("Introduceti greutatea dvs.", text: $userWeight)
-                                .keyboardType(.numberPad)
-                                .onReceive(Just(userHeight)) { newValue in
-                                    let filtered = newValue.filter { "0123456789".contains($0) }
-                                    if filtered != newValue {
-                                        self.userWeight = filtered
-                                    }
-                                }
-                            Text("cm")
-                        }
-                    }
+            Form {
+                // ACTIVITY TITLE
+                Section(header: Text("Greutate(Kg):")) {
+                    TextField("", text: $userWeight)
+                        .numbersOnly($userWeight, includeDecimal: true, decimalPlaces: 2)
                 }
-            }
+                // MET
+                Section(header: Text("Înălțime(cm):")) {
+                    TextField("", text: $userHeight)
+                        .numbersOnly($userHeight, includeDecimal: true, decimalPlaces: 2)
+                }
+            } //: END FORM
             .frame(maxWidth: 580)
-            .navigationTitle("Masuratori")
+            .navigationTitle("Editare măsurători")
             .navigationBarTitleDisplayMode(.inline)
+            .addHideKeyboardButton()
+            .onAppear {
+                UITextField.appearance().clearButtonMode = .whileEditing
+            }
             .toolbar {
-                Button("Salveaza") {
-                    print("Buton salvare apasat")
+                Button("Trimite") {
+                    Task(priority: .medium) {
+                        try await self.settingsViewModel.updateMeasurements(weight: userWeight, height: userHeight)
+                    }
                 }
             }
-        }
+            .onReceive(settingsViewModel.$didUpdateMeasurements, perform: { success in
+                if success {
+                    Task {
+                        try await authViewModel.getUser()
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                }
+            })
+        } //: END ZSTACK
     }
 }
 
@@ -66,9 +71,17 @@ struct MeasurementsSettings: View {
 // MARK: - PREVIEW
 struct MeasurementsSettings_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            MeasurementsSettings()
-            MeasurementsSettings()
+        let viewModel = AuthViewModel()
+        viewModel.currentUser = userPreviewData
+        return Group {
+            NavigationView {
+                MeasurementsSettings(user: userPreviewData)
+            }
+            NavigationView {
+                MeasurementsSettings(user: userPreviewData)
+            }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .environmentObject(viewModel)
     }
 }
