@@ -21,22 +21,17 @@ struct ActivityDetailConfrim: View {
     // MARK: - BODY
     var body: some View {
         if authViewModel.currentUser != nil {
-            ZStack {
+            ZStack(alignment: .top) {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
                 if let activityData = activityDetailViewModel.activity {
                     ScrollView(showsIndicators: false) {
-                        VStack(alignment: .center, spacing: 12) {
+                        VStack(alignment: .leading, spacing: 12) {
                             // HEADER
-                            VStack {
-                                HStack {
-                                    Text(activityData.title)
-                                        .font(.title)
-                                        .fontWeight(.bold)
-                                    Spacer()
-                                }
-                            }
-                            .padding([.horizontal, .top], 24)
+                            Text(activityData.title)
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .padding([.horizontal, .top], 24)
                             
                             // FOOD META
                             HStack {
@@ -123,7 +118,8 @@ struct ActivityDetailConfrim: View {
                                 Text("Adaugă la jurnal")
                                     .font(.headline)
                                     .foregroundColor(.white)
-                                    .frame(width: 340, height: 50)
+                                    .frame(height: 50)
+                                    .frame(maxWidth: 580)
                                     .background(Color.accent)
                                     .clipShape(Capsule())
                                     .padding()
