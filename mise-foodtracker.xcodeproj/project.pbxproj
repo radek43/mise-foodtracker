@@ -13,7 +13,6 @@
 		17482A7B28047F57006F2186 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17482A7A28047F57006F2186 /* TabBar.swift */; };
 		17482A7F2804832A006F2186 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17482A7E2804832A006F2186 /* HomeView.swift */; };
 		176372DD28C117E4006337A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176372DC28C117E4006337A7 /* User.swift */; };
-		176372E028C12445006337A7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 176372DF28C12445006337A7 /* Kingfisher */; };
 		178C8139280A992700EB29C1 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178C8138280A992700EB29C1 /* RecipeCard.swift */; };
 		178CCC7728BBF8140074D52E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CCC7628BBF8140074D52E /* ImagePicker.swift */; };
 		178CCC7928BC035C0074D52E /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CCC7828BC035C0074D52E /* ImageUploader.swift */; };
@@ -30,7 +29,6 @@
 		17AD15E42826EF460023C0EF /* ActivityProgressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AD15E32826EF460023C0EF /* ActivityProgressRow.swift */; };
 		17B1A4DB2826A1E100F1CDEC /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1A4DA2826A1E100F1CDEC /* ActivityView.swift */; };
 		17CC53EF2827E1A7006A8FFD /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 17CC53EE2827E1A7006A8FFD /* SwiftUICharts */; };
-		17D9D151281C3AB800DD0406 /* SwiftUISegues in Frameworks */ = {isa = PBXBuildFile; productRef = 17D9D150281C3AB800DD0406 /* SwiftUISegues */; };
 		17D9D156281C3EF700DD0406 /* DailyCaloriesChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D9D155281C3EF700DD0406 /* DailyCaloriesChart.swift */; };
 		17F01E7F28A2C81500285894 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E7E28A2C81500285894 /* LoginView.swift */; };
 		17F01E8128A2C84800285894 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8028A2C84800285894 /* RegistrationView.swift */; };
@@ -44,8 +42,10 @@
 		2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */; };
 		2C3ED20429EAEE14007CE412 /* CreateActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED20329EAEE13007CE412 /* CreateActivityViewModel.swift */; };
 		2C3ED20629EB2C51007CE412 /* AddNewActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED20529EB2C51007CE412 /* AddNewActivity.swift */; };
+		2C3F85FE29ED28B600B47AF6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3F85FD29ED28B600B47AF6 /* SDWebImageSwiftUI */; };
 		2C47869E29E084A500BFBADF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C47869D29E084A500BFBADF /* RefreshControl.swift */; };
-		2C4786A129E09BBD00BFBADF /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 2C4786A029E09BBD00BFBADF /* WrappingHStack */; };
+		2C4AD2D429EFE3F600311DAE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD2D329EFE3F600311DAE /* SettingsViewModel.swift */; };
+		2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD2D729EFFE1C00311DAE /* ObjectiveView.swift */; };
 		2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* RingView.swift */; };
 		2C63538128F0A7E40061A701 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63538028F0A7E40061A701 /* PostDetail.swift */; };
 		2C64C03E294B7C9F00E9305F /* DropdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C64C03D294B7C9F00E9305F /* DropdownList.swift */; };
@@ -124,6 +124,8 @@
 		2C3ED20329EAEE13007CE412 /* CreateActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewModel.swift; sourceTree = "<group>"; };
 		2C3ED20529EB2C51007CE412 /* AddNewActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewActivity.swift; sourceTree = "<group>"; };
 		2C47869D29E084A500BFBADF /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
+		2C4AD2D329EFE3F600311DAE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		2C4AD2D729EFFE1C00311DAE /* ObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveView.swift; sourceTree = "<group>"; };
 		2C56DEE729546FAF006A4A5A /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		2C63538028F0A7E40061A701 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		2C64C03D294B7C9F00E9305F /* DropdownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownList.swift; sourceTree = "<group>"; };
@@ -169,11 +171,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17D9D151281C3AB800DD0406 /* SwiftUISegues in Frameworks */,
-				176372E028C12445006337A7 /* Kingfisher in Frameworks */,
+				2C3F85FE29ED28B600B47AF6 /* SDWebImageSwiftUI in Frameworks */,
 				17CC53EF2827E1A7006A8FFD /* SwiftUICharts in Frameworks */,
 				2CED766E29D5A5850093E035 /* KeyboardToolbars in Frameworks */,
-				2C4786A129E09BBD00BFBADF /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +200,7 @@
 				2C74B75B2950BB510063A4F4 /* NotificationsSettings.swift */,
 				2C74B75D2950EE580063A4F4 /* MeasurementsSettings.swift */,
 				2CC4196729B8E8ED00B064B9 /* SettingsView.swift */,
+				2C4AD2D729EFFE1C00311DAE /* ObjectiveView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -341,6 +342,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2C3F85FF29ED2F2F00B47AF6 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2C4AD2D229EFE3E700311DAE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2C4AD2D329EFE3F600311DAE /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		2C6E96C328E49B5D000159C4 /* Forum */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,9 +383,10 @@
 		2C77A4CA2948A34A00233AF4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2C4AD2D229EFE3E700311DAE /* Settings */,
+				2C3F85FF29ED2F2F00B47AF6 /* Auth */,
 				2CE43D2529EC443300BD9E82 /* Activity */,
 				2CA0397529E859AE0079A614 /* Recipe */,
-				2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -429,11 +447,9 @@
 			);
 			name = "mise-foodtracker";
 			packageProductDependencies = (
-				17D9D150281C3AB800DD0406 /* SwiftUISegues */,
 				17CC53EE2827E1A7006A8FFD /* SwiftUICharts */,
-				176372DF28C12445006337A7 /* Kingfisher */,
 				2CED766D29D5A5850093E035 /* KeyboardToolbars */,
-				2C4786A029E09BBD00BFBADF /* WrappingHStack */,
+				2C3F85FD29ED28B600B47AF6 /* SDWebImageSwiftUI */,
 			);
 			productName = maiIncercSiEu;
 			productReference = 17A92CFB2801DCEA000CF34F /* mise-foodtracker.app */;
@@ -464,11 +480,9 @@
 			);
 			mainGroup = 17A92CF22801DCEA000CF34F;
 			packageReferences = (
-				17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */,
 				17CC53ED2827E1A7006A8FFD /* XCRemoteSwiftPackageReference "ChartView" */,
-				176372DE28C12445006337A7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				2CED766C29D5A5850093E035 /* XCRemoteSwiftPackageReference "KeyboardToolbarsSwiftUI" */,
-				2C47869F29E09BBD00BFBADF /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+				2C3F85FC29ED28B600B47AF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 17A92CFC2801DCEA000CF34F /* Products */;
 			projectDirPath = "";
@@ -555,6 +569,7 @@
 				2CA0398029E891830079A614 /* ActivityInfoView.swift in Sources */,
 				2C71A69B29DDF701006A823C /* LaunchScreen.swift in Sources */,
 				2CA12FDC29E1779800CC6CC8 /* RecipeDetailViewModel.swift in Sources */,
+				2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */,
 				2C6A161728F17F5200D9DDE4 /* ReplyRow.swift in Sources */,
 				2CFC2B3229705BF800451922 /* RegistrationButton.swift in Sources */,
 				2C64C040294B931600E9305F /* ProfileSettingsView.swift in Sources */,
@@ -567,6 +582,7 @@
 				2CC4196A29B8E8FD00B064B9 /* SettingsRow.swift in Sources */,
 				17F01E8528A2C8FD00285894 /* AuthenticationHeaderView.swift in Sources */,
 				17482A7B28047F57006F2186 /* TabBar.swift in Sources */,
+				2C4AD2D429EFE3F600311DAE /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,14 +803,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		176372DE28C12445006337A7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 		17CC53ED2827E1A7006A8FFD /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
@@ -803,17 +811,9 @@
 				version = "2.0.0-beta.2";
 			};
 		};
-		17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */ = {
+		2C3F85FC29ED28B600B47AF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/globulus/swiftui-segues";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		2C47869F29E09BBD00BFBADF /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dkk/WrappingHStack.git";
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
@@ -830,25 +830,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		176372DF28C12445006337A7 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 176372DE28C12445006337A7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		17CC53EE2827E1A7006A8FFD /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 17CC53ED2827E1A7006A8FFD /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
 		};
-		17D9D150281C3AB800DD0406 /* SwiftUISegues */ = {
+		2C3F85FD29ED28B600B47AF6 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 17D9D14F281C3AB800DD0406 /* XCRemoteSwiftPackageReference "swiftui-segues" */;
-			productName = SwiftUISegues;
-		};
-		2C4786A029E09BBD00BFBADF /* WrappingHStack */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2C47869F29E09BBD00BFBADF /* XCRemoteSwiftPackageReference "WrappingHStack" */;
-			productName = WrappingHStack;
+			package = 2C3F85FC29ED28B600B47AF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 		2CED766D29D5A5850093E035 /* KeyboardToolbars */ = {
 			isa = XCSwiftPackageProductDependency;
