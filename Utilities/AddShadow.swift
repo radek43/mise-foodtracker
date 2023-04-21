@@ -31,7 +31,7 @@ struct AddShadow: ViewModifier {
 struct AddShadow_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = AuthViewModel()
-        viewModel.currentUser = User(fullname: "George Popescu", name: "popescu.george", email: "george.popescu@yahoo.com", is_staff: false)
+        viewModel.currentUser = userPreviewData
         return Group {
             TabBar()
             TabBar()
