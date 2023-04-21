@@ -20,6 +20,9 @@ extension Color {
     static let mono = Color("BlackAndWhite")
     static let navigation = Color("NavigationBackground")
     static let progress = Color("ProgressViewColor")
+    static let success = Color("SuccessColor")
+    static let information = Color("InfoColor")
+    static let alert = Color("AlertColor")
 }
 
 // Override NavigationBar Color
@@ -27,6 +30,7 @@ extension UINavigationController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         let standard = UINavigationBarAppearance()
+        UINavigationBar.appearance().barTintColor = UIColor(Color.navigation)
         standard.configureWithOpaqueBackground()
         standard.backgroundColor = UIColor(Color.navigation)
         navigationBar.standardAppearance = standard
@@ -84,4 +88,3 @@ extension UIDevice {
         UIDevice.current.userInterfaceIdiom == .phone
     }
 }
-
