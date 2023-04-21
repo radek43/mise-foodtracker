@@ -58,7 +58,6 @@ struct DishView: View {
                             }
                         }
                         .card()
-                        .padding(.horizontal)
                         
                         // FOOD HISTORY
                         VStack {
@@ -95,12 +94,11 @@ struct DishView: View {
                             }
                         }
                         .card()
-                        .padding(.horizontal)
                         Spacer()
                     } //: END VSTACK
                 } //: END SCROLL VIEW
             } //: END ZSTACK
-            .navigationBarTitle("Adauga un fel de mancare", displayMode: .inline)
+            .navigationBarTitle("Adaugă un fel de mancare", displayMode: .inline)
         } //: END NAVIGATION VIEW
     }
 }
