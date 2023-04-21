@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+
 
 struct RecipesView: View {
     // MARK: - PROPERTIES
@@ -52,9 +54,10 @@ struct RecipesView: View {
                                     NavigationLink {
                                         RecipeDetailView(recipeDetailViewModel: RecipeDetailViewModel(withrecipeId: recipe.id))
                                     } label: {
-                                        RecipeCard(title: recipe.title, image: recipe.image ?? "", calories: recipe.calories)
+                                        RecipeCard(title: recipe.title, imageString: recipe.image ?? "", calories: recipe.calories)
                                             .frame(maxWidth: 580)
                                             .foregroundColor(.primary)
+                                            
                                     }
                                 }
                             }
