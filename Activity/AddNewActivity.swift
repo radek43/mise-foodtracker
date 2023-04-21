@@ -29,7 +29,7 @@ struct AddNewActivity: View {
                 // MET
                 Section(header: Text("MET:")) {
                     TextField("2.5", text: $met)
-                        .numbersOnly($met, includeDecimal: true)
+                        .numbersOnly($met, includeDecimal: true, decimalPlaces: 2)
                 }
             } //: END FORM
             .frame(maxWidth: 580)
