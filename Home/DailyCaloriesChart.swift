@@ -12,7 +12,7 @@ struct DailyCaloriesChart: View {
     // MARK: - PROPERTIES
     var demoData: [Double] = [19, 13, 12]
     let mixedColorStyle = ChartStyle(backgroundColor: Color.card, foregroundColor: [
-        ColorGradient(Color.accent, Color.accent), ColorGradient(Color("Pallette1"), Color("Pallette1")), ColorGradient(Color("Pallette2"), Color("Pallette2"))])
+        ColorGradient(Color.green, Color.green), ColorGradient(Color.orange, Color.orange), ColorGradient(Color.blue, Color.blue)])
     
     // MARK: - BODY
     var body: some View {
@@ -31,7 +31,7 @@ struct DailyCaloriesChart: View {
                             Circle()
                                 .fill(
                                     LinearGradient(
-                                        gradient: Gradient(colors: [Color("Pallette1"), Color("Pallette1")]),
+                                        gradient: Gradient(colors: [Color.orange, Color.orange]),
                                         startPoint: .leading,
                                         endPoint: .trailing))
                                 .frame(width: 15, height: 15)
@@ -41,7 +41,7 @@ struct DailyCaloriesChart: View {
                             Circle()
                                 .fill(
                                     LinearGradient(
-                                        gradient: Gradient(colors: [Color("Pallette2"), Color("Pallette2")]),
+                                        gradient: Gradient(colors: [Color.blue, Color.blue]),
                                         startPoint: .leading,
                                         endPoint: .trailing))
                                 .frame(width: 15, height: 15)
@@ -51,7 +51,7 @@ struct DailyCaloriesChart: View {
                             Circle()
                                 .fill(
                                     LinearGradient(
-                                        gradient: Gradient(colors: [Color.accent, Color.accent]),
+                                        gradient: Gradient(colors: [Color.green, Color.green]),
                                         startPoint: .leading,
                                         endPoint: .trailing))
                                 .frame(width: 15, height: 15)
