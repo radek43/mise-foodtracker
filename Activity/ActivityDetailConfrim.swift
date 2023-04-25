@@ -7,16 +7,18 @@
 
 import SwiftUI
 
+
 struct ActivityDetailConfrim: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     @ObservedObject var activityDetailViewModel: ActivityDetailViewModel
     
     @State private var activityTime = ""
     @State private var userWeight = ""
     @State private var showDeleteConfirmation = false
-    
-    @Environment(\.presentationMode) var presentationMode
     
     // MARK: - BODY
     var body: some View {
@@ -136,7 +138,7 @@ struct ActivityDetailConfrim: View {
                                 } label: {
                                     HStack {
                                         Text("Editează")
-                                        Image(systemName: "square.and.pencil")
+                                        Image(systemName: "pencil.circle")
                                     }
                                 }
                                 Button {
@@ -144,7 +146,9 @@ struct ActivityDetailConfrim: View {
                                 } label: {
                                     HStack {
                                         Text("Șterge")
-                                        Image(systemName: "trash")
+                                            .foregroundColor(Color.red)
+                                        Image(systemName: "trash.circle")
+                                            .foregroundColor(Color.red)
                                     }
                                 }
                                 .alert(isPresented:$showDeleteConfirmation) {
