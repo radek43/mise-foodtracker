@@ -2,7 +2,7 @@
 //  RecipeDetailView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 4/16/22.
+//  Created by Radu Bila on 16.04.2022.
 //
 
 import SwiftUI
@@ -25,7 +25,7 @@ struct RecipeDetailView: View {
                 if let recipe = recipeDetailViewModel.recipe {
                     ScrollView(showsIndicators: false) {
                         VStack {
-                            // RECIPE IMAGE
+                            // Recipe image
                             ZStack {
                                 Rectangle()
                                     .fill(Color(.gray))
@@ -48,7 +48,7 @@ struct RecipeDetailView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                         .padding()
                         
-                        // RECIPE DETAILS
+                        // Recipe details
                         VStack(spacing: 30) {
                             Text(recipe.title)
                                 .font(.largeTitle)
@@ -111,15 +111,8 @@ struct RecipeDetailView: View {
                             .padding(.horizontal)
                             
                             
-                            Text("Adaugă la jurnal")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .frame(width: 340, height: 50)
-                                .background(Color.accent)
-                                .clipShape(Capsule())
-                                .padding()
-                                .padding(.bottom, 30)
-                        } //: END DETAILS VSTACK
+                            CapsuleButton(text: "Adaugă la jurnal")
+                        }
                         .navigationBarItems(trailing: authViewModel.currentUser?.is_staff == true ?
                             HStack(spacing: 15) {
                                 NavigationLink {
@@ -156,10 +149,10 @@ struct RecipeDetailView: View {
                             }
                             : nil
                         )
-                    } //: END MAIN VSTACK
+                    }
                     .frame(maxWidth: 580)
-                } //: END SCROLL VIEW
-            } //: END ZSTACK
+                }
+            }
             .onAppear {
                 Task(priority: .medium) {
                     try await self.recipeDetailViewModel.fetchRecipe()
