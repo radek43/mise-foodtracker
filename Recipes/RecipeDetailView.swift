@@ -127,7 +127,7 @@ struct RecipeDetailView: View {
                                 } label: {
                                     HStack {
                                         Text("Editează")
-                                        Image(systemName: "square.and.pencil")
+                                        Image(systemName: "pencil.circle")
                                     }
                                 }
                                 Button {
@@ -135,7 +135,9 @@ struct RecipeDetailView: View {
                                 } label: {
                                     HStack {
                                         Text("Șterge")
-                                        Image(systemName: "trash")
+                                            .foregroundColor(Color.red)
+                                        Image(systemName: "trash.circle")
+                                            .foregroundColor(Color.red)
                                     }
                                 }
                                 .alert(isPresented:$showDeleteConfirmation) {
