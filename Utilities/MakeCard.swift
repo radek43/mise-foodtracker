@@ -2,7 +2,7 @@
 //  MakeCard.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 5/8/22.
+//  Created by Radu Bila on 08.05.2022.
 //
 
 import SwiftUI
@@ -15,17 +15,11 @@ struct MakeCard: ViewModifier {
             .padding()
             .background(Color.card)
             .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-            .padding(.horizontal)
             .frame(maxWidth: 580)
+            .padding(.horizontal)
     }
 }
 
-// MARK: - EXTENSIONS
-extension View {
-    func card() -> some View {
-        self.modifier(MakeCard())
-    }
-}
 
 // MARK: - PREVIEWS
 struct MakeCard_Previews: PreviewProvider {
@@ -38,5 +32,13 @@ struct MakeCard_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)
+    }
+}
+
+
+// MARK: - EXTENSIONS
+extension View {
+    func card() -> some View {
+        self.modifier(MakeCard())
     }
 }
