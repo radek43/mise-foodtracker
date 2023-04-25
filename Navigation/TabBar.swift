@@ -14,14 +14,13 @@ struct TabBar: View {
     @State private var tabSelection = 0
     
     init() {
-        UITabBar.appearance().barTintColor = UIColor(Color.mono)
         UITabBar.appearance().backgroundColor = UIColor(Color.mono)
     }
     
     // MARK: - BODY
     var body: some View {
         TabView(selection: $tabSelection) {
-            HomeView()
+            HomeView(tabSelection: $tabSelection)
                 .tabItem {
                     if tabSelection == 0 { Image("house.fill") }
                     else { Image("house") }
