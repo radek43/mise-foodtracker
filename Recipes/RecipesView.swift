@@ -2,7 +2,7 @@
 //  RecipesView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 4/10/22.
+//  Created by Radu Bila on 10.04.2022.
 //
 
 import SwiftUI
@@ -32,7 +32,7 @@ struct RecipesView: View {
                             }
                         }
                         VStack {
-                            // SEARCH BAR
+                            // Search bar
                             HStack(alignment: .center, spacing: 5.0) {
                                 SearchBar(placeholderText: "Gaseste-ți inspirația",text: .constant(""))
                                 Button {
@@ -48,7 +48,7 @@ struct RecipesView: View {
                             .padding(.top)
                             .padding(.bottom, 5.0)
                             
-                            // RECIPE GRID
+                            // Recipe grid
                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 15)], spacing: 15) {
                                 ForEach(recipeListViewModel.recipes) { recipe in
                                     NavigationLink {
@@ -75,7 +75,7 @@ struct RecipesView: View {
                         }
                         .frame(maxWidth: 580)
                         .padding(.horizontal)
-                    } //: END SCROLL VIEW
+                    }
                     .coordinateSpace(name: "RefreshControl")
                     .navigationBarItems( trailing: user.is_staff == true ?
                             NavigationLink {
@@ -92,7 +92,7 @@ struct RecipesView: View {
                         try await self.recipeListViewModel.fetchRecipes()
                     }
                 }
-            } //: END ZSTACK
+            }
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }
