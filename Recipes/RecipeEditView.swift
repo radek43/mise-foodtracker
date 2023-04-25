@@ -55,11 +55,11 @@ struct RecipeEditView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             Form {
-                // RECIPE TITLE
+                // Title
                 Section(header: Text("Titlu rețetă:")) {
                     TextField("Supă de legume", text: $title)
                 }
-                // CATEGORY
+                // Category
                 Section(header: Text("Categorie:")) {
                     Picker("Alege o categorie:", selection: $selectedCategory) {
                         ForEach(category, id: \.self) {
@@ -67,13 +67,12 @@ struct RecipeEditView: View {
                         }
                     }
                 }
-                // TIME MINUTES
+                // Recipe duration
                 Section(header: Text("Durată preparare:")) {
                     TextField("Durata in minute", text: $time_minutes)
                         .numbersOnly($time_minutes)
-
                 }
-                // RECIPE VALUES
+                // Recipe meta
                 Section(header: Text("Valori nutritive: ")) {
                     HStack {
                         Text("Calorii:")
@@ -106,22 +105,22 @@ struct RecipeEditView: View {
                             .numbersOnly($carbs, includeDecimal: true, decimalPlaces: 2)
                     }
                 }
-                // RECIPE INGREDIENTS
+                // Ingredients
                 Section(header: Text("Ingrediente:")) {
                     TextEditor(text: $ingredients)
                         .frame(height: 150, alignment: .leading)
                 }
-                // RECIPE DIRECTIONS
+                // Directions
                 Section(header: Text("Mod preparare:")) {
                     TextEditor(text: $description)
                         .frame(height: 150, alignment: .leading)
                 }
-                // RECIPE IMAGE
+                // Image picker
                 Section(header: Text("Poză preparat:")) {
                     Button {
                         showImagePicker.toggle()
                     } label: {
-                        if let profileImage = recipeImage {  // an image was picked
+                        if let profileImage = recipeImage {  // An image was picked
                             profileImage
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -156,7 +155,7 @@ struct RecipeEditView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             })
-        } //: END ZSTACK
+        }
     }
 }
 
