@@ -2,11 +2,11 @@
 //  MeasurementsSettings.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 12/19/22.
+//  Created by Radu Bila on 19.12.2022.
 //
 
 import SwiftUI
-import Combine
+import KeyboardToolbars
 
 
 struct MeasurementsSettings: View {
@@ -31,17 +31,15 @@ struct MeasurementsSettings: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             Form {
-                // ACTIVITY TITLE
                 Section(header: Text("Greutate(Kg):")) {
                     TextField("", text: $userWeight)
                         .numbersOnly($userWeight, includeDecimal: true, decimalPlaces: 2)
                 }
-                // MET
                 Section(header: Text("Înălțime(cm):")) {
                     TextField("", text: $userHeight)
                         .numbersOnly($userHeight, includeDecimal: true, decimalPlaces: 2)
                 }
-            } //: END FORM
+            }
             .frame(maxWidth: 580)
             .navigationTitle("Editare măsurători")
             .navigationBarTitleDisplayMode(.inline)
@@ -64,7 +62,7 @@ struct MeasurementsSettings: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             })
-        } //: END ZSTACK
+        }
     }
 }
 
