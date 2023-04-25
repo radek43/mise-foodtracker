@@ -2,7 +2,7 @@
 //  miseFoodTrackerApp.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 09.04.22.
+//  Created by Radu Bila on 09.04.2022.
 //
 
 import SwiftUI
