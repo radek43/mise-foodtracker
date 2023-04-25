@@ -81,7 +81,7 @@ struct RecipesView: View {
                             NavigationLink {
                                 AddNewRecipe(recipeViewModel: recipeListViewModel)
                             } label: {
-                                Image(systemName: "note.text.badge.plus")
+                                Image(systemName: "plus.circle")
                             }
                         : nil
                     )
