@@ -2,7 +2,7 @@
 //  ImagePicker.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 8/28/22.
+//  Created by Radu Bila on 28.08.202.
 //
 
 import SwiftUI
@@ -12,6 +12,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     // MARK: - PROPERTIES
     @Binding var selectedImage: UIImage?
     @Environment(\.presentationMode) var presentationMode
+    
     
     // MARK: - FUNCTIONS
     func makeCoordinator() -> Coordinator {
