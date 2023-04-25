@@ -2,7 +2,7 @@
 //  RecipeCard.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 4/16/22.
+//  Created by Radu Bila on 16.04.2022.
 //
 
 import SwiftUI
@@ -10,9 +10,15 @@ import SDWebImageSwiftUI
 
 
 struct RecipeCard: View {
+    // MARK: - PROPERTIES
+    var title: String
+    var imageString: String
+    var calories: String
+    
     // MARK: - STRUCTS
     struct BodyView: View {
         @State var url: String
+        
         var body: some View {
             VStack {
                 WebImage(url: URL(string: url))
@@ -29,10 +35,6 @@ struct RecipeCard: View {
         }
     }
     
-    // MARK: - PROPERTIES
-    var title: String
-    var imageString: String
-    var calories: String
     
     // MARK: - BODY
     var body: some View {
@@ -62,7 +64,7 @@ struct RecipeCard: View {
             Text("\(calories) kCal" as String)
                 .font(.caption)
                 .foregroundColor(Color.secondary)
-        } //: END MAIN VSTACK
+        }
     }
 }
 
