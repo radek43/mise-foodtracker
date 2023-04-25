@@ -2,7 +2,7 @@
 //  AddShadow.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 12/21/22.
+//  Created by Radu Bila on 21.12.2022.
 //
 
 import SwiftUI
