@@ -2,7 +2,7 @@
 //  AddNewPost.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 10/8/22.
+//  Created by Radu Bila on 08.10.2022.
 //
 
 import SwiftUI
@@ -16,8 +16,8 @@ struct AddNewPost: View {
     @State private var titluPostare = ""
     @State private var descriere = ""
     @Environment(\.presentationMode) var presentationMode
-    //    @EnvironmentObject var authViewModel: AuthViewModel
-    //    @ObservedObject var viewModel = ForumViewModel()
+//  @EnvironmentObject var authViewModel: AuthViewModel
+//  @ObservedObject var viewModel = ForumViewModel()
     
     // MARK: - BODY
     var body: some View {
@@ -35,7 +35,7 @@ struct AddNewPost: View {
                         showImagePicker.toggle()
                         print("buton de ales imagine apasat")
                     } label: {
-                        if let profileImage = profileImage {    // daca s-a ales o imagine din galeria telefonului creaza constanta si executa ..
+                        if let profileImage = profileImage {
                             profileImage
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -51,20 +51,20 @@ struct AddNewPost: View {
                 }
             }
         }
-        //        .onReceive(viewModel.$didUploadPost, perform: { success in
-        //            if success {
-        //                presentationMode.wrappedValue.dismiss()
-        //            }
-        //        })
+//      .onReceive(viewModel.$didUploadPost, perform: { success in
+//          if success {
+//              presentationMode.wrappedValue.dismiss()
+//          }
+//      })
         .navigationBarTitle("Postare Noua", displayMode: .inline)
         .toolbar {
             Button("Posteaza") {
                 print("Buton postare apasat")
             }
-            //                Button("Trimite") {
-            //                    viewModel.uploadPost(withTitle: titluPostare, withContent: descriere)
-            //                    viewModel.uploadProfileImage(selectedImage)
-            //                }
+//          Button("Trimite") {
+//              viewModel.uploadPost(withTitle: titluPostare, withContent: descriere)
+//              viewModel.uploadProfileImage(selectedImage)
+//          }
         }
     }
     
