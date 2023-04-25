@@ -76,7 +76,7 @@ struct ActivityView: View {
                         NavigationLink {
                             AddNewActivity()
                         } label: {
-                            Image(systemName: "note.text.badge.plus")
+                            Image(systemName: "plus.circle")
                         }
                         .sheet(isPresented: $showInfoSheet) {
                             ActivityInfoView()
