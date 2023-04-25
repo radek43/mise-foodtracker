@@ -2,7 +2,7 @@
 //  RoundedShape.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 8/9/22.
+//  Created by Radu Bila on 09.08.2022.
 //
 
 import SwiftUI
