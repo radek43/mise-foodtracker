@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		171C1724280AE513004F17DE /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171C1723280AE513004F17DE /* RecipeDetailView.swift */; };
 		173F05532810AC5D0058D1F2 /* ActivityProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173F05522810AC5D0058D1F2 /* ActivityProgressView.swift */; };
-		1747ABFB28C39E8300138938 /* Excercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747ABFA28C39E8300138938 /* Excercise.swift */; };
 		17482A7B28047F57006F2186 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17482A7A28047F57006F2186 /* TabBar.swift */; };
 		17482A7F2804832A006F2186 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17482A7E2804832A006F2186 /* HomeView.swift */; };
 		176372DD28C117E4006337A7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176372DC28C117E4006337A7 /* User.swift */; };
@@ -17,7 +16,6 @@
 		178CCC7728BBF8140074D52E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CCC7628BBF8140074D52E /* ImagePicker.swift */; };
 		178CCC7928BC035C0074D52E /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CCC7828BC035C0074D52E /* ImageUploader.swift */; };
 		178CEBC52809B82700D6DD25 /* AddDishButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178CEBC42809B82700D6DD25 /* AddDishButton.swift */; };
-		1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1791A78A281AE55000FB69E2 /* AddFoodView.swift */; };
 		179DDB2B2803441D00049C65 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DDB2A2803441D00049C65 /* RecipesView.swift */; };
 		179DDB2D2803443200049C65 /* ForumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179DDB2C2803443200049C65 /* ForumView.swift */; };
 		17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A08FB228C3410500CD3D92 /* Recipe.swift */; };
@@ -37,7 +35,6 @@
 		17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8628A2C94F00285894 /* RoundedShape.swift */; };
 		2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0C2901AD4A006ECB21 /* Post.swift */; };
 		2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8629CC843E00371FE9 /* Extensions.swift */; };
-		2C082D8929CC925E00371FE9 /* ChartTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8829CC925E00371FE9 /* ChartTest.swift */; };
 		2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D03F129D44A92005C8C4B /* PreviewData.swift */; };
 		2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */; };
 		2C3ED20429EAEE14007CE412 /* CreateActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED20329EAEE13007CE412 /* CreateActivityViewModel.swift */; };
@@ -46,9 +43,8 @@
 		2C47869E29E084A500BFBADF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C47869D29E084A500BFBADF /* RefreshControl.swift */; };
 		2C4AD2D429EFE3F600311DAE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD2D329EFE3F600311DAE /* SettingsViewModel.swift */; };
 		2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD2D729EFFE1C00311DAE /* ObjectiveView.swift */; };
-		2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* RingView.swift */; };
+		2C56DEE829546FAF006A4A5A /* RingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* RingButton.swift */; };
 		2C63538128F0A7E40061A701 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63538028F0A7E40061A701 /* PostDetail.swift */; };
-		2C64C03E294B7C9F00E9305F /* DropdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C64C03D294B7C9F00E9305F /* DropdownList.swift */; };
 		2C64C040294B931600E9305F /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C64C03F294B931600E9305F /* ProfileSettingsView.swift */; };
 		2C6A161728F17F5200D9DDE4 /* ReplyRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161628F17F5200D9DDE4 /* ReplyRow.swift */; };
 		2C6A161928F1C79500D9DDE4 /* AddNewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A161828F1C79400D9DDE4 /* AddNewPost.swift */; };
@@ -61,7 +57,6 @@
 		2C7918F7296DBFB1009F2194 /* DishDetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7918F6296DBFB1009F2194 /* DishDetailButton.swift */; };
 		2C79C8D529BF71DF00243940 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79C8D429BF71DF00243940 /* KeychainService.swift */; };
 		2C8D797D29DC238D00B9AB47 /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D797C29DC238D00B9AB47 /* RecipeListViewModel.swift */; };
-		2C8F034E296F0B67003AA27C /* DishDetailChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8F034D296F0B67003AA27C /* DishDetailChart.swift */; };
 		2CA0397829E859D30079A614 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0397729E859D30079A614 /* ActivityViewModel.swift */; };
 		2CA0397A29E87EF70079A614 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0397929E87EF70079A614 /* Activity.swift */; };
 		2CA0398029E891830079A614 /* ActivityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0397F29E891830079A614 /* ActivityInfoView.swift */; };
@@ -79,18 +74,16 @@
 		2CE9260629E96182005E6803 /* RecipeEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260529E96182005E6803 /* RecipeEditViewModel.swift */; };
 		2CE9260829E9765C005E6803 /* ActivityDetailConfrim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9260729E9765C005E6803 /* ActivityDetailConfrim.swift */; };
 		2CE9C54C29E1C96000DDBA20 /* FoodLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE9C54B29E1C96000DDBA20 /* FoodLog.swift */; };
-		2CEADAB42953204D002AA0A0 /* PostRowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB32953204D002AA0A0 /* PostRowTest.swift */; };
 		2CEADAB8295330D2002AA0A0 /* AddShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEADAB7295330D2002AA0A0 /* AddShadow.swift */; };
 		2CED766E29D5A5850093E035 /* KeyboardToolbars in Frameworks */ = {isa = PBXBuildFile; productRef = 2CED766D29D5A5850093E035 /* KeyboardToolbars */; };
 		2CED767029D5A9460093E035 /* NumbersOnlyViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED766F29D5A9460093E035 /* NumbersOnlyViewModifier.swift */; };
 		2CF44A6928ECBB26001689A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A6828ECBB26001689A8 /* SearchBar.swift */; };
-		2CFC2B3229705BF800451922 /* RegistrationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC2B3129705BF800451922 /* RegistrationButton.swift */; };
+		2CFC2B3229705BF800451922 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC2B3129705BF800451922 /* CapsuleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		171C1723280AE513004F17DE /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		173F05522810AC5D0058D1F2 /* ActivityProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressView.swift; sourceTree = "<group>"; };
-		1747ABFA28C39E8300138938 /* Excercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Excercise.swift; sourceTree = "<group>"; };
 		17482A7A28047F57006F2186 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		17482A7E2804832A006F2186 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		176372DC28C117E4006337A7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -98,7 +91,6 @@
 		178CCC7628BBF8140074D52E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		178CCC7828BC035C0074D52E /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		178CEBC42809B82700D6DD25 /* AddDishButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDishButton.swift; sourceTree = "<group>"; };
-		1791A78A281AE55000FB69E2 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		179DDB2A2803441D00049C65 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
 		179DDB2C2803443200049C65 /* ForumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumView.swift; sourceTree = "<group>"; };
 		17A08FB228C3410500CD3D92 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -118,7 +110,6 @@
 		17F01E8628A2C94F00285894 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
 		2C049F0C2901AD4A006ECB21 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2C082D8629CC843E00371FE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		2C082D8829CC925E00371FE9 /* ChartTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTest.swift; sourceTree = "<group>"; };
 		2C0D03F129D44A92005C8C4B /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 		2C3ED20329EAEE13007CE412 /* CreateActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewModel.swift; sourceTree = "<group>"; };
@@ -126,9 +117,8 @@
 		2C47869D29E084A500BFBADF /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		2C4AD2D329EFE3F600311DAE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2C4AD2D729EFFE1C00311DAE /* ObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveView.swift; sourceTree = "<group>"; };
-		2C56DEE729546FAF006A4A5A /* RingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		2C56DEE729546FAF006A4A5A /* RingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RingButton.swift; sourceTree = "<group>"; };
 		2C63538028F0A7E40061A701 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
-		2C64C03D294B7C9F00E9305F /* DropdownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownList.swift; sourceTree = "<group>"; };
 		2C64C03F294B931600E9305F /* ProfileSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
 		2C6A161628F17F5200D9DDE4 /* ReplyRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyRow.swift; sourceTree = "<group>"; };
 		2C6A161828F1C79400D9DDE4 /* AddNewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPost.swift; sourceTree = "<group>"; };
@@ -141,7 +131,6 @@
 		2C7918F6296DBFB1009F2194 /* DishDetailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailButton.swift; sourceTree = "<group>"; };
 		2C79C8D429BF71DF00243940 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		2C8D797C29DC238D00B9AB47 /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
-		2C8F034D296F0B67003AA27C /* DishDetailChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailChart.swift; sourceTree = "<group>"; };
 		2CA0397729E859D30079A614 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		2CA0397929E87EF70079A614 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		2CA0397F29E891830079A614 /* ActivityInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInfoView.swift; sourceTree = "<group>"; };
@@ -159,11 +148,10 @@
 		2CE9260529E96182005E6803 /* RecipeEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeEditViewModel.swift; sourceTree = "<group>"; };
 		2CE9260729E9765C005E6803 /* ActivityDetailConfrim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailConfrim.swift; sourceTree = "<group>"; };
 		2CE9C54B29E1C96000DDBA20 /* FoodLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLog.swift; sourceTree = "<group>"; };
-		2CEADAB32953204D002AA0A0 /* PostRowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowTest.swift; sourceTree = "<group>"; };
 		2CEADAB7295330D2002AA0A0 /* AddShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShadow.swift; sourceTree = "<group>"; };
 		2CED766F29D5A9460093E035 /* NumbersOnlyViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOnlyViewModifier.swift; sourceTree = "<group>"; };
 		2CF44A6828ECBB26001689A8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		2CFC2B3129705BF800451922 /* RegistrationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationButton.swift; sourceTree = "<group>"; };
+		2CFC2B3129705BF800451922 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +217,10 @@
 		178CCC7528BBF7F00074D52E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2C56DEE729546FAF006A4A5A /* RingView.swift */,
+				2C56DEE729546FAF006A4A5A /* RingButton.swift */,
+				2CFC2B3129705BF800451922 /* CapsuleButton.swift */,
+				17F01E8228A2C8B900285894 /* CustomInputFields.swift */,
+				17F01E8428A2C8FD00285894 /* AuthenticationHeaderView.swift */,
 				17ABAE5D2827D75A0059E52A /* MakeCard.swift */,
 				2CEADAB7295330D2002AA0A0 /* AddShadow.swift */,
 				178CCC7628BBF8140074D52E /* ImagePicker.swift */,
@@ -248,7 +239,6 @@
 			children = (
 				17482A7E2804832A006F2186 /* HomeView.swift */,
 				2C7918F4296DBC35009F2194 /* DishDetailConfirm.swift */,
-				2C8F034D296F0B67003AA27C /* DishDetailChart.swift */,
 				2C7918F2296DB519009F2194 /* DishView.swift */,
 				17D9D155281C3EF700DD0406 /* DailyCaloriesChart.swift */,
 				178CEBC42809B82700D6DD25 /* AddDishButton.swift */,
@@ -262,7 +252,6 @@
 			children = (
 				176372DC28C117E4006337A7 /* User.swift */,
 				17A08FB228C3410500CD3D92 /* Recipe.swift */,
-				1747ABFA28C39E8300138938 /* Excercise.swift */,
 				2C049F0C2901AD4A006ECB21 /* Post.swift */,
 				2CE9C54B29E1C96000DDBA20 /* FoodLog.swift */,
 				2CA0397929E87EF70079A614 /* Activity.swift */,
@@ -286,7 +275,6 @@
 				178CEBC32809B63B00D6DD25 /* Model */,
 				2C77A4CA2948A34A00233AF4 /* ViewModel */,
 				17425A3B28A2BB380021F61A /* Service */,
-				17B1A4DD2826A24D00F1CDEC /* Concept */,
 				2C082D8529CC840C00371FE9 /* Extensions */,
 				17A92D042801DCEC000CF34F /* Preview Content */,
 				2CA55FE02948AACE00C6A8B1 /* Resources */,
@@ -311,24 +299,10 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		17B1A4DD2826A24D00F1CDEC /* Concept */ = {
-			isa = PBXGroup;
-			children = (
-				1791A78A281AE55000FB69E2 /* AddFoodView.swift */,
-				2C64C03D294B7C9F00E9305F /* DropdownList.swift */,
-				2CEADAB32953204D002AA0A0 /* PostRowTest.swift */,
-				2C082D8829CC925E00371FE9 /* ChartTest.swift */,
-			);
-			path = Concept;
-			sourceTree = "<group>";
-		};
 		17F01E7928A2C79000285894 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				17F01E8228A2C8B900285894 /* CustomInputFields.swift */,
-				17F01E8428A2C8FD00285894 /* AuthenticationHeaderView.swift */,
 				17F01E7E28A2C81500285894 /* LoginView.swift */,
-				2CFC2B3129705BF800451922 /* RegistrationButton.swift */,
 				17F01E8028A2C84800285894 /* RegistrationView.swift */,
 			);
 			path = Authentication;
@@ -517,16 +491,14 @@
 				17D9D156281C3EF700DD0406 /* DailyCaloriesChart.swift in Sources */,
 				178CCC7928BC035C0074D52E /* ImageUploader.swift in Sources */,
 				2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */,
-				2C56DEE829546FAF006A4A5A /* RingView.swift in Sources */,
+				2C56DEE829546FAF006A4A5A /* RingButton.swift in Sources */,
 				17AD15E42826EF460023C0EF /* ActivityProgressRow.swift in Sources */,
 				2CABC86F29D96B3D00D79F18 /* Greetings.swift in Sources */,
-				2C64C03E294B7C9F00E9305F /* DropdownList.swift in Sources */,
 				2C7918F7296DBFB1009F2194 /* DishDetailButton.swift in Sources */,
 				17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */,
 				17A92D012801DCEA000CF34F /* ContentView.swift in Sources */,
 				2CEADAB8295330D2002AA0A0 /* AddShadow.swift in Sources */,
 				2CE9260829E9765C005E6803 /* ActivityDetailConfrim.swift in Sources */,
-				1747ABFB28C39E8300138938 /* Excercise.swift in Sources */,
 				17482A7F2804832A006F2186 /* HomeView.swift in Sources */,
 				17F01E7F28A2C81500285894 /* LoginView.swift in Sources */,
 				2C74B75E2950EE580063A4F4 /* MeasurementsSettings.swift in Sources */,
@@ -534,7 +506,6 @@
 				178CEBC52809B82700D6DD25 /* AddDishButton.swift in Sources */,
 				17F01E8128A2C84800285894 /* RegistrationView.swift in Sources */,
 				2C3ED20629EB2C51007CE412 /* AddNewActivity.swift in Sources */,
-				2C8F034E296F0B67003AA27C /* DishDetailChart.swift in Sources */,
 				2C3ED20429EAEE14007CE412 /* CreateActivityViewModel.swift in Sources */,
 				2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */,
 				2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */,
@@ -544,7 +515,6 @@
 				171C1724280AE513004F17DE /* RecipeDetailView.swift in Sources */,
 				178CCC7728BBF8140074D52E /* ImagePicker.swift in Sources */,
 				17A92CFF2801DCEA000CF34F /* miseFoodTrackerApp.swift in Sources */,
-				1791A78B281AE55000FB69E2 /* AddFoodView.swift in Sources */,
 				17F01E8328A2C8B900285894 /* CustomInputFields.swift in Sources */,
 				2CED767029D5A9460093E035 /* NumbersOnlyViewModifier.swift in Sources */,
 				17B1A4DB2826A1E100F1CDEC /* ActivityView.swift in Sources */,
@@ -553,7 +523,6 @@
 				2C6A161928F1C79500D9DDE4 /* AddNewPost.swift in Sources */,
 				2CE43D2B29EC4C2900BD9E82 /* EditActivityView.swift in Sources */,
 				2C8D797D29DC238D00B9AB47 /* RecipeListViewModel.swift in Sources */,
-				2CEADAB42953204D002AA0A0 /* PostRowTest.swift in Sources */,
 				2CA0397A29E87EF70079A614 /* Activity.swift in Sources */,
 				173F05532810AC5D0058D1F2 /* ActivityProgressView.swift in Sources */,
 				178C8139280A992700EB29C1 /* RecipeCard.swift in Sources */,
@@ -562,7 +531,6 @@
 				2C63538128F0A7E40061A701 /* PostDetail.swift in Sources */,
 				179DDB2D2803443200049C65 /* ForumView.swift in Sources */,
 				17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */,
-				2C082D8929CC925E00371FE9 /* ChartTest.swift in Sources */,
 				2CE9C54C29E1C96000DDBA20 /* FoodLog.swift in Sources */,
 				2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */,
 				2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */,
@@ -571,7 +539,7 @@
 				2CA12FDC29E1779800CC6CC8 /* RecipeDetailViewModel.swift in Sources */,
 				2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */,
 				2C6A161728F17F5200D9DDE4 /* ReplyRow.swift in Sources */,
-				2CFC2B3229705BF800451922 /* RegistrationButton.swift in Sources */,
+				2CFC2B3229705BF800451922 /* CapsuleButton.swift in Sources */,
 				2C64C040294B931600E9305F /* ProfileSettingsView.swift in Sources */,
 				2C79C8D529BF71DF00243940 /* KeychainService.swift in Sources */,
 				2CE43D2929EC460000BD9E82 /* ActivityDetailViewModel.swift in Sources */,

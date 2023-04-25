@@ -42,13 +42,3 @@ struct LaunchScreen: View {
         hasTimeElapsed = true
     }
 }
-
-//struct LaunchScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            LaunchScreen()
-//            LaunchScreen()
-//                .preferredColorScheme(.dark)
-//        }
-//    }
-//}
