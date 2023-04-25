@@ -2,14 +2,12 @@
 //  ForumView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 4/10/22.
+//  Created by Radu Bila on 10.04.2022.
 //
 
 import SwiftUI
 
 struct ForumView: View {
-    // MARK: - PROPERTIES
-    
     // MARK: - BODY
     var body: some View {
         NavigationView {
@@ -90,7 +88,7 @@ struct ForumView_Previews: PreviewProvider {
             ForumView()
             ForumView()
                 .preferredColorScheme(.dark)
-
+            
         }
     }
 }
