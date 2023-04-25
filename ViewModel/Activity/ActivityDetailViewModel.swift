@@ -29,7 +29,7 @@ class ActivityDetailViewModel: ObservableObject {
             throw RecipeError.invalidURL
         }
         
-        // Get token from KeyChain
+        // Get token from Keychain
         var token = ""
         
         do {
@@ -95,7 +95,7 @@ class ActivityDetailViewModel: ObservableObject {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("Token \(token)", forHTTPHeaderField: "Authorization")
         
-        // Send a GET request to the URL and parse the response
+        // Send a DELETE request to the URL and parse the response
         do {
             let (_, response) = try await session.data(for: request)
             guard (response as? HTTPURLResponse)?.statusCode == 204 else {

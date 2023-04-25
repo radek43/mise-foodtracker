@@ -44,6 +44,7 @@ class ActivityViewModel: ObservableObject {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("Token \(token)", forHTTPHeaderField: "Authorization")
         
+        // Send a GET request to the URL, with the data we created earlier
         do {
             let (data, response) = try await session.data(for: request)
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {

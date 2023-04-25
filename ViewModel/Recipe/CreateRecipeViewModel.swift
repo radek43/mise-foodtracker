@@ -22,7 +22,7 @@ class CreateRecipeViewModel: ObservableObject {
             throw RecipeError.invalidURL
         }
         
-        // Add the payload to the http request data
+        // Add the payload to the HTTP request data
         let params = [
             "title": title,
             "calories": calories,
@@ -38,7 +38,7 @@ class CreateRecipeViewModel: ObservableObject {
         
         var token = ""
         
-        // Get token from KeyChain
+        // Get token from Keychain
         do {
             guard let keychainResult = (try self.keychainService.get(service: "mise-foodtracker", account: user.email)) else {
                 print("KeychainService: Failed to read token.")

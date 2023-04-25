@@ -17,7 +17,7 @@ class AuthViewModel: ObservableObject {
     private var keychainService = KeychainService()
     
     init() {
-        // CHECK IF USER IS ALREADY LOGGED IN
+        // Check if the user is already logged in
         self.taskGetUser()
     }
     
@@ -87,7 +87,7 @@ class AuthViewModel: ObservableObject {
             "password": password
         ] as [String: Any]
         
-        // REQUEST PROPERTIES
+        // Request properties
         var request = URLRequest(url: url)
         
         request.httpMethod = "POST"
@@ -126,7 +126,7 @@ class AuthViewModel: ObservableObject {
     func signOut() {
         guard let email = UserDefaults.standard.string(forKey: "userEmail") else { return }
         
-        // delete from token from keychain
+        // Delete token from keychain
         guard (try? self.keychainService.remove(service: "mise-foodtracker", account: email)) != nil else {
             print("KeychainService: Failed to remove keychain data")
             return
@@ -143,7 +143,7 @@ class AuthViewModel: ObservableObject {
             throw UserError.invalidURL
         }
         
-        // Add the payload to the http request data
+        // Add the payload to the HTTP request data
         let payload = [
             "email": email,
             "password": password
@@ -198,12 +198,12 @@ class AuthViewModel: ObservableObject {
             print("fetchUser:\(error)")
         }
         
-        // CHECK IF URL EXISTS
+        // Check if URL exists
         guard let url = URL(string: "http://127.0.0.1:8000/api/user/me/") else {
             throw UserError.invalidURL
         }
         
-        // REQUEST PROPERTIES
+        // Request properties
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"

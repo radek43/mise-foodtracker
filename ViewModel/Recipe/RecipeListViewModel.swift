@@ -15,10 +15,6 @@ class RecipeListViewModel: ObservableObject {
     
     private var keychainService = KeychainService()
     
-//    init() {
-//        loadData()
-//    }
-    
     // MARK: - METHODS
     @MainActor
     func fetchRecipes() async throws {

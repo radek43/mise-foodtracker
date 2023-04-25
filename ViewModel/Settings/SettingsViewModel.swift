@@ -33,7 +33,7 @@ class SettingsViewModel: ObservableObject {
         
         var token = ""
         
-        // Get token from KeyChain
+        // Get token from Keychain
         do {
             guard let keychainResult = (try self.keychainService.get(service: "mise-foodtracker", account: user.email)) else {
                 print("KeychainService: Failed to read token.")
@@ -44,7 +44,7 @@ class SettingsViewModel: ObservableObject {
             print("fetchUser:\(error)")
         }
         
-        // Set the URLRequest to POST and to the specified URL
+        // Set the URLRequest to PATCH and to the specified URL
         var request = URLRequest(url: url)
         
         request.httpMethod = "PATCH"
@@ -86,7 +86,7 @@ class SettingsViewModel: ObservableObject {
         
         var token = ""
         
-        // Get token from KeyChain
+        // Get token from Keychain
         do {
             guard let keychainResult = (try self.keychainService.get(service: "mise-foodtracker", account: user.email)) else {
                 print("KeychainService: Failed to read token.")
@@ -97,7 +97,7 @@ class SettingsViewModel: ObservableObject {
             print("fetchUser:\(error)")
         }
         
-        // Set the URLRequest to POST and to the specified URL
+        // Set the URLRequest to PATCH and to the specified URL
         var request = URLRequest(url: url)
         
         request.httpMethod = "PATCH"
@@ -144,7 +144,7 @@ class SettingsViewModel: ObservableObject {
         
         var token = ""
         
-        // Get token from KeyChain
+        // Get token from Keychain
         do {
             guard let keychainResult = (try self.keychainService.get(service: "mise-foodtracker", account: user.email)) else {
                 print("KeychainService: Failed to read token.")
@@ -155,7 +155,7 @@ class SettingsViewModel: ObservableObject {
             print("fetchUser:\(error)")
         }
         
-        // Set the URLRequest to POST and to the specified URL
+        // Set the URLRequest to PATCH and to the specified URL
         var request = URLRequest(url: url)
         
         request.httpMethod = "PATCH"
@@ -183,7 +183,7 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
-    // converts a date var to a string
+    // Converts a Date var to a String
     func formatDateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
