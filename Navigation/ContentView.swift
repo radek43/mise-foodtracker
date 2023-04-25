@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 4/9/22.
+//  Created by Radu Bila on 09.04.2022.
 //
 
 import SwiftUI
@@ -16,9 +16,9 @@ struct ContentView: View {
     
     // MARK: - BODY
     var body: some View {
-        if authViewModel.isLoggedIn == false {  //  NO USER LOGGED IN
+        if authViewModel.isLoggedIn == false {  //  User is not logged in
             LoginView()
-        } else {  //  USER LOGGED IN
+        } else {  //  User is logged in
             TabBar()
         }
     }
