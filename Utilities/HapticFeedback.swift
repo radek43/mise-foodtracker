@@ -2,7 +2,7 @@
 //  HapticFeedback.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 1/9/23.
+//  Created by Radu Bila on 09.01.2023.
 //
 
 import SwiftUI
