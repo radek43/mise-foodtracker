@@ -2,14 +2,12 @@
 //  ReplyRow.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 10/8/22.
+//  Created by Radu Bila on 08.10.2022.
 //
 
 import SwiftUI
 
 struct ReplyRow: View {
-    // MARK: - PROPERTIES
-    
     // MARK: - BODY
     var body: some View {
         VStack(alignment: .leading) {
