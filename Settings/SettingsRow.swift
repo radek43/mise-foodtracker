@@ -37,6 +37,7 @@ struct SettingsRow: View {
                 .foregroundColor(Color.primary)
             Spacer()
         }
+        .padding([.top, .bottom, .trailing], 3)
     }
 }
 
