@@ -2,7 +2,7 @@
 //  ProfileSettingsView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 12/15/22.
+//  Created by Radu Bila on 15.12.2022.
 //
 
 import SwiftUI
@@ -24,7 +24,6 @@ struct ProfileSettingsView: View {
     
     let genders = ["Bărbat", "Femeie"]
     let activityLevel = ["Sedentar (exercițiu puțin sau deloc)", "Usor activ (exercitii usoare/sport 1-3 zile/saptamana)", "Moderat activ (exercitare moderată/sport 3-5 zile/săptămână)", "Foarte activ (exerciții grele/sport 6-7 zile pe săptămână)", "Extra activ (exercițiu/sport foarte greu și o muncă fizică)"]
-    
     
     init(user: User) {
         _gender = State(initialValue: user.gender)
@@ -55,7 +54,7 @@ struct ProfileSettingsView: View {
                         .padding(.horizontal, -8)
                     }
                     Section(header: Text("Data nașterii")) {
-                            DatePicker("Data:", selection: $date, in: ...Date(), displayedComponents: .date)
+                        DatePicker("Data:", selection: $date, in: ...Date(), displayedComponents: .date)
                             .accentColor(.primary)
                     }
                     Section(header: Text("Nivel Activitate")) {
