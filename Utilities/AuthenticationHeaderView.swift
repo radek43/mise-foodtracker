@@ -2,7 +2,7 @@
 //  AuthenticationHeaderView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 8/9/22.
+//  Created by Radu Bila on 09.08.2022.
 //
 
 import SwiftUI
@@ -20,7 +20,6 @@ struct AuthenticationHeaderView: View {
             HStack {
                 Spacer()
             }
-            
             Spacer()
             
             Text(title1)
@@ -32,8 +31,9 @@ struct AuthenticationHeaderView: View {
                 .fontWeight(.semibold)
                 .padding(.bottom)
         }
-        .frame(height: 260)
-        .padding(.leading)
+        .frame(height: 275)
+        .padding(.leading, 20)
+        .padding(.bottom, 8)
         .background(
             ZStack{
                 Image("Blob1")
@@ -42,7 +42,7 @@ struct AuthenticationHeaderView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 600, height: 600)
                     .rotationEffect(Angle(degrees: show ? 360 + 90 : 90))
-                    .blendMode(.overlay)
+                    .blendMode(.color)
                     .animation(Animation.linear(duration: 60).repeatForever())
                     .onAppear {
                         self.show = true
@@ -53,7 +53,7 @@ struct AuthenticationHeaderView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 350, height: 350)
                     .rotationEffect(Angle(degrees: show ? -90 : 0), anchor: .topTrailing)
-                    .blendMode(.overlay)
+                    .blendMode(.normal)
                     .animation(Animation.linear(duration: 50).repeatForever())
                 Image("Blob2")
                     .resizable()
@@ -67,7 +67,7 @@ struct AuthenticationHeaderView: View {
         )
         .background(Color.accent)
         .foregroundColor(.white)
-        .clipShape(RoundedShape(corners: [.bottomRight], cornerRadius: 80))
+        .clipShape(RoundedShape(corners: [.bottomRight, .bottomLeft], cornerRadius: 50))
     }
 }
 
