@@ -2,7 +2,7 @@
 //  SearchBar.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 10/4/22.
+//  Created by Radu Bila on 04.10.2022.
 //
 
 import SwiftUI
@@ -33,10 +33,25 @@ struct SearchBar: View {
     }
 }
 
-// MARK: - PREVIEW
+// MARK: - PREVIEWS
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar(placeholderText: "Gaseste-ti inspiratia",text: .constant(""))
-            .previewLayout(.sizeThatFits)
+        Group {
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                SearchBar(placeholderText: "Gaseste-ti inspiratia",text: .constant(""))
+                    .padding()
+            }
+            
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                SearchBar(placeholderText: "Gaseste-ti inspiratia",text: .constant(""))
+                    .padding()
+                    .preferredColorScheme(.dark)
+            }
+        }
+        
     }
 }
