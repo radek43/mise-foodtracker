@@ -46,7 +46,6 @@ struct NumbersOnlyViewModifier: ViewModifier {
                         self.text = filtered
                     }
                 }
-
             }
     }
 }
