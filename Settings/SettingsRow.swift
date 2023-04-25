@@ -37,7 +37,7 @@ struct SettingsRow: View {
                 .foregroundColor(Color.primary)
             Spacer()
         }
-        .padding([.top, .bottom, .trailing], 3)
+        .padding([.top, .bottom, .trailing], 3 )
     }
 }
 
@@ -46,9 +46,19 @@ struct SettingsRow: View {
 struct SettingsRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SettingsRow(iconAsset: "figure.run", firstText: "Application", color: .secondary)
-            SettingsRow(iconAsset: "figure.run", firstText: "Application", color: .secondary)
-                .preferredColorScheme(.dark)
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                SettingsRow(iconAsset: "figure.run", firstText: "Application", color: .secondary)
+                    .padding()
+            }
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                SettingsRow(iconAsset: "figure.run", firstText: "Application", color: .secondary)
+                    .padding()
+                    .preferredColorScheme(.dark)
+            }
         }
     }
 }
