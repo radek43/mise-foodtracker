@@ -2,7 +2,7 @@
 //  DailyCaloriesChart.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 4/29/22.
+//  Created by Radu Bila on 29.04.2022.
 //
 
 import SwiftUI
@@ -18,14 +18,13 @@ struct DailyCaloriesChart: View {
     var body: some View {
         CardView(showShadow: false) {
             VStack {
-                // CHART HEADER
                 ChartLabel("Sumar", type: .subTitle)
                     .padding([.top, .leading, .trailing], 8)
-                // CHART
+
                 HStack(alignment: .center) {
                     PieChart()
                         .padding([.leading, .bottom])
-                    // CHART LEGEND
+                    // Chart legend
                     VStack {
                         HStack {
                             Circle()
@@ -59,9 +58,9 @@ struct DailyCaloriesChart: View {
                         }
                     }
                 }
-            } //: END VSTACK
+            }
             .background(Color.card)
-        } //: END CARDVIEW
+        }
         .data(demoData)
         .chartStyle(mixedColorStyle)
         .allowsHitTesting(false)
@@ -86,8 +85,8 @@ struct DailyCaloriesChart_Previews: PreviewProvider {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
                 DailyCaloriesChart()
+                    .preferredColorScheme(.dark)
             }
-                .preferredColorScheme(.dark)
         }
     }
 }
