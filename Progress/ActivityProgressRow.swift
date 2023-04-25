@@ -2,7 +2,7 @@
 //  ActivityProgressRow.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 5/7/22.
+//  Created by Radu Bila on 07.05.2022.
 //
 
 import SwiftUI
@@ -29,9 +29,17 @@ struct ActivityProgressRow: View {
 struct ActivityProgressRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
-            ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
-                .preferredColorScheme(.dark)
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
+            }
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
+                    .preferredColorScheme(.dark)
+            }
         }
     }
 }
