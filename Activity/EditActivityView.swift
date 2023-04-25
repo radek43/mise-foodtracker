@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import KeyboardToolbars
+
 
 struct EditActivityView: View {
     // MARK: - PROPERTIES
@@ -30,7 +32,7 @@ struct EditActivityView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             Form {
-                // ACTIVITY TITLE
+                // Title
                 Section(header: Text("Titlu activitate:")) {
                     TextField("Alergare ușoară", text: $activityTitle)
                 }
@@ -39,7 +41,7 @@ struct EditActivityView: View {
                     TextField("2.5", text: $met)
                         .numbersOnly($met, includeDecimal: true, decimalPlaces: 2)
                 }
-            } //: END FORM
+            }
             .frame(maxWidth: 580)
             .navigationTitle("Editează o activitate")
             .navigationBarTitleDisplayMode(.inline)
@@ -59,13 +61,13 @@ struct EditActivityView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             })
-        } //: END ZSTACK
+        }
     }
 }
 
 // MARK: - PREVIEW
 struct EditActivityView_Previews: PreviewProvider {
     static var previews: some View {
-        EditActivityView(activity: previewActivityData[0])
+        EditActivityView(activity: activityPreviewData[0])
     }
 }
