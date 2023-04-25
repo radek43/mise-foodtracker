@@ -2,7 +2,7 @@
 //  AddNewRecipe.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 12/9/22.
+//  Created by Radu Bila on 09.12.2022.
 //
 
 import SwiftUI
@@ -13,6 +13,7 @@ import KeyboardToolbars
 struct AddNewRecipe: View {
     // MARK: - PROPERTIES
     @StateObject var viewModel = CreateRecipeViewModel()
+    
     @ObservedObject var recipeViewModel: RecipeListViewModel
     
     @State private var title = ""
@@ -26,6 +27,7 @@ struct AddNewRecipe: View {
     @State private var fat = ""
     
     @State private var selectedCategory = Category.supa.rawValue
+    
     let category: [String] = Category.allCases.map { $0.rawValue }
     
     @Environment(\.presentationMode) var presentationMode
@@ -40,11 +42,11 @@ struct AddNewRecipe: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             Form {
-                // RECIPE TITLE
+                // Title
                 Section(header: Text("Titlu rețetă:")) {
                     TextField("Supă de legume", text: $title)
                 }
-                // CATEGORY
+                // Category
                 Section(header: Text("Categorie:")) {
                     Picker("Alege o categorie:", selection: $selectedCategory) {
                         ForEach(category, id: \.self) {
@@ -52,12 +54,12 @@ struct AddNewRecipe: View {
                         }
                     }
                 }
-                // TIME MINUTES
+                // Time minutes
                 Section(header: Text("Durată preparare:")) {
                     TextField("Durata in minute", text: $time_minutes)
                         .numbersOnly($time_minutes)
                 }
-                // RECIPE VALUES
+                // Recipe meta
                 Section(header: Text("Valori nutritive: ")) {
                     HStack {
                         Text("Calorii:")
@@ -90,17 +92,17 @@ struct AddNewRecipe: View {
                             .numbersOnly($carbs, includeDecimal: true, decimalPlaces: 2)
                     }
                 }
-                // RECIPE INGREDIENTS
+                // Ingredients
                 Section(header: Text("Ingrediente:")) {
                     TextEditor(text: $ingredients)
                         .frame(height: 150, alignment: .leading)
                 }
-                // RECIPE DIRECTIONS
+                // Directions
                 Section(header: Text("Mod preparare:")) {
                     TextEditor(text: $description)
                         .frame(height: 150, alignment: .leading)
                 }
-                // RECIPE IMAGE
+                // Image
                 Section(header: Text("Poză preparat:")) {
                     Button {
                         showImagePicker.toggle()
@@ -120,7 +122,7 @@ struct AddNewRecipe: View {
                         ImagePicker(selectedImage: $selectedImage)
                     }
                 }
-            } //: END FORM
+            }
             .frame(maxWidth: 580)
             .navigationTitle("Adaugă o retetă nouă")
             .navigationBarTitleDisplayMode(.inline)
@@ -141,7 +143,7 @@ struct AddNewRecipe: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             })
-        } //: END ZSTACK
+        }
     }
 }
 
