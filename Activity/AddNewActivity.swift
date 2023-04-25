@@ -22,7 +22,7 @@ struct AddNewActivity: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             Form {
-                // ACTIVITY TITLE
+                // Title
                 Section(header: Text("Titlu activitate:")) {
                     TextField("Alergare ușoară", text: $activityTitle)
                 }
@@ -31,7 +31,7 @@ struct AddNewActivity: View {
                     TextField("2.5", text: $met)
                         .numbersOnly($met, includeDecimal: true, decimalPlaces: 2)
                 }
-            } //: END FORM
+            }
             .frame(maxWidth: 580)
             .navigationTitle("Adaugă o activitate nouă")
             .navigationBarTitleDisplayMode(.inline)
@@ -51,7 +51,7 @@ struct AddNewActivity: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             })
-        } //: END ZSTACK
+        }
     }
 }
 
