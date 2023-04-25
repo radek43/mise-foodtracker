@@ -2,7 +2,7 @@
 //  PostRow.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 9/28/22.
+//  Created by Radu Bila on 28.08.2022.
 //
 
 import SwiftUI
@@ -16,13 +16,13 @@ struct PostRow: View {
         VStack(alignment: .leading) {
             if let user = post.user {
                 HStack(alignment: .top) {
-                    //                    KFImage(URL(string: user.profileImageUrl))
-                    //                        .resizable()
-                    //                        .scaledToFill()
-                    //                        .clipShape(Circle())
-                    //                        .frame(width: 50, height: 50)
-                    //                        .foregroundColor(Color.secondary)
-                    //                        .padding(.trailing, 5)
+//                    KFImage(URL(string: user.profileImageUrl))
+//                        .resizable()
+//                        .scaledToFill()
+//                        .clipShape(Circle())
+//                        .frame(width: 50, height: 50)
+//                        .foregroundColor(Color.secondary)
+//                        .padding(.trailing, 5)
                     
                     VStack(alignment: .leading) {
                         Text(post.titluPostare)
