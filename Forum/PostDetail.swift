@@ -2,7 +2,7 @@
 //  PostDetail.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 10/7/22.
+//  Created by Radu Bila on 07.10.2022.
 //
 
 import SwiftUI
@@ -21,13 +21,13 @@ struct PostDetail: View {
                 VStack(alignment: .leading) { // titlu, metadata si interaction buttons
                     HStack(alignment: .center) {
                         if post.user != nil {
-                            //  KFImage(URL(string: user.profileImageUrl))
-                            //      .resizable()
-                            //      .scaledToFill()
-                            //      .clipShape(Circle())
-                            //      .frame(width: 50, height: 50)
-                            //      .foregroundColor(Color.secondary)
-                            //      .padding(.trailing, 5)
+//                          KFImage(URL(string: user.profileImageUrl))
+//                              .resizable()
+//                              .scaledToFill()
+//                              .clipShape(Circle())
+//                              .frame(width: 50, height: 50)
+//                              .foregroundColor(Color.secondary)
+//                              .padding(.trailing, 5)
                             VStack(alignment: .leading) {
                                 Text(post.titluPostare)
                                     .font(.title)
