@@ -2,7 +2,7 @@
 //  ImageUploader.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 8/28/22.
+//  Created by Radu Bila on 28.08.2022.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ struct ImageUploader {
     static func uploadImage(email: String, paramName: String, fileName: String, image: UIImage, urlPath: String) {
         let url = URL(string: "http://127.0.0.1:8000\(urlPath)")
         
-        // generate boundary string using a unique per-app string
+        // Generate boundary string using a unique per-app string
         let boundary = UUID().uuidString
         
         let session = URLSession.shared
@@ -25,7 +25,7 @@ struct ImageUploader {
         
         var token = ""
         
-        // Get token from KeyChain
+        // Get token from Keychain
         do {
             guard let keychainResult = (try self.keychainService.get(service: "mise-foodtracker", account: email)) else {
                 print("KeychainService: Failed to read token.")
