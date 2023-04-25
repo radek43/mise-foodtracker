@@ -2,7 +2,7 @@
 //  HomeView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 4/11/22.
+//  Created by Radu Bila on 11.04.2022.
 //
 
 import SwiftUI
@@ -30,14 +30,14 @@ struct HomeView: View {
                             .edgesIgnoringSafeArea(.all)
                         
                         VStack {
-                            // DATE PICKER
+                            // Date picker
                             VStack(alignment: .center) {
                                 DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
                                     .accentColor(.primary)
                             }
                             .card()
                             
-                            // USER OBJECTIVE
+                            // Objective dashboard
                             VStack(alignment: .center) {
                                 HStack {
                                     Text("Obiectiv")
@@ -92,7 +92,7 @@ struct HomeView: View {
                             }
                             .card()
                             
-                            // LOG EATEN FOOD
+                            // Add data to log
                             VStack(alignment: .center) {
                                 HStack {
                                     Text("Jurnal")
@@ -151,7 +151,7 @@ struct HomeView: View {
                             DailyCaloriesChart()
                                 .padding(.bottom, 20)
                             
-                        } //: END SCROLL VIEW
+                        }
                         .navigationTitle("Bine ai venit!")
                         .navigationBarItems(
                             trailing:
@@ -162,7 +162,7 @@ struct HomeView: View {
                                 }
                         )
                     }
-                } //: END ZSTACK
+                }
                 .background(Color.background.edgesIgnoringSafeArea(.all))
             }
             .navigationViewStyle(StackNavigationViewStyle())
