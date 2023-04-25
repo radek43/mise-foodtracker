@@ -2,7 +2,7 @@
 //  DishDetailConfirm.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 1/10/23.
+//  Created by Radu Bila on 10.01.2023.
 //
 
 import SwiftUI
@@ -14,10 +14,10 @@ struct DishDetailConfirm: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .center) {
-                // HEADER
+                // Header
                 VStack {
                     HStack {
-                        Text("Fasole Frecata")
+                        Text("Cartofi piure")
                             .font(.title2)
                             .fontWeight(.semibold)
                         Spacer()
@@ -31,36 +31,30 @@ struct DishDetailConfirm: View {
                 .padding(.horizontal)
                 .padding(.top)
                 
-                // FOOD META
+                // Log meta
                 HStack {
+                    Spacer()
+                    DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3")
                     DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
                     DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
                     DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
-                    DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
+                    Spacer()
                 }
                 .card()
                 
-                // FOOD CHART
-                DishDetailChart()
+                DailyCaloriesChart()
                 
-                // ADD TO JOURNAL
+                // Add to journal
                 Button {
                     // viewModel.login(withEmail: email, password: password)
                 } label: {
-                    Text("Adauga la jurnal")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .frame(width: 340, height: 50)
-                        .background(Color.accent)
-                        .clipShape(Capsule())
-                        .padding()
+                    CapsuleButton(text: "Adaugă la jurnal")
                 }
-                .shadow(color: Color.black.opacity(0.1), radius: 12)
                 
                 Spacer()
-            } //: END MAIN VSTACK
+            }
             .navigationBarTitle("Detalii Servire", displayMode: .inline)
-        } //: END ZSTACK
+        }
     }
 }
 
