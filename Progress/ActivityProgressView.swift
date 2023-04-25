@@ -2,7 +2,7 @@
 //  ActivityProgressView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 4/21/22.
+//  Created by Radu Bila on 21.04.2022.
 //
 
 import SwiftUI
@@ -23,7 +23,7 @@ struct ActivityProgressView: View {
                         .edgesIgnoringSafeArea(.all)
                     
                     VStack {
-                        // WEEKLY CALORIES
+                        // Weekly calories
                         CardView(showShadow: false) {
                             VStack(alignment: .leading) {
                                 Text("Calorii saptamanale")
@@ -33,6 +33,7 @@ struct ActivityProgressView: View {
                                 LineChart()
                                     .data(demoData)
                                     .chartStyle(mixedColorStyle)
+                                    .padding(.bottom, 5)
                             }
                             .background(Color.card)
                         }
@@ -41,7 +42,7 @@ struct ActivityProgressView: View {
                         .padding([.horizontal, .top])
                         .frame(maxWidth: 580)
                         
-                        // MOST EATEN FOODS
+                        // Top foods eaten
                         CardView(showShadow: false) {
                             VStack(alignment: .leading) {
                                 Text("Top alimente calorice consumate")
@@ -60,19 +61,18 @@ struct ActivityProgressView: View {
                         .padding(.horizontal)
                         .frame(maxWidth: 580)
                         
-                        // USER STATS
+                        // User details
                         VStack {
                             ActivityProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
                             ActivityProgressRow(progressTitle: "Medie pasi facuti saptamanal", progressValue: "5749", measurementUnit: "pasi")
                             ActivityProgressRow(progressTitle: "Indice Masa Corporala", progressValue: "22.3", measurementUnit: "IMC")
                         }
-                    } //: END SCROLL VIEW
+                    }
                     .navigationTitle("Progres")
                 }
             }
             .background(Color.background.edgesIgnoringSafeArea(.all))
-            
-        } //: END ZSTACK
+        }
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
