@@ -13,7 +13,8 @@ struct HomeView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
     
-    @State private var uiTabarController: UITabBarController?
+    @Binding var tabSelection: Int
+    
     @State private var data = Date()
     @State private var showDishSheet = false
     @State private var height = 0
@@ -21,7 +22,7 @@ struct HomeView: View {
     
     // MARK: - BODY
     var body: some View {
-        if authViewModel.currentUser != nil {
+        if let user = authViewModel.currentUser {
             NavigationView {
                 ScrollView(showsIndicators: false) {
                     ZStack {
@@ -30,14 +31,11 @@ struct HomeView: View {
                         
                         VStack {
                             // DATE PICKER
-                            
-                            
                             VStack(alignment: .center) {
                                 DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
                                     .accentColor(.primary)
                             }
                             .card()
-                            
                             
                             // USER OBJECTIVE
                             VStack(alignment: .center) {
@@ -46,7 +44,7 @@ struct HomeView: View {
                                         .font(.title2)
                                         .fontWeight(.semibold)
                                     Spacer()
-                                    Text("2342 kCal")
+                                    Text("\(user.calorie_goal) kCal")
                                         .font(.body)
                                         .fontWeight(.semibold)
                                 }
@@ -132,7 +130,7 @@ struct HomeView: View {
                                 
                                 HStack(alignment: .top) {
                                     Button {
-                                        print("Buton sport apasat")
+                                        tabSelection = 3
                                     } label: {
                                         AddDishButton(imageName: "sprint", title: "sport")
                                     }
@@ -144,7 +142,7 @@ struct HomeView: View {
                                     Button {
                                         print("Buton lichide apasat")
                                     } label: {
-                                        AddDishButton(imageName: "waterDrop", title: "lichide")
+                                        AddDishButton(imageName: "waterDrop", title: "apă ")
                                     }
                                 }
                             }
@@ -179,8 +177,8 @@ struct HomeView_Previews: PreviewProvider {
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
         return Group {
-            HomeView()
-            HomeView()
+            HomeView(tabSelection: .constant(1))
+            HomeView(tabSelection: .constant(1))
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)
