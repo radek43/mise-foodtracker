@@ -15,14 +15,10 @@ extension Color {
     static let card = Color("CardBackground")
     static let background = Color("ColorBackground")
     static let post = Color("PostDetailColor")
-    static let accentLight = Color("AccentLight")
     static let formText = Color("SectionText")
     static let mono = Color("BlackAndWhite")
     static let navigation = Color("NavigationBackground")
     static let progress = Color("ProgressViewColor")
-    static let success = Color("SuccessColor")
-    static let information = Color("InfoColor")
-    static let alert = Color("AlertColor")
 }
 
 // Override NavigationBar Color
@@ -86,5 +82,20 @@ extension UIDevice {
     }
     static var isIPhone: Bool {
         UIDevice.current.userInterfaceIdiom == .phone
+    }
+}
+
+extension Date {
+    func formatDate() -> String {
+            let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("EEEE, MMM d")
+        return dateFormatter.string(from: self)
+    }
+}
+
+extension Float {
+    func roundTo(places:Int) -> Float {
+        let divisor = pow(10.0, Float(places))
+        return (self * divisor).rounded() / divisor
     }
 }
