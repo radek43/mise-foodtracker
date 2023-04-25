@@ -2,7 +2,7 @@
 //  ActivityView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 5/7/22.
+//  Created by Radu Bila on 07.05.2022.
 //
 
 import SwiftUI
@@ -10,6 +10,7 @@ import SwiftUI
 struct ActivityView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
+    
     @StateObject var activityViewModel = ActivityViewModel()
     
     @State private var showEditView = false
@@ -23,7 +24,9 @@ struct ActivityView: View {
                 ScrollView(showsIndicators: false) {
                     ZStack {
                         Color.background.ignoresSafeArea(.all)
-                        VStack {
+                        
+                        // Activity list
+                        VStack(alignment: .leading) {
                             HStack {
                                 Text("Nume activitate")
                                     .font(.headline)
@@ -78,9 +81,6 @@ struct ActivityView: View {
                         } label: {
                             Image(systemName: "plus.circle")
                         }
-                        .sheet(isPresented: $showInfoSheet) {
-                            ActivityInfoView()
-                        }
                     : nil
                 )
             }
@@ -96,7 +96,7 @@ struct ActivityView_Previews: PreviewProvider {
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
         let activityViewModel = ActivityViewModel()
-        activityViewModel.activities = previewActivityData
+        activityViewModel.activities = activityPreviewData
         return Group {
             ActivityView()
             ActivityView()
