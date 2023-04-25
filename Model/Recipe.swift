@@ -2,7 +2,7 @@
 //  Recipe.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 9/3/22.
+//  Created by Radu Bila on 03.09.2022.
 //
 
 import Foundation

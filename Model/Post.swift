@@ -2,7 +2,7 @@
 //  Post.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 10/20/22.
+//  Created by Radu Bila on 20.10.2022.
 //
 
 
