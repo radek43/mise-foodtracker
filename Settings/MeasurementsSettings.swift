@@ -12,6 +12,7 @@ import Combine
 struct MeasurementsSettings: View {
     // MARK: - PROPERTIES
     @StateObject var settingsViewModel = SettingsViewModel()
+    
     @EnvironmentObject var authViewModel: AuthViewModel
     
     @State private var userWeight: String
