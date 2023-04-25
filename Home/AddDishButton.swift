@@ -2,7 +2,7 @@
 //  AddDishButton.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 4/15/22.
+//  Created by Radu Bila on 15.04.2022.
 //
 
 import SwiftUI
@@ -21,6 +21,7 @@ struct AddDishButton: View {
     // MARK: - BODY
     var body: some View {
         VStack {
+            // Dish icon
             Circle()
                 .stroke(Color.button, style: StrokeStyle(lineWidth: 5))
                 .frame(width: idiom == .pad ? 48 : getScreenBounds().width * 0.12, height: idiom == .pad ? 48 : getScreenBounds().width * 0.12)
@@ -32,6 +33,7 @@ struct AddDishButton: View {
                         .font(Font.title.weight(.light))
                         .frame(width: idiom == .pad ? 48 : getScreenBounds().width * 0.12, height: idiom == .pad ? 48 : getScreenBounds().width * 0.12)
                 )
+            // Dish text
             Text(title)
                 .font(.subheadline)
                 .fontWeight(.medium)
