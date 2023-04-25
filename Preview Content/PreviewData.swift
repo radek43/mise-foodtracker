@@ -6,14 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 var userPreviewData = User(email: "john.doe@email.com", name: "john.doe", fullname: "John Doe", is_staff: true, calorie_goal: "2854", weight: "84", height: "187", gender: 0, activity_factor: 2, dob: "2021-02-21")
 
+
 var recipePreviewData: [RecipeList] = [
-    RecipeList(id: 1,
-           title: "Oua umplute",
-           calories: "803.33",
-           image: "https://fit2life.ro/uploads/retete/oua-umplute-_0_1679162396.jpg"),
     RecipeList(id: 2,
            title: "Smoothie cu cheesecake cu căpșuni",
            calories: "433",
@@ -27,6 +25,7 @@ var recipePreviewData: [RecipeList] = [
            calories: "295",
            image: "https://onco-plan.ro/wp-content/uploads/2021/07/asparagus-spinach-soup.jpg")
 ]
+
 
 var recipeDetailPreviewData: Recipe = 
     Recipe(id: 4,
@@ -43,10 +42,10 @@ var recipeDetailPreviewData: Recipe =
            image: "https://onco-plan.ro/wp-content/uploads/2021/07/asparagus-spinach-soup.jpg")
     
 
-var previewActivityData: [Activity] = [
-    Activity(id: 1, title: "abdomene", met: "4.5"),
-    Activity(id: 2, title: "aerobic", met: "6.5"),
-    Activity(id: 3, title: "baschet", met: "8"),
-    Activity(id: 4, title: "patinaj", met: "7"),
+var activityPreviewData: [Activity] = [
+    Activity(id: 1, title: "Abdomene", met: "4.5"),
+    Activity(id: 2, title: "Aerobic", met: "6.5"),
+    Activity(id: 3, title: "Baschet", met: "8"),
+    Activity(id: 4, title: "Patinaj", met: "7"),
 ]
 
