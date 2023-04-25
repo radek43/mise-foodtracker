@@ -2,7 +2,7 @@
 //  User.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 9/1/22.
+//  Created by Radu Bila on 01.09.2022.
 //
 
 import SwiftUI
