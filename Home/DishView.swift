@@ -2,14 +2,14 @@
 //  DishView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 1/10/23.
+//  Created by Radu Bila on 10.01.2023.
 //
 
 import SwiftUI
 
 struct DishView: View {
     // MARK: - PROPERTIES
-    @State private var searchText = ""  // de modificat
+    @State private var searchText = ""
     
     // MARK: - BODY
     var body: some View {
@@ -23,7 +23,7 @@ struct DishView: View {
                             .frame(maxWidth: 580)
                             .padding([.top, .leading, .trailing])
                         
-                        // RECENT LOGGED FOODS
+                        // Recent logged items
                         VStack {
                             Text("Adaugate astazi")
                                 .font(.headline)
@@ -59,7 +59,7 @@ struct DishView: View {
                         }
                         .card()
                         
-                        // FOOD HISTORY
+                        // Item history
                         VStack {
                             Text("Istoric meniuri servite")
                                 .font(.headline)
@@ -95,11 +95,11 @@ struct DishView: View {
                         }
                         .card()
                         Spacer()
-                    } //: END VSTACK
-                } //: END SCROLL VIEW
-            } //: END ZSTACK
+                    }
+                }
+            }
             .navigationBarTitle("Adaugă un fel de mancare", displayMode: .inline)
-        } //: END NAVIGATION VIEW
+        }
     }
 }
 
