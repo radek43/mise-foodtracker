@@ -1,32 +1,39 @@
 //
-//  RingView.swift
+//  RingButton.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 12/22/22.
+//  Created by Radu Bila on 22.12.2022.
 //
 
 import SwiftUI
 
 
 struct RingView: View {
+    // MARK: - PROPERTIES
+    private var idiom: UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
     // MARK: - BODY
     var body: some View {
         VStack {
             ZStack {
+                // Main circle
                 Circle()
                     .stroke(Color.primary.opacity(0.2), style: StrokeStyle(lineWidth: 0))
                     .background(Circle().fill(Color.button))
-                    .frame(width: 48, height: 48)
+                    .frame(width: idiom == .pad ? 48 : getScreenBounds().width * 0.12, height: idiom == .pad ? 48 : getScreenBounds().width * 0.12)
+                
+                // Progress ring
                 Circle()
                     .trim(from: 0.6, to: 1)
                     .stroke(
-                        LinearGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.2666666667, green: 0.4784313725, blue: 0.5647058824, alpha: 1)), Color(#colorLiteral(red: 0.2274509804, green: 0.4784313725, blue: 0.5647058824, alpha: 1))]), startPoint: .topTrailing, endPoint: .bottomLeading),
+                        LinearGradient(gradient: Gradient(colors: [Color.accent, Color.accent]), startPoint: .topTrailing, endPoint: .bottomLeading),
                         style: StrokeStyle(lineWidth: 4,lineCap: .round, lineJoin: .round, miterLimit: .infinity, dash: [20, 0], dashPhase: 0)
                     )
                     .rotationEffect(Angle(degrees: 90))
                     .rotation3DEffect(Angle(degrees: 180), axis: (x: 1, y: 0, z: 0))
-                    .frame(width: 48, height: 48)
+                    .frame(width: idiom == .pad ? 48 : getScreenBounds().width * 0.12, height: idiom == .pad ? 48 : getScreenBounds().width * 0.12)
                 
+                // Food log meta
                 VStack(alignment: .center, spacing: 0.0) {
                     Text("456")
                         .font(.footnote)
@@ -48,8 +55,21 @@ struct RingView: View {
 }
 
 // MARK: - PREVIEW
-struct RingView_Previews: PreviewProvider {
+struct RingButton_Previews: PreviewProvider {
     static var previews: some View {
-        RingView()
+        Group {
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                RingView()
+            }
+            
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                RingView()
+                    .preferredColorScheme(.dark)
+            }
+        }
     }
 }
