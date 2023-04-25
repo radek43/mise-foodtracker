@@ -2,7 +2,7 @@
 //  RegistrationView.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 8/9/22.
+//  Created by Radu Bila on 09.08.2022.
 //
 
 import SwiftUI
@@ -21,37 +21,34 @@ struct RegistrationView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
-            //  HEADER
-            AuthenticationHeaderView(title1: "Creaza un cont nou", title2: "")
+            AuthenticationHeaderView(title1: "Crează un cont nou", title2: "")
             
-            // AUTH FORM
-            VStack(spacing: 40) {
+            // Registration data
+            VStack(spacing: 18.0) {
                 CustomInputFields(imageName: "envelope", placeholderText: "Email", text: $email)
                     .keyboardType(.emailAddress)
                 CustomInputFields(imageName: "person", placeholderText: "Nume Utilizator", text: $username)
                 CustomInputFields(imageName: "person", placeholderText: "Nume Complet", text: $fullname)
                 CustomInputFields(imageName: "lock", placeholderText: "Parola", isSecureField: true, text: $password)
             }
-            .padding(32)
+            .padding(.top, 30)
             
-            // REGISTRATION
             Button {
                 Task {
                     try await authViewModel.signUp(email: email, username: username, fullname: fullname, password: password)
                 }
             } label: {
-                RegistrationButton(text: "Continua")
+                CapsuleButton(text: "Continuă")
             }
             Spacer()
             
-            // DISMISS
             Button {
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 HStack {
                     Text("Ai deja un cont existent?")
                         .font(.footnote)
-                    Text("Autentifica-te")
+                    Text("Autentifică-te")
                         .font(.footnote)
                         .fontWeight(.semibold)
                 }
