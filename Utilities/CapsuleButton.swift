@@ -1,14 +1,14 @@
 //
-//  RegistrationButton.swift
+//  CapsuleButton.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 1/12/23.
+//  Created by Radu Bila on 12.01.2023.
 //
 
 import SwiftUI
 
 
-struct RegistrationButton: View {
+struct CapsuleButton: View {
     // MARK: - PROPERTIES
     var text: String
     
@@ -17,21 +17,21 @@ struct RegistrationButton: View {
         Text(text)
             .font(.headline)
             .foregroundColor(.white)
-            .frame(width: 340, height: 50)
+            .frame(height: 50)
+            .frame(maxWidth: 580)
             .background(Color.accent)
             .clipShape(Capsule())
             .padding()
-            .shadow(color: Color.black.opacity(0.1), radius: 12)
     }
 }
 
 
 // MARK: - PREVIEWS
-struct RegistrationButton_Previews: PreviewProvider {
+struct CapsuleButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RegistrationButton(text: "Inregistreaza-te")
-            RegistrationButton(text: "Inregistreaza-te")
+            CapsuleButton(text: "Inregistreaza-te")
+            CapsuleButton(text: "Inregistreaza-te")
                 .preferredColorScheme(.dark)
         }
     }
