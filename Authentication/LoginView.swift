@@ -22,7 +22,7 @@ struct LoginView: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     // Header card
-                    AuthenticationHeaderView(title1: "Bine ai venit!", title2: "")
+                    HeaderView(title1: "", title2: "Bine ai venit!")
                     
                     VStack(spacing: 18.0) {
                         CustomInputFields(imageName: "envelope", placeholderText: "Email", text: $email)

@@ -21,7 +21,7 @@ struct RegistrationView: View {
     // MARK: - BODY
     var body: some View {
         VStack {
-            AuthenticationHeaderView(title1: "Crează un cont nou", title2: "")
+            HeaderView(title1: "", title2: "Crează un cont nou")
             
             // Registration data
             VStack(spacing: 18.0) {
