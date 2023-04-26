@@ -11,9 +11,9 @@ import SwiftUI
 struct CustomInputFields: View {
     // MARK: - PROPERTIES
     let imageName: String
+    var notSystemImage: Bool? = false
     let placeholderText: String
     var isSecureField: Bool? = false
-    var notSystemImage: Bool? = false
     @Binding var text: String
     
     // MARK: - BODY
