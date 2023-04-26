@@ -1,5 +1,5 @@
 //
-//  AuthenticationHeaderView.swift
+//  HeaderView.swift
 //  mise-foodtracker
 //
 //  Created by Radu Bila on 09.08.2022.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct AuthenticationHeaderView: View {
+struct HeaderView: View {
     // MARK: - PROPERTIES
     let title1: String
     let title2: String
@@ -72,11 +72,11 @@ struct AuthenticationHeaderView: View {
 }
 
 // MARK: - PREVIEW
-struct AuthenticationHeaderView_Previews: PreviewProvider {
+struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            AuthenticationHeaderView(title1: "Welcome", title2: "Back")
-            AuthenticationHeaderView(title1: "Welcome", title2: "Back")
+            HeaderView(title1: "Welcome", title2: "Back")
+            HeaderView(title1: "Welcome", title2: "Back")
                 .preferredColorScheme(.dark)
         }
     }
