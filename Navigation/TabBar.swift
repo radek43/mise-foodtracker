@@ -13,6 +13,8 @@ struct TabBar: View {
     
     @State private var tabSelection = 0
     
+    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding = true
+    
     init() {
         UITabBar.appearance().backgroundColor = UIColor(Color.mono)
     }
@@ -50,6 +52,9 @@ struct TabBar: View {
                     Text("Sport")
                 }
                 .tag(3)
+        }
+        .fullScreenCover(isPresented: $shouldShowOnboarding) {
+            OnboardWelcome(shouldShowOnboarding: $shouldShowOnboarding)
         }
     }
 }
