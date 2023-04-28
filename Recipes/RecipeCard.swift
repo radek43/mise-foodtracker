@@ -11,60 +11,65 @@ import SDWebImageSwiftUI
 
 struct RecipeCard: View {
     // MARK: - PROPERTIES
-    var title: String
-    var imageString: String
-    var calories: String
-    
-    // MARK: - STRUCTS
-    struct BodyView: View {
-        @State var url: String
-        
-        var body: some View {
-            VStack {
-                WebImage(url: URL(string: url))
-                    .onSuccess { image, data, cacheType in
-                    }
-                    .resizable()
-                    .placeholder {
-                        ProgressView()
-                    }
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fill)
-                    .layoutPriority(-1)
-            }
-        }
-    }
-    
+    let recipe: RecipeList
     
     // MARK: - BODY
     var body: some View {
-        VStack(alignment: .leading) {
-            VStack {
+        ZStack {
+            VStack(alignment: .leading) {
                 ZStack {
                     Rectangle()
                         .fill(Color(.gray))
-                        .aspectRatio(3/4, contentMode: .fit)
                     
-                    if let imageString = imageString {
-                        BodyView(url: imageString)    
+                    if let imageUrl = recipe.image {
+                        VStack {
+                            WebImage(url: URL(string: imageUrl))
+                                .onSuccess { image, data, cacheType in
+                                }
+                                .resizable()
+                                .placeholder {
+                                    ProgressView()
+                                }
+                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fill)
+                                .layoutPriority(-1)
+                        }
                     }
                 }
                 .clipped()
+                .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
+                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+
+                HStack {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Group {
+                            Text(recipe.title)
+                                .font(.callout)
+                                .fontWeight(.medium)
+                            .foregroundColor(.primary) +
+                            Text("  \(recipe.calories)kCal")
+                                .font(.footnote)
+                                .foregroundColor(Color.secondary)
+                        }
+                        Group {
+                            Text("•\(recipe.protein)g proteină ")
+                                .font(.caption)
+                                .foregroundColor(Color.secondary) +
+                            Text("•\(recipe.calories)g grăsimi ")
+                                .font(.caption)
+                                .foregroundColor(Color.secondary) +
+                            Text("•\(recipe.calories)g carbohidrați")
+                                .font(.caption)
+                                .foregroundColor(Color.secondary)
+                        }
+                    }
+                }
+                .padding(.horizontal, 6)
             }
-            .background(LinearGradient(gradient: Gradient(colors: [Color(.gray).opacity(0.3), Color(.gray)]), startPoint: .top, endPoint: .bottom))
-            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-            .shadow(color: Color.gray.opacity(0.2), radius: 20, x: 0, y: 10)
-            
-            Text(title + "\n")
-                .font(.callout)
-                .fontWeight(.medium)
-                .foregroundColor(.primary)
-                .lineLimit(2)
-            
-            Text("\(calories) kCal" as String)
-                .font(.caption)
-                .foregroundColor(Color.secondary)
+
         }
+        .frame(maxWidth: 580)
+        .frame(height: 350)
     }
 }
 
@@ -73,9 +78,19 @@ struct RecipeCard: View {
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RecipeCard(title: recipePreviewData[1].title, imageString: recipePreviewData[1].image!, calories: recipePreviewData[1].calories)
-            RecipeCard(title: recipePreviewData[1].title, imageString: recipePreviewData[1].image!, calories: recipePreviewData[1].calories)
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                RecipeCard(recipe: recipePreviewData[1])
+                    .padding()
+            }
+            ZStack {
+                Color.background
+                    .edgesIgnoringSafeArea(.all)
+                RecipeCard(recipe: recipePreviewData[1])
+                    .padding()
                 .preferredColorScheme(.dark)
+            }
         }
     }
 }
