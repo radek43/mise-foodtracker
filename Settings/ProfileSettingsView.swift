@@ -79,7 +79,7 @@ struct ProfileSettingsView: View {
                 UITextField.appearance().clearButtonMode = .whileEditing
             }
             .toolbar {
-                Button("Trimite") {
+                Button("Modifică") {
                     Task(priority: .medium) {
                         try await self.settingsViewModel.updateProfile(gender: gender, fullname: name, dob: date, activity: activity)
                     }
