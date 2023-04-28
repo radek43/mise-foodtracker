@@ -84,10 +84,10 @@ struct NotificationsSettings: View {
                 }
             }
             .frame(maxWidth: 580)
-            .navigationTitle("Notificari")
+            .navigationTitle("Notificări")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button("Salveaza") {
+                Button("Modifică") {
                     print("Buton salvare apasat")
                 }
             }
