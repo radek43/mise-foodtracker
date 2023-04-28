@@ -49,15 +49,13 @@ struct RecipesView: View {
                             .padding(.bottom, 5.0)
                             
                             // Recipe grid
-                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 15)], spacing: 15) {
+                            VStack(spacing: 15.0) {
                                 ForEach(recipeListViewModel.recipes) { recipe in
                                     NavigationLink {
                                         RecipeDetailView(recipeDetailViewModel: RecipeDetailViewModel(withrecipeId: recipe.id))
                                     } label: {
-                                        RecipeCard(title: recipe.title, imageString: recipe.image ?? "", calories: recipe.calories)
-                                            .frame(maxWidth: 580)
+                                        RecipeCard(recipe: recipe)
                                             .foregroundColor(.primary)
-                                            
                                     }
                                 }
                             }
