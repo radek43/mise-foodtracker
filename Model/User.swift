@@ -5,6 +5,7 @@
 //  Created by Radu Bila on 01.09.2022.
 //
 
+import Foundation
 import SwiftUI
 
 enum UserError: Error, LocalizedError {
@@ -27,12 +28,12 @@ enum UserError: Error, LocalizedError {
     }
 }
 
-// TOKEN MODEL
+// Token model
 struct Token: Codable {
     let token: String
 }
 
-// USER MODEL
+// User model
 struct User: Codable {
     let email: String
     let name: String
@@ -91,7 +92,12 @@ struct User: Codable {
         return getTDEE(gender: gender, weight: Float(weight)!, height: Float(height)!, age: Int(age)!, activityLevel: activityValue)
     }
     
+    var bmi: Float {
+        return calculateBMI(weight: Float(weight)!, height: Float(height)!)
+    }
+    
     func convertStringToDate(dateString: String) -> Date? {
+        // Convert to date type
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         return dateFormatter.date(from: dateString)
@@ -135,7 +141,13 @@ struct User: Codable {
         var tdee: Float = bmr * activityLevel
         tdee = round(tdee * 10) / 10.0
         
-        // return the TDEE
         return tdee
+    }
+    
+    func calculateBMI(weight: Float, height: Float) -> Float {
+        // Calculate BMI
+        var bmi: Float = (weight / height / height) * 10_000
+        bmi = round(bmi * 10) / 10.0
+        return bmi
     }
 }
