@@ -49,7 +49,7 @@ struct RecipeDetailView: View {
                         .padding()
                         
                         // Recipe details
-                        VStack(spacing: 30) {
+                        VStack(spacing: 20) {
                             Text(recipe.title)
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
@@ -79,10 +79,7 @@ struct RecipeDetailView: View {
                                         .foregroundColor(Color.secondary)
                                 }
                             }
-                            .padding()
-                            .background(Color.card)
-                            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                            .padding(.horizontal)
+                            .card()
                             
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Ingrediente:")
@@ -92,10 +89,7 @@ struct RecipeDetailView: View {
                                 Text(recipe.ingredients)
                                     .fixedSize(horizontal: false, vertical: true)
                             }
-                            .padding()
-                            .background(Color.card)
-                            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                            .padding(.horizontal)
+                            .card()
                             
                             VStack(alignment: .leading, spacing: 10) {
                                 Text("Mod de preparare:")
@@ -105,11 +99,7 @@ struct RecipeDetailView: View {
                                 Text(recipe.description)
                                     .fixedSize(horizontal: false, vertical: true)
                             }
-                            .padding()
-                            .background(Color.card)
-                            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                            .padding(.horizontal)
-                            
+                            .card()
                             
                             CapsuleButton(text: "Adaugă la jurnal")
                         }
