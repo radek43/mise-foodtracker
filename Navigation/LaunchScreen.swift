@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+
 struct LaunchScreen: View {
+    // MARK: - PROPERTIES
     @State private var showMainView = false
     @State private var hasTimeElapsed = false
     
+    // MARK: - BODY
     var body: some View {
         Group {
-            if showMainView && hasTimeElapsed {
+            if hasTimeElapsed && showMainView   {
                 ContentView()
             } else {
                 ZStack {
@@ -22,23 +25,23 @@ struct LaunchScreen: View {
                     Image("launchScreenIcon")
                         .resizable()
                         .frame(width: 200, height: 200)
-                        .clipShape(RoundedRectangle(cornerRadius:  36))
+                        .clipShape(RoundedRectangle(cornerRadius: 36))
                 }
             }
         }
         .onAppear {
             Task {
-               await delayView()
-            }
-            withAnimation(.easeInOut) {
-                showMainView = true
+                await delayView()
+                withAnimation(.easeInOut(duration: 1.5)) {
+                    showMainView = true
+                }
             }
         }
     }
     
     private func delayView() async {
-        // Delay of 7.5 seconds (1 second = 1_000_000_000 nanoseconds)
-        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        // Delay of 2 seconds (1 second = 1_000_000_000 nanoseconds)
+        try? await Task.sleep(nanoseconds: 1_000_000_000)
         hasTimeElapsed = true
     }
 }
