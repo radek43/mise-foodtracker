@@ -48,7 +48,7 @@ struct MeasurementsSettings: View {
                 UITextField.appearance().clearButtonMode = .whileEditing
             }
             .toolbar {
-                Button("Trimite") {
+                Button("Modifică") {
                     Task(priority: .medium) {
                         try await self.settingsViewModel.updateMeasurements(weight: userWeight, height: userHeight)
                     }
