@@ -50,7 +50,7 @@ struct HomeView: View {
                                 }
                                 HStack {
                                     Spacer()
-                                    Text("2342 kCal Ramase")
+                                    Text("2342 kCal Rămase")
                                         .fontWeight(.semibold)
                                         .padding(5)
                                     Spacer()
