@@ -22,7 +22,11 @@ enum Category: String, CaseIterable {
 struct RecipeList: Codable, Identifiable {
     let id: Int
     let title: String
+    let category: String
     let calories: String
+    let protein: String
+    let carbs: String
+    let fat: String
     let image: String?
 }
 
@@ -31,16 +35,17 @@ struct RecipeList: Codable, Identifiable {
 struct Recipe: Codable, Identifiable {
     let id: Int
     let title: String
-    let calories: String
     let category: String
-    let time_minutes: Int
+    let calories: String
     let protein: String
     let carbs: String
-    let fibers: String
     let fat: String
+    let image: String?
+    let fibers: String
+    let time_minutes: Int
     let description: String
     let ingredients: String
-    let image: String?
+    
 }
 
 enum RecipeError: Error, LocalizedError {
