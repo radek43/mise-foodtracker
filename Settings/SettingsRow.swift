@@ -49,13 +49,13 @@ struct SettingsRow_Previews: PreviewProvider {
             ZStack {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
-                SettingsRow(iconAsset: "figure.run", firstText: "Application", color: .secondary)
+                SettingsRow(iconAsset: "sport", firstText: "Application", color: .secondary)
                     .padding()
             }
             ZStack {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
-                SettingsRow(iconAsset: "figure.run", firstText: "Application", color: .secondary)
+                SettingsRow(iconAsset: "sport", firstText: "Application", color: .secondary)
                     .padding()
                     .preferredColorScheme(.dark)
             }
