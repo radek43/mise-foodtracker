@@ -48,7 +48,7 @@ struct ForumView: View {
                                     // do something
                                 } label: {
                                     Text("Alergare")
-                                    Image("figure.run")
+                                    Image("sport")
                                 }
                             } label: {
                                 Text("Sorteaza")
