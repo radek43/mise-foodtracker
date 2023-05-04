@@ -30,8 +30,8 @@ struct CapsuleButton: View {
 struct CapsuleButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CapsuleButton(text: "Inregistreaza-te")
-            CapsuleButton(text: "Inregistreaza-te")
+            CapsuleButton(text: "Înregistrează-te")
+            CapsuleButton(text: "Înregistrează-te")
                 .preferredColorScheme(.dark)
         }
     }
