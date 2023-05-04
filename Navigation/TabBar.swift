@@ -42,14 +42,14 @@ struct TabBar: View {
                 .tabItem {
                     if tabSelection == 2 { Image("book.fill") }
                     else { Image("book") }
-                    Text("Retete")
+                    Text("Rețete")
                 }
                 .tag(2)
             ActivityView()
                 .tabItem {
                     if tabSelection == 3 { Image("dumbbell.fill").imageScale(.large) }
                     else { Image("dumbbell").imageScale(.large) }
-                    Text("Sport")
+                    Text("Activitate")
                 }
                 .tag(3)
         }
