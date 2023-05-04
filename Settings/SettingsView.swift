@@ -68,7 +68,7 @@ struct SettingsView: View {
                             SettingsRow(iconDefault: "bell.badge", firstText: "Notificări", color: .red)
                         }
                         Toggle(isOn: $doesTrackActivity) {
-                            SettingsRow(iconAsset: "figure.run", firstText: "Inregistrare activitate", color: .blue)
+                            SettingsRow(iconAsset: "sport", firstText: "Înregistrare activitate", color: .blue)
                         }
                         Button {
                             authViewModel.signOut()
