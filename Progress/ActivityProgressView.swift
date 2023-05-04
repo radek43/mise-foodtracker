@@ -45,6 +45,7 @@ struct ActivityProgressView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                             .padding([.horizontal, .top])
                             .frame(maxWidth: 580)
+                            .allowsHitTesting(false)
                             
                             // Top foods eaten
                             CardView(showShadow: false) {
@@ -64,6 +65,7 @@ struct ActivityProgressView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
                             .padding(.horizontal)
                             .frame(maxWidth: 580)
+                            .allowsHitTesting(false)
                             
                             // User details
                             VStack {
