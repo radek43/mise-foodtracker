@@ -32,8 +32,12 @@ struct HomeView: View {
                         VStack {
                             // Date picker
                             VStack(alignment: .center) {
-                                DatePicker("Data:", selection: $data, in: ...Date(), displayedComponents: .date)
-                                    .accentColor(.primary)
+                                DatePicker(selection: $data, in: ...Date(), displayedComponents: .date) {
+                                    Text("Data")
+                                        .font(.title2)
+                                        .fontWeight(.semibold)
+                                }
+                                .accentColor(.primary)
                             }
                             .card()
                             
@@ -132,7 +136,7 @@ struct HomeView: View {
                                     Button {
                                         tabSelection = 3
                                     } label: {
-                                        AddDishButton(imageName: "sprint", title: "sport")
+                                        AddDishButton(imageName: "sport", title: "activitate")
                                     }
                                     Button {
                                         print("Buton greutate apasat")
