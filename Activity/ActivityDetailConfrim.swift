@@ -29,7 +29,7 @@ struct ActivityDetailConfrim: View {
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 12) {
                         Text(activityData.title)
-                            .font(.title)
+                            .font(.largeTitle)
                             .fontWeight(.bold)
                             .padding([.horizontal, .top], 24)
                         
@@ -58,13 +58,12 @@ struct ActivityDetailConfrim: View {
                                     .foregroundColor(Color.accent)
                                 
                                 VStack(alignment: .leading) {
-                                    Text("Valoare MET")
+                                    Text("Valoare MET:")
                                         .font(.headline)
                                     Text(activityData.met)
                                         .font(.title2)
                                         .fontWeight(.semibold)
                                 }
-                                Spacer()
                             }
                             .padding()
                             .background(Color.card)
@@ -76,7 +75,7 @@ struct ActivityDetailConfrim: View {
                                     .imageScale(.large)
                                     .foregroundColor(Color.accent)
                                 VStack(alignment: .leading) {
-                                    Text("Timp MET")
+                                    Text("Timp MET:")
                                         .font(.headline)
                                     Text(activityData.met)
                                         .font(.title2)
@@ -108,7 +107,6 @@ struct ActivityDetailConfrim: View {
                         }
                         .card()
                         
-                        
                         Button {
                             // addToJournal()
                         } label: {
@@ -123,43 +121,42 @@ struct ActivityDetailConfrim: View {
                         }
                     }
                     .frame(maxWidth: 580)
-                    .navigationBarItems(trailing: authViewModel.currentUser?.is_staff == true ?
-                        HStack(spacing: 15) {
-                            NavigationLink {
-                                EditActivityView(activity: activityData)
-                            } label: {
-                                HStack {
-                                    Text("Editează")
-                                    Image(systemName: "pencil.circle")
+                    .navigationBarItems(
+                        trailing: authViewModel.currentUser?.is_staff == true ?
+                            HStack(spacing: 15) {
+                                NavigationLink {
+                                    EditActivityView(activity: activityData)
+                                } label: {
+                                    HStack {
+                                        Text("Editează")
+                                        Image(systemName: "pencil.circle")
+                                    }
                                 }
-                            }
-                            Button {
-                                showDeleteConfirmation.toggle()
-                            } label: {
-                                HStack {
-                                    Text("Șterge")
-                                        .foregroundColor(Color.red)
-                                    Image(systemName: "trash.circle")
-                                        .foregroundColor(Color.red)
+                                Button {
+                                    showDeleteConfirmation.toggle()
+                                } label: {
+                                    HStack {
+                                        Text("Șterge")
+                                            .foregroundColor(Color.red)
+                                        Image(systemName: "trash.circle")
+                                            .foregroundColor(Color.red)
+                                    }
                                 }
-                            }
-                            .alert(isPresented:$showDeleteConfirmation) {
-                                Alert(
-                                    title: Text("Ești sigur că vrei să ștergi această activitate?"),
-                                    message: Text("Această acțiune este permanentă"),
-                                    primaryButton: .destructive(Text("Șterge")) {
-                                        Task {
-                                            try await activityDetailViewModel.deleteActivity()
-                                        }
-                                        self.presentationMode.wrappedValue.dismiss()
-                                    },
-                                    secondaryButton: .cancel(Text("Renunță"))
-                                )
-                            }
-                        }
-                        : nil
+                                .alert(isPresented:$showDeleteConfirmation) {
+                                    Alert(
+                                        title: Text("Ești sigur că vrei să ștergi această activitate?"),
+                                        message: Text("Această acțiune este permanentă"),
+                                        primaryButton: .destructive(Text("Șterge")) {
+                                            Task {
+                                                try await activityDetailViewModel.deleteActivity()
+                                            }
+                                            self.presentationMode.wrappedValue.dismiss()
+                                        },
+                                        secondaryButton: .cancel(Text("Renunță"))
+                                    )
+                                }
+                            } : nil
                     )
-                    .navigationBarTitle("", displayMode: .inline)
                 }
             }
         }
@@ -168,6 +165,7 @@ struct ActivityDetailConfrim: View {
                 try await self.activityDetailViewModel.fetchActivity()
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
     }
 }
 
