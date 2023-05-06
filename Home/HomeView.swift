@@ -17,8 +17,6 @@ struct HomeView: View {
     
     @State private var data = Date()
     @State private var showDishSheet = false
-    @State private var height = 0
-    
     
     // MARK: - BODY
     var body: some View {
@@ -106,27 +104,25 @@ struct HomeView: View {
                                 }
                                 
                                 HStack(alignment: .top) {
-                                    Button {
-                                        self.showDishSheet.toggle()
+                                    NavigationLink {
+                                        DishView()
                                     } label: {
                                         AddDishButton(imageName: "breakfast", title: "mic\ndejun")
                                     }
-                                    .sheet(isPresented: $showDishSheet) {
-                                        DishDetailConfirm()
-                                    }
-                                    Button {
-                                        print("Buton pranz apasat")
+                                    
+                                    NavigationLink {
+                                        DishView()
                                     } label: {
                                         AddDishButton(imageName: "soupLadle", title: "prânz")
                                     }
                                     // RingView()
-                                    Button {
-                                        print("Buton cina apasat")
+                                    NavigationLink {
+                                        DishView()
                                     } label: {
                                         AddDishButton(imageName: "pastaDish", title: "cină")
                                     }
-                                    Button {
-                                        print("Am apasat")
+                                    NavigationLink {
+                                        DishView()
                                     } label: {
                                         AddDishButton(imageName: "icecream", title: "gustări")
                                     }
@@ -158,6 +154,12 @@ struct HomeView: View {
                         }
                         .navigationTitle("Bine ai venit!")
                         .navigationBarItems(
+                            leading: user.is_staff == true ?
+                                NavigationLink {
+                                    AddFoodView()
+                                } label: {
+                                    Image(systemName: "square.and.pencil")
+                                } : nil,
                             trailing:
                                 NavigationLink {
                                     SettingsView()
