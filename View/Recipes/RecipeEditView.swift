@@ -35,6 +35,8 @@ struct RecipeEditView: View {
     @State private var recipeImage: Image?
     
     init(recipe: Recipe) {
+        UITableView.appearance().showsVerticalScrollIndicator = false
+        
         _title = State(initialValue: recipe.title)
         _time_minutes = State(initialValue: String(recipe.time_minutes))
         _description = State(initialValue: recipe.description)
@@ -45,9 +47,10 @@ struct RecipeEditView: View {
         _fibers = State(initialValue: recipe.fibers)
         _fat = State(initialValue: recipe.fat)
         _selectedCategory = State(initialValue: recipe.category)
+        
         self.recipeId = recipe.id
     }
-    
+
     
     // MARK: - BODY
     var body: some View {
@@ -108,12 +111,12 @@ struct RecipeEditView: View {
                 // Ingredients
                 Section(header: Text("Ingrediente:")) {
                     TextEditor(text: $ingredients)
-                        .frame(height: 150, alignment: .leading)
+                        .frame(minHeight: 150, alignment: .leading)
                 }
                 // Directions
                 Section(header: Text("Mod preparare:")) {
                     TextEditor(text: $description)
-                        .frame(height: 150, alignment: .leading)
+                        .frame(minHeight: 150, alignment: .leading)
                 }
                 // Image picker
                 Section(header: Text("Poză preparat:")) {
@@ -170,6 +173,14 @@ extension RecipeEditView {
 // MARK: - PREVIEWS
 struct RecipeEditView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeEditView(recipe: recipeDetailPreviewData)
+        Group {
+            NavigationView {
+                RecipeEditView(recipe: recipeDetailPreviewData)
+            }
+            NavigationView {
+                RecipeEditView(recipe: recipeDetailPreviewData)
+                    .preferredColorScheme(.dark)
+            }
+        }
     }
 }
