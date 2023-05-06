@@ -17,7 +17,7 @@ func Greetings() -> String {
     let SUNSET = 18
     let MIDNIGHT = 24
     
-    var greetingText = "Salut" // Default greeting text
+    var greetingText = "Bine ai venit" // Default greeting text
     
     // MARK: - SWITCH
     switch hour {
@@ -28,7 +28,7 @@ func Greetings() -> String {
         case SUNSET..<MIDNIGHT:
             greetingText = "Bună seara"
         default:
-            _ = "Salut"
+            _ = "Bine ai venit"
     }
     
     return greetingText

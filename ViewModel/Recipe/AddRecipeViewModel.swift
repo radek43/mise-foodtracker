@@ -1,34 +1,39 @@
 //
-//  ActivityEditViewModel.swift
+//  AddRecipeViewModel.swift
 //  mise-foodtracker
 //
-//  Created by Radu Bila on 16.04.2023.
+//  Created by Radu Bila on 06.04.2023.
 //
-
 import Foundation
 import SwiftUI
 
-
-class ActivityEditViewModel: ObservableObject {
+class AddRecipeViewModel: ObservableObject {
     // MARK: - PROPERTIES
-    @Published var didUpdateActivity = false
+    @Published var didUploadRecipe = false
     @Published var error: Error?
     
     private var keychainService = KeychainService()
     
     // MARK: - METHODS
     @MainActor
-    func updateActivity(id: Int, title: String, met: String) async throws {
+    func postRecipe(title: String, category: String, time_minutes: Int, description: String, ingredients: String, calories: String, protein: String, carbs: String, fibers: String, fat: String, image: UIImage?) async throws {
         guard let user = AuthViewModel.shared.currentUser else { return }
-        guard let url = URL(string: "http://127.0.0.1:8000/api/activity/activities/\(id)/") else {
+        guard let url = URL(string: "http://127.0.0.1:8000/api/recipe/recipes/") else {
             throw RecipeError.invalidURL
         }
         
         // Add the payload to the HTTP request data
         let params = [
-            "id": id,
             "title": title,
-            "met": met,
+            "calories": calories,
+            "category": category,
+            "time_minutes": time_minutes,
+            "protein": protein,
+            "carbs": carbs,
+            "fibers": fibers,
+            "fat": fat,
+            "description": description,
+            "ingredients": ingredients
         ] as [String : Any]
         
         var token = ""
@@ -44,10 +49,10 @@ class ActivityEditViewModel: ObservableObject {
             print("fetchUser:\(error)")
         }
         
-        // Set the URLRequest to PUT and to the specified URL
+        // Set the URLRequest to POST and to the specified URL
         var request = URLRequest(url: url)
         
-        request.httpMethod = "PUT"
+        request.httpMethod = "POST"
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -59,16 +64,20 @@ class ActivityEditViewModel: ObservableObject {
             print("postRecipe: \(error)")
         }
         
-        // Send a PUT request to the URL, with the data we created earlier
+        // Send a POST request to the URL, with the data we created earlier
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            guard (response as? HTTPURLResponse)?.statusCode == 201 else {
                 throw RecipeError.serverError
             }
-            if try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .fragmentsAllowed]) is [String: Any] {
-                
+            if let result = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .fragmentsAllowed]) as? [String: Any] {
+                if let image = image {
+                    if let id = result["id"] {
+                        ImageUploader.uploadImage(email: user.email, paramName: "image", fileName: "image.jpeg", image: image, urlPath: "/api/recipe/recipes/\(id)/upload-image/")
+                    }
+                }
             }
-            self.didUpdateActivity = true
+            self.didUploadRecipe = true
         } catch {
             self.error = error
         }

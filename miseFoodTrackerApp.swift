@@ -17,7 +17,7 @@ struct miseFoodTrackerApp: App {
     // MARK: - BODY
     var body: some Scene {
         WindowGroup {
-            LaunchScreen()
+            LaunchView()
                 .environmentObject(AuthViewModel.shared)
         }
     }

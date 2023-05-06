@@ -22,12 +22,10 @@ struct SearchBar: View {
                 .background(Color("CardBackground"))
                 .cornerRadius(10)
                 .overlay(
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(Color.formText)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 8)
-                    }
+                    Image(systemName: "magnifyingglass")
+                        .foregroundColor(Color.formText)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 8)
                 )
         }
     }
@@ -40,14 +38,14 @@ struct SearchBar_Previews: PreviewProvider {
             ZStack {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
-                SearchBar(placeholderText: "Gaseste-ti inspiratia",text: .constant(""))
+                SearchBar(placeholderText: "Găseste-ți inspirația", text: .constant(""))
                     .padding()
             }
             
             ZStack {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
-                SearchBar(placeholderText: "Gaseste-ti inspiratia",text: .constant(""))
+                SearchBar(placeholderText: "Găseste-ți inspirația", text: .constant(""))
                     .padding()
                     .preferredColorScheme(.dark)
             }
