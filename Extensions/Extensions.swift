@@ -101,6 +101,13 @@ extension Float {
     }
 }
 
+extension Double {
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
+
 extension UINavigationBar {
     static func changeAppearance(clear: Bool) {
         let appearance = UINavigationBarAppearance()
@@ -115,4 +122,34 @@ extension UINavigationBar {
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
+}
+
+extension FileManager {
+    static var docDirURL: URL {
+        return Self.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
+    
+    func saveDocument(contents: String, docName: String, completion: (Error?) -> Void) {
+        let url = Self.docDirURL.appendingPathComponent(docName)
+        do {
+            try contents.write(to: url, atomically: true, encoding: .utf8)
+        } catch {
+            completion(error)
+        }
+    }
+    
+    func readDocument(docName: String, completion: (Result<Data, Error>) -> Void) {
+        let url = Self.docDirURL.appendingPathComponent(docName)
+        do {
+            let data = try Data(contentsOf: url)
+            completion(.success(data))
+        } catch {
+            completion(.failure(error))
+        }
+    }
+    
+    func docExist(named docName: String) -> Bool {
+        fileExists(atPath: Self.docDirURL.appendingPathComponent(docName).path)
+    }
+    
 }
