@@ -90,7 +90,7 @@ struct OnboardWelcome: View {
                                     }
                                 }
                         } label: {
-                            CapsuleButton(text: "Continuă")
+                            RectangleButton(text: "Continuă")
                         }
                         Spacer()
                     }

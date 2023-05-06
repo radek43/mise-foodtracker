@@ -38,7 +38,7 @@ struct RegistrationView: View {
                     try await authViewModel.signUp(email: email, username: username, fullname: fullname, password: password)
                 }
             } label: {
-                CapsuleButton(text: "Continuă")
+                RectangleButton(text: "Continuă")
             }
             Spacer()
             

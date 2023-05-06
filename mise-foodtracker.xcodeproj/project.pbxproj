@@ -85,7 +85,7 @@
 		2CED766E29D5A5850093E035 /* KeyboardToolbars in Frameworks */ = {isa = PBXBuildFile; productRef = 2CED766D29D5A5850093E035 /* KeyboardToolbars */; };
 		2CED767029D5A9460093E035 /* NumbersOnlyViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED766F29D5A9460093E035 /* NumbersOnlyViewModifier.swift */; };
 		2CF44A6928ECBB26001689A8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF44A6828ECBB26001689A8 /* SearchBar.swift */; };
-		2CFC2B3229705BF800451922 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC2B3129705BF800451922 /* CapsuleButton.swift */; };
+		2CFC2B3229705BF800451922 /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFC2B3129705BF800451922 /* RectangleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,7 +165,7 @@
 		2CEADAB7295330D2002AA0A0 /* AddShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShadow.swift; sourceTree = "<group>"; };
 		2CED766F29D5A9460093E035 /* NumbersOnlyViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOnlyViewModifier.swift; sourceTree = "<group>"; };
 		2CF44A6828ECBB26001689A8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
-		2CFC2B3129705BF800451922 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
+		2CFC2B3129705BF800451922 /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				2C56DEE729546FAF006A4A5A /* RingButton.swift */,
-				2CFC2B3129705BF800451922 /* CapsuleButton.swift */,
+				2CFC2B3129705BF800451922 /* RectangleButton.swift */,
 				17F01E8228A2C8B900285894 /* CustomInputFields.swift */,
 				17F01E8428A2C8FD00285894 /* HeaderView.swift */,
 				178CCC7628BBF8140074D52E /* ImagePicker.swift */,
@@ -589,7 +589,7 @@
 				2CA12FDC29E1779800CC6CC8 /* RecipeDetailViewModel.swift in Sources */,
 				2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */,
 				2C6A161728F17F5200D9DDE4 /* ReplyRow.swift in Sources */,
-				2CFC2B3229705BF800451922 /* CapsuleButton.swift in Sources */,
+				2CFC2B3229705BF800451922 /* RectangleButton.swift in Sources */,
 				2C64C040294B931600E9305F /* ProfileSettingsView.swift in Sources */,
 				2C79C8D529BF71DF00243940 /* KeychainService.swift in Sources */,
 				2CE43D2929EC460000BD9E82 /* ActivityDetailViewModel.swift in Sources */,

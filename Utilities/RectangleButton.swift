@@ -1,5 +1,5 @@
 //
-//  CapsuleButton.swift
+//  RectangleButton.swift
 //  mise-foodtracker
 //
 //  Created by Radu Bila on 12.01.2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct CapsuleButton: View {
+struct RectangleButton: View {
     // MARK: - PROPERTIES
     var text: String
     
@@ -27,12 +27,18 @@ struct CapsuleButton: View {
 
 
 // MARK: - PREVIEWS
-struct CapsuleButton_Previews: PreviewProvider {
+struct RectangleButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CapsuleButton(text: "Înregistrează-te")
-            CapsuleButton(text: "Înregistrează-te")
-                .preferredColorScheme(.dark)
+            ZStack {
+                Color.background.ignoresSafeArea()
+                RectangleButton(text: "Înregistrează-te")
+            }
+            ZStack {
+                Color.background.ignoresSafeArea()
+                RectangleButton(text: "Înregistrează-te")
+                    .preferredColorScheme(.dark)
+            }
         }
     }
 }

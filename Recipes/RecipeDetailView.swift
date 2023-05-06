@@ -101,7 +101,7 @@ struct RecipeDetailView: View {
                             }
                             .card()
                             
-                            CapsuleButton(text: "Adaugă la jurnal")
+                            RectangleButton(text: "Adaugă la jurnal")
                         }
                         .navigationBarItems(trailing: authViewModel.currentUser?.is_staff == true ?
                             HStack(spacing: 15) {

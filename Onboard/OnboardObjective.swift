@@ -190,7 +190,7 @@ struct OnboardObjective: View {
                             shouldShowOnboarding = false
                         }
                     } label: {
-                        CapsuleButton(text: "Finalizează")
+                        RectangleButton(text: "Finalizează")
                     }
                     Spacer()
                 }

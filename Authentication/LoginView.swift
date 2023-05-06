@@ -48,7 +48,7 @@ struct LoginView: View {
                             try await authViewModel.signIn(email: email, password: password)
                         }
                     } label: {
-                        CapsuleButton(text: "Autentifică-te")
+                        RectangleButton(text: "Autentifică-te")
                     }
                     
                     Spacer()

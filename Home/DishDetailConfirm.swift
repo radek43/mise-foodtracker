@@ -63,7 +63,7 @@ struct DishDetailConfirm: View {
                         Button {
                             // viewModel.login(withEmail: email, password: password)
                         } label: {
-                            CapsuleButton(text: "Adaugă la jurnal")
+                            RectangleButton(text: "Adaugă la jurnal")
                         }
                         
                         Spacer()

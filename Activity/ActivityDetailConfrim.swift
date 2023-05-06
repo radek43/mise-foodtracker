@@ -110,7 +110,7 @@ struct ActivityDetailConfrim: View {
                         Button {
                             // addToJournal()
                         } label: {
-                            CapsuleButton(text: "Adaugă la jurnal")
+                            RectangleButton(text: "Adaugă la jurnal")
                         }
                     }
                     .frame(maxWidth: 580)
