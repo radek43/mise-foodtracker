@@ -19,7 +19,7 @@ struct ContentView: View {
         if authViewModel.isLoggedIn == false {  //  User is not logged in
             LoginView()
         } else {  //  User is logged in
-            TabBar()
+            TabBarView()
         }
     }
 }
