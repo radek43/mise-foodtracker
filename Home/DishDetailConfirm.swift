@@ -6,55 +6,83 @@
 //
 
 import SwiftUI
+import KeyboardToolbars
+
 
 struct DishDetailConfirm: View {
+    // MARK: - PROPERTIES
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    @ObservedObject var dishDetailViewModel: DishDetailViewModel
+    
+    @State private var data = Date()
+    @State private var ammount = "100"
+    
     // MARK: - BODY
     var body: some View {
         ZStack {
             Color.background
                 .edgesIgnoringSafeArea(.all)
-            VStack(alignment: .center) {
-                // Header
-                VStack {
-                    HStack {
-                        Text("Cartofi piure")
-                            .font(.title2)
-                            .fontWeight(.semibold)
+            if let dishData = dishDetailViewModel.dish {
+                ScrollView(showsIndicators: false) {
+                    VStack(alignment: .center) {
+                        // Header
+                        VStack {
+                            HStack {
+                                Text(dishData.title)
+                                    .font(.title)
+                                    .fontWeight(.semibold)
+                                Spacer()
+                            }
+                        }
+                        .padding(.horizontal)
+                        .padding(.top)
+                        
+                        VStack(alignment: .center) {
+                            DatePicker(selection: $data, in: ...Date(), displayedComponents: .date) {
+                                Text("Data consumării:")
+                                    .foregroundColor(Color.formText)
+                            }
+                            .accentColor(.primary)
+                        }
+                        .card()
+
+                        HStack {
+                            Text("Cantitate(g):")
+                                .foregroundColor(Color.formText)
+                            TextField("", text: $ammount)
+                                .numbersOnly($ammount, includeDecimal: true, decimalPlaces: 2)
+                        }
+                        .card()
+                        
+                        DailyCaloriesChart(chartTitle: "Valori nutriționale:")
+                        
+                        // Add to journal
+                        Button {
+                            // viewModel.login(withEmail: email, password: password)
+                        } label: {
+                            CapsuleButton(text: "Adaugă la jurnal")
+                        }
+                        
                         Spacer()
                     }
-                    HStack {
-                        Text("Portie Servita: 1 cupa")
-                            .font(.subheadline)
-                        Spacer()
-                    }
+                    .navigationBarTitle("Detalii Servire", displayMode: .inline)
                 }
-                .padding(.horizontal)
-                .padding(.top)
-                
-                // Log meta
-                HStack {
-                    Spacer()
-                    DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3")
-                    DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
-                    DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
-                    DishDetailButton(imageName: "pastaDish", propertyTitle: "nr. portii", propertyValue: "3.0")
-                    Spacer()
-                }
-                .card()
-                
-                DailyCaloriesChart()
-                
-                // Add to journal
-                Button {
-                    // viewModel.login(withEmail: email, password: password)
-                } label: {
-                    CapsuleButton(text: "Adaugă la jurnal")
-                }
-                
-                Spacer()
+                .addHideKeyboardButton()
             }
-            .navigationBarTitle("Detalii Servire", displayMode: .inline)
         }
+        .onAppear {
+            Task(priority: .medium) {
+                try await self.dishDetailViewModel.fetchDish()
+            }
+        }
+    }
+    
+    func calculateAmmount(grams: Double, nutrition: Double) -> Double {
+        let result = grams * nutrition / 100
+        return result.roundTo(places: 1)
     }
 }
 
@@ -62,12 +90,16 @@ struct DishDetailConfirm: View {
 // MARK: - PREVIEWS
 struct DishDetailConfirm_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        let authViewModel = AuthViewModel()
+        authViewModel.currentUser = userPreviewData
+        let viewModel = DishDetailViewModel(withDishId: 1)
+        viewModel.dish = dishDetailPreviewData
+        return Group {
             NavigationView {
-                DishDetailConfirm()
+                DishDetailConfirm(dishDetailViewModel: viewModel)
             }
             NavigationView {
-                DishDetailConfirm()
+                DishDetailConfirm(dishDetailViewModel: viewModel)
             }
             .preferredColorScheme(.dark)
         }
