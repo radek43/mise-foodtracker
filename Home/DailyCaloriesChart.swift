@@ -10,7 +10,12 @@ import SwiftUICharts
 
 struct DailyCaloriesChart: View {
     // MARK: - PROPERTIES
-    var demoData: [Double] = [19, 13, 12]
+    @State private var protein: Double = 12
+    @State private var carbs: Double = 13
+    @State private var fats: Double = 14
+    
+    var chartTitle: String = "Sumar"
+    
     let mixedColorStyle = ChartStyle(backgroundColor: Color.card, foregroundColor: [
         ColorGradient(Color.green, Color.green), ColorGradient(Color.orange, Color.orange), ColorGradient(Color.blue, Color.blue)])
     
@@ -18,9 +23,9 @@ struct DailyCaloriesChart: View {
     var body: some View {
         CardView(showShadow: false) {
             VStack {
-                ChartLabel("Sumar", type: .subTitle)
+                ChartLabel(chartTitle, type: .subTitle)
                     .padding([.top, .leading, .trailing], 8)
-
+            
                 HStack(alignment: .center) {
                     PieChart()
                         .padding([.leading, .bottom])
@@ -30,11 +35,21 @@ struct DailyCaloriesChart: View {
                             Circle()
                                 .fill(
                                     LinearGradient(
+                                        gradient: Gradient(colors: [Color.green, Color.green]),
+                                        startPoint: .leading,
+                                        endPoint: .trailing))
+                                .frame(width: 15, height: 15)
+                            ChartLabel("\(protein)g \nProteine", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
+                        }
+                        HStack {
+                            Circle()
+                                .fill(
+                                    LinearGradient(
                                         gradient: Gradient(colors: [Color.orange, Color.orange]),
                                         startPoint: .leading,
                                         endPoint: .trailing))
                                 .frame(width: 15, height: 15)
-                            ChartLabel("\(demoData[1])g \nProteine", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
+                            ChartLabel("\(carbs)g \nCarbohidrati", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
                         }
                         HStack {
                             Circle()
@@ -44,24 +59,14 @@ struct DailyCaloriesChart: View {
                                         startPoint: .leading,
                                         endPoint: .trailing))
                                 .frame(width: 15, height: 15)
-                            ChartLabel("\(demoData[2])g \nCarbohidrati", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
-                        }
-                        HStack {
-                            Circle()
-                                .fill(
-                                    LinearGradient(
-                                        gradient: Gradient(colors: [Color.green, Color.green]),
-                                        startPoint: .leading,
-                                        endPoint: .trailing))
-                                .frame(width: 15, height: 15)
-                            ChartLabel("\(demoData[0])g \nGrasimi", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
+                            ChartLabel("\(fats)g \nGrasimi", type: .custom(size: 17, padding: EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2), color: .primary))
                         }
                     }
                 }
             }
             .background(Color.card)
         }
-        .data(demoData)
+        .data([protein, carbs, fats])
         .chartStyle(mixedColorStyle)
         .allowsHitTesting(false)
         .frame(height: 250)
