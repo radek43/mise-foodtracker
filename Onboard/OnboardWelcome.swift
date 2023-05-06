@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import KeyboardToolbars
 
 struct OnboardWelcome: View {
     // MARK: - PROPERTIES
@@ -78,6 +79,7 @@ struct OnboardWelcome: View {
                                 .padding(.horizontal, -8)
                             }
                         }
+                        .addHideKeyboardButton()
                         
                         NavigationLink {
                             OnboardObjective(shouldShowOnboarding: $shouldShowOnboarding)
