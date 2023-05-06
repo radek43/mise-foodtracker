@@ -45,7 +45,6 @@ struct Recipe: Codable, Identifiable {
     let time_minutes: Int
     let description: String
     let ingredients: String
-    
 }
 
 enum RecipeError: Error, LocalizedError {
