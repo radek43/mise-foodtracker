@@ -75,20 +75,18 @@ struct RecipesView: View {
                         .padding(.horizontal)
                     }
                     .coordinateSpace(name: "RefreshControl")
-                    .navigationBarItems( trailing: user.is_staff == true ?
+                    .navigationBarItems( leading: user.is_staff == true ?
                             NavigationLink {
                                 AddNewRecipe(recipeViewModel: recipeListViewModel)
                             } label: {
-                                Image(systemName: "plus.circle")
+                                Image(systemName: "square.and.pencil")
                             }
                         : nil
                     )
                     .navigationTitle("Rețete")
                 }
                 .onAppear {
-                    Task(priority: .medium) {
-                        try await self.recipeListViewModel.fetchRecipes()
-                    }
+                    recipeListViewModel.loadData()
                 }
             }
             .navigationViewStyle(StackNavigationViewStyle())
