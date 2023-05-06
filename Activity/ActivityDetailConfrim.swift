@@ -110,14 +110,7 @@ struct ActivityDetailConfrim: View {
                         Button {
                             // addToJournal()
                         } label: {
-                            Text("Adaugă la jurnal")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .frame(height: 50)
-                                .frame(maxWidth: 580)
-                                .background(Color.accent)
-                                .clipShape(Capsule())
-                                .padding()
+                            CapsuleButton(text: "Adaugă la jurnal")
                         }
                     }
                     .frame(maxWidth: 580)
@@ -129,7 +122,7 @@ struct ActivityDetailConfrim: View {
                                 } label: {
                                     HStack {
                                         Text("Editează")
-                                        Image(systemName: "pencil.circle")
+                                        Image(systemName: "highlighter")
                                     }
                                 }
                                 Button {
@@ -138,7 +131,7 @@ struct ActivityDetailConfrim: View {
                                     HStack {
                                         Text("Șterge")
                                             .foregroundColor(Color.red)
-                                        Image(systemName: "trash.circle")
+                                        Image(systemName: "trash")
                                             .foregroundColor(Color.red)
                                     }
                                 }
