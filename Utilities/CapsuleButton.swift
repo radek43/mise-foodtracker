@@ -20,7 +20,7 @@ struct CapsuleButton: View {
             .frame(height: 50)
             .frame(maxWidth: 580)
             .background(Color.accent)
-            .clipShape(Capsule())
+            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
             .padding()
     }
 }
