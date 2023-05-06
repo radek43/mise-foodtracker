@@ -58,6 +58,14 @@ var activityPreviewData: [Activity] = [
     Activity(id: 1, title: "Abdomene", met: "4.5"),
     Activity(id: 2, title: "Aerobic", met: "6.5"),
     Activity(id: 3, title: "Baschet", met: "8"),
-    Activity(id: 4, title: "Patinaj", met: "7"),
+    Activity(id: 4, title: "Patinaj", met: "7")
 ]
 
+var dishPreviewData: [FoodList] = [
+    FoodList(id: 1, title: "Arahide Nutline", calories: "645.0"),
+    FoodList(id: 2, title: "Iaurt de baut mango si para Zuzu", calories: "81.0"),
+    FoodList(id: 3, title: "Prosciutto crudo Casa Domani", calories: "231.0"),
+    FoodList(id: 4, title: "Bautura carbogazoasa Pepsi Twist Lemon", calories: "41.0")
+]
+
+var dishDetailPreviewData: Food = Food(id: 1, title: "Arahide Nutline", calories: "645.0", carbs: "11.5", fibers: "0.0", fat: "55.7", protein: "24.4", estimates: "")
