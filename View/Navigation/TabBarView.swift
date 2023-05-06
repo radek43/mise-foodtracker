@@ -1,5 +1,5 @@
 //
-//  TabBar.swift
+//  TabBarView.swift
 //  mise-foodtracker
 //
 //  Created by Radu Bila on 11.04.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TabBar: View {
+struct TabBarView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
     
@@ -45,7 +45,7 @@ struct TabBar: View {
                     Text("Rețete")
                 }
                 .tag(2)
-            ActivityView()
+            ActivityListView()
                 .tabItem {
                     if tabSelection == 3 { Image("dumbbell.fill").imageScale(.large) }
                     else { Image("dumbbell").imageScale(.large) }
@@ -61,13 +61,13 @@ struct TabBar: View {
 
 
 // MARK: - PREVIEW
-struct TabBar_Previews: PreviewProvider {
+struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
         return Group {
-            TabBar()
-            TabBar()
+            TabBarView()
+            TabBarView()
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)

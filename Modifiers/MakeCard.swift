@@ -27,8 +27,8 @@ struct MakeCard_Previews: PreviewProvider {
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
         return Group {
-            TabBar()
-            TabBar()
+            TabBarView()
+            TabBarView()
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)
