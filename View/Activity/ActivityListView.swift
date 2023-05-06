@@ -1,5 +1,5 @@
 //
-//  ActivityView.swift
+//  ActivityListView.swift
 //  mise-foodtracker
 //
 //  Created by Radu Bila on 07.05.2022.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct ActivityView: View {
+struct ActivityListView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
     
-    @StateObject var activityViewModel = ActivityViewModel()
+    @StateObject var activityListViewModel = ActivityListViewModel()
     
     @State private var showEditView = false
     @State private var showActivityConfirmSheet = false
@@ -28,7 +28,7 @@ struct ActivityView: View {
                         // Refresh list
                         RefreshControl(coordinateSpace: .named("RefreshControl")) {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                activityViewModel.loadActivities()
+                                activityListViewModel.loadActivities()
                             }
                         }
                         VStack {
@@ -49,7 +49,7 @@ struct ActivityView: View {
                                         .fontWeight(.bold)
                                 }
                                 Divider()
-                                ForEach(activityViewModel.activities) { activity in
+                                ForEach(activityListViewModel.activities) { activity in
                                     NavigationLink {
                                         ActivityConfrimView(activityConfirmViewModel: ActivityConfirmViewModel(withActivityId: activity.id))
                                     } label: {
@@ -62,7 +62,7 @@ struct ActivityView: View {
                                                 .foregroundColor(Color(UIColor.label))
                                         }
                                     }
-                                    if activity.id != activityViewModel.activities.last?.id {
+                                    if activity.id != activityListViewModel.activities.last?.id {
                                         Divider()
                                     }
                                 }
@@ -71,7 +71,7 @@ struct ActivityView: View {
                             .padding(.bottom)
                             .onAppear {
                                 Task {
-                                    try await self.activityViewModel.fetchActivities()
+                                    try await self.activityListViewModel.fetchActivities()
                                 }
                             }
                             .navigationTitle("Activitate")
@@ -82,7 +82,7 @@ struct ActivityView: View {
                     .navigationBarItems(
                         leading: user.is_staff == true ?
                             NavigationLink {
-                                AddActivityView()
+                                AddActivityListView()
                             } label: {
                                 Image(systemName: "square.and.pencil")
                             } : nil,
@@ -105,15 +105,15 @@ struct ActivityView: View {
 
 
 // MARK: - PREVIEW
-struct ActivityView_Previews: PreviewProvider {
+struct ActivityListView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
-        let activityViewModel = ActivityViewModel()
-        activityViewModel.activities = activityPreviewData
+        let activityListViewModel = ActivityListViewModel()
+        activityListViewModel.activities = activityPreviewData
         return Group {
-            ActivityView(activityViewModel: activityViewModel)
-            ActivityView(activityViewModel: activityViewModel)
+            ActivityListView(activityListViewModel: activityListViewModel)
+            ActivityListView(activityListViewModel: activityListViewModel)
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)

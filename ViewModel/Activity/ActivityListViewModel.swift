@@ -1,5 +1,5 @@
 //
-//  ActivityViewModel.swift
+//  ActivityListViewModel.swift
 //  mise-foodtracker
 //
 //  Created by Radu Bila on 13.04.2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-class ActivityViewModel: ObservableObject {
+class ActivityListViewModel: ObservableObject {
     // MARK: - PROPERTIES
     @Published var activities = [Activity]()
     @Published var error: Error?

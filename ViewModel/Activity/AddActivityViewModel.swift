@@ -1,5 +1,5 @@
 //
-//  AddActivityViewModel.swift
+//  AddActivityListViewModel.swift
 //  mise-foodtracker
 //
 //  Created by Radu Bila on 15.04.2023.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class AddActivityViewModel: ObservableObject {
+class AddActivityListViewModel: ObservableObject {
     // MARK: - PROPERTIES
     @Published var error: Error?
     @Published var didUploadActivity = false

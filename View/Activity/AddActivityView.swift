@@ -1,5 +1,5 @@
 //
-//  AddActivityView.swift
+//  AddActivityListView.swift
 //  mise-foodtracker
 //
 //  Created by Radu Bila on 15.04.2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct AddActivityView: View {
+struct AddActivityListView: View {
     // MARK: - PROPERTIES
-    @StateObject var viewModel = AddActivityViewModel()
+    @StateObject var viewModel = AddActivityListViewModel()
     
     @State private var activityTitle = ""
     @State private var met = ""
@@ -56,14 +56,14 @@ struct AddActivityView: View {
 }
 
 // MARK: - PREVIEW
-struct AddActivityView_Previews: PreviewProvider {
+struct AddActivityListView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NavigationView {
-                AddActivityView()
+                AddActivityListView()
             }
             NavigationView {
-                AddActivityView()
+                AddActivityListView()
             }
             .preferredColorScheme(.dark)
         }
