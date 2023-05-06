@@ -9,96 +9,76 @@ import SwiftUI
 
 struct DishView: View {
     // MARK: - PROPERTIES
-    @State private var searchText = ""
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
+    @StateObject var dishViewModel = DishViewModel()
+    
+    @State private var showEditView = false
+    @State private var showActivityConfirmSheet = false
+    @State private var showInfoSheet = false
     
     // MARK: - BODY
     var body: some View {
-        NavigationView {
+        if let user = authViewModel.currentUser {
             ZStack {
-                Color.background
-                    .edgesIgnoringSafeArea(.all)
-                ScrollView {
+                Color.background.ignoresSafeArea(.all)
+                
+                ScrollView(showsIndicators: false) {
+                    // Refresh list
+                    RefreshControl(coordinateSpace: .named("RefreshControl")) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            dishViewModel.loadDishes()
+                        }
+                    }
                     VStack {
-                        SearchBar(placeholderText: "Ce ai mancat azi?", text: $searchText)
-                            .frame(maxWidth: 580)
-                            .padding([.top, .leading, .trailing])
+                        // Search bar
+                        SearchBar(placeholderText: "Caută un fel de mâncare",text: .constant(""))
+                            .padding([.top, .horizontal])
+                            .padding(.bottom, 5.0)
                         
-                        // Recent logged items
-                        VStack {
-                            Text("Adaugate astazi")
-                                .font(.headline)
+                        // Activity list
+                        VStack(alignment: .leading) {
                             HStack {
-                                VStack(alignment: .leading) {
-                                    Text("Paine cu ou")
-                                    Text("1 felie, 517 calorii")
-                                        .font(.footnote)
-                                }
+                                Text("Denumire")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
                                 Spacer()
-                                Image(systemName: "checkmark")
+                                Text("kCal")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
                             }
                             Divider()
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text("Cereale cu lapte")
-                                    Text("1 felie, 517 calorii")
-                                        .font(.footnote)
+                            ForEach(dishViewModel.dishes) { dishes in
+                                NavigationLink {
+                                    DishDetailConfirm(dishDetailViewModel: DishDetailViewModel(withDishId: dishes.id))
+                                } label: {
+                                    HStack {
+                                        Text(dishes.title)
+                                            .foregroundColor(Color(UIColor.label))
+                                            .fixedSize(horizontal: false, vertical: true)
+                                        Spacer()
+                                        Text(dishes.calories)
+                                            .foregroundColor(Color(UIColor.label))
+                                    }
                                 }
-                                Spacer()
-                                Image(systemName: "checkmark")
-                            }
-                            Divider()
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text("Biscuiti Ovaz")
-                                    Text("1 felie, 517 calorii")
-                                        .font(.footnote)
+                                if dishes.id != dishViewModel.dishes.last?.id {
+                                    Divider()
                                 }
-                                Spacer()
-                                Image(systemName: "checkmark")
                             }
                         }
                         .card()
-                        
-                        // Item history
-                        VStack {
-                            Text("Istoric meniuri servite")
-                                .font(.headline)
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text("Ochiuri de oua")
-                                    Text("1 felie, 517 calorii")
-                                        .font(.footnote)
-                                }
-                                Spacer()
-                                Image(systemName: "plus")
-                            }
-                            Divider()
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text("Sunca")
-                                    Text("1 felie, 517 calorii")
-                                        .font(.footnote)
-                                }
-                                Spacer()
-                                Image(systemName: "plus")
-                            }
-                            Divider()
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text("Cafea cu lapte")
-                                    Text("1 felie, 517 calorii")
-                                        .font(.footnote)
-                                }
-                                Spacer()
-                                Image(systemName: "plus")
-                            }
+                        .padding(.bottom)
+                        .onAppear {
+                            dishViewModel.loadDishes()
                         }
-                        .card()
-                        Spacer()
+                        .frame(maxWidth: 580)
+                        .navigationTitle("Adaugă la jurnal")
+                        .navigationBarTitleDisplayMode(.inline)
                     }
                 }
+                .background(Color.background.edgesIgnoringSafeArea(.all))
+                .coordinateSpace(name: "RefreshControl")
             }
-            .navigationBarTitle("Adaugă un fel de mancare", displayMode: .inline)
         }
     }
 }
@@ -107,11 +87,19 @@ struct DishView: View {
 // MARK: - PREVIEWS
 struct DishView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            DishView()
-            DishView()
-                .preferredColorScheme(.dark)
+        let viewModel = AuthViewModel()
+        viewModel.currentUser = userPreviewData
+        let dishViewModel = DishViewModel()
+        dishViewModel.dishes = dishPreviewData
+        return Group {
+            NavigationView {
+                DishView(dishViewModel: dishViewModel)
+            }
+            NavigationView {
+                DishView(dishViewModel: dishViewModel)
+            }
+            .preferredColorScheme(.dark)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .environmentObject(viewModel)
     }
 }
