@@ -110,7 +110,7 @@ struct RecipeDetailView: View {
                                 } label: {
                                     HStack {
                                         Text("Editează")
-                                        Image(systemName: "pencil.circle")
+                                        Image(systemName: "highlighter")
                                     }
                                 }
                                 Button {
@@ -119,7 +119,7 @@ struct RecipeDetailView: View {
                                     HStack {
                                         Text("Șterge")
                                             .foregroundColor(Color.red)
-                                        Image(systemName: "trash.circle")
+                                        Image(systemName: "trash")
                                             .foregroundColor(Color.red)
                                     }
                                 }
