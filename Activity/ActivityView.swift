@@ -80,7 +80,13 @@ struct ActivityView: View {
                     .background(Color.background.edgesIgnoringSafeArea(.all))
                     .coordinateSpace(name: "RefreshControl")
                     .navigationBarItems(
-                        leading:
+                        leading: user.is_staff == true ?
+                            NavigationLink {
+                                AddNewActivity()
+                            } label: {
+                                Image(systemName: "square.and.pencil")
+                            } : nil,
+                        trailing:
                             Button {
                                 showInfoSheet.toggle()
                             } label: {
@@ -88,13 +94,7 @@ struct ActivityView: View {
                             }
                             .sheet(isPresented: $showInfoSheet) {
                                 ActivityInfoView()
-                            },
-                        trailing: user.is_staff == true ?
-                            NavigationLink {
-                                AddNewActivity()
-                            } label: {
-                                Image(systemName: "plus.circle")
-                            } : nil
+                            }
                     )
                 }
             }
@@ -112,8 +112,8 @@ struct ActivityView_Previews: PreviewProvider {
         let activityViewModel = ActivityViewModel()
         activityViewModel.activities = activityPreviewData
         return Group {
-            ActivityView()
-            ActivityView()
+            ActivityView(activityViewModel: activityViewModel)
+            ActivityView(activityViewModel: activityViewModel)
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)
