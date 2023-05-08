@@ -60,7 +60,7 @@ struct ActivityConfrimView: View {
                                 VStack(alignment: .leading) {
                                     Text("Valoare MET:")
                                         .font(.headline)
-                                    Text(activityData.met)
+                                    Text("\(activityData.met, specifier: "%.1f")")
                                         .font(.title2)
                                         .fontWeight(.semibold)
                                 }
@@ -77,7 +77,7 @@ struct ActivityConfrimView: View {
                                 VStack(alignment: .leading) {
                                     Text("Timp MET:")
                                         .font(.headline)
-                                    Text(activityData.met)
+                                    Text("\(activityData.met, specifier: "%.1f")")
                                         .font(.title2)
                                         .fontWeight(.semibold)
                                 }
