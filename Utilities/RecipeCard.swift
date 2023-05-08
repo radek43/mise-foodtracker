@@ -47,18 +47,18 @@ struct RecipeCard: View {
                                 .font(.callout)
                                 .fontWeight(.medium)
                             .foregroundColor(.primary) +
-                            Text("  \(recipe.calories)kCal")
+                            Text("  \(recipe.calories, specifier: "%.f")kCal")
                                 .font(.footnote)
                                 .foregroundColor(Color.secondary)
                         }
                         Group {
-                            Text("•\(recipe.protein)g proteină ")
+                            Text("•\(recipe.protein, specifier: "%.1f")g proteină ")
                                 .font(.caption)
                                 .foregroundColor(Color.secondary) +
-                            Text("•\(recipe.calories)g grăsimi ")
+                            Text("•\(recipe.calories, specifier: "%.1f")g grăsimi ")
                                 .font(.caption)
                                 .foregroundColor(Color.secondary) +
-                            Text("•\(recipe.calories)g carbohidrați")
+                            Text("•\(recipe.calories, specifier: "%.1f")g carbohidrați")
                                 .font(.caption)
                                 .foregroundColor(Color.secondary)
                         }
