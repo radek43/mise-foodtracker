@@ -41,11 +41,11 @@ struct RecipeEditView: View {
         _time_minutes = State(initialValue: String(recipe.time_minutes))
         _description = State(initialValue: recipe.description)
         _ingredients = State(initialValue: recipe.ingredients)
-        _calories = State(initialValue: recipe.calories)
-        _protein = State(initialValue: recipe.protein)
-        _carbs = State(initialValue: recipe.carbs)
-        _fibers = State(initialValue: recipe.fibers)
-        _fat = State(initialValue: recipe.fat)
+        _calories = State(initialValue: String(recipe.calories))
+        _protein = State(initialValue: String(recipe.protein))
+        _carbs = State(initialValue: String(recipe.carbs))
+        _fibers = State(initialValue: String(recipe.fibers))
+        _fat = State(initialValue: String(recipe.fat))
         _selectedCategory = State(initialValue: recipe.category)
         
         self.recipeId = recipe.id
