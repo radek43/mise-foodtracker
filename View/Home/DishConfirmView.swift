@@ -82,7 +82,7 @@ struct DishConfirmView: View {
     
     func calculateAmmount(grams: Double, nutrition: Double) -> Double {
         let result = grams * nutrition / 100
-        return result.roundTo(places: 1)
+        return result.rounded(toPlaces: 1)
     }
 }
 
