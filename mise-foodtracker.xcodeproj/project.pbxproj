@@ -32,7 +32,6 @@
 		17F01E8328A2C8B900285894 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8228A2C8B900285894 /* InputField.swift */; };
 		17F01E8528A2C8FD00285894 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8428A2C8FD00285894 /* HeaderView.swift */; };
 		17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8628A2C94F00285894 /* RoundedShape.swift */; };
-		2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C049F0C2901AD4A006ECB21 /* Post.swift */; };
 		2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8629CC843E00371FE9 /* Extensions.swift */; };
 		2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D03F129D44A92005C8C4B /* PreviewData.swift */; };
 		2C124B3029F92C9A003640FE /* OnboardMeasurementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C124B2F29F92C9A003640FE /* OnboardMeasurementsView.swift */; };
@@ -45,6 +44,7 @@
 		2C3ED20629EB2C51007CE412 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED20529EB2C51007CE412 /* AddActivityView.swift */; };
 		2C3F85FE29ED28B600B47AF6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3F85FD29ED28B600B47AF6 /* SDWebImageSwiftUI */; };
 		2C47869E29E084A500BFBADF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C47869D29E084A500BFBADF /* RefreshControl.swift */; };
+		2C4790862A06C0E600F7F281 /* ScreenCorners in Frameworks */ = {isa = PBXBuildFile; productRef = 2C4790852A06C0E600F7F281 /* ScreenCorners */; };
 		2C4AD2D429EFE3F600311DAE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD2D329EFE3F600311DAE /* SettingsViewModel.swift */; };
 		2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD2D729EFFE1C00311DAE /* ObjectiveView.swift */; };
 		2C4D586C2A05041900B3E887 /* DishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D586B2A05041900B3E887 /* DishListViewModel.swift */; };
@@ -108,7 +108,6 @@
 		17F01E8228A2C8B900285894 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		17F01E8428A2C8FD00285894 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		17F01E8628A2C94F00285894 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
-		2C049F0C2901AD4A006ECB21 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2C082D8629CC843E00371FE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2C0D03F129D44A92005C8C4B /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		2C124B2F29F92C9A003640FE /* OnboardMeasurementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardMeasurementsView.swift; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3F85FE29ED28B600B47AF6 /* SDWebImageSwiftUI in Frameworks */,
+				2C4790862A06C0E600F7F281 /* ScreenCorners in Frameworks */,
 				17CC53EF2827E1A7006A8FFD /* SwiftUICharts in Frameworks */,
 				2CED766E29D5A5850093E035 /* KeyboardToolbars in Frameworks */,
 			);
@@ -252,7 +252,6 @@
 			children = (
 				176372DC28C117E4006337A7 /* User.swift */,
 				17A08FB228C3410500CD3D92 /* Recipe.swift */,
-				2C049F0C2901AD4A006ECB21 /* Post.swift */,
 				2CE9C54B29E1C96000DDBA20 /* Log.swift */,
 				2CA0397929E87EF70079A614 /* Activity.swift */,
 				2C28FA7E2A03C06200C6E625 /* Food.swift */,
@@ -451,6 +450,7 @@
 				17CC53EE2827E1A7006A8FFD /* SwiftUICharts */,
 				2CED766D29D5A5850093E035 /* KeyboardToolbars */,
 				2C3F85FD29ED28B600B47AF6 /* SDWebImageSwiftUI */,
+				2C4790852A06C0E600F7F281 /* ScreenCorners */,
 			);
 			productName = maiIncercSiEu;
 			productReference = 17A92CFB2801DCEA000CF34F /* mise-foodtracker.app */;
@@ -484,6 +484,7 @@
 				17CC53ED2827E1A7006A8FFD /* XCRemoteSwiftPackageReference "ChartView" */,
 				2CED766C29D5A5850093E035 /* XCRemoteSwiftPackageReference "KeyboardToolbarsSwiftUI" */,
 				2C3F85FC29ED28B600B47AF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				2C4790842A06C0E600F7F281 /* XCRemoteSwiftPackageReference "ScreenCorners" */,
 			);
 			productRefGroup = 17A92CFC2801DCEA000CF34F /* Products */;
 			projectDirPath = "";
@@ -517,7 +518,6 @@
 				17ABAE5E2827D75A0059E52A /* MakeCard.swift in Sources */,
 				17D9D156281C3EF700DD0406 /* NutritionFactsChart.swift in Sources */,
 				178CCC7928BC035C0074D52E /* ImageUploader.swift in Sources */,
-				2C049F0D2901AD4A006ECB21 /* Post.swift in Sources */,
 				2C56DEE829546FAF006A4A5A /* DishRingButton.swift in Sources */,
 				2C124B3029F92C9A003640FE /* OnboardMeasurementsView.swift in Sources */,
 				17AD15E42826EF460023C0EF /* ProgressRow.swift in Sources */,
@@ -815,6 +815,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		2C4790842A06C0E600F7F281 /* XCRemoteSwiftPackageReference "ScreenCorners" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kylebshr/ScreenCorners.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		2CED766C29D5A5850093E035 /* XCRemoteSwiftPackageReference "KeyboardToolbarsSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ArnavMotwani/KeyboardToolbarsSwiftUI.git";
@@ -835,6 +843,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C3F85FC29ED28B600B47AF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		2C4790852A06C0E600F7F281 /* ScreenCorners */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C4790842A06C0E600F7F281 /* XCRemoteSwiftPackageReference "ScreenCorners" */;
+			productName = ScreenCorners;
 		};
 		2CED766D29D5A5850093E035 /* KeyboardToolbars */ = {
 			isa = XCSwiftPackageProductDependency;
