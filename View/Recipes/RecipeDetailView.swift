@@ -63,11 +63,11 @@ struct RecipeDetailView: View {
                                     .fontWeight(.semibold)
                                 Divider()
                                 VStack(alignment: .leading) {
-                                    Text("• Calorii: \(recipe.calories)kCal")
-                                    Text("• Proteine: \(recipe.protein)g")
-                                    Text("• Lipide: \(recipe.fat)g")
-                                    Text("• Carbohidrați: \(recipe.carbs)g")
-                                    Text("• Fibre: \(recipe.fibers)g")
+                                    Text("• Calorii: \(recipe.calories, specifier: "%.f")kCal")
+                                    Text("• Proteine: \(recipe.protein, specifier: "%.1f")g")
+                                    Text("• Lipide: \(recipe.fat, specifier: "%.1f")g")
+                                    Text("• Carbohidrați: \(recipe.carbs, specifier: "%.1f")g")
+                                    Text("• Fibre: \(recipe.fibers, specifier: "%.1f")g")
                                 }
                                 Divider()
                                 VStack(alignment: .leading) {
