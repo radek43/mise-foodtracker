@@ -32,8 +32,8 @@ struct LoginView: View {
                     // Password reset
                     HStack {
                         Spacer()
-                        NavigationLink {
-                            Text("Reset password view..")
+                        Button {
+                            authViewModel.signOut() // for debug purposes
                         } label: {
                             Text("Am uitat parola")
                                 .font(.caption)
