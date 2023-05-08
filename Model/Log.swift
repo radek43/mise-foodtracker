@@ -12,12 +12,12 @@ struct DishLog: Identifiable, Codable {
     var id: String = UUID().uuidString
     var mealtype: Int
     var title: String
-    var servingSize: Float
-    var calories: Float
-    var protein: Float
-    var carbs: Float
-    var fibers: Float
-    var fat: Float
+    var servingSize: Double
+    var calories: Double
+    var protein: Double
+    var carbs: Double
+    var fibers: Double
+    var fat: Double
 }
 
 struct ActivityLog: Identifiable, Codable {

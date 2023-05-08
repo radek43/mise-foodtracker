@@ -23,10 +23,10 @@ struct RecipeList: Codable, Identifiable {
     let id: Int
     let title: String
     let category: String
-    let calories: String
-    let protein: String
-    let carbs: String
-    let fat: String
+    let calories: Double
+    let protein: Double
+    let carbs: Double
+    let fat: Double
     let image: String?
 }
 
@@ -36,12 +36,12 @@ struct Recipe: Codable, Identifiable {
     let id: Int
     let title: String
     let category: String
-    let calories: String
-    let protein: String
-    let carbs: String
-    let fat: String
+    let calories: Double
+    let protein: Double
+    let carbs: Double
+    let fat: Double
     let image: String?
-    let fibers: String
+    let fibers: Double
     let time_minutes: Int
     let description: String
     let ingredients: String

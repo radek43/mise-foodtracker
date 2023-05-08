@@ -11,16 +11,16 @@ import Foundation
 struct FoodList: Codable, Identifiable {
     let id: Int
     let title: String
-    let calories: String
+    let calories: Double
 }
 
 struct Food: Codable, Identifiable {
     let id: Int
     let title: String
-    let calories: String
-    let carbs: String
-    let fibers: String
-    let fat: String
-    let protein: String
+    let calories: Double
+    let carbs: Double
+    let fibers: Double
+    let fat: Double
+    let protein: Double
     let estimates: String
 }

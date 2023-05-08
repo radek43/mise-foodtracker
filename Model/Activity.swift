@@ -11,7 +11,7 @@ import SwiftUI
 struct Activity: Codable, Identifiable {
     let id: Int
     let title: String
-    let met: String
+    let met: Double
 }
 
 enum ActivityError: Error, LocalizedError {
