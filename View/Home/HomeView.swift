@@ -46,7 +46,7 @@ struct HomeView: View {
                                         .font(.title2)
                                         .fontWeight(.semibold)
                                     Spacer()
-                                    Text("\(user.calorie_goal) kCal")
+                                    Text("\(user.calorie_goal, specifier: "%.f") kCal")
                                         .font(.body)
                                         .fontWeight(.semibold)
                                 }

@@ -57,7 +57,7 @@ struct DishListView: View {
                                             .foregroundColor(Color(UIColor.label))
                                             .fixedSize(horizontal: false, vertical: true)
                                         Spacer()
-                                        Text(dishes.calories)
+                                        Text("\(dishes.calories, specifier: "%.f")")
                                             .foregroundColor(Color(UIColor.label))
                                     }
                                 }
