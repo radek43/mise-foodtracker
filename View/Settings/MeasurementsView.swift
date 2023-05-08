@@ -21,8 +21,8 @@ struct MeasurementsView: View {
     @Environment(\.presentationMode) var presentationMode
     
     init(user: User) {
-        _userWeight = State(initialValue: user.weight)
-        _userHeight = State(initialValue: user.height)
+        _userWeight = State(initialValue: String(user.weight))
+        _userHeight = State(initialValue: String(user.weight))
     }
     
     // MARK: - BODY
