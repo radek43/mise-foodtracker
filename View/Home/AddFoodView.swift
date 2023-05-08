@@ -31,14 +31,18 @@ struct AddFoodView: View {
                 .edgesIgnoringSafeArea(.all)
             Form {
                 // Title
-                Section(header: Text("Titlu:")) {
-                    TextField("Baton de ciocolată", text: $title)
+                HStack {
+                    Text("Titlu:")
+                        .foregroundColor(Color.formText)
+                    
+                    TextField("", text: $title)
                 }
                 // Recipe meta
                 Section(header: Text("Valori nutritive/100g: ")) {
                     HStack {
                         Text("Calorii:")
                             .foregroundColor(Color.formText)
+                        
                         TextField("", text: $calories)
                             .numbersOnly($calories, includeDecimal: true, decimalPlaces: 2)
                     }
