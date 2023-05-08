@@ -22,7 +22,7 @@ struct ActivityEditView: View {
     
     init(activity: Activity) {
         _activityTitle = State(initialValue: activity.title)
-        _met = State(initialValue: activity.met)
+        _met = State(initialValue: String(activity.met))
         self.activityId = activity.id
     }
     
