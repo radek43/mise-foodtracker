@@ -12,7 +12,9 @@ struct HeaderView: View {
     // MARK: - PROPERTIES
     let title1: String
     let title2: String
+    
     @State private var show = false
+    
     
     // MARK: - BODY
     var body: some View {
@@ -67,7 +69,7 @@ struct HeaderView: View {
         )
         .background(Color.accent)
         .foregroundColor(.white)
-        .clipShape(RoundedShape(corners: [.bottomRight, .bottomLeft], cornerRadius: 50))
+        .clipShape(RoundedShape(corners: [.bottomRight, .bottomLeft], cornerRadius: 40))
     }
 }
 
