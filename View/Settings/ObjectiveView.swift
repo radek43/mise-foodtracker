@@ -20,7 +20,7 @@ struct ObjectiveView: View {
     @Environment(\.presentationMode) var presentationMode
     
     init(user: User) {
-        _calorieGoal = State(initialValue: user.calorie_goal)
+        _calorieGoal = State(initialValue: String(user.calorie_goal))
     }
     
     // MARK: - BODY
@@ -120,14 +120,14 @@ struct ObjectiveView: View {
                             HStack(spacing: 20.0) {
                                 Image(systemName: "hand.thumbsup.fill")
                                     .resizable()
-                                    .foregroundColor(Color.blue)
+                                    .foregroundColor(Color.accent)
                                     .frame(width: 35, height: 35)
                                     .padding(.leading, 10)
                                 VStack(alignment: .leading) {
                                     Text("Menținere")
                                         .font(.title3)
                                         .fontWeight(.semibold)
-                                        .foregroundColor(Color.blue)
+                                        .foregroundColor(Color.accent)
                                     Text("Raport caloric necesar:")
                                         .font(.subheadline)
                                     Text("\(Float(user.tdee).roundTo(places: 1), specifier: "%.1f")kCal")
