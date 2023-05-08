@@ -58,7 +58,7 @@ struct ActivityListView: View {
                                                 .foregroundColor(Color(UIColor.label))
                                                 .fixedSize(horizontal: false, vertical: true)
                                             Spacer()
-                                            Text(activity.met)
+                                            Text("\(activity.met, specifier: "%.1f")")
                                                 .foregroundColor(Color(UIColor.label))
                                         }
                                     }
