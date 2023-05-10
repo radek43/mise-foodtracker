@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AppPear/ChartView",
       "state" : {
-        "revision" : "caa75ecbc0d68f2b50d714909566406f80214186",
-        "version" : "2.0.0-beta.2"
+        "revision" : "7140b8b6fd7413ccbcf31b748b32233f08314dab",
+        "version" : "2.0.0-beta.8"
       }
     },
     {
@@ -16,15 +16,6 @@
       "state" : {
         "revision" : "203ed27ee7fc2d7529a1b7e8b18e36651fe680d7",
         "version" : "1.0.0"
-      }
-    },
-    {
-      "identity" : "screencorners",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/kylebshr/ScreenCorners.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "f9ab802d820e07b33167b58ef520790c2c9bb720"
       }
     },
     {

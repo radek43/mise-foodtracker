@@ -26,7 +26,6 @@
 		17AD15E42826EF460023C0EF /* ProgressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AD15E32826EF460023C0EF /* ProgressRow.swift */; };
 		17B1A4DB2826A1E100F1CDEC /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B1A4DA2826A1E100F1CDEC /* ActivityListView.swift */; };
 		17CC53EF2827E1A7006A8FFD /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 17CC53EE2827E1A7006A8FFD /* SwiftUICharts */; };
-		17D9D156281C3EF700DD0406 /* NutritionFactsChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D9D155281C3EF700DD0406 /* NutritionFactsChart.swift */; };
 		17F01E7F28A2C81500285894 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E7E28A2C81500285894 /* LoginView.swift */; };
 		17F01E8128A2C84800285894 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8028A2C84800285894 /* RegistrationView.swift */; };
 		17F01E8328A2C8B900285894 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8228A2C8B900285894 /* InputField.swift */; };
@@ -40,16 +39,17 @@
 		2C28FA7F2A03C06200C6E625 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28FA7E2A03C06200C6E625 /* Food.swift */; };
 		2C28FA822A03C93800C6E625 /* AddFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28FA812A03C93800C6E625 /* AddFoodViewModel.swift */; };
 		2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */; };
+		2C3D0E3A2A0BA96A007974C2 /* NutritionChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D0E392A0BA96A007974C2 /* NutritionChart.swift */; };
 		2C3ED20429EAEE14007CE412 /* AddActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED20329EAEE13007CE412 /* AddActivityViewModel.swift */; };
 		2C3ED20629EB2C51007CE412 /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3ED20529EB2C51007CE412 /* AddActivityView.swift */; };
 		2C3F85FE29ED28B600B47AF6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3F85FD29ED28B600B47AF6 /* SDWebImageSwiftUI */; };
 		2C47869E29E084A500BFBADF /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C47869D29E084A500BFBADF /* RefreshControl.swift */; };
-		2C4790862A06C0E600F7F281 /* ScreenCorners in Frameworks */ = {isa = PBXBuildFile; productRef = 2C4790852A06C0E600F7F281 /* ScreenCorners */; };
 		2C4AD2D429EFE3F600311DAE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD2D329EFE3F600311DAE /* SettingsViewModel.swift */; };
 		2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD2D729EFFE1C00311DAE /* ObjectiveView.swift */; };
 		2C4D586C2A05041900B3E887 /* DishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D586B2A05041900B3E887 /* DishListViewModel.swift */; };
 		2C4D586E2A050BE000B3E887 /* DishConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D586D2A050BE000B3E887 /* DishConfirmViewModel.swift */; };
 		2C56DEE829546FAF006A4A5A /* DishRingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* DishRingButton.swift */; };
+		2C634A342A092E5900B0058B /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C634A332A092E5900B0058B /* Test.swift */; };
 		2C64C040294B931600E9305F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C64C03F294B931600E9305F /* ProfileView.swift */; };
 		2C71A69B29DDF701006A823C /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71A69A29DDF701006A823C /* LaunchView.swift */; };
 		2C74B75C2950BB510063A4F4 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C74B75B2950BB510063A4F4 /* NotificationsView.swift */; };
@@ -68,6 +68,7 @@
 		2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196729B8E8ED00B064B9 /* SettingsView.swift */; };
 		2CC4196A29B8E8FD00B064B9 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */; };
 		2CE35E6D2943B0AA00674348 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE35E6C2943B0AA00674348 /* AddRecipeView.swift */; };
+		2CE3FFEA2A0A4E4B00124D9C /* TestDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3FFE92A0A4E4B00124D9C /* TestDate.swift */; };
 		2CE43D2729EC445C00BD9E82 /* ActivityEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE43D2629EC445C00BD9E82 /* ActivityEditViewModel.swift */; };
 		2CE43D2929EC460000BD9E82 /* ActivityConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE43D2829EC460000BD9E82 /* ActivityConfirmViewModel.swift */; };
 		2CE43D2B29EC4C2900BD9E82 /* ActivityEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE43D2A29EC4C2900BD9E82 /* ActivityEditView.swift */; };
@@ -102,7 +103,6 @@
 		17ABAE5D2827D75A0059E52A /* MakeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeCard.swift; sourceTree = "<group>"; };
 		17AD15E32826EF460023C0EF /* ProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRow.swift; sourceTree = "<group>"; };
 		17B1A4DA2826A1E100F1CDEC /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
-		17D9D155281C3EF700DD0406 /* NutritionFactsChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionFactsChart.swift; sourceTree = "<group>"; };
 		17F01E7E28A2C81500285894 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		17F01E8028A2C84800285894 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		17F01E8228A2C8B900285894 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
@@ -116,6 +116,7 @@
 		2C28FA7E2A03C06200C6E625 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		2C28FA812A03C93800C6E625 /* AddFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewModel.swift; sourceTree = "<group>"; };
 		2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
+		2C3D0E392A0BA96A007974C2 /* NutritionChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionChart.swift; sourceTree = "<group>"; };
 		2C3ED20329EAEE13007CE412 /* AddActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityViewModel.swift; sourceTree = "<group>"; };
 		2C3ED20529EB2C51007CE412 /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
 		2C47869D29E084A500BFBADF /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		2C4D586B2A05041900B3E887 /* DishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListViewModel.swift; sourceTree = "<group>"; };
 		2C4D586D2A050BE000B3E887 /* DishConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishConfirmViewModel.swift; sourceTree = "<group>"; };
 		2C56DEE729546FAF006A4A5A /* DishRingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishRingButton.swift; sourceTree = "<group>"; };
+		2C634A332A092E5900B0058B /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		2C64C03F294B931600E9305F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2C71A69A29DDF701006A823C /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		2C74B75B2950BB510063A4F4 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		2CC4196729B8E8ED00B064B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		2CE35E6C2943B0AA00674348 /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
+		2CE3FFE92A0A4E4B00124D9C /* TestDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDate.swift; sourceTree = "<group>"; };
 		2CE43D2629EC445C00BD9E82 /* ActivityEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEditViewModel.swift; sourceTree = "<group>"; };
 		2CE43D2829EC460000BD9E82 /* ActivityConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityConfirmViewModel.swift; sourceTree = "<group>"; };
 		2CE43D2A29EC4C2900BD9E82 /* ActivityEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEditView.swift; sourceTree = "<group>"; };
@@ -161,7 +164,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3F85FE29ED28B600B47AF6 /* SDWebImageSwiftUI in Frameworks */,
-				2C4790862A06C0E600F7F281 /* ScreenCorners in Frameworks */,
 				17CC53EF2827E1A7006A8FFD /* SwiftUICharts in Frameworks */,
 				2CED766E29D5A5850093E035 /* KeyboardToolbars in Frameworks */,
 			);
@@ -226,12 +228,12 @@
 				2CFC2B3129705BF800451922 /* RectangleButton.swift */,
 				178C8138280A992700EB29C1 /* RecipeCard.swift */,
 				17F01E8228A2C8B900285894 /* InputField.swift */,
-				17D9D155281C3EF700DD0406 /* NutritionFactsChart.swift */,
 				17F01E8428A2C8FD00285894 /* HeaderView.swift */,
 				178CCC7628BBF8140074D52E /* ImagePicker.swift */,
 				17F01E8628A2C94F00285894 /* RoundedShape.swift */,
 				2CF44A6828ECBB26001689A8 /* SearchBar.swift */,
 				2CABC86E29D96B3D00D79F18 /* Greetings.swift */,
+				2C3D0E392A0BA96A007974C2 /* NutritionChart.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -266,6 +268,7 @@
 				2CD3CB642A06565D00927DD3 /* View */,
 				178CEBC32809B63B00D6DD25 /* Model */,
 				2C77A4CA2948A34A00233AF4 /* ViewModel */,
+				2C634A322A092E3E00B0058B /* Test */,
 				17425A3B28A2BB380021F61A /* Service */,
 				178CCC7528BBF7F00074D52E /* Utilities */,
 				2CFCD29829F85D9D00300E6C /* Modifiers */,
@@ -343,6 +346,15 @@
 				2C4AD2D329EFE3F600311DAE /* SettingsViewModel.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		2C634A322A092E3E00B0058B /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				2C634A332A092E5900B0058B /* Test.swift */,
+				2CE3FFE92A0A4E4B00124D9C /* TestDate.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		2C77A4C82948A1AB00233AF4 /* Navigation */ = {
@@ -450,7 +462,6 @@
 				17CC53EE2827E1A7006A8FFD /* SwiftUICharts */,
 				2CED766D29D5A5850093E035 /* KeyboardToolbars */,
 				2C3F85FD29ED28B600B47AF6 /* SDWebImageSwiftUI */,
-				2C4790852A06C0E600F7F281 /* ScreenCorners */,
 			);
 			productName = maiIncercSiEu;
 			productReference = 17A92CFB2801DCEA000CF34F /* mise-foodtracker.app */;
@@ -484,7 +495,6 @@
 				17CC53ED2827E1A7006A8FFD /* XCRemoteSwiftPackageReference "ChartView" */,
 				2CED766C29D5A5850093E035 /* XCRemoteSwiftPackageReference "KeyboardToolbarsSwiftUI" */,
 				2C3F85FC29ED28B600B47AF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				2C4790842A06C0E600F7F281 /* XCRemoteSwiftPackageReference "ScreenCorners" */,
 			);
 			productRefGroup = 17A92CFC2801DCEA000CF34F /* Products */;
 			projectDirPath = "";
@@ -516,7 +526,6 @@
 				2CA54DEE29DF0B92003D317B /* AddRecipeViewModel.swift in Sources */,
 				2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */,
 				17ABAE5E2827D75A0059E52A /* MakeCard.swift in Sources */,
-				17D9D156281C3EF700DD0406 /* NutritionFactsChart.swift in Sources */,
 				178CCC7928BC035C0074D52E /* ImageUploader.swift in Sources */,
 				2C56DEE829546FAF006A4A5A /* DishRingButton.swift in Sources */,
 				2C124B3029F92C9A003640FE /* OnboardMeasurementsView.swift in Sources */,
@@ -533,8 +542,10 @@
 				2C28FA7D2A03BE1300C6E625 /* AddFoodView.swift in Sources */,
 				2C28FA7F2A03C06200C6E625 /* Food.swift in Sources */,
 				2CE9260629E96182005E6803 /* RecipeEditViewModel.swift in Sources */,
+				2C634A342A092E5900B0058B /* Test.swift in Sources */,
 				178CEBC52809B82700D6DD25 /* DishButton.swift in Sources */,
 				17F01E8128A2C84800285894 /* RegistrationView.swift in Sources */,
+				2CE3FFEA2A0A4E4B00124D9C /* TestDate.swift in Sources */,
 				2C3ED20629EB2C51007CE412 /* AddActivityView.swift in Sources */,
 				2C3ED20429EAEE14007CE412 /* AddActivityViewModel.swift in Sources */,
 				2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */,
@@ -549,6 +560,7 @@
 				2C28FA822A03C93800C6E625 /* AddFoodViewModel.swift in Sources */,
 				2CED767029D5A9460093E035 /* NumbersOnlyViewModifier.swift in Sources */,
 				17B1A4DB2826A1E100F1CDEC /* ActivityListView.swift in Sources */,
+				2C3D0E3A2A0BA96A007974C2 /* NutritionChart.swift in Sources */,
 				2CE9260429E94D97005E6803 /* RecipeEditView.swift in Sources */,
 				179DDB2B2803441D00049C65 /* RecipeListView.swift in Sources */,
 				2CE43D2B29EC4C2900BD9E82 /* ActivityEditView.swift in Sources */,
@@ -804,7 +816,7 @@
 			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
 				kind = exactVersion;
-				version = "2.0.0-beta.2";
+				version = "2.0.0-beta.8";
 			};
 		};
 		2C3F85FC29ED28B600B47AF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
@@ -813,14 +825,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
-			};
-		};
-		2C4790842A06C0E600F7F281 /* XCRemoteSwiftPackageReference "ScreenCorners" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kylebshr/ScreenCorners.git";
-			requirement = {
-				branch = main;
-				kind = branch;
 			};
 		};
 		2CED766C29D5A5850093E035 /* XCRemoteSwiftPackageReference "KeyboardToolbarsSwiftUI" */ = {
@@ -843,11 +847,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C3F85FC29ED28B600B47AF6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
-		};
-		2C4790852A06C0E600F7F281 /* ScreenCorners */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2C4790842A06C0E600F7F281 /* XCRemoteSwiftPackageReference "ScreenCorners" */;
-			productName = ScreenCorners;
 		};
 		2CED766D29D5A5850093E035 /* KeyboardToolbars */ = {
 			isa = XCSwiftPackageProductDependency;
