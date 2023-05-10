@@ -14,7 +14,6 @@ extension Color {
     static let button = Color("ButtonColor")
     static let card = Color("CardBackground")
     static let background = Color("ColorBackground")
-    static let post = Color("PostDetailColor")
     static let formText = Color("SectionText")
     static let mono = Color("BlackAndWhite")
     static let navigation = Color("NavigationBackground")
@@ -92,6 +91,16 @@ extension Date {
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE, MMM d")
         return dateFormatter.string(from: self)
     }
+    
+    static func from(year: Int, month: Int, day: Int) -> Date {
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        dateComponents.day = day
+        return calendar.date(from: dateComponents) ?? Date()
+    }
+    
 }
 
 extension Float {
@@ -153,4 +162,15 @@ extension FileManager {
         fileExists(atPath: Self.docDirURL.appendingPathComponent(docName).path)
     }
     
+}
+
+
+extension Array {
+    mutating func remove(where condition: (Element) -> Bool) -> Element? {
+        guard let index = firstIndex(where: condition) else {
+            return nil
+        }
+
+        return remove(at: index)
+    }
 }
