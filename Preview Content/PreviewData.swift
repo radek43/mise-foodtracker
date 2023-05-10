@@ -84,4 +84,4 @@ var dishDetailPreviewData: Food = Food(id: 1,
                                        fibers: 0.0,
                                        fat: 55.7,
                                        protein: 24.4,
-                                       estimates: "")
+                                       estimates: "1 punga = 200g")
