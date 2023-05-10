@@ -22,7 +22,7 @@ struct MeasurementsView: View {
     
     init(user: User) {
         _userWeight = State(initialValue: String(user.weight))
-        _userHeight = State(initialValue: String(user.weight))
+        _userHeight = State(initialValue: String(user.height))
     }
     
     // MARK: - BODY
