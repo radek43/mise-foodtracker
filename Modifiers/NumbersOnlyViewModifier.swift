@@ -14,6 +14,7 @@ struct NumbersOnlyViewModifier: ViewModifier {
     @Binding var text: String
     var includeDecimal: Bool
     var decimalPlaces: Int
+    var disableZero: Bool
     
     // MARK: - BODY
     func body(content: Content) -> some View {
@@ -46,13 +47,18 @@ struct NumbersOnlyViewModifier: ViewModifier {
                         self.text = filtered
                     }
                 }
+                if disableZero {
+                    if newValue.hasPrefix("0") {
+                        self.text = ""
+                    }
+                }
             }
     }
 }
 
 // MARK: - EXTENSIONS
 extension View {
-    func numbersOnly(_ text: Binding<String>, includeDecimal: Bool = false, decimalPlaces: Int = 0) -> some View {
-        self.modifier(NumbersOnlyViewModifier(text: text, includeDecimal: includeDecimal, decimalPlaces: decimalPlaces))
+    func numbersOnly(_ text: Binding<String>, includeDecimal: Bool = false, decimalPlaces: Int = 0, disableZero: Bool = false) -> some View {
+        self.modifier(NumbersOnlyViewModifier(text: text, includeDecimal: includeDecimal, decimalPlaces: decimalPlaces, disableZero: disableZero))
     }
 }
