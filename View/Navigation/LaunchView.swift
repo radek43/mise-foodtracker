@@ -40,7 +40,7 @@ struct LaunchView: View {
     }
     
     private func delayView() async {
-        // Delay of 2 seconds (1 second = 1_000_000_000 nanoseconds)
+        // (1 second = 1_000_000_000 nanoseconds)
         try? await Task.sleep(nanoseconds: 1_000_000_000)
         hasTimeElapsed = true
     }
