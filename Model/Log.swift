@@ -8,6 +8,13 @@
 import Foundation
 import SwiftUI
 
+enum DishCategory: String, CaseIterable {
+    case breakfast  = "Mic Dejun"
+    case lunch = "Prânz"
+    case dinner = "Cină"
+    case snack = "Gustări"
+}
+
 struct DishLog: Identifiable, Codable {
     var id: String = UUID().uuidString
     var mealtype: Int
@@ -23,13 +30,53 @@ struct DishLog: Identifiable, Codable {
 struct ActivityLog: Identifiable, Codable {
     var id: String = UUID().uuidString
     var title: String
-    var calories: Float
+    var calories: Double
 }
 
 struct Log: Identifiable, Codable {
-    var id: Date
-    var food: [DishLog]
-    var activity: [ActivityLog]
-    var weight: Float
-    var water: Float
+    var id: Date = Date()
+    var foods: [DishLog] = []
+    var activities: [ActivityLog] = []
+    var weight: Double = 0
+    var water: Double = 0
+
+    var totalCalories: Double {
+        var sum: Double = 0
+        for food in foods {
+            sum += food.calories
+        }
+        return sum
+    }
+    
+    var totalActivityCalories: Double {
+        var sum: Double = 0
+        for activity in activities {
+            sum += activity.calories
+        }
+        return sum
+    }
+    
+    var totalProtein: Double {
+        var sum: Double = 0
+        for food in foods {
+            sum += food.protein
+        }
+        return sum
+    }
+    
+    var totalCarbs: Double {
+        var sum: Double = 0
+        for food in foods {
+            sum += food.carbs
+        }
+        return sum
+    }
+    
+    var totalFat: Double {
+        var sum: Double = 0
+        for food in foods {
+            sum += food.fat
+        }
+        return sum
+    }
 }
