@@ -27,7 +27,7 @@ struct DishConfirmView: View {
                 .edgesIgnoringSafeArea(.all)
             if let dishData = dishConfirmViewModel.dish {
                 ScrollView(showsIndicators: false) {
-                    VStack(alignment: .center) {
+                    VStack(alignment: .leading) {
                         // Header
                         VStack {
                             HStack {
@@ -53,11 +53,24 @@ struct DishConfirmView: View {
                             Text("Cantitate(g):")
                                 .foregroundColor(Color.formText)
                             TextField("", text: $ammount)
-                                .numbersOnly($ammount, includeDecimal: true, decimalPlaces: 2)
+                                .numbersOnly($ammount, includeDecimal: true, decimalPlaces: 2, disableZero: true)
                         }
                         .card()
                         
-                        NutritionFactsChart(chartTitle: "Valori nutriționale:")
+                        if !dishData.estimates.isEmpty {
+                            Text("Estimări: \(dishData.estimates)")
+                                .font(.footnote)
+                                .foregroundColor(Color.formText)
+                                .padding([.leading, .bottom, .trailing])
+                                .padding(.leading, 8)
+                                .padding(.top, -2)
+                        }
+                        
+                        NutritionChart(chartTitle: "Valori nutriționale",
+                                       protein: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dishData.protein),
+                                       carbs: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dishData.carbs),
+                                       fat: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dishData.fat),
+                                       isDisabled: ammount.isEmpty ? true : false)
                         
                         // Add to journal
                         Button {
