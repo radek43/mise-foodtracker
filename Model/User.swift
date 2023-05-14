@@ -35,6 +35,7 @@ struct Token: Codable {
 
 // User model
 struct User: Codable {
+    // MARK: - PROPERTIES
     let email: String
     let name: String
     let fullname: String
@@ -46,6 +47,7 @@ struct User: Codable {
     let activity_factor: Int
     let dob: String
     
+    // MARK: - COMPUTED PROPERTIES
     var formattedDob: Date {
         return convertStringToDate(dateString: dob) ?? Date()
     }
