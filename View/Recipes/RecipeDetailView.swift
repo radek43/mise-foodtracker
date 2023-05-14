@@ -18,7 +18,7 @@ struct RecipeDetailView: View {
     
     // MARK: - BODY
     var body: some View {
-        if authViewModel.currentUser != nil {
+        if let user = authViewModel.currentUser {
             ZStack {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
@@ -103,7 +103,7 @@ struct RecipeDetailView: View {
                             
                             RectangleButton(text: "Adaugă la jurnal")
                         }
-                        .navigationBarItems(trailing: authViewModel.currentUser?.is_staff == true ?
+                        .navigationBarItems(trailing: user.is_staff == true ?
                             HStack(spacing: 15) {
                                 NavigationLink {
                                     RecipeEditView(recipe: recipe)
@@ -148,7 +148,7 @@ struct RecipeDetailView: View {
                     try await self.recipeDetailViewModel.fetchRecipe()
                 }
             }
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitle(user.is_staff == true ? "" : "Detalii Rețetă", displayMode: .inline)
         }
     }
 }
