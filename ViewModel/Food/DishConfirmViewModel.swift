@@ -69,7 +69,7 @@ class DishConfirmViewModel: ObservableObject {
     
     func deleteDish() async throws {
         guard let user = AuthViewModel.shared.currentUser else { return }
-        guard let url = URL(string: "http://127.0.0.1:8000/api/activity/activities/\(self.dishId)/") else {
+        guard let url = URL(string: "http://127.0.0.1:8000/api/food/foods/\(self.dishId)/") else {
             throw RecipeError.invalidURL
         }
         
