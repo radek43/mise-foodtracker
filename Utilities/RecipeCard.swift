@@ -55,10 +55,10 @@ struct RecipeCard: View {
                             Text("•\(recipe.protein, specifier: "%.1f")g proteină ")
                                 .font(.caption)
                                 .foregroundColor(Color.secondary) +
-                            Text("•\(recipe.calories, specifier: "%.1f")g grăsimi ")
+                            Text("•\(recipe.fat, specifier: "%.1f")g grăsimi ")
                                 .font(.caption)
                                 .foregroundColor(Color.secondary) +
-                            Text("•\(recipe.calories, specifier: "%.1f")g carbohidrați")
+                            Text("•\(recipe.carbs, specifier: "%.1f")g carbohidrați")
                                 .font(.caption)
                                 .foregroundColor(Color.secondary)
                         }
@@ -66,7 +66,6 @@ struct RecipeCard: View {
                 }
                 .padding(.horizontal, 6)
             }
-
         }
         .frame(maxWidth: 580)
         .frame(height: 350)
