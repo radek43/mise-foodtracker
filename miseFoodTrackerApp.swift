@@ -19,6 +19,7 @@ struct miseFoodTrackerApp: App {
         WindowGroup {
             LaunchView()
                 .environmentObject(AuthViewModel.shared)
+                .environmentObject(LogViewModel())
         }
     }
 }
