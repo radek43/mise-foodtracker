@@ -17,6 +17,8 @@ struct DishListView: View {
     @State private var showActivityConfirmSheet = false
     @State private var showInfoSheet = false
     
+    let dishType: Int
+    
     // MARK: - BODY
     var body: some View {
         if let user = authViewModel.currentUser {
@@ -50,7 +52,7 @@ struct DishListView: View {
                             Divider()
                             ForEach(dishViewModel.dishes) { dishes in
                                 NavigationLink {
-                                    DishConfirmView(dishConfirmViewModel: DishConfirmViewModel(withDishId: dishes.id))
+                                    DishConfirmView(dishConfirmViewModel: DishConfirmViewModel(withDishId: dishes.id), dishType: dishType)
                                 } label: {
                                     HStack {
                                         Text(dishes.title)
@@ -93,10 +95,10 @@ struct DishListView_Previews: PreviewProvider {
         dishViewModel.dishes = dishPreviewData
         return Group {
             NavigationView {
-                DishListView(dishViewModel: dishViewModel)
+                DishListView(dishViewModel: dishViewModel, dishType: 1)
             }
             NavigationView {
-                DishListView(dishViewModel: dishViewModel)
+                DishListView(dishViewModel: dishViewModel, dishType: 1)
             }
             .preferredColorScheme(.dark)
         }
