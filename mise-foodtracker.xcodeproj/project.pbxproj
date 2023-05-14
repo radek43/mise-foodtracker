@@ -31,6 +31,8 @@
 		17F01E8328A2C8B900285894 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8228A2C8B900285894 /* InputField.swift */; };
 		17F01E8528A2C8FD00285894 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8428A2C8FD00285894 /* HeaderView.swift */; };
 		17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8628A2C94F00285894 /* RoundedShape.swift */; };
+		2C0589F92A0CC7E20099C254 /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0589F82A0CC7E20099C254 /* LogViewModel.swift */; };
+		2C0589FD2A0CCFC30099C254 /* EditFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0589FC2A0CCFC30099C254 /* EditFoodViewModel.swift */; };
 		2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8629CC843E00371FE9 /* Extensions.swift */; };
 		2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D03F129D44A92005C8C4B /* PreviewData.swift */; };
 		2C124B3029F92C9A003640FE /* OnboardMeasurementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C124B2F29F92C9A003640FE /* OnboardMeasurementsView.swift */; };
@@ -67,6 +69,7 @@
 		2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */; };
 		2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196729B8E8ED00B064B9 /* SettingsView.swift */; };
 		2CC4196A29B8E8FD00B064B9 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */; };
+		2CE1947A2A0E725F001EF4FE /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE194792A0E725F001EF4FE /* EditFoodView.swift */; };
 		2CE35E6D2943B0AA00674348 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE35E6C2943B0AA00674348 /* AddRecipeView.swift */; };
 		2CE3FFEA2A0A4E4B00124D9C /* TestDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3FFE92A0A4E4B00124D9C /* TestDate.swift */; };
 		2CE43D2729EC445C00BD9E82 /* ActivityEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE43D2629EC445C00BD9E82 /* ActivityEditViewModel.swift */; };
@@ -108,6 +111,8 @@
 		17F01E8228A2C8B900285894 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		17F01E8428A2C8FD00285894 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		17F01E8628A2C94F00285894 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
+		2C0589F82A0CC7E20099C254 /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
+		2C0589FC2A0CCFC30099C254 /* EditFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodViewModel.swift; sourceTree = "<group>"; };
 		2C082D8629CC843E00371FE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2C0D03F129D44A92005C8C4B /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		2C124B2F29F92C9A003640FE /* OnboardMeasurementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardMeasurementsView.swift; sourceTree = "<group>"; };
@@ -143,6 +148,7 @@
 		2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2CC4196729B8E8ED00B064B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		2CE194792A0E725F001EF4FE /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 		2CE35E6C2943B0AA00674348 /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 		2CE3FFE92A0A4E4B00124D9C /* TestDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDate.swift; sourceTree = "<group>"; };
 		2CE43D2629EC445C00BD9E82 /* ActivityEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEditViewModel.swift; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 				2C7918F2296DB519009F2194 /* DishListView.swift */,
 				2C7918F4296DBC35009F2194 /* DishConfirmView.swift */,
 				2C28FA7C2A03BE1300C6E625 /* AddFoodView.swift */,
+				2CE194792A0E725F001EF4FE /* EditFoodView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -305,6 +312,14 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		2C0589F72A0CC7B60099C254 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				2C0589F82A0CC7E20099C254 /* LogViewModel.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		2C082D8529CC840C00371FE9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +343,7 @@
 				2C4D586B2A05041900B3E887 /* DishListViewModel.swift */,
 				2C4D586D2A050BE000B3E887 /* DishConfirmViewModel.swift */,
 				2C28FA812A03C93800C6E625 /* AddFoodViewModel.swift */,
+				2C0589FC2A0CCFC30099C254 /* EditFoodViewModel.swift */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -370,6 +386,7 @@
 		2C77A4CA2948A34A00233AF4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2C0589F72A0CC7B60099C254 /* Log */,
 				2C3F85FF29ED2F2F00B47AF6 /* Authentication */,
 				2C28FA802A03C15B00C6E625 /* Food */,
 				2CA0397529E859AE0079A614 /* Recipe */,
@@ -523,6 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE35E6D2943B0AA00674348 /* AddRecipeView.swift in Sources */,
+				2C0589F92A0CC7E20099C254 /* LogViewModel.swift in Sources */,
 				2CA54DEE29DF0B92003D317B /* AddRecipeViewModel.swift in Sources */,
 				2C2F7FDB296C076B003F3F76 /* HapticFeedback.swift in Sources */,
 				17ABAE5E2827D75A0059E52A /* MakeCard.swift in Sources */,
@@ -544,6 +562,7 @@
 				2CE9260629E96182005E6803 /* RecipeEditViewModel.swift in Sources */,
 				2C634A342A092E5900B0058B /* Test.swift in Sources */,
 				178CEBC52809B82700D6DD25 /* DishButton.swift in Sources */,
+				2C0589FD2A0CCFC30099C254 /* EditFoodViewModel.swift in Sources */,
 				17F01E8128A2C84800285894 /* RegistrationView.swift in Sources */,
 				2CE3FFEA2A0A4E4B00124D9C /* TestDate.swift in Sources */,
 				2C3ED20629EB2C51007CE412 /* AddActivityView.swift in Sources */,
@@ -556,6 +575,7 @@
 				171C1724280AE513004F17DE /* RecipeDetailView.swift in Sources */,
 				178CCC7728BBF8140074D52E /* ImagePicker.swift in Sources */,
 				17A92CFF2801DCEA000CF34F /* miseFoodTrackerApp.swift in Sources */,
+				2CE1947A2A0E725F001EF4FE /* EditFoodView.swift in Sources */,
 				17F01E8328A2C8B900285894 /* InputField.swift in Sources */,
 				2C28FA822A03C93800C6E625 /* AddFoodViewModel.swift in Sources */,
 				2CED767029D5A9460093E035 /* NumbersOnlyViewModifier.swift in Sources */,
