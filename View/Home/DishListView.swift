@@ -21,7 +21,7 @@ struct DishListView: View {
     
     // MARK: - BODY
     var body: some View {
-        if let user = authViewModel.currentUser {
+        if authViewModel.currentUser != nil {
             ZStack {
                 Color.background.ignoresSafeArea(.all)
                 
@@ -35,9 +35,10 @@ struct DishListView: View {
                     VStack {
                         // Search bar
                         SearchBar(placeholderText: "Caută un fel de mâncare",text: .constant(""))
+                            .frame(maxWidth: 580)
                             .padding([.top, .horizontal])
                             .padding(.bottom, 5.0)
-                        
+        
                         // Activity list
                         VStack(alignment: .leading) {
                             HStack {
@@ -68,6 +69,7 @@ struct DishListView: View {
                                 }
                             }
                         }
+                        
                         .card()
                         .padding(.bottom)
                         .onAppear {
