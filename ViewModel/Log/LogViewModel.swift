@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class LogViewModel: ObservableObject {
     // MARK: - PROPERTIES
@@ -16,6 +17,19 @@ class LogViewModel: ObservableObject {
     }
     
     // MARK: - FUNCTIONS
+    
+    func addDishToLog(date: Date, dish: DishLog) {
+        if let index = logs.firstIndex(where: { $0.dateTime == date }) {
+            logs[index].foods.append(dish)
+            print("dish appended")
+            print(logs)
+        } else {
+            logs.append(Log(dateTime: date, foods: [dish]))
+            print("dish added to new log")
+            print(logs)
+        }
+    }
+    
     func addLog(log: Log) {
         
     }
@@ -26,7 +40,7 @@ class LogViewModel: ObservableObject {
         
     }
     func loadLogs() {
-        logs = Log.sampleLogs
+//        logs = Log.sampleLogs
     }
     func saveLog() {
         print("DEBUG: Saving logs to file system..")
