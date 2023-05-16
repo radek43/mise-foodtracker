@@ -38,10 +38,12 @@ struct LoginView: View {
                             Text("Am uitat parola")
                                 .font(.caption)
                                 .fontWeight(.semibold)
-                                .padding(.top)
-                                .padding(.trailing, 24)
+                                
                         }
                     }
+                    .frame(maxWidth: 580)
+                    .padding(.top, 8)
+                    .padding(.horizontal)
                     // Sign in
                     Button {
                         Task {
@@ -65,12 +67,13 @@ struct LoginView: View {
                                 .fontWeight(.semibold)
                         }
                     }
+                    .padding(.bottom, 32)
                 }
                 .edgesIgnoringSafeArea(.top)
                 .navigationBarHidden(true)
-                .navigationViewStyle(StackNavigationViewStyle())
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
