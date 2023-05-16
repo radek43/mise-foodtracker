@@ -31,6 +31,7 @@
 		17F01E8328A2C8B900285894 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8228A2C8B900285894 /* InputField.swift */; };
 		17F01E8528A2C8FD00285894 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8428A2C8FD00285894 /* HeaderView.swift */; };
 		17F01E8728A2C94F00285894 /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F01E8628A2C94F00285894 /* RoundedShape.swift */; };
+		2C04CB472A1383C4008142C1 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C04CB462A1383C4008142C1 /* NavigationUtil.swift */; };
 		2C0589F92A0CC7E20099C254 /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0589F82A0CC7E20099C254 /* LogViewModel.swift */; };
 		2C0589FD2A0CCFC30099C254 /* EditFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0589FC2A0CCFC30099C254 /* EditFoodViewModel.swift */; };
 		2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C082D8629CC843E00371FE9 /* Extensions.swift */; };
@@ -50,6 +51,7 @@
 		2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD2D729EFFE1C00311DAE /* ObjectiveView.swift */; };
 		2C4D586C2A05041900B3E887 /* DishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D586B2A05041900B3E887 /* DishListViewModel.swift */; };
 		2C4D586E2A050BE000B3E887 /* DishConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D586D2A050BE000B3E887 /* DishConfirmViewModel.swift */; };
+		2C542E782A10CFA6007BE23E /* RecipeConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C542E772A10CFA6007BE23E /* RecipeConfirmView.swift */; };
 		2C56DEE829546FAF006A4A5A /* DishRingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* DishRingButton.swift */; };
 		2C634A342A092E5900B0058B /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C634A332A092E5900B0058B /* Test.swift */; };
 		2C64C040294B931600E9305F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C64C03F294B931600E9305F /* ProfileView.swift */; };
@@ -69,6 +71,7 @@
 		2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */; };
 		2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196729B8E8ED00B064B9 /* SettingsView.swift */; };
 		2CC4196A29B8E8FD00B064B9 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */; };
+		2CD714362A10BADB005196A3 /* ConsumedCalories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD714352A10BADB005196A3 /* ConsumedCalories.swift */; };
 		2CE1947A2A0E725F001EF4FE /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE194792A0E725F001EF4FE /* EditFoodView.swift */; };
 		2CE35E6D2943B0AA00674348 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE35E6C2943B0AA00674348 /* AddRecipeView.swift */; };
 		2CE3FFEA2A0A4E4B00124D9C /* TestDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3FFE92A0A4E4B00124D9C /* TestDate.swift */; };
@@ -111,6 +114,7 @@
 		17F01E8228A2C8B900285894 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		17F01E8428A2C8FD00285894 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		17F01E8628A2C94F00285894 /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
+		2C04CB462A1383C4008142C1 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		2C0589F82A0CC7E20099C254 /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		2C0589FC2A0CCFC30099C254 /* EditFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodViewModel.swift; sourceTree = "<group>"; };
 		2C082D8629CC843E00371FE9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		2C4AD2D729EFFE1C00311DAE /* ObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveView.swift; sourceTree = "<group>"; };
 		2C4D586B2A05041900B3E887 /* DishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListViewModel.swift; sourceTree = "<group>"; };
 		2C4D586D2A050BE000B3E887 /* DishConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishConfirmViewModel.swift; sourceTree = "<group>"; };
+		2C542E772A10CFA6007BE23E /* RecipeConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeConfirmView.swift; sourceTree = "<group>"; };
 		2C56DEE729546FAF006A4A5A /* DishRingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishRingButton.swift; sourceTree = "<group>"; };
 		2C634A332A092E5900B0058B /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		2C64C03F294B931600E9305F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -148,6 +153,7 @@
 		2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2CC4196729B8E8ED00B064B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		2CD714352A10BADB005196A3 /* ConsumedCalories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumedCalories.swift; sourceTree = "<group>"; };
 		2CE194792A0E725F001EF4FE /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 		2CE35E6C2943B0AA00674348 /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 		2CE3FFE92A0A4E4B00124D9C /* TestDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDate.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 				171C1723280AE513004F17DE /* RecipeDetailView.swift */,
 				2CE35E6C2943B0AA00674348 /* AddRecipeView.swift */,
 				2CE9260329E94D97005E6803 /* RecipeEditView.swift */,
+				2C542E772A10CFA6007BE23E /* RecipeConfirmView.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -240,6 +247,8 @@
 				2CF44A6828ECBB26001689A8 /* SearchBar.swift */,
 				2CABC86E29D96B3D00D79F18 /* Greetings.swift */,
 				2C3D0E392A0BA96A007974C2 /* NutritionChart.swift */,
+				2CD714352A10BADB005196A3 /* ConsumedCalories.swift */,
+				2C04CB462A1383C4008142C1 /* NavigationUtil.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -570,10 +579,12 @@
 				2C082D8729CC843E00371FE9 /* Extensions.swift in Sources */,
 				2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */,
 				176372DD28C117E4006337A7 /* User.swift in Sources */,
+				2C542E782A10CFA6007BE23E /* RecipeConfirmView.swift in Sources */,
 				2C74B75C2950BB510063A4F4 /* NotificationsView.swift in Sources */,
 				2CA0397829E859D30079A614 /* ActivityListViewModel.swift in Sources */,
 				171C1724280AE513004F17DE /* RecipeDetailView.swift in Sources */,
 				178CCC7728BBF8140074D52E /* ImagePicker.swift in Sources */,
+				2CD714362A10BADB005196A3 /* ConsumedCalories.swift in Sources */,
 				17A92CFF2801DCEA000CF34F /* miseFoodTrackerApp.swift in Sources */,
 				2CE1947A2A0E725F001EF4FE /* EditFoodView.swift in Sources */,
 				17F01E8328A2C8B900285894 /* InputField.swift in Sources */,
@@ -591,6 +602,7 @@
 				2CF44A6928ECBB26001689A8 /* SearchBar.swift in Sources */,
 				2C47869E29E084A500BFBADF /* RefreshControl.swift in Sources */,
 				17A08FB328C3410500CD3D92 /* Recipe.swift in Sources */,
+				2C04CB472A1383C4008142C1 /* NavigationUtil.swift in Sources */,
 				2CE9C54C29E1C96000DDBA20 /* Log.swift in Sources */,
 				2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */,
 				2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */,
