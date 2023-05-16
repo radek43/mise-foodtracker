@@ -195,8 +195,6 @@ struct OnboardObjectiveView: View {
                     Spacer()
                 }
                 .edgesIgnoringSafeArea(.top)
-//                .navigationBarHidden(true)
-                .navigationViewStyle(StackNavigationViewStyle())
             }
     }
 }

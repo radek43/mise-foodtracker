@@ -95,10 +95,9 @@ struct OnboardMeasurementsView: View {
                         Spacer()
                     }
                     .edgesIgnoringSafeArea(.top)
-    //                .navigationBarHidden(true)
-                    .navigationViewStyle(StackNavigationViewStyle())
                 }
             }
+            .navigationViewStyle(StackNavigationViewStyle())
             .accentColor(Color.white)
         }
     }
