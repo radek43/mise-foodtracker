@@ -101,7 +101,13 @@ struct RecipeDetailView: View {
                             }
                             .card()
                             
-                            RectangleButton(text: "Adaugă la jurnal")
+                            NavigationLink {
+                                RecipeConfirmView(recipe: Food(id: recipe.id, title: recipe.title, calories: recipe.calories, carbs: recipe.carbs, fibers: recipe.fibers, fat: recipe.fat, protein: recipe.protein, estimates: ""))
+                            } label: {
+                                RectangleButton(text: "Adaugă la jurnal")
+                            }
+
+                            
                         }
                         .navigationBarItems(trailing: user.is_staff == true ?
                             HStack(spacing: 15) {
