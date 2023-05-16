@@ -15,20 +15,21 @@ struct HomeView: View {
     @EnvironmentObject var logViewModel: LogViewModel
     
     @Binding var tabSelection: Int
-    
+        
     @State private var showDishSheet = false
-    @State private var selectedDate = Date()
-
+    @State private var selectedDate = Date().stripTime()
+    @State var isActive: Bool = false
+    
+    private var idiom: UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
+    
     var filteredLogs: [Log] {
         logViewModel.logs.filter {
-            Calendar.current.compare($0.id, to: selectedDate, toGranularity: .day) == .orderedSame
+            Calendar.current.compare($0.dateTime, to: selectedDate, toGranularity: .day) == .orderedSame
         }
     }
     var defaultLog: Log {
-        Log(id: selectedDate)
+        Log(dateTime: selectedDate)
     }
-    
-    
     
     // MARK: - BODY
     var body: some View {
@@ -38,7 +39,7 @@ struct HomeView: View {
                     ZStack {
                         Color.background
                             .edgesIgnoringSafeArea(.all)
-                        
+
                         // Date picker
                         VStack(alignment: .center) {
                             DatePicker(selection: $selectedDate, in: ...Date(), displayedComponents: .date) {
@@ -46,17 +47,15 @@ struct HomeView: View {
                                     .font(.title2)
                                     .fontWeight(.semibold)
                             }
-                            .onChange(of: selectedDate) { newDate in
-                                if let midnight = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: newDate) {
-                                    selectedDate = midnight
-
-                                }
-                            }
+                            .onChange(of: selectedDate, perform: { value in
+                                let newDate = selectedDate.stripTime()
+                                selectedDate = newDate
+                            })
                             .accentColor(.primary)
                             .card()
                             
                             // Objective dashboard
-                            VStack(alignment: .leading) {
+                            VStack(alignment: .center) {
                                 HStack(alignment: .center) {
                                     Text("Obiectiv")
                                         .font(.title2)
@@ -75,38 +74,7 @@ struct HomeView: View {
                                 }
                                 ProgressView(value: filteredLogs.isEmpty ? 0 : filteredLogs[0].totalCalories / user.calorie_goal)
                                 
-                                HStack(alignment: .center) {
-                                    VStack {
-                                        Text("\(filteredLogs.isEmpty ? 0 : filteredLogs[0].totalCalories, specifier: "%.f")")
-                                            .font(.title3)
-                                            .fontWeight(.medium)
-                                        Text("Consumat")
-                                            .font(.subheadline)
-                                            .fontWeight(.medium)
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                    
-                                    VStack(alignment: .center) {
-                                        Text("\(filteredLogs.isEmpty ? 0 : filteredLogs[0].totalActivityCalories, specifier: "%.f")")
-                                            .font(.title3)
-                                            .fontWeight(.medium)
-                                        Text("Ars")
-                                            .font(.subheadline)
-                                            .fontWeight(.medium)
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                    
-                                    VStack(alignment: .center) {
-                                        Text("\(filteredLogs.isEmpty ? 0 :  filteredLogs[0].totalCalories - filteredLogs[0].totalActivityCalories, specifier: "%.f")")
-                                            .font(.title3)
-                                            .fontWeight(.medium)
-                                        Text("Net")
-                                            .font(.subheadline)
-                                            .fontWeight(.medium)
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                }
-                                .fixedSize(horizontal: false, vertical: true)
+                                ConsumedCalories(totalCalories: filteredLogs.isEmpty ? 0 : filteredLogs[0].totalCalories, totalActivityCalories: filteredLogs.isEmpty ? 0 : filteredLogs[0].totalActivityCalories)
                             }
                             .card()
                             
@@ -119,31 +87,46 @@ struct HomeView: View {
                                     Spacer()
                                 }
                                 
-                                HStack(alignment: .top) {
+                                HStack(alignment: .top, spacing: idiom == .pad ? 30 : 5) {
                                     NavigationLink {
                                         DishListView(dishType: 1)
                                     } label: {
-                                        DishButton(imageName: "breakfast", title: "mic\ndejun")
+                                        if calorieCategoryExists(1) == true {
+                                            DishRingButton(title: "mic\ndejun", calories: filteredLogs[0].totalBreakfast)
+                                        } else {
+                                            DishButton(imageName: "breakfast", title: "mic\ndejun")
+                                        }
                                     }
                                     NavigationLink {
                                         DishListView(dishType: 2)
                                     } label: {
-                                        DishButton(imageName: "soupLadle", title: "prânz")
+                                        if calorieCategoryExists(2) == true {
+                                            DishRingButton(title: "prânz", calories: filteredLogs[0].totalLunch)
+                                        } else {
+                                            DishButton(imageName: "soupLadle", title: "prânz")
+                                        }
                                     }
-                                    // DishRingButton()
                                     NavigationLink {
                                         DishListView(dishType: 3)
                                     } label: {
-                                        DishButton(imageName: "pastaDish", title: "cină")
+                                        if calorieCategoryExists(3) == true {
+                                            DishRingButton(title: "cină", calories: filteredLogs[0].totalDinner)
+                                        } else {
+                                            DishButton(imageName: "pastaDish", title: "cină")
+                                        }
                                     }
                                     NavigationLink {
                                         DishListView(dishType: 4)
                                     } label: {
-                                        DishButton(imageName: "icecream", title: "gustări")
+                                        if calorieCategoryExists(4) == true {
+                                            DishRingButton(title: "gustări", calories: filteredLogs[0].totalSnacks)
+                                        } else {
+                                            DishButton(imageName: "icecream", title: "gustări")
+                                        }
                                     }
                                 }
                                 
-                                HStack(alignment: .top) {
+                                HStack(alignment: .top, spacing: idiom == .pad ? 30 : 5) {
                                     Button {
                                         tabSelection = 3
                                     } label: {
@@ -162,6 +145,7 @@ struct HomeView: View {
                                 }
                             }
                             .card()
+                            
                             NutritionChart(chartTitle: "Valori nutriționale",
                                            protein: filteredLogs.isEmpty ? 1 : filteredLogs[0].totalProtein,
                                            carbs: filteredLogs.isEmpty ? 1 : filteredLogs[0].totalCarbs,
@@ -190,6 +174,19 @@ struct HomeView: View {
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
+    }
+    
+    func calorieCategoryExists(_ category: Int) -> Bool {
+        if filteredLogs.isEmpty {
+            return false
+        } else {
+            for food in filteredLogs[0].foods {
+                if food.mealtype == category {
+                    return true
+                }
+            }
+        }
+        return false
     }
 }
 
