@@ -12,16 +12,17 @@ import KeyboardToolbars
 struct DishConfirmView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var logViewModel: LogViewModel
     
     @Environment(\.presentationMode) var presentationMode
     
     @ObservedObject var dishConfirmViewModel: DishConfirmViewModel
     
-    @State private var data = Date()
+    var dishType: Int
+    
+    @State private var data = Date().stripTime()
     @State private var ammount = "100"
     @State private var showDeleteConfirmation = false
-    
-    var dishType: Int
     
     // MARK: - BODY
     var body: some View {
@@ -31,7 +32,7 @@ struct DishConfirmView: View {
             if let user = authViewModel.currentUser {
                 if let dishData = dishConfirmViewModel.dish {
                     ScrollView(showsIndicators: false) {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .center) {
                             // Header
                             VStack {
                                 HStack {
@@ -41,6 +42,7 @@ struct DishConfirmView: View {
                                     Spacer()
                                 }
                             }
+                            .frame(maxWidth: 580)
                             .padding(.horizontal)
                             .padding(.top)
                             
@@ -49,12 +51,10 @@ struct DishConfirmView: View {
                                     Text("Data consumării:")
                                         .foregroundColor(Color.formText)
                                 }
-                                .onChange(of: data) { newDate in
-                                    if let midnight = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: newDate) {
-                                        data = midnight
-
-                                    }
-                                }
+                                .onChange(of: data, perform: { value in
+                                    let newDate = data.stripTime()
+                                    data = newDate
+                                })
                                 .accentColor(.primary)
                             }
                             .card()
@@ -68,14 +68,27 @@ struct DishConfirmView: View {
                             .card()
                             
                             if !dishData.estimates.isEmpty {
-                                Text("Estimări: \(dishData.estimates)")
-                                    .font(.footnote)
-                                    .foregroundColor(Color.formText)
-                                    .padding([.leading, .bottom, .trailing])
-                                    .padding(.leading, 8)
-                                    .padding(.top, -2)
+                                HStack {
+                                    Text("Estimări: \(dishData.estimates)")
+                                        .font(.footnote)
+                                        .foregroundColor(Color.formText)
+                                    Spacer()
+                                }
+                                .frame(maxWidth: 580)
+                                .padding([.leading, .bottom, .trailing])
+                                .padding(.leading, 16)
+                                .padding(.top, -2)
                             }
                             
+
+                            HStack {
+                                Text("\(calculateAmmount(grams: Double(ammount)!, nutrition: dishData.calories), specifier: "%.0f") calorii consumate")
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                Spacer()
+                            }
+                            .padding(.top)
+                            .padding(.horizontal, 32)
                             NutritionChart(chartTitle: "Valori nutriționale",
                                            protein: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dishData.protein),
                                            carbs: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dishData.carbs),
@@ -84,7 +97,8 @@ struct DishConfirmView: View {
                             
                             // Add to journal
                             Button {
-                                // viewModel.login(withEmail: email, password: password)
+                                logViewModel.addDishToLog(date: data, dish: DishLog(mealtype: dishType, title: dishData.title, servingSize: Double(ammount)!, calories: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.calories), protein: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.protein), carbs: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.carbs), fibers: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.fibers), fat: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.fat)))
+                                NavigationUtil.popToRootView() 
                             } label: {
                                 RectangleButton(text: "Adaugă la jurnal")
                             }
@@ -132,7 +146,6 @@ struct DishConfirmView: View {
                     .addHideKeyboardButton()
                 }
             }
-
         }
         .onAppear {
             Task(priority: .medium) {
