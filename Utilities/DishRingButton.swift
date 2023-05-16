@@ -12,7 +12,7 @@ struct DishRingButton: View {
     // MARK: - PROPERTIES
     private var idiom: UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     var title: String
-    var calories: Int
+    var calories: Double
     
     // MARK: - BODY
     var body: some View {
@@ -25,17 +25,22 @@ struct DishRingButton: View {
                 
                 // Progress ring
                 Circle()
-                    .stroke(Color.accent, style: StrokeStyle(lineWidth: 3))
+                    .stroke(Color.accent, style: StrokeStyle(lineWidth: 2))
 
                 // Food log meta
                 VStack(alignment: .center, spacing: 0.0) {
-                    Text("\(calories)")
+                    Text("\(calories, specifier: "%.0f")")
                         .font(.footnote)
                         .fontWeight(.semibold)
                     Text("kCal")
                         .font(.caption2)
                         .fontWeight(.semibold)
                 }
+                .foregroundColor(.primary)
+                Image(systemName: "checkmark")
+                    .imageScale(.small)
+                    .foregroundColor(Color.accent)
+                    .position(x: idiom == .pad ? 48 : getScreenBounds().width * 0.12, y: 0)
             }
             .frame(width: idiom == .pad ? 48 : getScreenBounds().width * 0.12, height: idiom == .pad ? 48 : getScreenBounds().width * 0.12)
             
