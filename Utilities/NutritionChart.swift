@@ -33,8 +33,7 @@ struct NutritionChart: View {
                     .data([protein, fat, carbs])
                     .chartStyle(isDisabled ? disabledColorStyle : defaultColorStyle)
                     .allowsHitTesting(false) // crash if true
-                    .frame(maxHeight: 280)
-                
+                    .frame(minHeight: 200)
                 VStack(alignment: .leading) {
                     HStack(alignment: .center) {
                         Circle()
@@ -78,6 +77,7 @@ struct NutritionChart: View {
                     }
                 }
                 .frame(minWidth: 140)
+                
                 Spacer()
             }
         }
@@ -92,6 +92,7 @@ struct NutritionChart_Previews: PreviewProvider {
             ZStack {
                 Color.background.edgesIgnoringSafeArea(.all)
                 NutritionChart(chartTitle: "Valori nutriționale", protein: 1, carbs: 1, fat: 1)
+                    
             }
             ZStack {
                 Color.background.edgesIgnoringSafeArea(.all)
