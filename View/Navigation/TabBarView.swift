@@ -63,6 +63,11 @@ struct TabBarView: View {
 // MARK: - PREVIEW
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
+        let previewDefaults: UserDefaults = {
+            let d = UserDefaults(suiteName: "showOnboardingPreview")!
+            d.set(false, forKey: "shouldShowOnboarding")
+            return d
+        }()
         let viewModel = AuthViewModel()
         viewModel.currentUser = userPreviewData
         return Group {
@@ -71,5 +76,6 @@ struct TabBarView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)
+        .defaultAppStorage(previewDefaults)
     }
 }
