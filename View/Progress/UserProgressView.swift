@@ -15,7 +15,10 @@ struct UserProgressView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     
     var demoData: [Double] = [8, 4, 2, 5, 7, 6, 5, 8]
+    
     let mixedColorStyle = ChartStyle(backgroundColor: Color.card, foregroundColor: [ColorGradient(Color.accent, Color.accent)])
+    
+    private var idiom: UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     // MARK: - BODY
     var body: some View {
@@ -28,43 +31,32 @@ struct UserProgressView: View {
                         
                         VStack {
                             // Weekly calories
-                            CardView(showShadow: false) {
-                                VStack(alignment: .leading) {
-                                    Text("Calorii săptămânale")
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                        .padding()
-                                    LineChart()
-                                        .data(demoData)
-                                        .chartStyle(mixedColorStyle)
-                                        .padding(.bottom, 5)
-                                }
-                                .background(Color.card)
+                            VStack(alignment: .leading) {
+                                Text("Calorii săptămânale")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                    .padding()
+                                LineChart()
+                                    .data(demoData)
+                                    .chartStyle(mixedColorStyle)
+                                    .padding(.bottom, 5)
                             }
-                            .frame(height: 250)
-                            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                            .padding([.horizontal, .top])
-                            .frame(maxWidth: 580)
+                            .card()
+                            .frame(height: idiom == .pad ? 350 : 250)
+                            .padding(.top)
                             .allowsHitTesting(false)
                             
                             // Top foods eaten
-                            CardView(showShadow: false) {
-                                VStack(alignment: .leading) {
-                                    Text("Top alimente calorice consumate")
-                                        .font(.title3)
-                                        .fontWeight(.semibold)
-                                    BarChart()
-                                        .data(demoData)
-                                        .chartStyle(mixedColorStyle)
-                                }
-                                .padding([.top, .leading, .trailing])
-                                .background(Color.card)
-                                
+                            VStack(alignment: .leading) {
+                                Text("Top alimente calorice consumate")
+                                    .font(.title3)
+                                    .fontWeight(.semibold)
+                                BarChart()
+                                    .data(demoData)
+                                    .chartStyle(mixedColorStyle)
                             }
-                            .frame(height: 250)
-                            .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                            .padding(.horizontal)
-                            .frame(maxWidth: 580)
+                            .card()
+                            .frame(height: idiom == .pad ? 350 : 250)
                             .allowsHitTesting(false)
                             
                             // User details
