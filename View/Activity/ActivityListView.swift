@@ -52,7 +52,7 @@ struct ActivityListView: View {
                                 Divider()
                                 ForEach(activityListViewModel.activities) { activity in
                                     NavigationLink {
-                                        ActivityConfrimView(activityConfirmViewModel: ActivityConfirmViewModel(withActivityId: activity.id))
+                                        ActivityConfrimView(activityConfirmViewModel: ActivityConfirmViewModel(withActivityId: activity.id), userWeight: user.weight)
                                     } label: {
                                         HStack {
                                             Text(activity.title)
