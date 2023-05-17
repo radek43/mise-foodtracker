@@ -13,11 +13,13 @@ struct RecipeConfirmView: View {
     // MARK: - PROPERTIES
     
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var logViewModel: LogViewModel
     
-    @State private var data = Date()
+    private let options = ["Mic dejun", "Prânz", "Cină", "Gustare"]
+    
+    @State private var data = Date().stripTime()
     @State private var ammount = "100"
-
-    var dishType = 1
+    @State private var selectedOption = 0
     
     var recipe: Food
     
@@ -40,6 +42,14 @@ struct RecipeConfirmView: View {
                     .frame(maxWidth: 580)
                     .padding(.horizontal)
                     .padding(.top)
+                    
+                    Picker("", selection: $selectedOption) {
+                        ForEach(0..<options.count, id: \.self) { index in
+                            Text(options[index])
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(.horizontal)
                     
                     VStack(alignment: .center) {
                         DatePicker(selection: $data, in: ...Date(), displayedComponents: .date) {
@@ -77,6 +87,15 @@ struct RecipeConfirmView: View {
                         .padding(.top, -2)
                     }
                     
+                    HStack {
+                        Text("\(calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.calories), specifier: "%.0f") calorii consumate")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                        Spacer()
+                    }
+                    .padding(.top)
+                    .padding(.horizontal, 32)
+                    
                     NutritionChart(chartTitle: "Valori nutriționale",
                                    protein: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.protein),
                                    carbs: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.carbs),
@@ -85,10 +104,12 @@ struct RecipeConfirmView: View {
                     
                     // Add to journal
                     Button {
-                        // viewModel.login(withEmail: email, password: password)
+                        logViewModel.addDishToLog(date: data, dish: DishLog(mealtype: selectedOption + 1, title: recipe.title, servingSize: Double(ammount) ?? 0, calories: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.calories), protein: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.protein), carbs: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.carbs), fibers: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.fibers), fat: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.fat)))
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
-                        RectangleButton(text: "Adaugă la jurnal")
+                        RectangleButton(text: "Adaugă la jurnal", isDisabled: ammount.isEmpty ? true : false)
                     }
+                    .disabled(ammount.isEmpty)
                     
                     Spacer()
                 }
@@ -103,7 +124,6 @@ struct RecipeConfirmView: View {
         let result = grams * nutrition / 100
         return result.rounded(toPlaces: 1)
     }
-    
 }
 
 // MARK: - PREIVEWS
