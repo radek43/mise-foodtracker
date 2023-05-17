@@ -130,15 +130,19 @@ struct HomeView: View {
                                     Button {
                                         tabSelection = 3
                                     } label: {
-                                        DishButton(imageName: "sport", title: "activitate")
+                                        if filteredLogs.isEmpty || filteredLogs[0].activities.isEmpty {
+                                            DishButton(imageName: "sport", title: "activitate")
+                                        } else {
+                                            DishRingButton(title: "sport", calories: filteredLogs[0].totalActivityCalories)
+                                        }
                                     }
                                     Button {
                                         print("Buton greutate apasat")
                                     } label: {
                                         DishButton(imageName: "weightScale", title: "greutate")
                                     }
-                                    Button {
-                                        print("Buton lichide apasat")
+                                    NavigationLink {
+                                        AddWaterView()
                                     } label: {
                                         DishButton(imageName: "waterDrop", title: "apă ")
                                     }
