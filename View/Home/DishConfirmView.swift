@@ -80,15 +80,15 @@ struct DishConfirmView: View {
                                 .padding(.top, -2)
                             }
                             
-
                             HStack {
-                                Text("\(calculateAmmount(grams: Double(ammount)!, nutrition: dishData.calories), specifier: "%.0f") calorii consumate")
+                                Text("\(calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dishData.calories), specifier: "%.0f") calorii consumate")
                                     .font(.title2)
                                     .fontWeight(.semibold)
                                 Spacer()
                             }
                             .padding(.top)
                             .padding(.horizontal, 32)
+                            
                             NutritionChart(chartTitle: "Valori nutriționale",
                                            protein: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dishData.protein),
                                            carbs: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dishData.carbs),
