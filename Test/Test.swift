@@ -40,9 +40,9 @@ struct Test: View {
                     fat: 15)
         ],
             activities: [
-                ActivityLog(title: "Alergare", calories: 48),
-                ActivityLog(title: "Haltere", calories: 23),
-                ActivityLog(title: "Plimbare", calories: 12)
+                ActivityLog(title: "Alergare", calories: 48, duration: 12),
+                ActivityLog(title: "Haltere", calories: 23, duration: 12),
+                ActivityLog(title: "Plimbare", calories: 12, duration: 12)
             ],
             weight: 50,
             water: 6),
@@ -74,9 +74,9 @@ struct Test: View {
                     fat: 25)
         ],
             activities: [
-                ActivityLog(title: "Plimbare", calories: 140),
-                ActivityLog(title: "Alergare", calories: 140),
-                ActivityLog(title: "Somn", calories: 140)
+                ActivityLog(title: "Plimbare", calories: 140, duration: 12),
+                ActivityLog(title: "Alergare", calories: 140, duration: 12),
+                ActivityLog(title: "Somn", calories: 140, duration: 12)
             ],
             weight: 78,
             water: 3),
@@ -107,9 +107,9 @@ struct Test: View {
                     fat: 45)
         ],
             activities: [
-                ActivityLog(title: "Somn", calories: 140),
-                ActivityLog(title: "ALergare", calories: 140),
-                ActivityLog(title: "Haltere", calories: 140)
+                ActivityLog(title: "Somn", calories: 140, duration: 12),
+                ActivityLog(title: "ALergare", calories: 140, duration: 12),
+                ActivityLog(title: "Haltere", calories: 140, duration: 12)
             ],
             weight: 20,
             water: 1),
