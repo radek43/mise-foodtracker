@@ -68,6 +68,8 @@
 		2CA12FDC29E1779800CC6CC8 /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA12FDB29E1779800CC6CC8 /* RecipeDetailViewModel.swift */; };
 		2CA54DEE29DF0B92003D317B /* AddRecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA54DED29DF0B92003D317B /* AddRecipeViewModel.swift */; };
 		2CABC86F29D96B3D00D79F18 /* Greetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CABC86E29D96B3D00D79F18 /* Greetings.swift */; };
+		2CB0CC672A15297600E559E0 /* Wave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB0CC662A15297600E559E0 /* Wave.swift */; };
+		2CB0CC692A1537A600E559E0 /* AddWaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB0CC682A1537A600E559E0 /* AddWaterView.swift */; };
 		2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */; };
 		2CC4196829B8E8ED00B064B9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196729B8E8ED00B064B9 /* SettingsView.swift */; };
 		2CC4196A29B8E8FD00B064B9 /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */; };
@@ -150,6 +152,8 @@
 		2CA12FDB29E1779800CC6CC8 /* RecipeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewModel.swift; sourceTree = "<group>"; };
 		2CA54DED29DF0B92003D317B /* AddRecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewModel.swift; sourceTree = "<group>"; };
 		2CABC86E29D96B3D00D79F18 /* Greetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greetings.swift; sourceTree = "<group>"; };
+		2CB0CC662A15297600E559E0 /* Wave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave.swift; sourceTree = "<group>"; };
+		2CB0CC682A1537A600E559E0 /* AddWaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterView.swift; sourceTree = "<group>"; };
 		2CB5DE2B29B8E3C300F34FC4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2CC4196729B8E8ED00B064B9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2CC4196929B8E8FD00B064B9 /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 				2C3D0E392A0BA96A007974C2 /* NutritionChart.swift */,
 				2CD714352A10BADB005196A3 /* ConsumedCalories.swift */,
 				2C04CB462A1383C4008142C1 /* NavigationUtil.swift */,
+				2CB0CC662A15297600E559E0 /* Wave.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				2C7918F4296DBC35009F2194 /* DishConfirmView.swift */,
 				2C28FA7C2A03BE1300C6E625 /* AddFoodView.swift */,
 				2CE194792A0E725F001EF4FE /* EditFoodView.swift */,
+				2CB0CC682A1537A600E559E0 /* AddWaterView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -612,9 +618,11 @@
 				2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */,
 				2CFC2B3229705BF800451922 /* RectangleButton.swift in Sources */,
 				2C64C040294B931600E9305F /* ProfileView.swift in Sources */,
+				2CB0CC672A15297600E559E0 /* Wave.swift in Sources */,
 				2C79C8D529BF71DF00243940 /* KeychainService.swift in Sources */,
 				2CE43D2929EC460000BD9E82 /* ActivityConfirmViewModel.swift in Sources */,
 				2CE43D2729EC445C00BD9E82 /* ActivityEditViewModel.swift in Sources */,
+				2CB0CC692A1537A600E559E0 /* AddWaterView.swift in Sources */,
 				2C4D586E2A050BE000B3E887 /* DishConfirmViewModel.swift in Sources */,
 				2C7918F5296DBC35009F2194 /* DishConfirmView.swift in Sources */,
 				2C7918F3296DB519009F2194 /* DishListView.swift in Sources */,
