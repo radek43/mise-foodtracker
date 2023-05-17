@@ -11,6 +11,7 @@ import SwiftUI
 struct RectangleButton: View {
     // MARK: - PROPERTIES
     var text: String
+    var isDisabled: Bool = false
     
     // MARK: - BODY
     var body: some View {
@@ -19,7 +20,7 @@ struct RectangleButton: View {
             .foregroundColor(.white)
             .frame(height: 50)
             .frame(maxWidth: 580)
-            .background(Color.accent)
+            .background(isDisabled ? Color.secondary : Color.accent)
             .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
             .padding()
     }
