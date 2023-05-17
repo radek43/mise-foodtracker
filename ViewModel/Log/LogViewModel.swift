@@ -17,7 +17,6 @@ class LogViewModel: ObservableObject {
     }
     
     // MARK: - FUNCTIONS
-    
     func addDishToLog(date: Date, dish: DishLog) {
         if let index = logs.firstIndex(where: { $0.dateTime == date }) {
             logs[index].foods.append(dish)
@@ -26,6 +25,18 @@ class LogViewModel: ObservableObject {
         } else {
             logs.append(Log(dateTime: date, foods: [dish]))
             print("dish added to new log")
+            print(logs)
+        }
+    }
+    
+    func addActivityToLog(date: Date, activity: ActivityLog) {
+        if let index = logs.firstIndex(where: { $0.dateTime == date }) {
+            logs[index].activities.append(activity)
+            print("activity appended")
+            print(logs)
+        } else {
+            logs.append(Log(dateTime: date, activities: [activity]))
+            print("activity added to new log")
             print(logs)
         }
     }
