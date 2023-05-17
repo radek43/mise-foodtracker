@@ -50,8 +50,9 @@ struct LoginView: View {
                             try await authViewModel.signIn(email: email, password: password)
                         }
                     } label: {
-                        RectangleButton(text: "Autentifică-te")
+                        RectangleButton(text: "Autentifică-te", isDisabled: (email.isEmpty || password.isEmpty) ? true : false)
                     }
+                    .disabled(email.isEmpty || password.isEmpty)
                     
                     Spacer()
                     // Register
