@@ -12,7 +12,8 @@ struct DishRingButton: View {
     // MARK: - PROPERTIES
     private var idiom: UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     var title: String
-    var calories: Double
+    var value: Double
+    var measurement: String
     
     // MARK: - BODY
     var body: some View {
@@ -29,10 +30,10 @@ struct DishRingButton: View {
 
                 // Food log meta
                 VStack(alignment: .center, spacing: 0.0) {
-                    Text("\(calories, specifier: "%.0f")")
+                    Text("\(value, specifier: "%.0f")")
                         .font(.footnote)
                         .fontWeight(.semibold)
-                    Text("kCal")
+                    Text(measurement)
                         .font(.caption2)
                         .fontWeight(.semibold)
                 }
@@ -60,12 +61,12 @@ struct DishRingButton_Previews: PreviewProvider {
         Group {
             ZStack {
                 Color.background.edgesIgnoringSafeArea(.all)
-                DishRingButton(title: "prânz", calories: 453)
+                DishRingButton(title: "prânz", value: 453, measurement: "kCal")
             }
             
             ZStack {
                 Color.background.edgesIgnoringSafeArea(.all)
-                DishRingButton(title: "prânz", calories: 453)
+                DishRingButton(title: "prânz", value: 453, measurement: "kCal")
                     .preferredColorScheme(.dark)
             }
         }
