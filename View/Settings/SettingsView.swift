@@ -80,6 +80,7 @@ struct SettingsView: View {
                 .listStyle(GroupedListStyle())
                 .frame(maxWidth: 580)
                 .navigationTitle("Setări")
+                .navigationViewStyle(StackNavigationViewStyle())
                 .navigationBarTitleDisplayMode(.inline)
             }
         }
