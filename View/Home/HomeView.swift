@@ -92,7 +92,7 @@ struct HomeView: View {
                                         DishListView(dishType: 1)
                                     } label: {
                                         if calorieCategoryExists(1) == true {
-                                            DishRingButton(title: "mic\ndejun", calories: filteredLogs[0].totalBreakfast)
+                                            DishRingButton(title: "mic\ndejun", value: filteredLogs[0].totalBreakfast, measurement: "kCal")
                                         } else {
                                             DishButton(imageName: "breakfast", title: "mic\ndejun")
                                         }
@@ -101,7 +101,7 @@ struct HomeView: View {
                                         DishListView(dishType: 2)
                                     } label: {
                                         if calorieCategoryExists(2) == true {
-                                            DishRingButton(title: "prânz", calories: filteredLogs[0].totalLunch)
+                                            DishRingButton(title: "prânz", value: filteredLogs[0].totalLunch, measurement: "kCal")
                                         } else {
                                             DishButton(imageName: "soupLadle", title: "prânz")
                                         }
@@ -110,7 +110,7 @@ struct HomeView: View {
                                         DishListView(dishType: 3)
                                     } label: {
                                         if calorieCategoryExists(3) == true {
-                                            DishRingButton(title: "cină", calories: filteredLogs[0].totalDinner)
+                                            DishRingButton(title: "cină", value: filteredLogs[0].totalDinner, measurement: "kCal")
                                         } else {
                                             DishButton(imageName: "pastaDish", title: "cină")
                                         }
@@ -119,7 +119,7 @@ struct HomeView: View {
                                         DishListView(dishType: 4)
                                     } label: {
                                         if calorieCategoryExists(4) == true {
-                                            DishRingButton(title: "gustări", calories: filteredLogs[0].totalSnacks)
+                                            DishRingButton(title: "gustări", value: filteredLogs[0].totalSnacks, measurement: "kCal")
                                         } else {
                                             DishButton(imageName: "icecream", title: "gustări")
                                         }
@@ -133,28 +133,38 @@ struct HomeView: View {
                                         if filteredLogs.isEmpty || filteredLogs[0].activities.isEmpty {
                                             DishButton(imageName: "sport", title: "activitate")
                                         } else {
-                                            DishRingButton(title: "sport", calories: filteredLogs[0].totalActivityCalories)
+                                            DishRingButton(title: "sport", value: filteredLogs[0].totalActivityCalories, measurement: "kCal")
                                         }
                                     }
-                                    Button {
-                                        print("Buton greutate apasat")
+                                    NavigationLink {
+                                        AddWeightView(userWeight: String(user.weight))
                                     } label: {
-                                        DishButton(imageName: "weightScale", title: "greutate")
+                                        if filteredLogs.isEmpty || filteredLogs[0].weight.isZero {
+                                            DishButton(imageName: "weightScale", title: "greutate")
+                                        } else {
+                                            DishRingButton(title: "greutate", value: filteredLogs[0].weight, measurement: "kg")
+                                        }
+
+                                        
                                     }
                                     NavigationLink {
-                                        AddWaterView()
+                                        AddWaterView(percent: filteredLogs.isEmpty ? 0 : filteredLogs[0].water)
                                     } label: {
-                                        DishButton(imageName: "waterDrop", title: "apă ")
+                                        if filteredLogs.isEmpty || filteredLogs[0].water.isZero {
+                                            DishButton(imageName: "waterDrop", title: "apă")
+                                        } else {
+                                            DishRingButton(title: "apă", value: filteredLogs[0].water, measurement: "ml")
+                                        }
                                     }
                                 }
                             }
                             .card()
                             
                             NutritionChart(chartTitle: "Valori nutriționale",
-                                           protein: filteredLogs.isEmpty ? 1 : filteredLogs[0].totalProtein,
-                                           carbs: filteredLogs.isEmpty ? 1 : filteredLogs[0].totalCarbs,
-                                           fat: filteredLogs.isEmpty ? 1 : filteredLogs[0].totalFat,
-                                           isDisabled: filteredLogs.isEmpty ? true : false)
+                                           protein: filteredLogs.isEmpty || filteredLogs[0].foods.isEmpty ? 1 : filteredLogs[0].totalProtein,
+                                           carbs: filteredLogs.isEmpty || filteredLogs[0].foods.isEmpty ? 1 : filteredLogs[0].totalCarbs,
+                                           fat: filteredLogs.isEmpty || filteredLogs[0].foods.isEmpty ? 1 : filteredLogs[0].totalFat,
+                                           isDisabled: filteredLogs.isEmpty || filteredLogs[0].foods.isEmpty ? true : false)
                             Spacer()
                         }
                         .navigationTitle("Bine ai venit!")
