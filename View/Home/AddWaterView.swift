@@ -8,23 +8,32 @@
 import SwiftUI
 
 struct AddWaterView: View {
+    
+    @EnvironmentObject var logViewModel: LogViewModel
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var percent = 0.0
     @State private var waveOffset = Angle(degrees: 0)
     @State private var waveOffset2 = Angle(degrees: 180)
     
+    init(percent: Double) {
+        _percent = State(initialValue: percent)
+    }
+    
     var body: some View {
         VStack {
-            Text("Apă consumată: 250ml")
+            Text("Apă consumată: \(percent, specifier: "%.0f")ml")
             ZStack(alignment: .center) {
                 Rectangle()
                     .fill(Color.secondary)
                     .frame(width: 300, height: 320)
                 
-                Wave(offset: Angle(degrees: self.waveOffset.degrees), percent: Double(percent)/100)
+                Wave(offset: Angle(degrees: self.waveOffset.degrees), percent: Double(percent)/2000)
                     .fill(Color(red: 0, green: 0.5, blue: 0.75, opacity: 0.5))
                     .frame(width: 300, height: 320)
                     
-                Wave(offset: Angle(degrees: self.waveOffset2.degrees), percent: Double(percent)/100)
+                Wave(offset: Angle(degrees: self.waveOffset2.degrees), percent: Double(percent)/2000)
                     .fill(Color(red: 0, green: 0.5, blue: 0.75, opacity: 0.5))
                     .opacity(0.5)
                     .frame(width: 300, height: 320)
@@ -38,11 +47,11 @@ struct AddWaterView: View {
             )
             .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onEnded({ value in
                 if value.translation.height < 0 {
-                    percent += 12.5
+                    percent += 250
                 }
                 
                 if value.translation.height > 0 {
-                    percent -= 12.5
+                    percent -= 250
                 }
             }))
             
@@ -53,7 +62,8 @@ struct AddWaterView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button("Adaugă") {
-                // add water to log
+                logViewModel.addWaterToLog(date: Date().stripTime(), water: percent)
+                presentationMode.wrappedValue.dismiss()
             }
         }
         .onAppear {
@@ -69,7 +79,7 @@ struct AddWaterView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.background.ignoresSafeArea(.all)
-            AddWaterView()
+            AddWaterView(percent: 250)
                 .preferredColorScheme(.dark)
         }
         
