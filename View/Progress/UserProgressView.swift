@@ -35,16 +35,21 @@ struct UserProgressView: View {
                                 Text("Calorii săptămânale")
                                     .font(.title3)
                                     .fontWeight(.semibold)
-                                    .padding()
-                                LineChart()
-                                    .data(demoData)
-                                    .chartStyle(mixedColorStyle)
-                                    .padding(.bottom, 5)
+                                ChartGrid {
+                                    LineChart()
+                                        .setLineWidth(width: 2)
+                                        .showChartMarks(true)
+                                        .data(demoData)
+                                        .chartStyle(mixedColorStyle)
+                                }
+                                .setNumberOfHorizontalLines(5)
+                                .setNumberOfVerticalLines(5)
+                                .showBaseLine(true)
                             }
                             .card()
-                            .frame(height: idiom == .pad ? 350 : 250)
+                            .frame(height: idiom == .pad ? 350 : 300)
                             .padding(.top)
-                            .allowsHitTesting(false)
+//                            .allowsHitTesting(false)
                             
                             // Top foods eaten
                             VStack(alignment: .leading) {
