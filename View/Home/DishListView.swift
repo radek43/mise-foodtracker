@@ -18,6 +18,7 @@ struct DishListView: View {
     @State private var showInfoSheet = false
     
     let dishType: Int
+    let date: Date
     
     // MARK: - BODY
     var body: some View {
@@ -53,7 +54,7 @@ struct DishListView: View {
                             Divider()
                             ForEach(dishViewModel.dishes) { dishes in
                                 NavigationLink {
-                                    DishConfirmView(dishConfirmViewModel: DishConfirmViewModel(withDishId: dishes.id), dishType: dishType)
+                                    DishConfirmView(date: date, dishtype: dishType, dishConfirmViewModel: DishConfirmViewModel(withDishId: dishes.id))
                                 } label: {
                                     HStack {
                                         Text(dishes.title)
@@ -97,10 +98,10 @@ struct DishListView_Previews: PreviewProvider {
         dishViewModel.dishes = dishPreviewData
         return Group {
             NavigationView {
-                DishListView(dishViewModel: dishViewModel, dishType: 1)
+                DishListView(dishViewModel: dishViewModel, dishType: 1, date: Date().stripTime())
             }
             NavigationView {
-                DishListView(dishViewModel: dishViewModel, dishType: 1)
+                DishListView(dishViewModel: dishViewModel, dishType: 1, date: Date().stripTime())
             }
             .preferredColorScheme(.dark)
         }
