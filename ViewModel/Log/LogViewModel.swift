@@ -12,65 +12,120 @@ class LogViewModel: ObservableObject {
     // MARK: - PROPERTIES
     @Published var logs: [Log] = []
     @Published var error: Error?
-    @Published var didUpdateUserWeight = false
     
     private var keychainService = KeychainService()
     
     init() {
-        loadLogs()
+        print(FileManager.docDirURL.path)
+        if FileManager().docExist(docName: fileName) {
+            loadLogs()
+        }
     }
     
     // MARK: - FUNCTIONS
-    func addDishToLog(date: Date, dish: DishLog) {
+    func addDishToLog(date: Date, dish: DishLog, completion: () -> Void) {
+        // create or add new dishes to log
+        var confirmed = false
+        
+        // check if a log with selected date is already created
         if let index = logs.firstIndex(where: { $0.dateTime == date }) {
             logs[index].foods.append(dish)
-            print("dish appended")
+            saveLog()
+            print("DEBUG: Dish appended")
             print(logs)
+            confirmed = true
         } else {
             logs.append(Log(dateTime: date, foods: [dish]))
-            print("dish added to new log")
+            saveLog()
+            print("DEBUG: Dish added to new log")
             print(logs)
+            confirmed = true
+        }
+        
+        // dismiss view after log is updated
+        if confirmed == true {
+            completion()
         }
     }
     
-    func addActivityToLog(date: Date, activity: ActivityLog) {
+    func addActivityToLog(date: Date, activity: ActivityLog, completion: () -> Void) {
+        // create or add new activities to log
+        var confirmed = false
+        
+        // check if a log with selected date is already created
         if let index = logs.firstIndex(where: { $0.dateTime == date }) {
             logs[index].activities.append(activity)
-            print("activity appended")
+            saveLog()
+            print("DEBUG: Activity appended")
             print(logs)
+            confirmed = true
         } else {
             logs.append(Log(dateTime: date, activities: [activity]))
-            print("activity added to new log")
+            saveLog()
+            print("DEBUG: Activity added to new log")
             print(logs)
+            confirmed = true
+        }
+        
+        // dismiss view after log is updated
+        if confirmed == true {
+            completion()
         }
     }
     
-    func addWaterToLog(date: Date, water: Double) {
+    func addWaterToLog(date: Date, water: Double, completion: () -> Void) {
+        // create or add water to log
+        var confirmed = false
+        
+        // check if a log with selected date is already created
         if let index = logs.firstIndex(where: { $0.dateTime == date }) {
             logs[index].water += water
-            print("water appended")
+            saveLog()
+            print("DEBUG: Water appended")
             print(logs)
+            confirmed = true
         } else {
             logs.append(Log(dateTime: date, water: water))
-            print("water added to new log")
+            saveLog()
+            print("DEBUG: Water added to new log")
             print(logs)
+            confirmed = true
+        }
+        
+        // dismiss view after log is updated
+        if confirmed == true {
+            completion()
         }
     }
     
-    func addWeightToLog(date: Date, weight: Double) {
+    func addWeightToLog(date: Date, weight: Double, completion: () -> Void) {
+        // create or add weight to log
+        var confirmed = false
+        
+        // check if a log with selected date is already created
         if let index = logs.firstIndex(where: { $0.dateTime == date }) {
             logs[index].weight = weight
-            print("weight updated")
+            saveLog()
+            print("DEBUG: Weight updated")
             print(logs)
+            confirmed = true
         } else {
             logs.append(Log(dateTime: date, weight: weight))
-            print("weight added to new log")
+            saveLog()
+            print("DEBUG: Weight added to new log")
             print(logs)
+            confirmed = true
+        }
+        
+        // dismiss view after log is updated
+        if confirmed == true {
+            completion()
         }
     }
     
     @MainActor
     func updateUserWeight(weight: String) async throws {
+        // update added weight from log to db
         guard let user = AuthViewModel.shared.currentUser else { return }
         guard let url = URL(string: "http://127.0.0.1:8000/api/user/me/") else {
             throw RecipeError.invalidURL
@@ -116,20 +171,99 @@ class LogViewModel: ObservableObject {
                 throw RecipeError.serverError
             }
             if try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .fragmentsAllowed]) is [String: Any] {}
-            self.didUpdateUserWeight = true
         } catch {
             self.error = error
         }
     }
     
-    func deleteLog(indexSet: IndexSet) {
+    func lastWeekCalories() -> [Double] {
+        // calculate total daily calories from the last 7 days
+        var result: [Double] = []
         
+        let calendar = Calendar.current
+        let lastWeek = calendar.date(byAdding: .day, value: -7, to: Date().stripTime())!
+        
+        // filter logs by each day, add all found dishes and append to array
+        for i in 0..<7 {
+            let date = calendar.date(byAdding: .day, value: i, to: lastWeek)!
+            let filteredLogs = logs.filter { calendar.isDate($0.dateTime, inSameDayAs: date) }
+            let sumCalories = filteredLogs.reduce(0.0) { $0 + $1.foods.reduce(0.0) { $0 + $1.calories } }
+            result.append(sumCalories)
+        }
+        return result
     }
+    
+    func containsFood() -> Bool {
+        // check if a dish exists in a log
+        for log in logs {
+            for food in log.foods {
+                if !food.title.isEmpty && food.calories > 0 {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    func lastWeekFoods() -> [(dish: String, count: Double)] {
+        // calculate the times a dish is eaten in the last 7 days
+        let calendar = Calendar.current
+        let lastWeek = calendar.date(byAdding: .day, value: -7, to: Date().stripTime())!
+        
+        // filter logs
+        let logsFromLastWeek = logs.filter { $0.dateTime >= lastWeek }
+        
+        var foodCounts: [String: Double] = [:]
+        
+        // iterate over filtered logs
+        for log in logsFromLastWeek {
+            for food in log.foods {
+                foodCounts[food.title, default: 0] += food.calories
+            }
+        }
+        
+        // sort descending
+        let sortedFoods = foodCounts.sorted { $0.value > $1.value }
+
+        return sortedFoods.map { ($0.key, $0.value) }
+    }
+    
+    func deleteLog(indexSet: IndexSet) {
+        // TODO: Delete logs
+    }
+    
     func loadLogs() {
-//        logs = Log.sampleLogs
+        // load logs from documents
+        FileManager().readDocument(docName: fileName) { result in
+            switch result {
+                case .success(let data):
+                    let decoder = JSONDecoder()
+                    do {
+                        logs = try decoder.decode([Log].self, from: data)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
     }
+    
     func saveLog() {
-        print("DEBUG: Saving logs to file system..")
+        // save log to documents
+        print("DEBUG: Saving logs to file system")
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(logs)
+            let jsonString = String(decoding: data, as: UTF8.self)
+            FileManager().saveDocument(contents: jsonString, docName: fileName) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
 }
