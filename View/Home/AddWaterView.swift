@@ -13,12 +13,15 @@ struct AddWaterView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var percent = 0.0
+    @State private var percent: Double
     @State private var waveOffset = Angle(degrees: 0)
     @State private var waveOffset2 = Angle(degrees: 180)
     
-    init(percent: Double) {
+    var date: Date
+    
+    init(percent: Double, date: Date) {
         _percent = State(initialValue: percent)
+        self.date = date
     }
     
     var body: some View {
@@ -62,8 +65,9 @@ struct AddWaterView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button("Adaugă") {
-                logViewModel.addWaterToLog(date: Date().stripTime(), water: percent)
-                presentationMode.wrappedValue.dismiss()
+                logViewModel.addWaterToLog(date: date, water: percent) {
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
         }
         .onAppear {
@@ -79,7 +83,7 @@ struct AddWaterView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.background.ignoresSafeArea(.all)
-            AddWaterView(percent: 250)
+            AddWaterView(percent: 250, date: Date().stripTime())
                 .preferredColorScheme(.dark)
         }
         

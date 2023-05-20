@@ -17,8 +17,11 @@ struct AddWeightView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    init(userWeight: String) {
+    var date: Date
+    
+    init(userWeight: String, date: Date) {
         _userWeight = State(initialValue: userWeight)
+        self.date = date
     }
     
     // MARK: - BODY
@@ -44,8 +47,9 @@ struct AddWeightView: View {
                     Task(priority: .medium) {
                         try await self.logViewModel.updateUserWeight(weight: userWeight)
                     }
-                    logViewModel.addWeightToLog(date: Date().stripTime(), weight: Double(userWeight) ?? 0)
-                    presentationMode.wrappedValue.dismiss()
+                    logViewModel.addWeightToLog(date: date, weight: Double(userWeight) ?? 0) {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
             }
         }
@@ -59,10 +63,10 @@ struct AddWeightView_Previews: PreviewProvider {
         viewModel.currentUser = userPreviewData
         return Group {
             NavigationView {
-                AddWeightView(userWeight: "20")
+                AddWeightView(userWeight: "20", date: Date().stripTime())
             }
             NavigationView {
-                AddWeightView(userWeight: "20")
+                AddWeightView(userWeight: "20", date: Date().stripTime())
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .environmentObject(viewModel)
