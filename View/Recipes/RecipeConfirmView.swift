@@ -104,8 +104,10 @@ struct RecipeConfirmView: View {
                     
                     // Add to journal
                     Button {
-                        logViewModel.addDishToLog(date: data, dish: DishLog(mealtype: selectedOption + 1, title: recipe.title, servingSize: Double(ammount) ?? 0, calories: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.calories), protein: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.protein), carbs: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.carbs), fibers: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.fibers), fat: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.fat)))
-                        presentationMode.wrappedValue.dismiss()
+                        logViewModel.addDishToLog(date: data, dish: DishLog(mealtype: selectedOption + 1, title: recipe.title, servingSize: Double(ammount) ?? 0, calories: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.calories), protein: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.protein), carbs: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.carbs), fibers: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.fibers), fat: calculateAmmount(grams: Double(ammount) ?? 0, nutrition: recipe.fat))) {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        
                     } label: {
                         RectangleButton(text: "Adaugă la jurnal", isDisabled: ammount.isEmpty ? true : false)
                     }
