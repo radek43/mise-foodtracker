@@ -89,7 +89,7 @@ struct HomeView: View {
                                 
                                 HStack(alignment: .top, spacing: idiom == .pad ? 30 : 5) {
                                     NavigationLink {
-                                        DishListView(dishType: 1)
+                                        DishListView(dishType: 1, date: selectedDate)
                                     } label: {
                                         if calorieCategoryExists(1) == true {
                                             DishRingButton(title: "mic\ndejun", value: filteredLogs[0].totalBreakfast, measurement: "kCal")
@@ -98,7 +98,7 @@ struct HomeView: View {
                                         }
                                     }
                                     NavigationLink {
-                                        DishListView(dishType: 2)
+                                        DishListView(dishType: 2, date: selectedDate)
                                     } label: {
                                         if calorieCategoryExists(2) == true {
                                             DishRingButton(title: "prânz", value: filteredLogs[0].totalLunch, measurement: "kCal")
@@ -107,7 +107,7 @@ struct HomeView: View {
                                         }
                                     }
                                     NavigationLink {
-                                        DishListView(dishType: 3)
+                                        DishListView(dishType: 3, date: selectedDate)
                                     } label: {
                                         if calorieCategoryExists(3) == true {
                                             DishRingButton(title: "cină", value: filteredLogs[0].totalDinner, measurement: "kCal")
@@ -116,7 +116,7 @@ struct HomeView: View {
                                         }
                                     }
                                     NavigationLink {
-                                        DishListView(dishType: 4)
+                                        DishListView(dishType: 4, date: selectedDate)
                                     } label: {
                                         if calorieCategoryExists(4) == true {
                                             DishRingButton(title: "gustări", value: filteredLogs[0].totalSnacks, measurement: "kCal")
@@ -137,7 +137,7 @@ struct HomeView: View {
                                         }
                                     }
                                     NavigationLink {
-                                        AddWeightView(userWeight: String(user.weight))
+                                        AddWeightView(userWeight: String(user.weight),date: selectedDate)
                                     } label: {
                                         if filteredLogs.isEmpty || filteredLogs[0].weight.isZero {
                                             DishButton(imageName: "weightScale", title: "greutate")
@@ -148,7 +148,7 @@ struct HomeView: View {
                                         
                                     }
                                     NavigationLink {
-                                        AddWaterView(percent: filteredLogs.isEmpty ? 0 : filteredLogs[0].water)
+                                        AddWaterView(percent: filteredLogs.isEmpty ? 0 : filteredLogs[0].water, date: selectedDate)
                                     } label: {
                                         if filteredLogs.isEmpty || filteredLogs[0].water.isZero {
                                             DishButton(imageName: "waterDrop", title: "apă")
