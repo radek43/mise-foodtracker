@@ -133,8 +133,9 @@ struct ActivityConfrimView: View {
                             .card()
                             
                             Button {
-                                logViewModel.addActivityToLog(date: data, activity: ActivityLog(title: activityData.title, calories: calculateMet(met: activityData.met, userWeight: Double(userWeight) ?? 0, activityTime: Double(activityTime) ?? 0), duration: Double(activityTime) ?? 0))
-                                presentationMode.wrappedValue.dismiss()
+                                logViewModel.addActivityToLog(date: data, activity: ActivityLog(title: activityData.title, calories: calculateMet(met: activityData.met, userWeight: Double(userWeight) ?? 0, activityTime: Double(activityTime) ?? 0), duration: Double(activityTime) ?? 0)) {
+                                    presentationMode.wrappedValue.dismiss()
+                                }
                             } label: {
                                 RectangleButton(text: "Adaugă la jurnal", isDisabled: activityTime.isEmpty || userWeight.isEmpty ? true : false)
                             }
