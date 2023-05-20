@@ -20,9 +20,15 @@ struct DishConfirmView: View {
     
     var dishType: Int
     
-    @State private var data = Date().stripTime()
+    @State private var data: Date
     @State private var ammount = "100"
     @State private var showDeleteConfirmation = false
+    
+    init(date: Date, dishtype: Int, dishConfirmViewModel: DishConfirmViewModel) {
+        _data = State(initialValue: date)
+        self.dishConfirmViewModel = dishConfirmViewModel
+        self.dishType = dishtype
+    }
     
     // MARK: - BODY
     var body: some View {
@@ -97,8 +103,9 @@ struct DishConfirmView: View {
                             
                             // Add to journal
                             Button {
-                                logViewModel.addDishToLog(date: data, dish: DishLog(mealtype: dishType, title: dishData.title, servingSize: Double(ammount)!, calories: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.calories), protein: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.protein), carbs: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.carbs), fibers: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.fibers), fat: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.fat)))
-                                NavigationUtil.popToRootView() 
+                                logViewModel.addDishToLog(date: data, dish: DishLog(mealtype: dishType, title: dishData.title, servingSize: Double(ammount)!, calories: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.calories), protein: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.protein), carbs: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.carbs), fibers: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.fibers), fat: calculateAmmount(grams: Double(ammount)!, nutrition: dishData.fat))) {
+                                        NavigationUtil.popToRootView()
+                                }
                             } label: {
                                 RectangleButton(text: "Adaugă la jurnal")
                             }
@@ -170,10 +177,10 @@ struct DishConfirmView_Previews: PreviewProvider {
         viewModel.dish = dishDetailPreviewData
         return Group {
             NavigationView {
-                DishConfirmView(dishConfirmViewModel: viewModel, dishType: 1)
+                DishConfirmView(date: Date().stripTime(), dishtype: 1, dishConfirmViewModel: viewModel)
             }
             NavigationView {
-                DishConfirmView(dishConfirmViewModel: viewModel, dishType: 1)
+                DishConfirmView(date: Date().stripTime(), dishtype: 1, dishConfirmViewModel: viewModel)
             }
             .preferredColorScheme(.dark)
         }
