@@ -86,12 +86,23 @@ var dishDetailPreviewData: Food = Food(id: 1,
                                        protein: 24.4,
                                        estimates: "1 punga = 200g")
 
+var dishLogPreviewData: DishLog = DishLog(id: "1",
+                                          mealtype: 1,
+                                          title: "Arahide Nutline",
+                                          servingSize: 100,
+                                          calories: 645.0,
+                                          protein: 24.4,
+                                          carbs: 11.5,
+                                          fibers: 0.0,
+                                          fat: 55.7)
+
 var logPreviewData: [Log] = [
     Log(dateTime: Date.from(year: 2023, month: 5, day: 19),
         foods: [
-            DishLog(mealtype: 1,
+            DishLog(id: "1",
+                    mealtype: 1,
                     title: "Cartofi prajiti",
-                    servingSize: 100,
+                    servingSize: 120,
                     calories: 150,
                     protein: 14,
                     carbs: 31,
@@ -156,7 +167,7 @@ var logPreviewData: [Log] = [
         ],
         weight: 78,
         water: 3),
-    Log(dateTime: Date.from(year: 2023, month: 5, day: 18),
+    Log(dateTime: Date().stripTime(),
         foods: [
             DishLog(mealtype: 1,
                     title: "Halva",
@@ -191,3 +202,5 @@ var logPreviewData: [Log] = [
         weight: 20,
         water: 1),
 ]
+
+
