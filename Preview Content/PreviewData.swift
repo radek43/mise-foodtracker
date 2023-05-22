@@ -126,9 +126,9 @@ var logPreviewData: [Log] = [
                     fat: 15)
         ],
         activities: [
-            ActivityLog(title: "Alergare", calories: 48, duration: 12),
-            ActivityLog(title: "Haltere", calories: 23, duration: 12),
-            ActivityLog(title: "Plimbare", calories: 12, duration: 12)
+            ActivityLog(title: "Alergare", calories: 48, duration: 12, met: 3.5, weight: 80),
+            ActivityLog(title: "Haltere", calories: 23, duration: 12, met: 3.5, weight: 80),
+            ActivityLog(title: "Plimbare", calories: 12, duration: 12, met: 3.5, weight: 80)
         ],
         weight: 50,
         water: 6),
@@ -161,9 +161,9 @@ var logPreviewData: [Log] = [
                     fat: 25)
         ],
         activities: [
-            ActivityLog(title: "Plimbare", calories: 140, duration: 12),
-            ActivityLog(title: "Alergare", calories: 140, duration: 12),
-            ActivityLog(title: "Somn", calories: 140, duration: 12)
+            ActivityLog(title: "Plimbare", calories: 140, duration: 12, met: 3.5, weight: 80),
+            ActivityLog(title: "Alergare", calories: 140, duration: 12, met: 3.5, weight: 80),
+            ActivityLog(title: "Somn", calories: 140, duration: 12, met: 3.5, weight: 80)
         ],
         weight: 78,
         water: 3),
@@ -195,9 +195,9 @@ var logPreviewData: [Log] = [
                     fat: 45)
         ],
         activities: [
-            ActivityLog(title: "Somn", calories: 140, duration: 12),
-            ActivityLog(title: "ALergare", calories: 140, duration: 12),
-            ActivityLog(title: "Haltere", calories: 140, duration: 12)
+            ActivityLog(title: "Somn", calories: 140, duration: 12, met: 3.5, weight: 80),
+            ActivityLog(title: "ALergare", calories: 140, duration: 12, met: 3.5, weight: 80),
+            ActivityLog(title: "Haltere", calories: 140, duration: 12, met: 3.5, weight: 80)
         ],
         weight: 20,
         water: 1),
