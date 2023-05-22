@@ -127,15 +127,20 @@ struct HomeView: View {
                                 }
                                 
                                 HStack(alignment: .top, spacing: idiom == .pad ? 30 : 5) {
-                                    Button {
-                                        tabSelection = 3
-                                    } label: {
-                                        if filteredLogs.isEmpty || filteredLogs[0].activities.isEmpty {
+                                    if filteredLogs.isEmpty || filteredLogs[0].activities.isEmpty {
+                                        Button {
+                                            tabSelection = 3
+                                        } label: {
                                             DishButton(imageName: "sport", title: "activitate")
-                                        } else {
+                                        }
+                                    } else {
+                                        NavigationLink {
+                                            ActivityManageView(date: selectedDate)
+                                        } label: {
                                             DishRingButton(title: "sport", value: filteredLogs[0].totalActivityCalories, measurement: "kCal")
                                         }
                                     }
+                                    
                                     NavigationLink {
                                         AddWeightView(userWeight: String(user.weight), date: selectedDate)
                                     } label: {
