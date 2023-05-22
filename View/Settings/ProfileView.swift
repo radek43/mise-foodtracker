@@ -14,11 +14,14 @@ struct ProfileView: View {
     @StateObject var settingsViewModel = SettingsViewModel()
     
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var logViewModel: LogViewModel
     
     @State private var gender: Int
     @State private var name: String
     @State private var date: Date
     @State private var activity: Int
+    
+    @State private var showDeleteConfirmation = false
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -68,6 +71,29 @@ struct ProfileView: View {
                         .scaledToFit()
                         .labelsHidden()
                         .padding(.horizontal, -8)
+                    }
+                    
+                    Button {
+                        showDeleteConfirmation.toggle()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("Ștergere jurnal")
+                                .foregroundColor(.red)
+                            Spacer()
+                        }
+                    }
+                    .alert(isPresented:$showDeleteConfirmation) {
+                        Alert(
+                            title: Text("Ești sigur că vrei să ștergi toate jurnalele create?"),
+                            message: Text("Această acțiune este permanentă"),
+                            primaryButton: .destructive(Text("Șterge")) {
+                                logViewModel.deleteLogs {
+                                    NavigationUtil.popToRootView()
+                                }
+                            },
+                            secondaryButton: .cancel(Text("Renunță"))
+                        )
                     }
                 }
             }
