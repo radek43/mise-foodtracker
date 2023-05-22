@@ -37,6 +37,8 @@ struct ActivityLog: Identifiable, Codable {
     var title: String
     var calories: Double
     var duration: Double
+    var met: Double
+    var weight: Double
 }
 
 struct Log: Identifiable, Codable {
