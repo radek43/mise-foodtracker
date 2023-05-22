@@ -11,12 +11,12 @@ import SwiftUICharts
 
 struct UserProgressView: View {
     // MARK: - PROPERTIES
-    
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var logViewModel: LogViewModel
     
     var demoData: [Double] = [8, 4, 2, 5, 7, 6, 5, 8]
     
-    let mixedColorStyle = ChartStyle(backgroundColor: Color.card, foregroundColor: [ColorGradient(Color.accent, Color.accent)])
+    let style = ChartStyle(backgroundColor: Color.card, foregroundColor: [ColorGradient(Color.accent, Color.accent)])
     
     private var idiom: UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
@@ -28,42 +28,53 @@ struct UserProgressView: View {
                     ZStack {
                         Color.background
                             .edgesIgnoringSafeArea(.all)
-                        
                         VStack {
-                            // Weekly calories
-                            VStack(alignment: .leading) {
-                                Text("Calorii săptămânale")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                ChartGrid {
-                                    LineChart()
-                                        .setLineWidth(width: 2)
-                                        .showChartMarks(true)
-                                        .data(demoData)
-                                        .chartStyle(mixedColorStyle)
+                            if logViewModel.containsFood() {
+                                CardView(showShadow: false) {
+                                    VStack(alignment: .leading) {
+                                        VStack(alignment: .leading) {
+                                            Text("Calorii din ultima săptămână")
+                                                .font(.title3)
+                                                .fontWeight(.semibold)
+
+                                            ChartLabel("\(String(format: "%.1f", logViewModel.lastWeekCalories().last!)) kCal", type: .subTitle, format: "%.1f kCal")
+                                                .padding([.top, .leading], -8)
+                                        }
+                                        .padding(.horizontal)
+
+                                        LineChart()
+                                            .frame(height: 200)
+                                    }
+                                    .background(Color.card)
+                                    .padding(.bottom, 8)
                                 }
-                                .setNumberOfHorizontalLines(5)
-                                .setNumberOfVerticalLines(5)
-                                .showBaseLine(true)
-                            }
-                            .card()
-                            .frame(height: idiom == .pad ? 350 : 300)
-                            .padding(.top)
-//                            .allowsHitTesting(false)
+                                .data(logViewModel.lastWeekCalories())
+                                .chartStyle(style)
+                                .padding(.top)
+                                .background(Color.card)
+                                .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
+                                .frame(maxWidth: 580)
+                                .padding(.horizontal)
+                                .frame(height: idiom == .pad ? 350 : 300)
                             
-                            // Top foods eaten
-                            VStack(alignment: .leading) {
-                                Text("Top alimente calorice consumate")
-                                    .font(.title3)
-                                    .fontWeight(.semibold)
-                                BarChart()
-                                    .data(demoData)
-                                    .chartStyle(mixedColorStyle)
-                            }
-                            .card()
-                            .frame(height: idiom == .pad ? 350 : 250)
-                            .allowsHitTesting(false)
                             
+                                VStack(alignment: .leading) {
+                                    Text("Top alimente calorice consumate")
+                                        .font(.title3)
+                                        .fontWeight(.semibold)
+                                        .padding(.bottom)
+                                    ForEach(logViewModel.lastWeekFoods(), id: \.0) { item in
+                                        Group {
+                                            Text("\(item.0)")
+                                            Text("\(item.1, specifier: "%.f") kCal")
+                                                .font(.body)
+                                                .fontWeight(.semibold)
+                                            Divider()
+                                        }
+                                    }
+                                }
+                                .card()
+                            }
                             // User details
                             VStack {
                                 ProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
@@ -86,12 +97,17 @@ struct UserProgressView: View {
 struct UserProgressView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = AuthViewModel()
+        let logViewModel = LogViewModel()
+        
+        logViewModel.logs = logPreviewData
         viewModel.currentUser = userPreviewData
+        
         return Group {
             UserProgressView()
             UserProgressView()
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)
+        .environmentObject(logViewModel)
     }
 }
