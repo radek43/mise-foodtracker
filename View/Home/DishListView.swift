@@ -10,15 +10,18 @@ import SwiftUI
 struct DishListView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var logViewModel: LogViewModel
     
     @StateObject var dishViewModel = DishViewModel()
     
-    @State private var showEditView = false
-    @State private var showActivityConfirmSheet = false
-    @State private var showInfoSheet = false
-    
     let dishType: Int
     let date: Date
+    
+    var filteredLogs: [Log] {
+        logViewModel.logs.filter {
+            Calendar.current.compare($0.dateTime, to: date, toGranularity: .day) == .orderedSame
+        }
+    }
     
     // MARK: - BODY
     var body: some View {
@@ -33,52 +36,97 @@ struct DishListView: View {
                             dishViewModel.loadDishes()
                         }
                     }
-                    VStack {
-                        // Search bar
-                        SearchBar(placeholderText: "Caută un fel de mâncare",text: .constant(""))
-                            .frame(maxWidth: 580)
-                            .padding([.top, .horizontal])
-                            .padding(.bottom, 5.0)
-        
-                        // Activity list
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text("Denumire")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                                Spacer()
-                                Text("kCal")
-                                    .font(.headline)
-                                    .fontWeight(.bold)
-                            }
-                            Divider()
-                            ForEach(dishViewModel.dishes) { dishes in
-                                NavigationLink {
-                                    DishConfirmView(date: date, dishtype: dishType, dishConfirmViewModel: DishConfirmViewModel(withDishId: dishes.id))
-                                } label: {
+                    
+                    VStack(spacing: 60.0) {
+                        // Recent logs
+                        if !filteredLogs.isEmpty {
+                            VStack(alignment: .leading) {
+                                Text("ADĂUGATE RECENT:")
+                                    .font(.footnote)
+                                    .foregroundColor(Color.formText)
+                                    .padding(.horizontal, 24)
+                                VStack(alignment: .leading) {
                                     HStack {
-                                        Text(dishes.title)
-                                            .foregroundColor(Color(UIColor.label))
-                                            .fixedSize(horizontal: false, vertical: true)
+                                        Text("Denumire")
+                                            .font(.headline)
+                                            .fontWeight(.bold)
                                         Spacer()
-                                        Text("\(dishes.calories, specifier: "%.f")")
-                                            .foregroundColor(Color(UIColor.label))
+                                        Text("kCal")
+                                            .font(.headline)
+                                            .fontWeight(.bold)
+                                    }
+                                    Divider()
+                                    ForEach(filteredLogs[0].foods) { log in
+                                        if log.mealtype == dishType {
+                                            NavigationLink {
+                                                DishEdit(dish: log, ammount: log.servingSize)
+                                            } label: {
+                                                HStack {
+                                                    Text(log.title)
+                                                        .foregroundColor(Color(UIColor.label))
+                                                        .fixedSize(horizontal: false, vertical: true)
+                                                    Spacer()
+                                                    Text("\(log.calories, specifier: "%.f")")
+                                                        .foregroundColor(Color(UIColor.label))
+                                                    Image(systemName: "chevron.right")
+                                                }
+                                            }
+                                            if log.id != filteredLogs[0].foods.last?.id {
+                                                Divider()
+                                            }
+                                        }
                                     }
                                 }
-                                if dishes.id != dishViewModel.dishes.last?.id {
-                                    Divider()
-                                }
+                                .card()
                             }
+                            .padding(.top)
                         }
                         
-                        .card()
-                        .padding(.bottom)
-                        .onAppear {
-                            dishViewModel.loadDishes()
-                        }
-                        .frame(maxWidth: 580)
-                        .navigationTitle("Adaugă la jurnal")
+                        // Activity list
+                        VStack(alignment: .leading) {
+                            Text("FELURI DE MÂNCARE:")
+                                .font(.footnote)
+                                .foregroundColor(Color.formText)
+                                .padding(.horizontal, 24)
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text("Denumire")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                    Spacer()
+                                    Text("kCal")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                }
+                                Divider()
+                                ForEach(dishViewModel.dishes) { dishes in
+                                    NavigationLink {
+                                        DishConfirmView(date: date, dishtype: dishType, dishConfirmViewModel: DishConfirmViewModel(withDishId: dishes.id))
+                                    } label: {
+                                        HStack {
+                                            Text(dishes.title)
+                                                .foregroundColor(Color(UIColor.label))
+                                                .fixedSize(horizontal: false, vertical: true)
+                                            Spacer()
+                                            Text("\(dishes.calories, specifier: "%.f")")
+                                                .foregroundColor(Color(UIColor.label))
+                                            Image(systemName: "chevron.right")
+                                        }
+                                    }
+                                    if dishes.id != dishViewModel.dishes.last?.id {
+                                        Divider()
+                                    }
+                                }
+                            }
+                            .card()
+                            .padding(.bottom)
+                            .onAppear {
+                                dishViewModel.loadDishes()
+                            }
+                            .frame(maxWidth: 580)
+                            .navigationTitle("Adaugă la jurnal")
                         .navigationBarTitleDisplayMode(.inline)
+                        }
                     }
                 }
                 .background(Color.background.edgesIgnoringSafeArea(.all))
@@ -96,6 +144,8 @@ struct DishListView_Previews: PreviewProvider {
         viewModel.currentUser = userPreviewData
         let dishViewModel = DishViewModel()
         dishViewModel.dishes = dishPreviewData
+        let logViewModel = LogViewModel()
+        logViewModel.logs = logPreviewData
         return Group {
             NavigationView {
                 DishListView(dishViewModel: dishViewModel, dishType: 1, date: Date().stripTime())
@@ -106,5 +156,6 @@ struct DishListView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)
+        .environmentObject(logViewModel)
     }
 }
