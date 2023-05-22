@@ -38,6 +38,7 @@
 		2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0D03F129D44A92005C8C4B /* PreviewData.swift */; };
 		2C124B3029F92C9A003640FE /* OnboardMeasurementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C124B2F29F92C9A003640FE /* OnboardMeasurementsView.swift */; };
 		2C124B3229F9523D003640FE /* OnboardObjectiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C124B3129F9523D003640FE /* OnboardObjectiveView.swift */; };
+		2C2652592A1B6D16004A5616 /* DishEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2652582A1B6D16004A5616 /* DishEdit.swift */; };
 		2C28FA7D2A03BE1300C6E625 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28FA7C2A03BE1300C6E625 /* AddFoodView.swift */; };
 		2C28FA7F2A03C06200C6E625 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28FA7E2A03C06200C6E625 /* Food.swift */; };
 		2C28FA822A03C93800C6E625 /* AddFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28FA812A03C93800C6E625 /* AddFoodViewModel.swift */; };
@@ -123,6 +124,7 @@
 		2C0D03F129D44A92005C8C4B /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		2C124B2F29F92C9A003640FE /* OnboardMeasurementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardMeasurementsView.swift; sourceTree = "<group>"; };
 		2C124B3129F9523D003640FE /* OnboardObjectiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardObjectiveView.swift; sourceTree = "<group>"; };
+		2C2652582A1B6D16004A5616 /* DishEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishEdit.swift; sourceTree = "<group>"; };
 		2C28FA7C2A03BE1300C6E625 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
 		2C28FA7E2A03C06200C6E625 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		2C28FA812A03C93800C6E625 /* AddFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewModel.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			children = (
 				17482A7E2804832A006F2186 /* HomeView.swift */,
 				2C7918F2296DB519009F2194 /* DishListView.swift */,
+				2C2652582A1B6D16004A5616 /* DishEdit.swift */,
 				2C7918F4296DBC35009F2194 /* DishConfirmView.swift */,
 				2C28FA7C2A03BE1300C6E625 /* AddFoodView.swift */,
 				2CE194792A0E725F001EF4FE /* EditFoodView.swift */,
@@ -603,6 +606,7 @@
 				2C04CB472A1383C4008142C1 /* NavigationUtil.swift in Sources */,
 				2CE9C54C29E1C96000DDBA20 /* Log.swift in Sources */,
 				2C0D03F229D44A92005C8C4B /* PreviewData.swift in Sources */,
+				2C2652592A1B6D16004A5616 /* DishEdit.swift in Sources */,
 				2CB5DE2C29B8E3C300F34FC4 /* AuthViewModel.swift in Sources */,
 				2CA0398029E891830079A614 /* ActivityInfoView.swift in Sources */,
 				2C71A69B29DDF701006A823C /* LaunchView.swift in Sources */,
