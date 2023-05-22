@@ -137,15 +137,13 @@ struct HomeView: View {
                                         }
                                     }
                                     NavigationLink {
-                                        AddWeightView(userWeight: String(user.weight),date: selectedDate)
+                                        AddWeightView(userWeight: String(user.weight), date: selectedDate)
                                     } label: {
                                         if filteredLogs.isEmpty || filteredLogs[0].weight.isZero {
                                             DishButton(imageName: "weightScale", title: "greutate")
                                         } else {
                                             DishRingButton(title: "greutate", value: filteredLogs[0].weight, measurement: "kg")
                                         }
-
-                                        
                                     }
                                     NavigationLink {
                                         AddWaterView(percent: filteredLogs.isEmpty ? 0 : filteredLogs[0].water, date: selectedDate)
