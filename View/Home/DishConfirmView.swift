@@ -107,8 +107,9 @@ struct DishConfirmView: View {
                                         NavigationUtil.popToRootView()
                                 }
                             } label: {
-                                RectangleButton(text: "Adaugă la jurnal")
+                                RectangleButton(text: "Adaugă la jurnal", isDisabled: ammount.isEmpty ? true : false)
                             }
+                            .disabled(ammount.isEmpty)
                             
                             Spacer()
                         }
