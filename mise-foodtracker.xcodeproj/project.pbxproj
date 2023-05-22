@@ -61,6 +61,8 @@
 		2C7918F3296DB519009F2194 /* DishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7918F2296DB519009F2194 /* DishListView.swift */; };
 		2C7918F5296DBC35009F2194 /* DishConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7918F4296DBC35009F2194 /* DishConfirmView.swift */; };
 		2C79C8D529BF71DF00243940 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79C8D429BF71DF00243940 /* KeychainService.swift */; };
+		2C8C6F412A1BE0A10094C227 /* ActivityManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C6F402A1BE0A10094C227 /* ActivityManageView.swift */; };
+		2C8C6F432A1BE9AC0094C227 /* ActivityLogEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C6F422A1BE9AC0094C227 /* ActivityLogEditView.swift */; };
 		2C8D797D29DC238D00B9AB47 /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D797C29DC238D00B9AB47 /* RecipeListViewModel.swift */; };
 		2CA0397829E859D30079A614 /* ActivityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0397729E859D30079A614 /* ActivityListViewModel.swift */; };
 		2CA0397A29E87EF70079A614 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0397929E87EF70079A614 /* Activity.swift */; };
@@ -146,6 +148,8 @@
 		2C7918F2296DB519009F2194 /* DishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListView.swift; sourceTree = "<group>"; };
 		2C7918F4296DBC35009F2194 /* DishConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishConfirmView.swift; sourceTree = "<group>"; };
 		2C79C8D429BF71DF00243940 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		2C8C6F402A1BE0A10094C227 /* ActivityManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManageView.swift; sourceTree = "<group>"; };
+		2C8C6F422A1BE9AC0094C227 /* ActivityLogEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogEditView.swift; sourceTree = "<group>"; };
 		2C8D797C29DC238D00B9AB47 /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
 		2CA0397729E859D30079A614 /* ActivityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListViewModel.swift; sourceTree = "<group>"; };
 		2CA0397929E87EF70079A614 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 				2CE9260729E9765C005E6803 /* ActivityConfrimView.swift */,
 				2C3ED20529EB2C51007CE412 /* AddActivityView.swift */,
 				2CE43D2A29EC4C2900BD9E82 /* ActivityEditView.swift */,
+				2C8C6F422A1BE9AC0094C227 /* ActivityLogEditView.swift */,
+				2C8C6F402A1BE0A10094C227 /* ActivityManageView.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				2C74B75E2950EE580063A4F4 /* MeasurementsView.swift in Sources */,
 				2C28FA7D2A03BE1300C6E625 /* AddFoodView.swift in Sources */,
 				2C28FA7F2A03C06200C6E625 /* Food.swift in Sources */,
+				2C8C6F432A1BE9AC0094C227 /* ActivityLogEditView.swift in Sources */,
 				2CE9260629E96182005E6803 /* RecipeEditViewModel.swift in Sources */,
 				178CEBC52809B82700D6DD25 /* DishButton.swift in Sources */,
 				2C0589FD2A0CCFC30099C254 /* EditFoodViewModel.swift in Sources */,
@@ -612,6 +619,7 @@
 				2C71A69B29DDF701006A823C /* LaunchView.swift in Sources */,
 				2CA12FDC29E1779800CC6CC8 /* RecipeDetailViewModel.swift in Sources */,
 				2C4AD2D829EFFE1C00311DAE /* ObjectiveView.swift in Sources */,
+				2C8C6F412A1BE0A10094C227 /* ActivityManageView.swift in Sources */,
 				2CFC2B3229705BF800451922 /* RectangleButton.swift in Sources */,
 				2C64C040294B931600E9305F /* ProfileView.swift in Sources */,
 				2CB0CC672A15297600E559E0 /* Wave.swift in Sources */,
