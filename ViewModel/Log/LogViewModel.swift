@@ -204,7 +204,7 @@ class LogViewModel: ObservableObject {
         }
         return false
     }
-    
+        
     func lastWeekFoods() -> [(dish: String, count: Double)] {
         // calculate the times a dish is eaten in the last 7 days
         let calendar = Calendar.current
@@ -224,12 +224,44 @@ class LogViewModel: ObservableObject {
         
         // sort descending
         let sortedFoods = foodCounts.sorted { $0.value > $1.value }
-
-        return sortedFoods.map { ($0.key, $0.value) }
+        let result = Array(sortedFoods.prefix(5)).map { ($0.key, $0.value) }
+        return result
     }
     
-    func deleteLog(indexSet: IndexSet) {
-        // TODO: Delete logs
+    func editDish(id: String, mealtype: Int, title: String, servingSize: Double, calories: Double, protein: Double, carbs: Double, fibers: Double, fat: Double, completion: () -> Void) {
+        // edit a dish from log by id
+        var confirmed = false
+        let newDish = DishLog(id: id, mealtype: mealtype, title: title, servingSize: servingSize, calories: calories, protein: protein, carbs: carbs, fibers: fibers, fat: fat)
+        for i in 0..<logs.count {
+            var log = logs[i]
+            
+            if let index = log.foods.firstIndex(where: { $0.id == id }) {
+                log.foods[index] = newDish
+                logs[i] = log
+                saveLog()
+                print("DEBUG: Dish edited")
+                print(logs)
+                confirmed = true
+                break
+            }
+        }
+        
+        // dismiss view after log is updated
+        if confirmed == true {
+            completion()
+        }
+    }
+    
+    func deleteDish(id: String, completion: () -> Void) {
+        for (index, log) in logs.enumerated() {
+            if let foodIndex = log.foods.firstIndex(where: { $0.id == id }) {
+                logs[index].foods.remove(at: foodIndex)
+                saveLog()
+                print("DEBUG: Dish deleted")
+                print(logs)
+                completion()
+            }
+        }
     }
     
     func loadLogs() {
@@ -264,6 +296,15 @@ class LogViewModel: ObservableObject {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func deleteLogs(completion: () -> Void) {
+        // deletes all the logs
+        logs.removeAll()
+        saveLog()
+        print("DEBUG: Logs deleted")
+        print(logs)
+        completion()
     }
     
 }
