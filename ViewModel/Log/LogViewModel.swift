@@ -253,11 +253,49 @@ class LogViewModel: ObservableObject {
     }
     
     func deleteDish(id: String, completion: () -> Void) {
+        // deletes a selected dish from log
         for (index, log) in logs.enumerated() {
             if let foodIndex = log.foods.firstIndex(where: { $0.id == id }) {
                 logs[index].foods.remove(at: foodIndex)
                 saveLog()
                 print("DEBUG: Dish deleted")
+                print(logs)
+                completion()
+            }
+        }
+    }
+    
+    func editActivity(id: String, title: String, calories: Double, duration: Double, met: Double, weight: Double, completion: () -> Void) {
+        // edit an activity from log by id
+        var confirmed = false
+        let newActivity = ActivityLog(id: id, title: title, calories: calories, duration: duration, met: met, weight: weight)
+        for i in 0..<logs.count {
+            var log = logs[i]
+            
+            if let index = log.activities.firstIndex(where: { $0.id == id }) {
+                log.activities[index] = newActivity
+                logs[i] = log
+                saveLog()
+                print("DEBUG: Activity edited")
+                print(logs)
+                confirmed = true
+                break
+            }
+        }
+        
+        // dismiss view after log is updated
+        if confirmed == true {
+            completion()
+        }
+    }
+    
+    func deleteActivity(id: String, completion: () -> Void) {
+        // deletes a selected activity from log
+        for (index, log) in logs.enumerated() {
+            if let activityIndex = log.activities.firstIndex(where: { $0.id == id }) {
+                logs[index].activities.remove(at: activityIndex)
+                saveLog()
+                print("DEBUG: Activity deleted")
                 print(logs)
                 completion()
             }
