@@ -51,7 +51,7 @@ struct DishEdit: View {
                     .card()
                     
                     HStack {
-                        Text("\(calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dish.calories), specifier: "%.0f") calorii consumate")
+                        Text("\(calculateAmmount(oldAmmount: dish.servingSize , newAmmount: Double(ammount) ?? 0, nutrition: dish.calories), specifier: "%.0f") calorii consumate")
                             .font(.title2)
                             .fontWeight(.semibold)
                         Spacer()
@@ -60,19 +60,20 @@ struct DishEdit: View {
                     .padding(.horizontal, 32)
                     
                     NutritionChart(chartTitle: "Valori nutriționale",
-                                   protein: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dish.protein),
-                                   carbs: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dish.carbs),
-                                   fat: ammount.isEmpty ? 1 : calculateAmmount(grams: Double(ammount) ?? 0, nutrition: dish.fat),
+                                   protein: ammount.isEmpty ? 1 : calculateAmmount(oldAmmount: dish.servingSize , newAmmount: Double(ammount) ?? 0, nutrition: dish.protein),
+                                   carbs: ammount.isEmpty ? 1 : calculateAmmount(oldAmmount: dish.servingSize , newAmmount: Double(ammount) ?? 0, nutrition: dish.carbs),
+                                   fat: ammount.isEmpty ? 1 : calculateAmmount(oldAmmount: dish.servingSize , newAmmount: Double(ammount) ?? 0, nutrition: dish.fat),
                                    isDisabled: ammount.isEmpty ? true : false)
                     
                     // Add to journal
                     Button {
-                        logViewModel.editDish(id: dish.id, mealtype: dish.mealtype, title: dish.title, servingSize: Double(ammount)!, calories: calculateAmmount(grams: Double(ammount)!, nutrition: dish.calories), protein: calculateAmmount(grams: Double(ammount)!, nutrition: dish.protein), carbs: calculateAmmount(grams: Double(ammount)!, nutrition: dish.carbs), fibers: calculateAmmount(grams: Double(ammount)!, nutrition: dish.fibers), fat: calculateAmmount(grams: Double(ammount)!, nutrition: dish.fat)) {
+                        logViewModel.editDish(id: dish.id, mealtype: dish.mealtype, title: dish.title, servingSize: Double(ammount)!, calories: calculateAmmount(oldAmmount: dish.servingSize , newAmmount: Double(ammount) ?? 0, nutrition: dish.calories), protein: calculateAmmount(oldAmmount: dish.servingSize , newAmmount: Double(ammount) ?? 0, nutrition: dish.protein), carbs: calculateAmmount(oldAmmount: dish.servingSize , newAmmount: Double(ammount) ?? 0, nutrition: dish.carbs), fibers: calculateAmmount(oldAmmount: dish.servingSize , newAmmount: Double(ammount) ?? 0, nutrition: dish.fibers), fat: calculateAmmount(oldAmmount: dish.servingSize , newAmmount: Double(ammount) ?? 0, nutrition: dish.fat)) {
                             presentationMode.wrappedValue.dismiss()
                         }
                     } label: {
-                        RectangleButton(text: "Modifică fel de mâncare")
+                        RectangleButton(text: "Modifică fel de mâncare", isDisabled: ammount.isEmpty ? true : false)
                     }
+                    .disabled(ammount.isEmpty)
                     
                     Spacer()
 
@@ -102,8 +103,9 @@ struct DishEdit: View {
         }
     }
     
-    func calculateAmmount(grams: Double, nutrition: Double) -> Double {
-        let result = grams * nutrition / 100
+    func calculateAmmount(oldAmmount: Double, newAmmount: Double, nutrition: Double) -> Double {
+        let ratio = newAmmount / oldAmmount
+        let result = nutrition * ratio
         return result.rounded(toPlaces: 1)
     }
     
