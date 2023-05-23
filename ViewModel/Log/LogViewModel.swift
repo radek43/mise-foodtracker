@@ -79,7 +79,7 @@ class LogViewModel: ObservableObject {
         
         // check if a log with selected date is already created
         if let index = logs.firstIndex(where: { $0.dateTime == date }) {
-            logs[index].water += water
+            logs[index].water = water
             saveLog()
             print("DEBUG: Water appended")
             print(logs)
