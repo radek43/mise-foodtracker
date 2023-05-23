@@ -54,6 +54,8 @@
 		2C4D586E2A050BE000B3E887 /* DishConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4D586D2A050BE000B3E887 /* DishConfirmViewModel.swift */; };
 		2C542E782A10CFA6007BE23E /* RecipeConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C542E772A10CFA6007BE23E /* RecipeConfirmView.swift */; };
 		2C56DEE829546FAF006A4A5A /* DishRingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C56DEE729546FAF006A4A5A /* DishRingButton.swift */; };
+		2C638D352A1CAC8F009FD732 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C638D342A1CAC8F009FD732 /* NetworkManager.swift */; };
+		2C638D372A1CAE89009FD732 /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C638D362A1CAE89009FD732 /* NoInternetView.swift */; };
 		2C64C040294B931600E9305F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C64C03F294B931600E9305F /* ProfileView.swift */; };
 		2C71A69B29DDF701006A823C /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C71A69A29DDF701006A823C /* LaunchView.swift */; };
 		2C74B75C2950BB510063A4F4 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C74B75B2950BB510063A4F4 /* NotificationsView.swift */; };
@@ -141,6 +143,8 @@
 		2C4D586D2A050BE000B3E887 /* DishConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishConfirmViewModel.swift; sourceTree = "<group>"; };
 		2C542E772A10CFA6007BE23E /* RecipeConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeConfirmView.swift; sourceTree = "<group>"; };
 		2C56DEE729546FAF006A4A5A /* DishRingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishRingButton.swift; sourceTree = "<group>"; };
+		2C638D342A1CAC8F009FD732 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2C638D362A1CAE89009FD732 /* NoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetView.swift; sourceTree = "<group>"; };
 		2C64C03F294B931600E9305F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		2C71A69A29DDF701006A823C /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		2C74B75B2950BB510063A4F4 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				2C79C8D429BF71DF00243940 /* KeychainService.swift */,
 				2C47869D29E084A500BFBADF /* RefreshControl.swift */,
 				2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */,
+				2C638D342A1CAC8F009FD732 /* NetworkManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				17A92D002801DCEA000CF34F /* ContentView.swift */,
 				2C71A69A29DDF701006A823C /* LaunchView.swift */,
 				17482A7A28047F57006F2186 /* TabBarView.swift */,
+				2C638D362A1CAE89009FD732 /* NoInternetView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C638D352A1CAC8F009FD732 /* NetworkManager.swift in Sources */,
 				2CE35E6D2943B0AA00674348 /* AddRecipeView.swift in Sources */,
 				2C0589F92A0CC7E20099C254 /* LogViewModel.swift in Sources */,
 				2CA54DEE29DF0B92003D317B /* AddRecipeViewModel.swift in Sources */,
@@ -594,6 +601,7 @@
 				2CD714362A10BADB005196A3 /* ConsumedCalories.swift in Sources */,
 				17A92CFF2801DCEA000CF34F /* miseFoodTrackerApp.swift in Sources */,
 				2CE1947A2A0E725F001EF4FE /* EditFoodView.swift in Sources */,
+				2C638D372A1CAE89009FD732 /* NoInternetView.swift in Sources */,
 				17F01E8328A2C8B900285894 /* InputField.swift in Sources */,
 				2C28FA822A03C93800C6E625 /* AddFoodViewModel.swift in Sources */,
 				2CED767029D5A9460093E035 /* NumbersOnlyViewModifier.swift in Sources */,
