@@ -12,14 +12,21 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     @EnvironmentObject var authViewModel: AuthViewModel
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
+    @ObservedObject var networkManager = NetworkManager()
+    
     private var keychainService = KeychainService()
     
     // MARK: - BODY
     var body: some View {
-        if authViewModel.isLoggedIn == false {  //  User is not logged in
-            LoginView()
-        } else {  //  User is logged in
-            TabBarView()
+        if networkManager.isConnected {
+            if authViewModel.isLoggedIn == false {  //  User is not logged in
+                LoginView()
+            } else {  //  User is logged in
+                TabBarView()
+            }
+        } else {
+            NoInternetView()
         }
     }
 }
