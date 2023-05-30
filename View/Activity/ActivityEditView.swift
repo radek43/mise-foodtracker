@@ -68,6 +68,14 @@ struct ActivityEditView: View {
 // MARK: - PREVIEW
 struct ActivityEditView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityEditView(activity: activityPreviewData[0])
+        Group {
+            NavigationView {
+                ActivityEditView(activity: activityPreviewData[0])
+            }
+            NavigationView {
+                ActivityEditView(activity: activityPreviewData[0])
+                    .preferredColorScheme(.dark)
+            }
+        }
     }
 }
