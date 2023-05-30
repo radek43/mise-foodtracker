@@ -8,22 +8,37 @@
 import Foundation
 import SwiftUI
 
+enum Regex: String {
+    case email = "^[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,49}$"
+    case password = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+    case username = "^(?!.*\\.\\.)(?!.*\\.$)[^\\W][\\w.]{0,29}$"
+}
+
 enum UserError: Error, LocalizedError {
     case invalidURL
+    case invalidCredentials
     case serverError
     case invalidData
     case unknown(Error)
+    case invalidEmail
+    case invalidUsername
     
     var errorDescription: String? {
         switch self {
             case .invalidURL:
-                return ""
+                return "Link invalid."
             case .serverError:
-                return "S-a produs o eroare la partea de server. Va rugam incercati mai tarziu"
+                return "Aplicația nu poate comunica cu serverul. Vă rugăm reîncercați mai târziu."
             case .invalidData:
-                return "A aparut o eroare. Va rugam incercati mai tarziu."
+                return "A aparut o eroare. Vă rugăm reîncercați mai târziu."
+            case .invalidEmail:
+                return "Această adresă de email nu este validă sau este folosită deja. Vă rugăm introduceți alt email."
+            case .invalidUsername:
+                return "Aceast username este folosit deja. Vă rugăm introduceți alt username."
             case .unknown(let error):
                 return error.localizedDescription
+            case .invalidCredentials:
+                return "Adresă de email sau parola incorectă."
         }
     }
 }
