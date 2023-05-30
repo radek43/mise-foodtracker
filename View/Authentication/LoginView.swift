@@ -12,7 +12,17 @@ struct LoginView: View {
     // MARK: - PROPERTIES
     @State private var email = ""
     @State private var password = ""
+    @State private var showAlert = false
+    
     @EnvironmentObject var authViewModel: AuthViewModel
+    
+    var isDisabled: Bool {
+        if email.isEmpty || password.isEmpty || !email.isValid(regexPattern: Regex.email.rawValue) {
+            return true
+        } else {
+            return false
+        }
+    }
     
     // MARK: - BODY
     var body: some View {
@@ -28,31 +38,26 @@ struct LoginView: View {
                         InputField(imageName: "envelope", placeholderText: "Email", text: $email)
                         InputField(imageName: "lock", placeholderText: "Parola", isSecureField: true, text: $password)
                     }
-                    .padding(.top, 30)
-                    // Password reset
-                    HStack {
-                        Spacer()
-                        Button {
-                            authViewModel.signOut() // for debug purposes
-                        } label: {
-                            Text("Am uitat parola")
-                                .font(.caption)
-                                .fontWeight(.semibold)
-                                
-                        }
-                    }
-                    .frame(maxWidth: 580)
-                    .padding(.top, 8)
-                    .padding(.horizontal)
+                    .padding(.top, 45)
+
                     // Sign in
                     Button {
                         Task {
                             try await authViewModel.signIn(email: email, password: password)
                         }
                     } label: {
-                        RectangleButton(text: "Autentifică-te", isDisabled: (email.isEmpty || password.isEmpty) ? true : false)
+                        RectangleButton(text: "Autentifică-te", isDisabled: isDisabled)
                     }
-                    .disabled(email.isEmpty || password.isEmpty)
+                    .padding(.top, 20)
+                    .disabled(isDisabled)
+                    .onReceive(authViewModel.$error, perform: { error in
+                        if error != nil {
+                            showAlert.toggle()
+                        }
+                    })
+                    .alert(isPresented: $showAlert, content: {
+                        Alert(title: Text("Eroare"), message: Text(authViewModel.error?.localizedDescription ?? ""))
+                    })
                     
                     Spacer()
                     // Register
@@ -82,11 +87,14 @@ struct LoginView: View {
 // MARK: - PREVIEWS
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        let viewModel = AuthViewModel()
+        viewModel.currentUser = userPreviewData
+        return Group {
             LoginView()
             LoginView()
                 .preferredColorScheme(.dark)
         }
+        .environmentObject(viewModel)
     }
 }
 
