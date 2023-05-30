@@ -17,6 +17,8 @@ struct DishListView: View {
     let dishType: Int
     let date: Date
     
+    @State private var isHitTestEnabled = false
+    
     var filteredLogs: [Log] {
         logViewModel.logs.filter {
             Calendar.current.compare($0.dateTime, to: date, toGranularity: .day) == .orderedSame
@@ -117,11 +119,15 @@ struct DishListView: View {
                                         Divider()
                                     }
                                 }
+                                .allowsHitTesting(isHitTestEnabled)
                             }
                             .card()
                             .padding(.bottom)
                             .onAppear {
                                 dishViewModel.loadDishes()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                                    isHitTestEnabled = true
+                                }
                             }
                             .frame(maxWidth: 580)
                             .navigationTitle("Adaugă la jurnal")
