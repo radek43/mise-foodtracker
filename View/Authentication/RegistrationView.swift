@@ -14,9 +14,18 @@ struct RegistrationView: View {
     @State private var username = ""
     @State private var fullname = ""
     @State private var password = ""
+    @State private var showAlert = false
     
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authViewModel: AuthViewModel
+    
+    var isDisabled: Bool {
+        if email.isEmpty || username.isEmpty || fullname.isEmpty || password.isEmpty || !password.isValid(regexPattern: Regex.password.rawValue) || !email.isValid(regexPattern: Regex.email.rawValue) || !username.isValid(regexPattern: Regex.username.rawValue){
+            return true
+        } else {
+            return false
+        }
+    }
     
     // MARK: - BODY
     var body: some View {
@@ -27,10 +36,25 @@ struct RegistrationView: View {
             VStack(spacing: 18.0) {
                 InputField(imageName: "envelope", placeholderText: "Email", text: $email)
                     .keyboardType(.emailAddress)
-                InputField(imageName: "person", placeholderText: "Nume Utilizator", text: $username)
+                VStack(alignment: .leading, spacing: 3) {
+                    InputField(imageName: "person", placeholderText: "Nume Utilizator", text: $username)
+                    Text("• poate conține doar litere, cifre, puncte și underscore")
+                        .fixedSize(horizontal: false, vertical: true)
+                        .font(.footnote)
+                        .foregroundColor(Color.formText)
+                        .padding(.horizontal, 32)
+                }
                 InputField(imageName: "person", placeholderText: "Nume Complet", text: $fullname)
-                InputField(imageName: "lock", placeholderText: "Parola", isSecureField: true, text: $password)
+                VStack(alignment: .leading, spacing: 3) {
+                    InputField(imageName: "lock", placeholderText: "Parola", isSecureField: true, text: $password)
+                    Text("• minim 8 caractere, cu cel puțin o cifră și o literă mare")
+                        .fixedSize(horizontal: false, vertical: true)
+                        .font(.footnote)
+                        .foregroundColor(Color.formText)
+                        .padding(.horizontal, 32)
+                }
             }
+            .frame(maxWidth: 580)
             .padding(.top, 30)
             
             Button {
@@ -38,8 +62,18 @@ struct RegistrationView: View {
                     try await authViewModel.signUp(email: email, username: username, fullname: fullname, password: password)
                 }
             } label: {
-                RectangleButton(text: "Continuă")
+                RectangleButton(text: "Continuă", isDisabled: isDisabled)
             }
+            .disabled(isDisabled)
+            .onReceive(authViewModel.$registrationError, perform: { error in
+                if error != nil {
+                    showAlert.toggle()
+                }
+            })
+            .alert(isPresented: $showAlert, content: {
+                Alert(title: Text("Eroare"), message: Text(authViewModel.registrationError?.localizedDescription ?? ""))
+            })
+            
             Spacer()
             
             Button {
@@ -64,10 +98,13 @@ struct RegistrationView: View {
 // MARK: - PREVIEWS
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        let viewModel = AuthViewModel()
+        viewModel.currentUser = userPreviewData
+        return Group {
             RegistrationView()
             RegistrationView()
                 .preferredColorScheme(.dark)
         }
+        .environmentObject(viewModel)
     }
 }
