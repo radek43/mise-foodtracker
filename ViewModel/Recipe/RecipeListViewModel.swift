@@ -63,5 +63,4 @@ class RecipeListViewModel: ObservableObject {
             try await fetchRecipes()
         }
     }
-    
 }
