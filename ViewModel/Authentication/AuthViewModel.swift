@@ -13,6 +13,7 @@ class AuthViewModel: ObservableObject {
     @Published var currentUser: User?
     @Published var isLoggedIn = false
     @Published var error: Error?
+    @Published var registrationError: Error?
     
     private var keychainService = KeychainService()
     
@@ -52,21 +53,26 @@ class AuthViewModel: ObservableObject {
         // Send a POST request to the URL, with the data we created earlier
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-                throw UserError.serverError
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    if try JSONSerialization.jsonObject(with: data, options: .mutableContainers) is [String: Any] {}
+                    
+                    guard let tokenObject = try? JSONDecoder().decode(Token.self, from: data) else {
+                        throw UserError.invalidData
+                    }
+                    
+                    // Save user data
+                    UserDefaults.standard.set(String(email), forKey: "userEmail")
+                    try self.keychainService.save(service: "mise-foodtracker", account: email, password: tokenObject.token.data(using: .utf8) ?? Data())
+                    
+                    try await getUser()
+                    
+                } else if httpResponse.statusCode >= 400 && httpResponse.statusCode <= 500 {
+                    throw UserError.invalidCredentials
+                } else {
+                    throw UserError.serverError
+                }
             }
-            
-            if try JSONSerialization.jsonObject(with: data, options: .mutableContainers) is [String: Any] {}
-            
-            guard let tokenObject = try? JSONDecoder().decode(Token.self, from: data) else {
-                throw UserError.invalidData
-            }
-            // Save user data
-            UserDefaults.standard.set(String(email), forKey: "userEmail")
-            try self.keychainService.save(service: "mise-foodtracker", account: email, password: tokenObject.token.data(using: .utf8) ?? Data())
-            
-            try await getUser()
-            
         } catch {
             self.error = error
         }
@@ -103,23 +109,30 @@ class AuthViewModel: ObservableObject {
         // Send a POST request to the URL, with the data we created earlier
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
-            guard (response as? HTTPURLResponse)?.statusCode == 201 else {
-                throw UserError.serverError
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 201 {
+                    if try JSONSerialization.jsonObject(with: data, options: .mutableContainers) is [String: Any] {}
+                    
+                    guard let user = try? JSONDecoder().decode(User.self, from: data) else {
+                        throw UserError.invalidData
+                    }
+                    
+                    try await getToken(email: email , password: password)
+                    
+                    self.isLoggedIn = true
+                    self.currentUser = user
+                    
+                } else if httpResponse.statusCode >= 400 && httpResponse.statusCode < 500 {
+                    throw UserError.invalidEmail
+                } else if httpResponse.statusCode >= 500 {
+                    throw UserError.invalidUsername
+                } else {
+                    throw UserError.serverError
+                }
             }
-            
-            if try JSONSerialization.jsonObject(with: data, options: .mutableContainers) is [String: Any] {}
-            
-            guard let user = try? JSONDecoder().decode(User.self, from: data) else {
-                throw UserError.invalidData
-            }
-            
-            try await getToken(email: email , password: password)
-            
-            self.isLoggedIn = true
-            self.currentUser = user
-            
         } catch {
-            self.error = error
+            self.registrationError = error
         }
     }
     
