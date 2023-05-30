@@ -16,6 +16,7 @@ struct ActivityListView: View {
     @State private var showEditView = false
     @State private var showActivityConfirmSheet = false
     @State private var showInfoSheet = false
+    @State private var isHitTestEnabled = false
     
     // MARK: - BODY
     var body: some View {
@@ -67,12 +68,14 @@ struct ActivityListView: View {
                                         Divider()
                                     }
                                 }
+                                .allowsHitTesting(isHitTestEnabled)
                             }
                             .card()
                             .padding(.bottom)
                             .onAppear {
-                                Task {
-                                    try await self.activityListViewModel.fetchActivities()
+                                activityListViewModel.loadActivities()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                                    isHitTestEnabled = true
                                 }
                             }
                             .navigationTitle("Activitate")
