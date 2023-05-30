@@ -29,7 +29,7 @@ struct ActivityConfrimView: View {
     
     // MARK: - BODY
     var body: some View {
-        if authViewModel.currentUser != nil {
+        if let user = authViewModel.currentUser {
             ZStack(alignment: .top) {
                 Color.background
                     .edgesIgnoringSafeArea(.all)
@@ -186,11 +186,11 @@ struct ActivityConfrimView: View {
                     try await self.activityConfirmViewModel.fetchActivity()
                 }
             }
-            .navigationBarTitle("", displayMode: .inline)
-
+            .navigationBarTitle(user.is_staff == true ? "" : "Detalii Activitate", displayMode: .inline)
         }
     }
     
+    // MARK: - FUNCTIONS
     func calculateMet(met: Double, userWeight: Double, activityTime: Double) -> Double {
         var result = (met * 3.5 * userWeight) / 200
         
@@ -198,7 +198,6 @@ struct ActivityConfrimView: View {
         
         return result.rounded(toPlaces: 1)
     }
-    
 }
 
 struct ActivityConfrimView_Previews: PreviewProvider {
