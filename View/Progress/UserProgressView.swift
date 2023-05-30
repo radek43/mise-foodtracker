@@ -77,8 +77,7 @@ struct UserProgressView: View {
                             }
                             // User details
                             VStack {
-                                ProgressRow(progressTitle: "Greutate Medie", progressValue: "76.90", measurementUnit: "kg")
-                                ProgressRow(progressTitle: "Medie pași făcuți săptămânal", progressValue: "5749", measurementUnit: "pași")
+                                ProgressRow(progressTitle: "Greutate Medie", progressValue: "\(logViewModel.weightLastMonth())", measurementUnit: "kg")
                                 ProgressRow(progressTitle: "Indice Masă Corporală (BMI)", progressValue: "\(user.bmi)", measurementUnit: "BMI")
                             }
                         }

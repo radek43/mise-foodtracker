@@ -193,6 +193,34 @@ class LogViewModel: ObservableObject {
         return result
     }
     
+    func weightLastMonth() -> Double {
+        // calculate average weight from the last 30 days
+        let calendar = Calendar.current
+        let lastMonth = calendar.date(byAdding: .day, value: -30, to: Date().stripTime())!
+        
+        var count = 0.0
+        var averageWeight = 0.0
+        
+        // filter logs
+        let logsFromLastMonth = logs.filter { $0.dateTime >= lastMonth }
+        
+        // iterate over filtered logs
+        for log in logsFromLastMonth {
+            if log.weight != 0 {
+                count += 1
+                averageWeight += log.weight
+            }
+        }
+        
+        // return weight
+        if count != 0.0 {
+            let result = averageWeight / count
+            return result.rounded(toPlaces: 2)
+        } else {
+            return 0.0
+        }
+    }
+    
     func containsFood() -> Bool {
         // check if a dish exists in a log
         for log in logs {
