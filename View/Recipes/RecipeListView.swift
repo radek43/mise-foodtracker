@@ -16,6 +16,7 @@ struct RecipeListView: View {
     @StateObject var recipeListViewModel = RecipeListViewModel()
     
     @State private var showAlert = false
+    @State private var isHitTestEnabled = false
 
     // MARK: - BODY
     var body: some View {
@@ -58,6 +59,7 @@ struct RecipeListView: View {
                                             .foregroundColor(.primary)
                                     }
                                 }
+                                .allowsHitTesting(isHitTestEnabled)
                             }
                             .onReceive(recipeListViewModel.$error, perform: { error in
                                 if error != nil {
@@ -87,6 +89,9 @@ struct RecipeListView: View {
                 }
                 .onAppear {
                     recipeListViewModel.loadData()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                        isHitTestEnabled = true
+                    }
                 }
             }
             .navigationViewStyle(StackNavigationViewStyle())
