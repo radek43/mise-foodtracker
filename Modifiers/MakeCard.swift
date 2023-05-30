@@ -32,6 +32,7 @@ struct MakeCard_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
         .environmentObject(viewModel)
+        .environmentObject(LogViewModel())
     }
 }
 
