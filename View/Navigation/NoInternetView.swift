@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NoInternetView: View {
+    // MARK: - BODY
     var body: some View {
         ZStack {
             Color.background.edgesIgnoringSafeArea(.all)
@@ -26,6 +27,7 @@ struct NoInternetView: View {
     }
 }
 
+// MARK: - PREVIEWS
 struct NoInternetView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
