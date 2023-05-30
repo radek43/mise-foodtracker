@@ -32,6 +32,17 @@ extension UINavigationController {
     }
 }
 
+// Override alert color
+extension UIAlertController {
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let alertControllerView = view.superview?.superview {
+            alertControllerView.tintColor = UIColor(Color.accent)
+        }
+    }
+}
+
 // Override TabBar Color
 extension View {
     func tabViewStyle(backgroundColor: UIColor? = nil,
@@ -147,5 +158,16 @@ extension Array {
         }
 
         return remove(at: index)
+    }
+}
+
+extension String {
+    func isValid(regexPattern: String) -> Bool {
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regexPattern)
+        if predicate.evaluate(with: self) == true {
+            return true
+        } else {
+            return false
+        }
     }
 }
