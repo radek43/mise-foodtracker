@@ -66,6 +66,7 @@
 		2C8C6F412A1BE0A10094C227 /* ActivityManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C6F402A1BE0A10094C227 /* ActivityManageView.swift */; };
 		2C8C6F432A1BE9AC0094C227 /* ActivityLogEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8C6F422A1BE9AC0094C227 /* ActivityLogEditView.swift */; };
 		2C8D797D29DC238D00B9AB47 /* RecipeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D797C29DC238D00B9AB47 /* RecipeListViewModel.swift */; };
+		2C956E412A266CA60094A4BD /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C956E402A266CA60094A4BD /* NotificationManager.swift */; };
 		2CA0397829E859D30079A614 /* ActivityListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0397729E859D30079A614 /* ActivityListViewModel.swift */; };
 		2CA0397A29E87EF70079A614 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0397929E87EF70079A614 /* Activity.swift */; };
 		2CA0398029E891830079A614 /* ActivityInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0397F29E891830079A614 /* ActivityInfoView.swift */; };
@@ -155,6 +156,7 @@
 		2C8C6F402A1BE0A10094C227 /* ActivityManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityManageView.swift; sourceTree = "<group>"; };
 		2C8C6F422A1BE9AC0094C227 /* ActivityLogEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogEditView.swift; sourceTree = "<group>"; };
 		2C8D797C29DC238D00B9AB47 /* RecipeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewModel.swift; sourceTree = "<group>"; };
+		2C956E402A266CA60094A4BD /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		2CA0397729E859D30079A614 /* ActivityListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListViewModel.swift; sourceTree = "<group>"; };
 		2CA0397929E87EF70079A614 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		2CA0397F29E891830079A614 /* ActivityInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInfoView.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				2C47869D29E084A500BFBADF /* RefreshControl.swift */,
 				2C2F7FDA296C076B003F3F76 /* HapticFeedback.swift */,
 				2C638D342A1CAC8F009FD732 /* NetworkManager.swift */,
+				2C956E402A266CA60094A4BD /* NotificationManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C956E412A266CA60094A4BD /* NotificationManager.swift in Sources */,
 				2C638D352A1CAC8F009FD732 /* NetworkManager.swift in Sources */,
 				2CE35E6D2943B0AA00674348 /* AddRecipeView.swift in Sources */,
 				2C0589F92A0CC7E20099C254 /* LogViewModel.swift in Sources */,

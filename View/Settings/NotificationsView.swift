@@ -13,11 +13,6 @@ struct NotificationsView: View {
     @EnvironmentObject var notificationManager: NotificationManager
     @Environment(\.scenePhase) var scenePhase
     
-    @State private var breakfastNotifications = false
-    @State private var lunchNotifications = false
-    @State private var dinnerNotifications = false
-    @State private var snackNotifications = false
-    @State private var currentDate = Date()
     
     // MARK: - BODY
     var body: some View {
@@ -28,62 +23,63 @@ struct NotificationsView: View {
                 if notificationManager.isGranted {
                     Form {
                         Section {
-                            Toggle(isOn: $breakfastNotifications) {
+                            Toggle(isOn: $notificationManager.isBreakfastNotificationEnabled) {
                                 HStack {
                                     Text("Mic Dejun")
                                     Spacer()
-                                    if breakfastNotifications {
-                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                    if notificationManager.isBreakfastNotificationEnabled {
+                                        DatePicker("", selection: $notificationManager.breakfastTime, displayedComponents: .hourAndMinute)
                                             .pickerStyle(.wheel)
-                                    } else {
-                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                            .pickerStyle(.wheel)
-                                            .disabled(true)
                                     }
                                 }
                             }
-                            Toggle(isOn: $lunchNotifications) {
+                            .disabled(!notificationManager.isGranted)
+                            .onChange(of: notificationManager.isBreakfastNotificationEnabled) { enabled in
+                                if enabled {
+                                    notificationManager.scheduleBreakfastNotification()
+                                } else {
+                                    notificationManager.cancelBreakfastNotification()
+                                }
+                            }
+                            
+                            Toggle(isOn: $notificationManager.isLunchNotificationEnabled) {
                                 HStack {
-                                    Text("Pranz")
+                                    Text("Prânz")
                                     Spacer()
-                                    if lunchNotifications {
-                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                    if notificationManager.isLunchNotificationEnabled {
+                                        DatePicker("", selection: $notificationManager.lunchTime, displayedComponents: .hourAndMinute)
                                             .pickerStyle(.wheel)
-                                    } else {
-                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                            .pickerStyle(.wheel)
-                                            .disabled(true)
                                     }
                                 }
                             }
-                            Toggle(isOn: $dinnerNotifications) {
+                            .disabled(!notificationManager.isGranted)
+                            .onChange(of: notificationManager.isLunchNotificationEnabled) { enabled in
+                                if enabled {
+                                    notificationManager.scheduleLunchNotification()
+                                } else {
+                                    notificationManager.cancelLunchNotification()
+                                }
+                            }
+                            
+                            Toggle(isOn: $notificationManager.isDinnerNotificationEnabled) {
                                 HStack {
-                                    Text("Cina")
+                                    Text("Cină")
                                     Spacer()
-                                    if dinnerNotifications {
-                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                    if notificationManager.isDinnerNotificationEnabled {
+                                        DatePicker("", selection: $notificationManager.dinnerTime, displayedComponents: .hourAndMinute)
                                             .pickerStyle(.wheel)
-                                    } else {
-                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                            .pickerStyle(.wheel)
-                                            .disabled(true)
                                     }
                                 }
                             }
-                            Toggle(isOn: $snackNotifications) {
-                                HStack {
-                                    Text("Gustare")
-                                    Spacer()
-                                    if snackNotifications {
-                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                            .pickerStyle(.wheel)
-                                    } else {
-                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                            .pickerStyle(.wheel)
-                                            .disabled(true)
-                                    }
+                            .disabled(!notificationManager.isGranted)
+                            .onChange(of: notificationManager.isDinnerNotificationEnabled) { enabled in
+                                if enabled {
+                                    notificationManager.scheduleDinnerNotification()
+                                } else {
+                                    notificationManager.cancelDinnerNotification()
                                 }
                             }
+
                         }
                     }
                 } else {
