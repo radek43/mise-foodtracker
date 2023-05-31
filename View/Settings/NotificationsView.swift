@@ -10,6 +10,9 @@ import SwiftUI
 
 struct NotificationsView: View {
     // MARK: - PROPERTIES
+    @EnvironmentObject var notificationManager: NotificationManager
+    @Environment(\.scenePhase) var scenePhase
+    
     @State private var breakfastNotifications = false
     @State private var lunchNotifications = false
     @State private var dinnerNotifications = false
@@ -22,66 +25,76 @@ struct NotificationsView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .center, spacing: 0) {
-                Form {
-                    Section {
-                        Toggle(isOn: $breakfastNotifications) {
-                            HStack {
-                                Text("Mic Dejun")
-                                Spacer()
-                                if breakfastNotifications {
-                                    DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                        .pickerStyle(.wheel)
-                                } else {
-                                    DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                        .pickerStyle(.wheel)
-                                        .disabled(true)
+                if notificationManager.isGranted {
+                    Form {
+                        Section {
+                            Toggle(isOn: $breakfastNotifications) {
+                                HStack {
+                                    Text("Mic Dejun")
+                                    Spacer()
+                                    if breakfastNotifications {
+                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                            .pickerStyle(.wheel)
+                                    } else {
+                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                            .pickerStyle(.wheel)
+                                            .disabled(true)
+                                    }
                                 }
                             }
-                        }
-                        Toggle(isOn: $lunchNotifications) {
-                            HStack {
-                                Text("Pranz")
-                                Spacer()
-                                if lunchNotifications {
-                                    DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                        .pickerStyle(.wheel)
-                                } else {
-                                    DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                        .pickerStyle(.wheel)
-                                        .disabled(true)
+                            Toggle(isOn: $lunchNotifications) {
+                                HStack {
+                                    Text("Pranz")
+                                    Spacer()
+                                    if lunchNotifications {
+                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                            .pickerStyle(.wheel)
+                                    } else {
+                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                            .pickerStyle(.wheel)
+                                            .disabled(true)
+                                    }
                                 }
                             }
-                        }
-                        Toggle(isOn: $dinnerNotifications) {
-                            HStack {
-                                Text("Cina")
-                                Spacer()
-                                if dinnerNotifications {
-                                    DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                        .pickerStyle(.wheel)
-                                } else {
-                                    DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                        .pickerStyle(.wheel)
-                                        .disabled(true)
+                            Toggle(isOn: $dinnerNotifications) {
+                                HStack {
+                                    Text("Cina")
+                                    Spacer()
+                                    if dinnerNotifications {
+                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                            .pickerStyle(.wheel)
+                                    } else {
+                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                            .pickerStyle(.wheel)
+                                            .disabled(true)
+                                    }
                                 }
                             }
-                        }
-                        Toggle(isOn: $snackNotifications) {
-                            HStack {
-                                Text("Gustare")
-                                Spacer()
-                                if snackNotifications {
-                                    DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                        .pickerStyle(.wheel)
-                                } else {
-                                    DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
-                                        .pickerStyle(.wheel)
-                                        .disabled(true)
+                            Toggle(isOn: $snackNotifications) {
+                                HStack {
+                                    Text("Gustare")
+                                    Spacer()
+                                    if snackNotifications {
+                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                            .pickerStyle(.wheel)
+                                    } else {
+                                        DatePicker("", selection: $currentDate, displayedComponents: .hourAndMinute)
+                                            .pickerStyle(.wheel)
+                                            .disabled(true)
+                                    }
                                 }
                             }
                         }
                     }
+                } else {
+                    Button {
+                        notificationManager.openSettings()
+                    } label: {
+                        Text("Activează notificările")
+                    }
                 }
+                
+
             }
             .frame(maxWidth: 580)
             .navigationTitle("Notificări")
@@ -89,6 +102,18 @@ struct NotificationsView: View {
             .toolbar {
                 Button("Modifică") {
                     print("Buton salvare apasat")
+                }
+            }
+        }
+        .onAppear {
+            Task {
+                try? await notificationManager.requestAuthorization()
+            }
+        }
+        .onChange(of: scenePhase) { newValue in
+            if newValue == .active {
+                Task {
+                    await notificationManager.getCurrentSettings()
                 }
             }
         }
@@ -104,5 +129,6 @@ struct NotificationsView_Previews: PreviewProvider {
             NotificationsView()
                 .preferredColorScheme(.dark)
         }
+        .environmentObject(NotificationManager())
     }
 }

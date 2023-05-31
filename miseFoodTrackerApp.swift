@@ -11,13 +11,14 @@ import SwiftUI
 @main
 struct miseFoodTrackerApp: App {
     @StateObject var networkManager = NetworkManager()
-    
+    @StateObject var notificationManager = NotificationManager()
     var body: some Scene {
         WindowGroup {
             LaunchView()
                 .environmentObject(AuthViewModel.shared)
                 .environmentObject(LogViewModel())
                 .environmentObject(networkManager)
+                .environmentObject(notificationManager)
         }
     }
 }
