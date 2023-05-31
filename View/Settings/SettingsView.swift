@@ -27,7 +27,7 @@ struct SettingsView: View {
                     Section {
                         NavigationLink(destination: ProfileView(user: user)) {
                             HStack(alignment: .center) {
-                                Image(systemName: "person.crop.circle") // placeholder poza de profil
+                                Image(systemName: "person.crop.circle")
                                     .resizable()
                                     .frame(width: 50, height: 50)
                                     .foregroundColor(Color.secondary)
