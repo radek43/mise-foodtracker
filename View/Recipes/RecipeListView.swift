@@ -33,22 +33,6 @@ struct RecipeListView: View {
                             }
                         }
                         VStack {
-                            // Search bar
-                            HStack(alignment: .center, spacing: 5.0) {
-                                SearchBar(placeholderText: "Gaseste-ți inspirația",text: .constant(""))
-                                Button {
-                                    print("buton setari retete apasat")
-                                } label: {
-                                    Image(systemName: "slider.horizontal.3")
-                                        .imageScale(.large)
-                                        .padding(10)
-                                        .background(Color.card)
-                                        .clipShape(RoundedRectangle(cornerRadius: 13, style: .continuous))
-                                }
-                            }
-                            .padding(.top)
-                            .padding(.bottom, 5.0)
-                            
                             // Recipe grid
                             VStack(spacing: 15.0) {
                                 ForEach(recipeListViewModel.recipes) { recipe in

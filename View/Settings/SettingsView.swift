@@ -15,8 +15,6 @@ struct SettingsView: View {
     
     @StateObject var settingsViewModel = SettingsViewModel()
     
-    @State private var doesTrackActivity = false
-    
     // MARK: - BODY
     var body: some View {
         if let user = authViewModel.currentUser {
@@ -65,15 +63,12 @@ struct SettingsView: View {
                         NavigationLink {
                             NotificationsView()
                         } label: {
-                            SettingsRow(iconDefault: "bell.badge", firstText: "Notificări", color: .red)
-                        }
-                        Toggle(isOn: $doesTrackActivity) {
-                            SettingsRow(iconAsset: "sport", firstText: "Înregistrare activitate", color: .blue)
+                            SettingsRow(iconDefault: "bell.badge", firstText: "Notificări", color: .blue)
                         }
                         Button {
                             authViewModel.signOut()
                         } label: {
-                            SettingsRow(iconDefault: "lock", firstText: "Delogare", color: .secondary)
+                            SettingsRow(iconDefault: "lock", firstText: "Delogare", color: .red)
                         }
                     }
                 }

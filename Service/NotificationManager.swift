@@ -19,6 +19,7 @@ class NotificationManager: NSObject, ObservableObject, UNUserNotificationCenterD
             if isBreakfastNotificationEnabled {
                 cancelBreakfastNotification()
                 scheduleBreakfastNotification()
+                saveNotificationTimes()
             }
         }
     }
@@ -27,6 +28,7 @@ class NotificationManager: NSObject, ObservableObject, UNUserNotificationCenterD
             if isLunchNotificationEnabled {
                 cancelLunchNotification()
                 scheduleLunchNotification()
+                saveNotificationTimes()
             }
         }
     }
@@ -36,9 +38,16 @@ class NotificationManager: NSObject, ObservableObject, UNUserNotificationCenterD
             if isDinnerNotificationEnabled {
                 cancelDinnerNotification()
                 scheduleDinnerNotification()
+                saveNotificationTimes()
             }
         }
     }
+    
+    private let userDefaults = UserDefaults.standard
+    private let breakfastTimeKey = "BreakfastTime"
+    private let lunchTimeKey = "LunchTime"
+    private let dinnerTimeKey = "DinnerTime"
+    
     
     let notificationCenter = UNUserNotificationCenter.current()
     
@@ -69,6 +78,26 @@ class NotificationManager: NSObject, ObservableObject, UNUserNotificationCenterD
                     await UIApplication.shared.open(url)
                 }
             }
+        }
+    }
+    
+    func saveNotificationTimes() {
+        userDefaults.set(breakfastTime, forKey: breakfastTimeKey)
+        userDefaults.set(lunchTime, forKey: lunchTimeKey)
+        userDefaults.set(dinnerTime, forKey: dinnerTimeKey)
+    }
+    
+    func loadNotificationTimes() {
+        if let savedBreakfastTime = userDefaults.object(forKey: breakfastTimeKey) as? Date {
+            breakfastTime = savedBreakfastTime
+        }
+        
+        if let savedLunchTime = userDefaults.object(forKey: lunchTimeKey) as? Date {
+            lunchTime = savedLunchTime
+        }
+        
+        if let savedDinnerTime = userDefaults.object(forKey: dinnerTimeKey) as? Date {
+            dinnerTime = savedDinnerTime
         }
     }
     

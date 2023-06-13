@@ -22,6 +22,8 @@ struct KeychainService {
             kSecValueData as String: password as AnyObject,
         ]
         
+        SecItemDelete(query as CFDictionary)
+        
         let status = SecItemAdd(query as CFDictionary, nil)
         
         guard status != errSecDuplicateItem else {

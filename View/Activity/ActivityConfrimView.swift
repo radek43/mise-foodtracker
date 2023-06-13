@@ -43,7 +43,7 @@ struct ActivityConfrimView: View {
                             
                             VStack(alignment: .center) {
                                 DatePicker(selection: $data, in: ...Date(), displayedComponents: .date) {
-                                    Text("Data consumării:")
+                                    Text("Data efectuării:")
                                         .foregroundColor(Color.formText)
                                 }
                                 .onChange(of: data) { newDate in

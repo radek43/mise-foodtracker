@@ -37,6 +37,7 @@ struct NotificationsView: View {
                             .onChange(of: notificationManager.isBreakfastNotificationEnabled) { enabled in
                                 if enabled {
                                     notificationManager.scheduleBreakfastNotification()
+                                    notificationManager.saveNotificationTimes()
                                 } else {
                                     notificationManager.cancelBreakfastNotification()
                                 }
@@ -56,6 +57,7 @@ struct NotificationsView: View {
                             .onChange(of: notificationManager.isLunchNotificationEnabled) { enabled in
                                 if enabled {
                                     notificationManager.scheduleLunchNotification()
+                                    notificationManager.saveNotificationTimes()
                                 } else {
                                     notificationManager.cancelLunchNotification()
                                 }
@@ -75,6 +77,7 @@ struct NotificationsView: View {
                             .onChange(of: notificationManager.isDinnerNotificationEnabled) { enabled in
                                 if enabled {
                                     notificationManager.scheduleDinnerNotification()
+                                    notificationManager.saveNotificationTimes()
                                 } else {
                                     notificationManager.cancelDinnerNotification()
                                 }
@@ -95,11 +98,6 @@ struct NotificationsView: View {
             .frame(maxWidth: 580)
             .navigationTitle("Notificări")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                Button("Modifică") {
-                    print("Buton salvare apasat")
-                }
-            }
         }
         .onAppear {
             Task {

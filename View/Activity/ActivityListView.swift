@@ -32,13 +32,7 @@ struct ActivityListView: View {
                                 activityListViewModel.loadActivities()
                             }
                         }
-                        VStack {
-                            // Search bar
-                            SearchBar(placeholderText: "Caută o activitate",text: .constant(""))
-                                .frame(maxWidth: 580)
-                                .padding([.top, .horizontal])
-                                .padding(.bottom, 5.0)
-                            
+                        VStack {                            
                             // Activity list
                             VStack(alignment: .leading) {
                                 HStack {
