@@ -13,16 +13,23 @@ struct AddFoodView: View {
     @StateObject var viewModel = AddFoodViewModel()
     
     @State private var title = ""
-    @State private var met = ""
-    @State private var ingredients = ""
     @State private var calories = ""
     @State private var protein = ""
-    @State private var carbs = ""
-    @State private var fibers = ""
     @State private var fat = ""
+    @State private var fibers = ""
+    @State private var carbs = ""
     @State private var estimates = ""
     
     @Environment(\.presentationMode) var presentationMode
+    
+    var isDisabled: Bool {
+        if title.isEmpty || calories.isEmpty || protein.isEmpty || fat.isEmpty || fibers.isEmpty || carbs.isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     
     // MARK: - BODY
     var body: some View {
@@ -89,6 +96,7 @@ struct AddFoodView: View {
                         try await self.viewModel.postFood(title: title, calories: calories, carbs: carbs, fibers: fibers, fat: fat, protein: protein, estimates: estimates)
                     }
                 }
+                .disabled(isDisabled)
             }
             .onReceive(viewModel.$didUploadFood, perform: { success in
                 if success {

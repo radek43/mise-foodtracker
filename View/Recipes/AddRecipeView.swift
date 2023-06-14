@@ -36,6 +36,15 @@ struct AddRecipeView: View {
     @State private var selectedImage: UIImage?
     @State private var recipeImage: Image?
     
+    var isDisabled: Bool {
+        if title.isEmpty || time_minutes.isEmpty || description.isEmpty || ingredients.isEmpty || calories.isEmpty || protein.isEmpty || carbs.isEmpty || fibers.isEmpty || fat.isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    
     // MARK: - BODY
     var body: some View {
         ZStack {
@@ -135,8 +144,8 @@ struct AddRecipeView: View {
                     Task(priority: .medium) {
                         try await self.viewModel.postRecipe(title: title, category: selectedCategory, time_minutes: Int(time_minutes)!, description: description, ingredients: ingredients, calories: calories , protein: protein, carbs: carbs, fibers: fibers, fat: fat, image: selectedImage)
                     }
-                    
                 }
+                .disabled(isDisabled)
             }
             .onReceive(viewModel.$didUploadRecipe, perform: { success in
                 if success {

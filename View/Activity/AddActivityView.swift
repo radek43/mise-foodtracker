@@ -16,6 +16,14 @@ struct AddActivityListView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    var isDisabled: Bool {
+        if activityTitle.isEmpty || met.isEmpty {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     // MARK: - BODY
     var body: some View {
         ZStack {
@@ -45,6 +53,7 @@ struct AddActivityListView: View {
                         try await viewModel.postActivity(title: activityTitle, met: met)
                     }
                 }
+                .disabled(isDisabled)
             }
             .onReceive(viewModel.$didUploadActivity, perform: { success in
                 if success {
